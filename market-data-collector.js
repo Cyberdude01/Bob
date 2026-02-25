@@ -4,7 +4,7 @@ require('dotenv').config();
 // Database setup
 const db = new sqlite3.Database('./market-data.db');
 
-// Create tables (with last_price column added if missing)
+// Create tables (Schema Update v4)
 db.serialize(() => {
   db.run(`
     CREATE TABLE IF NOT EXISTS market_data (
@@ -22,23 +22,33 @@ db.serialize(() => {
       bid_depth REAL,
       ask_depth REAL,
       last_price REAL,
+      last_trade_size REAL,
+      last_trade_side TEXT,
+      last_trade_asset TEXT,
       created_at INTEGER DEFAULT (strftime('%s', 'now'))
     )
   `);
 
-  // Ensure last_price column exists for older installs
-  db.run(`ALTER TABLE market_data ADD COLUMN last_price REAL;`, [], (err) => {
-    // Ignore if column already exists
-    if (err && !err.message.includes('duplicate') && !err.message.includes('exists')) {
-      console.error('Error adding last_price column:', err.message);
-    }
+  // Migrations for existing tables are handled manually or via startup checks below
+  const columnsToAdd = [
+    { name: 'last_price', type: 'REAL' },
+    { name: 'last_trade_size', type: 'REAL' },
+    { name: 'last_trade_side', type: 'TEXT' },
+    { name: 'last_trade_asset', type: 'TEXT' }
+  ];
+
+  columnsToAdd.forEach(col => {
+    db.run(`ALTER TABLE market_data ADD COLUMN ${col.name} ${col.type};`, [], (err) => {
+      // Ignore errors if column exists
+    });
   });
 
   db.run(`
     CREATE INDEX IF NOT EXISTS idx_market_timestamp 
     ON market_data(market_id, timestamp)
   `);
-
+  
+  // Calculations table (unchanged)
   db.run(`
     CREATE TABLE IF NOT EXISTS calculations (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -57,16 +67,11 @@ db.serialize(() => {
 
 async function getActive15MinSlugs() {
   try {
-    // Scrape the /crypto/15M page to get current market slugs
     const response = await fetch('https://polymarket.com/crypto/15M');
     const html = await response.text();
-    
-    // Extract slugs from HTML
     const slugMatches = html.match(/event\/([a-z0-9-]+15m-\d+)/g);
     if (!slugMatches) return [];
-    
-    const slugs = [...new Set(slugMatches)].map(s => s.replace('event/', ''));
-    return slugs;
+    return [...new Set(slugMatches)].map(s => s.replace('event/', ''));
   } catch (err) {
     console.error('Error scraping /crypto/15M:', err.message);
     return [];
@@ -77,27 +82,18 @@ async function fetchMarketBySlug(slug) {
   try {
     const response = await fetch(`https://gamma-api.polymarket.com/markets?slug=${slug}`);
     const markets = await response.json();
-    
     if (markets.length === 0) return null;
-    
     const market = markets[0];
-    
-    // Parse JSON strings
-    const tokenIds = JSON.parse(market.clobTokenIds || '[]');
-    const outcomes = JSON.parse(market.outcomes || '[]');
-    const prices = JSON.parse(market.outcomePrices || '[]');
-    
     return {
       slug: market.slug,
       conditionId: market.conditionId,
       question: market.question,
       closed: market.closed,
       active: market.active,
-      tokenIds,
-      outcomes,
-      prices,
+      tokenIds: JSON.parse(market.clobTokenIds || '[]'),
+      outcomes: JSON.parse(market.outcomes || '[]'),
+      prices: JSON.parse(market.outcomePrices || '[]'),
       volume: parseFloat(market.volumeNum || 0),
-      liquidity: parseFloat(market.liquidityNum || 0),
     };
   } catch (err) {
     console.error(`Error fetching market ${slug}:`, err.message);
@@ -109,23 +105,14 @@ async function fetchOrderBook(tokenId) {
   try {
     const response = await fetch(`https://clob.polymarket.com/book?token_id=${tokenId}`);
     const orderBook = await response.json();
-    
     const bids = orderBook.bids || [];
     const asks = orderBook.asks || [];
-    
-    const bestBid = bids.length > 0 ? parseFloat(bids[0].price) : null;
-    const bestAsk = asks.length > 0 ? parseFloat(asks[0].price) : null;
-    const spread = (bestBid && bestAsk) ? bestAsk - bestBid : null;
-    
-    const bidDepth = bids.slice(0, 5).reduce((sum, b) => sum + parseFloat(b.size || 0), 0);
-    const askDepth = asks.slice(0, 5).reduce((sum, a) => sum + parseFloat(a.size || 0), 0);
-    
     return {
-      bestBid,
-      bestAsk,
-      spread,
-      bidDepth,
-      askDepth,
+      bestBid: bids.length > 0 ? parseFloat(bids[0].price) : null,
+      bestAsk: asks.length > 0 ? parseFloat(asks[0].price) : null,
+      spread: (bids.length > 0 && asks.length > 0) ? parseFloat(asks[0].price) - parseFloat(bids[0].price) : null,
+      bidDepth: bids.slice(0, 5).reduce((sum, b) => sum + parseFloat(b.size || 0), 0),
+      askDepth: asks.slice(0, 5).reduce((sum, a) => sum + parseFloat(a.size || 0), 0),
     };
   } catch (err) {
     console.error(`Error fetching order book for ${tokenId}:`, err.message);
@@ -133,18 +120,26 @@ async function fetchOrderBook(tokenId) {
   }
 }
 
-async function fetchLastTradePriceForMarket(conditionId) {
+async function fetchLastTradeForMarket(conditionId) {
   try {
+    // Fetch latest trade for the market
     const url = `https://data-api.polymarket.com/trades?market=${conditionId}&limit=1`;
     const res = await fetch(url);
     const data = await res.json();
+    
     if (Array.isArray(data) && data.length > 0) {
-      const t = data[0] || data[data.length - 1];
-      return parseFloat(t.price);
+      // API usually returns latest first, but we check just in case or take 0
+      const t = data[0]; 
+      return {
+        price: parseFloat(t.price),
+        size: parseFloat(t.size),
+        side: t.side, // BUY or SELL
+        asset: t.asset // Token ID
+      };
     }
     return null;
   } catch (e) {
-    console.error(`Failed to fetch last trade price for ${conditionId}:`, e.message);
+    console.error(`Failed to fetch trades for ${conditionId}:`, e.message);
     return null;
   }
 }
@@ -156,13 +151,19 @@ async function collectData() {
       console.log(`[${new Date().toISOString()}] No active 15-minute markets found`);
       return;
     }
-    console.log(`[${new Date().toISOString()}] Found ${slugs.length} active markets`);
+    
+    console.log(`[${new Date().toISOString()}] Processing ${slugs.length} markets...`);
     const timestamp = Math.floor(Date.now() / 1000);
     
     for (const slug of slugs) {
       const market = await fetchMarketBySlug(slug);
       if (!market || market.closed) continue;
       
+      // Fetch trade data once per market (shared across outcomes usually, but API returns specific asset trades)
+      // Actually the Trades API filters by market (conditionId) and returns trades for ANY asset in that market.
+      // The `lastTrade` object we fetch will correspond to ONE of the assets (tokens).
+      const lastTradeGlobal = await fetchLastTradeForMarket(market.conditionId);
+
       for (let i = 0; i < market.tokenIds.length; i++) {
         const tokenId = market.tokenIds[i];
         const outcome = market.outcomes[i];
@@ -175,14 +176,29 @@ async function collectData() {
           ? (orderBook.bestBid + orderBook.bestAsk) / 2 
           : price;
         
-        const lastPrice = await fetchLastTradePriceForMarket(market.conditionId);
-        
-        // INSERT including last_price
+        // Check if the global last trade matches this specific token
+        let tradeData = { price: null, size: null, side: null, asset: null };
+        if (lastTradeGlobal) {
+            // Note: If the last trade on the market was for "YES", it applies to that token.
+            // If we want the last trade SPECIFIC to this token, we'd need to filter the trades list by asset.
+            // But for now, we'll store the Market's last trade info, or match it.
+            // User asked for "Last price" etc. for the market.
+            // We will store the trade info exactly as fetched.
+            tradeData = {
+                price: lastTradeGlobal.price,
+                size: lastTradeGlobal.size,
+                side: lastTradeGlobal.side,
+                asset: lastTradeGlobal.asset 
+            };
+        }
+
         db.run(`
           INSERT INTO market_data (
             timestamp, market_id, market_name, token_id, outcome,
-            price, bid, ask, spread, volume_24h, bid_depth, ask_depth, last_price, created_at
-          ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            price, bid, ask, spread, volume_24h, bid_depth, ask_depth,
+            last_price, last_trade_size, last_trade_side, last_trade_asset,
+            created_at
+          ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         `, [
           timestamp,
           market.conditionId,
@@ -196,26 +212,24 @@ async function collectData() {
           market.volume,
           orderBook.bidDepth,
           orderBook.askDepth,
-          lastPrice,
+          tradeData.price,
+          tradeData.size,
+          tradeData.side,
+          tradeData.asset,
           timestamp
         ], (err) => {
           if (err) console.error('DB insert error:', err.message);
         });
         
-        console.log(`[${new Date().toISOString()}] ${market.question.slice(0, 40)}... | ${outcome} | Price: ${midPrice.toFixed(4)} | Last: ${lastPrice !== null ? lastPrice.toFixed(4) : 'n/a'} | Spread: ${(orderBook.spread || 0).toFixed(4)}`);
-        
+        // Rate limit
         await new Promise(r => setTimeout(r, 200));
       }
     }
-    
   } catch (err) {
     console.error('Error in collectData:', err.message);
   }
 }
 
-// Run immediately, then every 1 minute
-console.log('Starting market data collector (v3 - scraper + API)...');
-console.log('Database: market-data.db');
-console.log('Scraping /crypto/15M page for active markets...');
+console.log('Starting market data collector (v4 - Extended Trade Data)...');
 collectData();
 setInterval(collectData, 60 * 1000);
