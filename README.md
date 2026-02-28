@@ -1,6 +1,6 @@
 # Polymarket 15M Data Feed
 
-> **Mode:** PAPER &nbsp;|&nbsp; **Updated:** `2026-02-28T05:21:48Z`
+> **Mode:** PAPER &nbsp;|&nbsp; **Updated:** `2026-02-28T05:22:10Z`
 
 ## Live Markets
 | Symbol | UP | DOWN | Elapsed | Bucket | Dir@60% | Dir@80% | Dir@90% |
