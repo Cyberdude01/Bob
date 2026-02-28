@@ -1,11 +1,11 @@
 {
-  "updated": "2026-02-28T20:02:34Z",
+  "updated": "2026-02-28T20:07:34Z",
   "data": {
     "BTC": {
       "symbol": "BTC",
       "condition_id": "0x5092ace841123d364c9046a1650115b54dfb49a12704d46d054d65da73e5771c",
-      "elapsed_pct": 0.1716,
-      "remaining_sec": 745.5,
+      "elapsed_pct": 0.505,
+      "remaining_sec": 445.5,
       "up_price": 0.5,
       "down_price": 0.5,
       "arb": null,
@@ -26,14 +26,14 @@
     "ETH": {
       "symbol": "ETH",
       "condition_id": "0xdd84b27fb75ec49d8d49e2afd957ef653e50083f296bc997ed347067d1443c55",
-      "elapsed_pct": 0.1716,
-      "remaining_sec": 745.5,
+      "elapsed_pct": 0.505,
+      "remaining_sec": 445.5,
       "up_price": 0.5,
       "down_price": 0.5,
       "arb": null,
-      "rv60": 1.366194,
+      "rv60": 0.0,
       "eff60": 0.0,
-      "vol_bucket": "HighVol",
+      "vol_bucket": "LowVol",
       "trend_bucket": "Range",
       "up_price_ob": 0.5,
       "down_price_ob": 0.5,
@@ -41,15 +41,15 @@
       "dir_60pct": 0.5,
       "dir_80pct": 0.5,
       "dir_90pct": 0.5,
-      "prob_008": 0.44,
-      "prob_012": 0.56,
-      "prob_020": 0.71
+      "prob_008": 0.65,
+      "prob_012": 0.74,
+      "prob_020": 0.87
     },
     "SOL": {
       "symbol": "SOL",
       "condition_id": "0xd3ede653ef9498e38ad7594ceb064af9c82d38d4c5e69895ace1f6333d9fc4ba",
-      "elapsed_pct": 0.1716,
-      "remaining_sec": 745.5,
+      "elapsed_pct": 0.505,
+      "remaining_sec": 445.5,
       "up_price": 0.5,
       "down_price": 0.5,
       "arb": null,
@@ -70,14 +70,14 @@
     "XRP": {
       "symbol": "XRP",
       "condition_id": "0xf3941dfb4217b10191a167cdc35554fe9b27129269d9f70324fe70a568a3421b",
-      "elapsed_pct": 0.1716,
-      "remaining_sec": 745.5,
+      "elapsed_pct": 0.505,
+      "remaining_sec": 445.5,
       "up_price": 0.5,
       "down_price": 0.5,
       "arb": null,
-      "rv60": 1.366194,
+      "rv60": 0.0,
       "eff60": 0.0,
-      "vol_bucket": "HighVol",
+      "vol_bucket": "LowVol",
       "trend_bucket": "Range",
       "up_price_ob": 0.5,
       "down_price_ob": 0.5,
@@ -85,9 +85,9 @@
       "dir_60pct": 0.5,
       "dir_80pct": 0.5,
       "dir_90pct": 0.5,
-      "prob_008": 0.44,
-      "prob_012": 0.56,
-      "prob_020": 0.71
+      "prob_008": 0.65,
+      "prob_012": 0.74,
+      "prob_020": 0.87
     }
   }
 }
