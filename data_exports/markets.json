@@ -1,11 +1,11 @@
 {
-  "updated": "2026-02-28T22:22:35Z",
+  "updated": "2026-02-28T22:27:35Z",
   "data": {
     "BTC": {
       "symbol": "BTC",
       "condition_id": "0xc37d242842ab822ce898b3c93e6b5ffec35385c1107371643b24209479e9d44f",
-      "elapsed_pct": 0.5059,
-      "remaining_sec": 444.7,
+      "elapsed_pct": 0.8393,
+      "remaining_sec": 144.7,
       "up_price": 0.5,
       "down_price": 0.5,
       "arb": null,
@@ -26,8 +26,8 @@
     "ETH": {
       "symbol": "ETH",
       "condition_id": "0xd0adabc5515c17e1e92c91de0198b526d389b4a725ffb89f13fb446217c1e1fc",
-      "elapsed_pct": 0.5059,
-      "remaining_sec": 444.7,
+      "elapsed_pct": 0.8393,
+      "remaining_sec": 144.7,
       "up_price": 0.5,
       "down_price": 0.5,
       "arb": null,
@@ -48,8 +48,8 @@
     "SOL": {
       "symbol": "SOL",
       "condition_id": "0x2588ef8aca82aa2ca6d3aa36a01a230ea14fb588c4b97d70439cf9f536756d06",
-      "elapsed_pct": 0.5059,
-      "remaining_sec": 444.7,
+      "elapsed_pct": 0.8393,
+      "remaining_sec": 144.7,
       "up_price": 0.5,
       "down_price": 0.5,
       "arb": null,
@@ -70,8 +70,8 @@
     "XRP": {
       "symbol": "XRP",
       "condition_id": "0x450599f4aaa650281a8a6bff513ab6d442baf34afb7a04b75cc7bcd27a096867",
-      "elapsed_pct": 0.5059,
-      "remaining_sec": 444.7,
+      "elapsed_pct": 0.8393,
+      "remaining_sec": 144.7,
       "up_price": 0.5,
       "down_price": 0.5,
       "arb": null,
