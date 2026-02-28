@@ -1,33 +1,6 @@
 {
-  "updated": "2026-02-28T16:52:33Z",
+  "updated": "2026-02-28T16:57:33Z",
   "data": [
-    {
-      "symbol": "BTC",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 14.12,
-      "price": 1.0,
-      "confidence": 0.876,
-      "reason": "90pct trigger: P(UP)=0.876  bucket=HighVol+Range"
-    },
-    {
-      "symbol": "ETH",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 29.83,
-      "price": 1.0,
-      "confidence": 0.876,
-      "reason": "90pct trigger: P(UP)=0.876  bucket=HighVol+Range"
-    },
-    {
-      "symbol": "SOL",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 9.42,
-      "price": 0.99,
-      "confidence": 1.0,
-      "reason": "90pct trigger: P(UP)=1.000  bucket=HighVol+Trend"
-    },
     {
       "symbol": "BTC",
       "outcome": "UP",
@@ -180,6 +153,33 @@
       "price": 0.99,
       "confidence": 0.999,
       "reason": "90pct trigger: P(UP)=0.999  bucket=HighVol+Trend"
+    },
+    {
+      "symbol": "BTC",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 14.12,
+      "price": 0.99,
+      "confidence": 0.812,
+      "reason": "60pct trigger: P(UP)=0.188  bucket=HighVol+Trend"
+    },
+    {
+      "symbol": "SOL",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 9.42,
+      "price": 0.99,
+      "confidence": 0.87,
+      "reason": "60pct trigger: P(UP)=0.130  bucket=HighVol+Trend"
+    },
+    {
+      "symbol": "ETH",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 29.34,
+      "price": 0.95,
+      "confidence": 0.785,
+      "reason": "60pct trigger: P(UP)=0.215  bucket=HighVol+Range"
     }
   ]
 }
