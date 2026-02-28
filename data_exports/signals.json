@@ -1,4 +1,185 @@
 {
-  "updated": "2026-02-28T16:06:54Z",
-  "data": []
+  "updated": "2026-02-28T16:11:54Z",
+  "data": [
+    {
+      "symbol": "XRP",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 47.14,
+      "price": 0.99,
+      "confidence": 0.97,
+      "reason": "80pct trigger: P(UP)=0.970  bucket=HighVol+Trend"
+    },
+    {
+      "symbol": "BTC",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 39.54,
+      "price": 0.9,
+      "confidence": 0.891,
+      "reason": "80pct trigger: P(UP)=0.891  bucket=HighVol+Trend"
+    },
+    {
+      "symbol": "ETH",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 20.6,
+      "price": 0.72,
+      "confidence": 0.694,
+      "reason": "80pct trigger: P(UP)=0.694  bucket=LowVol+Trend"
+    },
+    {
+      "symbol": "SOL",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 20.14,
+      "price": 0.74,
+      "confidence": 0.689,
+      "reason": "80pct trigger: P(UP)=0.689  bucket=LowVol+Trend"
+    },
+    {
+      "symbol": "XRP",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 47.14,
+      "price": 0.98,
+      "confidence": 0.97,
+      "reason": "80pct trigger: P(UP)=0.970  bucket=HighVol+Trend"
+    },
+    {
+      "symbol": "BTC",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 40.49,
+      "price": 0.99,
+      "confidence": 0.901,
+      "reason": "80pct trigger: P(UP)=0.901  bucket=HighVol+Trend"
+    },
+    {
+      "symbol": "ETH",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 21.5,
+      "price": 0.72,
+      "confidence": 0.703,
+      "reason": "80pct trigger: P(UP)=0.703  bucket=LowVol+Trend"
+    },
+    {
+      "symbol": "SOL",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 22.41,
+      "price": 0.72,
+      "confidence": 0.713,
+      "reason": "80pct trigger: P(UP)=0.713  bucket=LowVol+Trend"
+    },
+    {
+      "symbol": "XRP",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 47.46,
+      "price": 0.98,
+      "confidence": 0.975,
+      "reason": "80pct trigger: P(UP)=0.975  bucket=HighVol+Trend"
+    },
+    {
+      "symbol": "BTC",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 40.49,
+      "price": 0.91,
+      "confidence": 0.901,
+      "reason": "80pct trigger: P(UP)=0.901  bucket=HighVol+Trend"
+    },
+    {
+      "symbol": "ETH",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 23.32,
+      "price": 0.76,
+      "confidence": 0.722,
+      "reason": "80pct trigger: P(UP)=0.722  bucket=LowVol+Trend"
+    },
+    {
+      "symbol": "SOL",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 22.41,
+      "price": 0.73,
+      "confidence": 0.713,
+      "reason": "80pct trigger: P(UP)=0.713  bucket=LowVol+Trend"
+    },
+    {
+      "symbol": "XRP",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 47.46,
+      "price": 0.99,
+      "confidence": 0.98,
+      "reason": "80pct trigger: P(UP)=0.980  bucket=HighVol+Trend"
+    },
+    {
+      "symbol": "BTC",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 41.44,
+      "price": 0.9,
+      "confidence": 0.911,
+      "reason": "80pct trigger: P(UP)=0.911  bucket=HighVol+Trend"
+    },
+    {
+      "symbol": "ETH",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 25.13,
+      "price": 0.73,
+      "confidence": 0.741,
+      "reason": "80pct trigger: P(UP)=0.741  bucket=LowVol+Trend"
+    },
+    {
+      "symbol": "SOL",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 22.41,
+      "price": 0.73,
+      "confidence": 0.713,
+      "reason": "80pct trigger: P(UP)=0.713  bucket=LowVol+Trend"
+    },
+    {
+      "symbol": "XRP",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 47.46,
+      "price": 0.98,
+      "confidence": 0.98,
+      "reason": "80pct trigger: P(UP)=0.980  bucket=HighVol+Trend"
+    },
+    {
+      "symbol": "BTC",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 38.12,
+      "price": 0.89,
+      "confidence": 0.876,
+      "reason": "80pct trigger: P(UP)=0.876  bucket=HighVol+Trend"
+    },
+    {
+      "symbol": "SOL",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 22.41,
+      "price": 0.99,
+      "confidence": 0.713,
+      "reason": "80pct trigger: P(UP)=0.713  bucket=LowVol+Trend"
+    },
+    {
+      "symbol": "XRP",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 34.83,
+      "price": 0.99,
+      "confidence": 0.842,
+      "reason": "80pct trigger: P(UP)=0.842  bucket=HighVol+Range"
+    }
+  ]
 }
