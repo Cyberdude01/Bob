@@ -1,185 +1,185 @@
 {
-  "updated": "2026-03-01T03:49:21Z",
+  "updated": "2026-03-01T03:54:22Z",
   "data": [
     {
-      "symbol": "SOL",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 32.72,
-      "price": 0.69,
-      "confidence": 0.66,
-      "reason": "HighVol+Trend momentum: UP price=0.690"
-    },
-    {
-      "symbol": "SOL",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 32.72,
-      "price": 0.35,
-      "confidence": 0.66,
-      "reason": "HighVol+Trend momentum: DOWN price=0.350"
-    },
-    {
-      "symbol": "ETH",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 23.12,
-      "price": 0.62,
-      "confidence": 0.61,
-      "reason": "HighVol+Trend momentum: UP price=0.620"
-    },
-    {
       "symbol": "ETH",
       "outcome": "DOWN",
       "side": "BUY",
-      "size": 23.12,
-      "price": 0.4,
-      "confidence": 0.61,
-      "reason": "HighVol+Trend momentum: DOWN price=0.400"
-    },
-    {
-      "symbol": "SOL",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 27.72,
-      "price": 0.67,
-      "confidence": 0.67,
-      "reason": "HighVol+Trend momentum: UP price=0.670"
+      "size": 41.68,
+      "price": 0.98,
+      "confidence": 0.919,
+      "reason": "60pct trigger: P(UP)=0.081  bucket=HighVol+Trend"
     },
     {
       "symbol": "SOL",
       "outcome": "DOWN",
       "side": "BUY",
       "size": 27.72,
-      "price": 0.34,
-      "confidence": 0.67,
-      "reason": "HighVol+Trend momentum: DOWN price=0.340"
+      "price": 0.95,
+      "confidence": 0.893,
+      "reason": "60pct trigger: P(UP)=0.107  bucket=HighVol+Trend"
     },
     {
-      "symbol": "SOL",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 27.72,
-      "price": 0.64,
-      "confidence": 0.635,
-      "reason": "HighVol+Trend momentum: UP price=0.640"
-    },
-    {
-      "symbol": "SOL",
+      "symbol": "BTC",
       "outcome": "DOWN",
       "side": "BUY",
-      "size": 27.72,
-      "price": 0.37,
-      "confidence": 0.635,
-      "reason": "HighVol+Trend momentum: DOWN price=0.370"
+      "size": 27.51,
+      "price": 0.84,
+      "confidence": 0.766,
+      "reason": "60pct trigger: P(UP)=0.234  bucket=LowVol+Trend"
     },
     {
-      "symbol": "SOL",
-      "outcome": "UP",
+      "symbol": "ETH",
+      "outcome": "DOWN",
       "side": "BUY",
-      "size": 27.72,
+      "size": 41.68,
       "price": 0.99,
-      "confidence": 0.64,
-      "reason": "HighVol+Trend momentum: UP price=0.990"
+      "confidence": 0.929,
+      "reason": "60pct trigger: P(UP)=0.071  bucket=HighVol+Trend"
     },
     {
       "symbol": "SOL",
       "outcome": "DOWN",
       "side": "BUY",
       "size": 27.72,
-      "price": 0.36,
-      "confidence": 0.64,
-      "reason": "HighVol+Trend momentum: DOWN price=0.360"
+      "price": 0.95,
+      "confidence": 0.889,
+      "reason": "60pct trigger: P(UP)=0.111  bucket=HighVol+Trend"
     },
     {
-      "symbol": "SOL",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 27.72,
-      "price": 0.67,
-      "confidence": 0.665,
-      "reason": "HighVol+Trend momentum: UP price=0.670"
-    },
-    {
-      "symbol": "SOL",
+      "symbol": "BTC",
       "outcome": "DOWN",
       "side": "BUY",
-      "size": 27.72,
-      "price": 0.34,
-      "confidence": 0.665,
-      "reason": "HighVol+Trend momentum: DOWN price=0.340"
+      "size": 23.9,
+      "price": 0.78,
+      "confidence": 0.728,
+      "reason": "60pct trigger: P(UP)=0.272  bucket=LowVol+Trend"
     },
     {
-      "symbol": "SOL",
-      "outcome": "UP",
+      "symbol": "ETH",
+      "outcome": "DOWN",
       "side": "BUY",
-      "size": 27.72,
+      "size": 41.68,
+      "price": 0.98,
+      "confidence": 0.92,
+      "reason": "60pct trigger: P(UP)=0.080  bucket=HighVol+Trend"
+    },
+    {
+      "symbol": "BTC",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 25.15,
+      "price": 0.79,
+      "confidence": 0.741,
+      "reason": "60pct trigger: P(UP)=0.259  bucket=LowVol+Trend"
+    },
+    {
+      "symbol": "ETH",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 41.68,
       "price": 0.99,
-      "confidence": 0.655,
-      "reason": "HighVol+Trend momentum: UP price=0.990"
+      "confidence": 0.921,
+      "reason": "60pct trigger: P(UP)=0.079  bucket=HighVol+Trend"
     },
     {
-      "symbol": "SOL",
+      "symbol": "BTC",
       "outcome": "DOWN",
       "side": "BUY",
-      "size": 27.72,
+      "size": 26.4,
+      "price": 0.81,
+      "confidence": 0.754,
+      "reason": "60pct trigger: P(UP)=0.246  bucket=LowVol+Trend"
+    },
+    {
+      "symbol": "ETH",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 41.68,
       "price": 0.99,
-      "confidence": 0.655,
-      "reason": "HighVol+Trend momentum: DOWN price=0.990"
-    },
-    {
-      "symbol": "SOL",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 27.72,
-      "price": 0.66,
-      "confidence": 0.655,
-      "reason": "HighVol+Trend momentum: UP price=0.660"
+      "confidence": 0.926,
+      "reason": "60pct trigger: P(UP)=0.074  bucket=HighVol+Trend"
     },
     {
       "symbol": "SOL",
       "outcome": "DOWN",
       "side": "BUY",
       "size": 27.72,
-      "price": 0.35,
-      "confidence": 0.655,
-      "reason": "HighVol+Trend momentum: DOWN price=0.350"
+      "price": 0.96,
+      "confidence": 0.904,
+      "reason": "60pct trigger: P(UP)=0.096  bucket=HighVol+Trend"
     },
     {
-      "symbol": "SOL",
-      "outcome": "UP",
+      "symbol": "BTC",
+      "outcome": "DOWN",
       "side": "BUY",
-      "size": 27.72,
-      "price": 0.66,
-      "confidence": 0.655,
-      "reason": "HighVol+Trend momentum: UP price=0.660"
+      "size": 31.44,
+      "price": 0.85,
+      "confidence": 0.807,
+      "reason": "60pct trigger: P(UP)=0.193  bucket=HighVol+Trend"
+    },
+    {
+      "symbol": "ETH",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 41.68,
+      "price": 0.99,
+      "confidence": 0.931,
+      "reason": "60pct trigger: P(UP)=0.069  bucket=HighVol+Trend"
+    },
+    {
+      "symbol": "BTC",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 33.19,
+      "price": 0.87,
+      "confidence": 0.825,
+      "reason": "60pct trigger: P(UP)=0.175  bucket=HighVol+Trend"
+    },
+    {
+      "symbol": "ETH",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 41.68,
+      "price": 0.99,
+      "confidence": 0.923,
+      "reason": "60pct trigger: P(UP)=0.077  bucket=HighVol+Trend"
     },
     {
       "symbol": "SOL",
       "outcome": "DOWN",
       "side": "BUY",
       "size": 27.72,
-      "price": 0.35,
-      "confidence": 0.655,
-      "reason": "HighVol+Trend momentum: DOWN price=0.350"
+      "price": 0.97,
+      "confidence": 0.914,
+      "reason": "60pct trigger: P(UP)=0.086  bucket=HighVol+Trend"
     },
     {
-      "symbol": "SOL",
-      "outcome": "UP",
+      "symbol": "BTC",
+      "outcome": "DOWN",
       "side": "BUY",
-      "size": 22.16,
-      "price": 0.61,
-      "confidence": 0.605,
-      "reason": "HighVol+Trend momentum: UP price=0.610"
+      "size": 31.95,
+      "price": 0.86,
+      "confidence": 0.812,
+      "reason": "60pct trigger: P(UP)=0.188  bucket=HighVol+Trend"
+    },
+    {
+      "symbol": "ETH",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 41.68,
+      "price": 0.99,
+      "confidence": 0.932,
+      "reason": "60pct trigger: P(UP)=0.068  bucket=HighVol+Trend"
     },
     {
       "symbol": "SOL",
       "outcome": "DOWN",
       "side": "BUY",
-      "size": 22.16,
-      "price": 0.4,
-      "confidence": 0.605,
-      "reason": "HighVol+Trend momentum: DOWN price=0.400"
+      "size": 27.72,
+      "price": 0.97,
+      "confidence": 0.914,
+      "reason": "60pct trigger: P(UP)=0.086  bucket=HighVol+Trend"
     }
   ]
 }
