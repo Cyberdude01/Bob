@@ -1,24 +1,6 @@
 {
-  "updated": "2026-03-01T05:16:49Z",
+  "updated": "2026-03-01T05:21:50Z",
   "data": [
-    {
-      "symbol": "XRP",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 22.45,
-      "price": 0.99,
-      "confidence": 0.854,
-      "reason": "90pct trigger: P(UP)=0.146  bucket=HighVol+Range"
-    },
-    {
-      "symbol": "BTC",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 26.02,
-      "price": 0.83,
-      "confidence": 0.75,
-      "reason": "90pct trigger: P(UP)=0.750  bucket=HighVol+Range"
-    },
     {
       "symbol": "ETH",
       "outcome": "UP",
@@ -180,6 +162,24 @@
       "price": 0.36,
       "confidence": 0.635,
       "reason": "HighVol+Trend momentum: DOWN price=0.360"
+    },
+    {
+      "symbol": "SOL",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 28.94,
+      "price": 0.12,
+      "confidence": 0.9,
+      "reason": "HighVol+Trend momentum: DOWN price=0.120"
+    },
+    {
+      "symbol": "XRP",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 22.45,
+      "price": 0.99,
+      "confidence": 0.75,
+      "reason": "HighVol+Trend momentum: DOWN price=0.990"
     }
   ]
 }
