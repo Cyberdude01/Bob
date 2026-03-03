@@ -1,14 +1,14 @@
 # Polymarket 15M Data Feed
 
-> **Mode:** LIVE &nbsp;|&nbsp; **Updated:** `2026-03-03T23:53:28Z`
+> **Mode:** LIVE &nbsp;|&nbsp; **Updated:** `2026-03-03T23:58:29Z`
 
 ## Live Markets
 | Symbol | UP | DOWN | Elapsed | Bucket | Dir@60% | Dir@80% | Dir@90% |
 |--------|----|------|---------|--------|---------|---------|---------|
-| **BTC** | 0.860 | 0.860 | 57% | HighVol+Range | 73.0% | 75.9% | 77.4% |
-| **ETH** | 0.140 | 0.140 | 57% | HighVol+Trend | 18.3% | 14.4% | 12.4% |
-| **SOL** | 0.410 | 0.410 | 57% | LowVol+Range | 43.5% | 42.7% | 42.3% |
-| **XRP** | 0.180 | 0.180 | 57% | HighVol+Range | 29.5% | 27.0% | 25.7% |
+| **BTC** | 0.010 | 0.010 | 90% | HighVol+Trend | 0.0% | 0.0% | 0.0% |
+| **ETH** | 0.990 | 0.990 | 90% | HighVol+Trend | 100.0% | 100.0% | 100.0% |
+| **SOL** | 0.030 | 0.030 | 90% | HighVol+Range | 14.3% | 14.3% | 14.3% |
+| **XRP** | 0.970 | 0.970 | 90% | HighVol+Trend | 99.1% | 99.1% | 99.1% |
 
 ## Portfolio
 | Balance | Realized P&L |
