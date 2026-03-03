@@ -1,6 +1,6 @@
 # Decision Tracker
 
-> **Updated:** `2026-03-03T15:41:45Z` &nbsp;|&nbsp; Historical log of every trade taken
+> **Updated:** `2026-03-03T15:46:46Z` &nbsp;|&nbsp; Historical log of every trade taken
 
 ## Summary
 | Total Trades | Wins | Losses | ARB | Win Rate | Total P&L |
@@ -10,6 +10,7 @@
 ## Trade Log
 | Entry Time | Symbol | Outcome | Trigger | Entry Price | Size | Mode | Resolved At | Winner | Result | P&L | Reasoning |
 |------------|--------|---------|---------|-------------|------|------|-------------|--------|--------|-----|-----------|
+| `2026-03-03T15:45:42` | SOL | **UP** | `trend_follow` | 0.9900 | $11.36 | live | `pending` | — | ⏳ | pending | TREND FOLLOW (HighVol+Trend, 5% elapsed) — UP token at 0.990 deviates 0.100 from 0.50. Momentum cont |
 | `2026-03-03T15:30:39` | SOL | **DOWN** | `trend_follow` | 0.4000 | $23.12 | live | `pending` | — | ⏳ | pending | TREND FOLLOW (HighVol+Trend, 4% elapsed) — DOWN token at 0.400 deviates 0.110 from 0.50. Momentum co |
 | `2026-03-03T15:30:39` | SOL | **UP** | `trend_follow` | 0.6200 | $23.12 | live | `pending` | — | ⏳ | pending | TREND FOLLOW (HighVol+Trend, 4% elapsed) — UP token at 0.620 deviates 0.110 from 0.50. Momentum cont |
 | `2026-03-03T15:22:58` | BTC | **DOWN** | `trend_follow` | 0.9900 | $50.00 | live | `pending` | — | ⏳ | pending | TREND FOLLOW (HighVol+Trend, 53% elapsed) — DOWN token at 0.990 deviates 0.430 from 0.50. Momentum c |
