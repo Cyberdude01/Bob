@@ -1,18 +1,86 @@
 # Decision Engine Summary
 
-> **Updated:** `2026-03-03T15:36:45Z` &nbsp;|&nbsp; All signals from the last 48 hours
+> **Updated:** `2026-03-03T15:41:45Z` &nbsp;|&nbsp; All signals from the last 48 hours
 
 ## Signal Distribution
 | Trigger | Count |
 |---------|-------|
-| `trend_follow` | 96 |
-| `directional_60pct` | 30 |
+| `trend_follow` | 128 |
+| `directional_60pct` | 58 |
+| `directional_80pct` | 37 |
 | `directional_90pct` | 29 |
-| `directional_80pct` | 29 |
 
 ## Signal Log
 | Time (UTC) | Symbol | Outcome | Trigger | Confidence | P(UP) | Bucket | Elapsed% | Reasoning |
 |------------|--------|---------|---------|------------|-------|--------|----------|-----------|
+| `2026-03-03T15:41:44` | SOL | **DOWN** | `directional_80pct` | 0.859 | 14.4% | HighVol+Range | 78% | DIRECTIONAL at 80pct (78% elapsed) — P(UP)=0.141 gives edge=0.359 toward DOWN. Bucket=HighVol+Range (RV60=29.90020, Eff6 |
+| `2026-03-03T15:41:42` | SOL | **UP** | `directional_80pct` | 0.859 | 85.5% | HighVol+Range | 78% | DIRECTIONAL at 80pct (78% elapsed) — P(UP)=0.859 gives edge=0.359 toward UP. Bucket=HighVol+Range (RV60=28.45273, Eff60= |
+| `2026-03-03T15:41:40` | SOL | **DOWN** | `directional_80pct` | 0.859 | 14.5% | HighVol+Range | 78% | DIRECTIONAL at 80pct (78% elapsed) — P(UP)=0.141 gives edge=0.359 toward DOWN. Bucket=HighVol+Range (RV60=27.61189, Eff6 |
+| `2026-03-03T15:41:38` | SOL | **DOWN** | `directional_80pct` | 0.859 | 14.6% | HighVol+Range | 78% | DIRECTIONAL at 80pct (78% elapsed) — P(UP)=0.141 gives edge=0.359 toward DOWN. Bucket=HighVol+Range (RV60=27.61189, Eff6 |
+| `2026-03-03T15:41:36` | SOL | **DOWN** | `directional_80pct` | 0.994 | 1.3% | HighVol+Trend | 77% | DIRECTIONAL at 80pct (77% elapsed) — P(UP)=0.006 gives edge=0.494 toward DOWN. Bucket=HighVol+Trend (RV60=26.23596, Eff6 |
+| `2026-03-03T15:41:34` | SOL | **DOWN** | `directional_80pct` | 0.994 | 1.4% | HighVol+Trend | 77% | DIRECTIONAL at 80pct (77% elapsed) — P(UP)=0.006 gives edge=0.494 toward DOWN. Bucket=HighVol+Trend (RV60=26.23596, Eff6 |
+| `2026-03-03T15:41:32` | SOL | **DOWN** | `directional_80pct` | 0.994 | 1.5% | HighVol+Trend | 77% | DIRECTIONAL at 80pct (77% elapsed) — P(UP)=0.006 gives edge=0.494 toward DOWN. Bucket=HighVol+Trend (RV60=26.23596, Eff6 |
+| `2026-03-03T15:41:30` | SOL | **DOWN** | `directional_80pct` | 0.994 | 1.5% | HighVol+Trend | 77% | DIRECTIONAL at 80pct (77% elapsed) — P(UP)=0.006 gives edge=0.494 toward DOWN. Bucket=HighVol+Trend (RV60=25.53635, Eff6 |
+| `2026-03-03T15:39:36` | SOL | **UP** | `trend_follow` | 0.990 | 94.2% | HighVol+Trend | 64% | TREND FOLLOW (HighVol+Trend, 64% elapsed) — UP token at 1.000 deviates 0.490 from 0.50. Momentum continuation strategy:  |
+| `2026-03-03T15:39:34` | SOL | **UP** | `trend_follow` | 0.990 | 94.1% | HighVol+Trend | 64% | TREND FOLLOW (HighVol+Trend, 64% elapsed) — UP token at 1.000 deviates 0.490 from 0.50. Momentum continuation strategy:  |
+| `2026-03-03T15:39:28` | SOL | **UP** | `directional_60pct` | 0.820 | 82.0% | HighVol+Range | 63% | DIRECTIONAL at 60pct (63% elapsed) — P(UP)=0.820 gives edge=0.320 toward UP. Bucket=HighVol+Range (RV60=20.62226, Eff60= |
+| `2026-03-03T15:39:26` | SOL | **UP** | `directional_60pct` | 0.819 | 81.9% | HighVol+Range | 63% | DIRECTIONAL at 60pct (63% elapsed) — P(UP)=0.819 gives edge=0.319 toward UP. Bucket=HighVol+Range (RV60=20.62063, Eff60= |
+| `2026-03-03T15:39:24` | SOL | **UP** | `directional_60pct` | 0.819 | 81.9% | HighVol+Range | 63% | DIRECTIONAL at 60pct (63% elapsed) — P(UP)=0.819 gives edge=0.319 toward UP. Bucket=HighVol+Range (RV60=20.62063, Eff60= |
+| `2026-03-03T15:39:22` | SOL | **UP** | `directional_60pct` | 0.818 | 81.8% | HighVol+Range | 62% | DIRECTIONAL at 60pct (62% elapsed) — P(UP)=0.818 gives edge=0.318 toward UP. Bucket=HighVol+Range (RV60=20.62063, Eff60= |
+| `2026-03-03T15:39:20` | SOL | **UP** | `directional_60pct` | 0.818 | 81.8% | HighVol+Range | 62% | DIRECTIONAL at 60pct (62% elapsed) — P(UP)=0.818 gives edge=0.318 toward UP. Bucket=HighVol+Range (RV60=20.61990, Eff60= |
+| `2026-03-03T15:39:18` | SOL | **UP** | `directional_60pct` | 0.817 | 81.7% | HighVol+Range | 62% | DIRECTIONAL at 60pct (62% elapsed) — P(UP)=0.817 gives edge=0.317 toward UP. Bucket=HighVol+Range (RV60=20.61990, Eff60= |
+| `2026-03-03T15:39:16` | SOL | **UP** | `directional_60pct` | 0.817 | 81.7% | HighVol+Range | 62% | DIRECTIONAL at 60pct (62% elapsed) — P(UP)=0.817 gives edge=0.317 toward UP. Bucket=HighVol+Range (RV60=20.61990, Eff60= |
+| `2026-03-03T15:39:14` | SOL | **UP** | `directional_60pct` | 0.816 | 81.6% | HighVol+Range | 62% | DIRECTIONAL at 60pct (62% elapsed) — P(UP)=0.816 gives edge=0.316 toward UP. Bucket=HighVol+Range (RV60=20.61918, Eff60= |
+| `2026-03-03T15:39:12` | SOL | **UP** | `directional_60pct` | 0.816 | 81.6% | HighVol+Range | 61% | DIRECTIONAL at 60pct (61% elapsed) — P(UP)=0.816 gives edge=0.316 toward UP. Bucket=HighVol+Range (RV60=20.61918, Eff60= |
+| `2026-03-03T15:39:10` | SOL | **UP** | `directional_60pct` | 0.816 | 81.6% | HighVol+Range | 61% | DIRECTIONAL at 60pct (61% elapsed) — P(UP)=0.816 gives edge=0.316 toward UP. Bucket=HighVol+Range (RV60=20.61918, Eff60= |
+| `2026-03-03T15:39:08` | SOL | **UP** | `directional_60pct` | 0.815 | 81.5% | HighVol+Range | 61% | DIRECTIONAL at 60pct (61% elapsed) — P(UP)=0.815 gives edge=0.315 toward UP. Bucket=HighVol+Range (RV60=20.60499, Eff60= |
+| `2026-03-03T15:39:06` | SOL | **UP** | `directional_60pct` | 0.815 | 81.5% | HighVol+Range | 61% | DIRECTIONAL at 60pct (61% elapsed) — P(UP)=0.815 gives edge=0.315 toward UP. Bucket=HighVol+Range (RV60=20.61772, Eff60= |
+| `2026-03-03T15:39:02` | SOL | **UP** | `directional_60pct` | 0.811 | 81.1% | HighVol+Range | 60% | DIRECTIONAL at 60pct (60% elapsed) — P(UP)=0.811 gives edge=0.311 toward UP. Bucket=HighVol+Range (RV60=20.60371, Eff60= |
+| `2026-03-03T15:39:00` | SOL | **DOWN** | `directional_60pct` | 0.814 | 18.6% | HighVol+Range | 60% | DIRECTIONAL at 60pct (60% elapsed) — P(UP)=0.186 gives edge=0.314 toward DOWN. Bucket=HighVol+Range (RV60=20.60317, Eff6 |
+| `2026-03-03T15:38:58` | SOL | **DOWN** | `trend_follow` | 0.985 | 92.7% | HighVol+Trend | 60% | TREND FOLLOW (HighVol+Trend, 60% elapsed) — DOWN token at 0.990 deviates 0.485 from 0.50. Momentum continuation strategy |
+| `2026-03-03T15:38:58` | SOL | **UP** | `trend_follow` | 0.985 | 92.7% | HighVol+Trend | 60% | TREND FOLLOW (HighVol+Trend, 60% elapsed) — UP token at 0.990 deviates 0.485 from 0.50. Momentum continuation strategy:  |
+| `2026-03-03T15:38:58` | SOL | **UP** | `directional_60pct` | 0.927 | 92.7% | HighVol+Trend | 60% | DIRECTIONAL at 60pct (60% elapsed) — P(UP)=0.927 gives edge=0.427 toward UP. Bucket=HighVol+Trend (RV60=19.91718, Eff60= |
+| `2026-03-03T15:38:56` | SOL | **DOWN** | `trend_follow` | 0.985 | 92.7% | HighVol+Trend | 60% | TREND FOLLOW (HighVol+Trend, 60% elapsed) — DOWN token at 0.020 deviates 0.485 from 0.50. Momentum continuation strategy |
+| `2026-03-03T15:38:56` | SOL | **UP** | `trend_follow` | 0.985 | 92.7% | HighVol+Trend | 60% | TREND FOLLOW (HighVol+Trend, 60% elapsed) — UP token at 0.990 deviates 0.485 from 0.50. Momentum continuation strategy:  |
+| `2026-03-03T15:38:56` | SOL | **UP** | `directional_60pct` | 0.927 | 92.7% | HighVol+Trend | 60% | DIRECTIONAL at 60pct (60% elapsed) — P(UP)=0.927 gives edge=0.427 toward UP. Bucket=HighVol+Trend (RV60=19.91718, Eff60= |
+| `2026-03-03T15:38:54` | SOL | **DOWN** | `trend_follow` | 0.990 | 6.9% | HighVol+Trend | 59% | TREND FOLLOW (HighVol+Trend, 59% elapsed) — DOWN token at 0.020 deviates 0.490 from 0.50. Momentum continuation strategy |
+| `2026-03-03T15:38:54` | SOL | **DOWN** | `directional_60pct` | 0.931 | 6.9% | HighVol+Trend | 59% | DIRECTIONAL at 60pct (59% elapsed) — P(UP)=0.069 gives edge=0.431 toward DOWN. Bucket=HighVol+Trend (RV60=19.68941, Eff6 |
+| `2026-03-03T15:38:52` | SOL | **UP** | `directional_60pct` | 0.807 | 80.7% | HighVol+Range | 59% | DIRECTIONAL at 60pct (59% elapsed) — P(UP)=0.807 gives edge=0.307 toward UP. Bucket=HighVol+Range (RV60=19.16164, Eff60= |
+| `2026-03-03T15:38:50` | SOL | **UP** | `directional_60pct` | 0.807 | 80.7% | HighVol+Range | 59% | DIRECTIONAL at 60pct (59% elapsed) — P(UP)=0.807 gives edge=0.307 toward UP. Bucket=HighVol+Range (RV60=19.16164, Eff60= |
+| `2026-03-03T15:38:48` | SOL | **UP** | `directional_60pct` | 0.807 | 80.7% | HighVol+Range | 59% | DIRECTIONAL at 60pct (59% elapsed) — P(UP)=0.807 gives edge=0.307 toward UP. Bucket=HighVol+Range (RV60=19.16164, Eff60= |
+| `2026-03-03T15:38:46` | SOL | **UP** | `directional_60pct` | 0.807 | 80.7% | HighVol+Range | 58% | DIRECTIONAL at 60pct (58% elapsed) — P(UP)=0.807 gives edge=0.307 toward UP. Bucket=HighVol+Range (RV60=18.59906, Eff60= |
+| `2026-03-03T15:38:44` | SOL | **DOWN** | `directional_60pct` | 0.814 | 18.6% | HighVol+Range | 58% | DIRECTIONAL at 60pct (58% elapsed) — P(UP)=0.186 gives edge=0.314 toward DOWN. Bucket=HighVol+Range (RV60=18.23387, Eff6 |
+| `2026-03-03T15:38:42` | SOL | **DOWN** | `directional_60pct` | 0.814 | 18.6% | HighVol+Range | 58% | DIRECTIONAL at 60pct (58% elapsed) — P(UP)=0.186 gives edge=0.314 toward DOWN. Bucket=HighVol+Range (RV60=18.23387, Eff6 |
+| `2026-03-03T15:38:40` | SOL | **DOWN** | `trend_follow` | 0.990 | 6.9% | HighVol+Trend | 58% | TREND FOLLOW (HighVol+Trend, 58% elapsed) — DOWN token at 0.990 deviates 0.490 from 0.50. Momentum continuation strategy |
+| `2026-03-03T15:38:40` | SOL | **DOWN** | `directional_60pct` | 0.931 | 6.9% | HighVol+Trend | 58% | DIRECTIONAL at 60pct (58% elapsed) — P(UP)=0.069 gives edge=0.431 toward DOWN. Bucket=HighVol+Trend (RV60=17.74470, Eff6 |
+| `2026-03-03T15:38:38` | SOL | **DOWN** | `directional_60pct` | 0.814 | 18.6% | HighVol+Range | 58% | DIRECTIONAL at 60pct (58% elapsed) — P(UP)=0.186 gives edge=0.314 toward DOWN. Bucket=HighVol+Range (RV60=17.33313, Eff6 |
+| `2026-03-03T15:38:34` | SOL | **DOWN** | `directional_60pct` | 0.814 | 18.6% | HighVol+Range | 57% | DIRECTIONAL at 60pct (57% elapsed) — P(UP)=0.186 gives edge=0.314 toward DOWN. Bucket=HighVol+Range (RV60=16.47960, Eff6 |
+| `2026-03-03T15:38:32` | SOL | **DOWN** | `directional_60pct` | 0.814 | 18.6% | HighVol+Range | 57% | DIRECTIONAL at 60pct (57% elapsed) — P(UP)=0.186 gives edge=0.314 toward DOWN. Bucket=HighVol+Range (RV60=16.47960, Eff6 |
+| `2026-03-03T15:38:30` | SOL | **DOWN** | `trend_follow` | 0.990 | 6.9% | HighVol+Trend | 57% | TREND FOLLOW (HighVol+Trend, 57% elapsed) — DOWN token at 0.990 deviates 0.490 from 0.50. Momentum continuation strategy |
+| `2026-03-03T15:38:30` | SOL | **DOWN** | `directional_60pct` | 0.931 | 6.9% | HighVol+Trend | 57% | DIRECTIONAL at 60pct (57% elapsed) — P(UP)=0.069 gives edge=0.431 toward DOWN. Bucket=HighVol+Trend (RV60=16.03520, Eff6 |
+| `2026-03-03T15:38:28` | SOL | **DOWN** | `trend_follow` | 0.990 | 6.9% | HighVol+Trend | 56% | TREND FOLLOW (HighVol+Trend, 56% elapsed) — DOWN token at 0.990 deviates 0.490 from 0.50. Momentum continuation strategy |
+| `2026-03-03T15:38:06` | SOL | **DOWN** | `trend_follow` | 0.975 | 91.8% | HighVol+Trend | 54% | TREND FOLLOW (HighVol+Trend, 54% elapsed) — DOWN token at 0.030 deviates 0.475 from 0.50. Momentum continuation strategy |
+| `2026-03-03T15:38:06` | SOL | **UP** | `trend_follow` | 0.975 | 91.8% | HighVol+Trend | 54% | TREND FOLLOW (HighVol+Trend, 54% elapsed) — UP token at 0.980 deviates 0.475 from 0.50. Momentum continuation strategy:  |
+| `2026-03-03T15:38:04` | SOL | **DOWN** | `trend_follow` | 0.975 | 91.8% | HighVol+Trend | 54% | TREND FOLLOW (HighVol+Trend, 54% elapsed) — DOWN token at 0.030 deviates 0.475 from 0.50. Momentum continuation strategy |
+| `2026-03-03T15:38:04` | SOL | **UP** | `trend_follow` | 0.975 | 91.8% | HighVol+Trend | 54% | TREND FOLLOW (HighVol+Trend, 54% elapsed) — UP token at 0.980 deviates 0.475 from 0.50. Momentum continuation strategy:  |
+| `2026-03-03T15:38:02` | SOL | **DOWN** | `trend_follow` | 0.970 | 91.4% | HighVol+Trend | 54% | TREND FOLLOW (HighVol+Trend, 54% elapsed) — DOWN token at 0.990 deviates 0.470 from 0.50. Momentum continuation strategy |
+| `2026-03-03T15:38:02` | SOL | **UP** | `trend_follow` | 0.970 | 91.4% | HighVol+Trend | 54% | TREND FOLLOW (HighVol+Trend, 54% elapsed) — UP token at 0.990 deviates 0.470 from 0.50. Momentum continuation strategy:  |
+| `2026-03-03T15:37:58` | SOL | **DOWN** | `trend_follow` | 0.970 | 8.6% | HighVol+Trend | 53% | TREND FOLLOW (HighVol+Trend, 53% elapsed) — DOWN token at 0.990 deviates 0.470 from 0.50. Momentum continuation strategy |
+| `2026-03-03T15:37:50` | SOL | **UP** | `trend_follow` | 0.960 | 90.5% | HighVol+Trend | 52% | TREND FOLLOW (HighVol+Trend, 52% elapsed) — UP token at 0.990 deviates 0.460 from 0.50. Momentum continuation strategy:  |
+| `2026-03-03T15:37:48` | SOL | **UP** | `trend_follow` | 0.960 | 90.5% | HighVol+Trend | 52% | TREND FOLLOW (HighVol+Trend, 52% elapsed) — UP token at 0.990 deviates 0.460 from 0.50. Momentum continuation strategy:  |
+| `2026-03-03T15:37:46` | SOL | **UP** | `trend_follow` | 0.960 | 90.5% | HighVol+Trend | 52% | TREND FOLLOW (HighVol+Trend, 52% elapsed) — UP token at 0.990 deviates 0.460 from 0.50. Momentum continuation strategy:  |
+| `2026-03-03T15:37:44` | SOL | **UP** | `trend_follow` | 0.960 | 90.5% | HighVol+Trend | 52% | TREND FOLLOW (HighVol+Trend, 52% elapsed) — UP token at 0.990 deviates 0.460 from 0.50. Momentum continuation strategy:  |
+| `2026-03-03T15:37:42` | SOL | **UP** | `trend_follow` | 0.960 | 90.5% | HighVol+Trend | 51% | TREND FOLLOW (HighVol+Trend, 51% elapsed) — UP token at 0.990 deviates 0.460 from 0.50. Momentum continuation strategy:  |
+| `2026-03-03T15:37:40` | SOL | **UP** | `trend_follow` | 0.960 | 90.5% | HighVol+Trend | 51% | TREND FOLLOW (HighVol+Trend, 51% elapsed) — UP token at 0.990 deviates 0.460 from 0.50. Momentum continuation strategy:  |
+| `2026-03-03T15:37:34` | SOL | **DOWN** | `trend_follow` | 0.960 | 9.5% | HighVol+Trend | 50% | TREND FOLLOW (HighVol+Trend, 50% elapsed) — DOWN token at 0.990 deviates 0.460 from 0.50. Momentum continuation strategy |
+| `2026-03-03T15:37:27` | SOL | **DOWN** | `trend_follow` | 0.960 | 9.5% | HighVol+Trend | 50% | TREND FOLLOW (HighVol+Trend, 50% elapsed) — DOWN token at 0.990 deviates 0.460 from 0.50. Momentum continuation strategy |
+| `2026-03-03T15:36:53` | SOL | **DOWN** | `trend_follow` | 0.970 | 8.6% | HighVol+Trend | 46% | TREND FOLLOW (HighVol+Trend, 46% elapsed) — DOWN token at 0.990 deviates 0.470 from 0.50. Momentum continuation strategy |
+| `2026-03-03T15:36:51` | SOL | **DOWN** | `trend_follow` | 0.970 | 8.6% | HighVol+Trend | 46% | TREND FOLLOW (HighVol+Trend, 46% elapsed) — DOWN token at 0.990 deviates 0.470 from 0.50. Momentum continuation strategy |
+| `2026-03-03T15:36:49` | SOL | **DOWN** | `trend_follow` | 0.970 | 8.6% | HighVol+Trend | 46% | TREND FOLLOW (HighVol+Trend, 46% elapsed) — DOWN token at 0.990 deviates 0.470 from 0.50. Momentum continuation strategy |
+| `2026-03-03T15:36:47` | SOL | **DOWN** | `trend_follow` | 0.965 | 90.9% | HighVol+Trend | 45% | TREND FOLLOW (HighVol+Trend, 45% elapsed) — DOWN token at 0.040 deviates 0.465 from 0.50. Momentum continuation strategy |
+| `2026-03-03T15:36:47` | SOL | **UP** | `trend_follow` | 0.965 | 90.9% | HighVol+Trend | 45% | TREND FOLLOW (HighVol+Trend, 45% elapsed) — UP token at 0.970 deviates 0.465 from 0.50. Momentum continuation strategy:  |
+| `2026-03-03T15:36:45` | SOL | **DOWN** | `trend_follow` | 0.965 | 90.9% | HighVol+Trend | 45% | TREND FOLLOW (HighVol+Trend, 45% elapsed) — DOWN token at 0.040 deviates 0.465 from 0.50. Momentum continuation strategy |
+| `2026-03-03T15:36:45` | SOL | **UP** | `trend_follow` | 0.965 | 90.9% | HighVol+Trend | 45% | TREND FOLLOW (HighVol+Trend, 45% elapsed) — UP token at 0.970 deviates 0.465 from 0.50. Momentum continuation strategy:  |
 | `2026-03-03T15:36:41` | SOL | **DOWN** | `trend_follow` | 0.955 | 90.0% | HighVol+Trend | 45% | TREND FOLLOW (HighVol+Trend, 45% elapsed) — DOWN token at 0.050 deviates 0.455 from 0.50. Momentum continuation strategy |
 | `2026-03-03T15:36:41` | SOL | **UP** | `trend_follow` | 0.955 | 90.0% | HighVol+Trend | 45% | TREND FOLLOW (HighVol+Trend, 45% elapsed) — UP token at 0.960 deviates 0.455 from 0.50. Momentum continuation strategy:  |
 | `2026-03-03T15:36:39` | SOL | **DOWN** | `trend_follow` | 0.955 | 90.0% | HighVol+Trend | 44% | TREND FOLLOW (HighVol+Trend, 44% elapsed) — DOWN token at 0.050 deviates 0.455 from 0.50. Momentum continuation strategy |
