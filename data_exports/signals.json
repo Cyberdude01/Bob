@@ -1,4 +1,145 @@
 {
-  "updated": "2026-03-03T15:16:42Z",
-  "data": []
+  "updated": "2026-03-03T15:21:43Z",
+  "data": [
+    {
+      "symbol": "SOL",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 19.28,
+      "price": 0.59,
+      "confidence": 0.59,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 14% elapsed) \u2014 DOWN token at 0.590 deviates 0.090 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$19.28 USDC (scales with deviation)."
+    },
+    {
+      "symbol": "SOL",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 23.12,
+      "price": 0.4,
+      "confidence": 0.61,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 16% elapsed) \u2014 UP token at 0.400 deviates 0.110 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$23.12 USDC (scales with deviation)."
+    },
+    {
+      "symbol": "SOL",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 30.8,
+      "price": 0.36,
+      "confidence": 0.65,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 21% elapsed) \u2014 UP token at 0.360 deviates 0.150 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$30.80 USDC (scales with deviation)."
+    },
+    {
+      "symbol": "ETH",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 50.0,
+      "price": 0.26,
+      "confidence": 0.75,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 25% elapsed) \u2014 UP token at 0.260 deviates 0.250 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$50.00 USDC (scales with deviation)."
+    },
+    {
+      "symbol": "SOL",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 50.0,
+      "price": 0.99,
+      "confidence": 0.78,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 25% elapsed) \u2014 UP token at 0.990 deviates 0.280 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$50.00 USDC (scales with deviation)."
+    },
+    {
+      "symbol": "XRP",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 50.0,
+      "price": 0.99,
+      "confidence": 0.78,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 25% elapsed) \u2014 UP token at 0.990 deviates 0.280 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$50.00 USDC (scales with deviation)."
+    },
+    {
+      "symbol": "SOL",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 50.0,
+      "price": 0.25,
+      "confidence": 0.78,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 25% elapsed) \u2014 UP token at 0.250 deviates 0.280 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$50.00 USDC (scales with deviation)."
+    },
+    {
+      "symbol": "BTC",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 50.0,
+      "price": 0.99,
+      "confidence": 0.81,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 28% elapsed) \u2014 UP token at 0.990 deviates 0.310 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$50.00 USDC (scales with deviation)."
+    },
+    {
+      "symbol": "XRP",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 50.0,
+      "price": 0.87,
+      "confidence": 0.9,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 34% elapsed) \u2014 DOWN token at 0.870 deviates 0.400 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$50.00 USDC (scales with deviation)."
+    },
+    {
+      "symbol": "SOL",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 50.0,
+      "price": 0.13,
+      "confidence": 0.89,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 36% elapsed) \u2014 UP token at 0.130 deviates 0.390 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$50.00 USDC (scales with deviation)."
+    },
+    {
+      "symbol": "BTC",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 50.0,
+      "price": 0.19,
+      "confidence": 0.81,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 39% elapsed) \u2014 UP token at 0.190 deviates 0.310 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$50.00 USDC (scales with deviation)."
+    },
+    {
+      "symbol": "SOL",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 50.0,
+      "price": 0.99,
+      "confidence": 0.82,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 41% elapsed) \u2014 UP token at 0.990 deviates 0.320 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$50.00 USDC (scales with deviation)."
+    },
+    {
+      "symbol": "SOL",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 50.0,
+      "price": 0.99,
+      "confidence": 0.82,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 42% elapsed) \u2014 UP token at 0.990 deviates 0.320 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$50.00 USDC (scales with deviation)."
+    },
+    {
+      "symbol": "ETH",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 50.0,
+      "price": 0.99,
+      "confidence": 0.85,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 44% elapsed) \u2014 DOWN token at 0.990 deviates 0.350 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$50.00 USDC (scales with deviation)."
+    }
+  ]
 }
