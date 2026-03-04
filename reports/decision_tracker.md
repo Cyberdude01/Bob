@@ -1,6 +1,6 @@
 # Decision Tracker
 
-> **Updated:** `2026-03-04 01:54:29 AM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
+> **Updated:** `2026-03-04 01:55:10 AM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
 
 ## Summary
 | Total | Wins | Losses | ARB | Pending | Win Rate | Total P&L |
@@ -10,6 +10,7 @@
 ## Trade Log
 | Entry Time (ET) | Symbol | Slug | Outcome | Trigger | Entry Price | Size (USDC) | Mode | Resolved (ET) | Winner | Result | P&L | Reasoning |
 | --------------- | ------ | ----------------- | ------- | -------------------- | ----------- | ----------- | ----- | -------------- | ------ | -------- | --------- | -------------------------------------------------- |
+| `2026-03-04 01:54 AM ET` | XRP | xrp-updown-15m | **UP** | `trend_follow` | 0.9900 | $42.32 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 66% elapsed) — UP token at 0.990 deviates 0.210 from 0.50. Momentum con |
 | `2026-03-03 10:45 AM ET` | SOL | sol-updown-15m | **UP** | `trend_follow` | 0.9900 | $11.36 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 5% elapsed) — UP token at 0.990 deviates 0.100 from 0.50. Momentum cont |
 | `2026-03-03 10:30 AM ET` | SOL | sol-updown-15m | **DOWN** | `trend_follow` | 0.4000 | $23.12 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 4% elapsed) — DOWN token at 0.400 deviates 0.110 from 0.50. Momentum co |
 | `2026-03-03 10:30 AM ET` | SOL | sol-updown-15m | **UP** | `trend_follow` | 0.6200 | $23.12 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 4% elapsed) — UP token at 0.620 deviates 0.110 from 0.50. Momentum cont |
