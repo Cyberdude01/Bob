@@ -1,17 +1,18 @@
 # Decision Tracker
 
-> **Updated:** `2026-03-04 11:16:55 AM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
+> **Updated:** `2026-03-04 11:21:56 AM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
 
 ## Summary
 | Total | Resolved | Wins | Losses | ARB | Pending | Win Rate | Realised P&L |
 | ----- | -------- | ---- | ------ | --- | ------- | -------- | ------------ |
-| 99 | 82 | 41 | 41 | 0 | 17 | 50.0% | $-671.8653 |
+| 100 | 82 | 41 | 41 | 0 | 18 | 50.0% | $-671.8653 |
 
 ## Trade Log
 > Each row: Entry Time · Market Slug · Condition ID (first 12 chars) · 15-min Window
 
 | Entry Time (ET) | Market & Window | Outcome | Trigger | Entry $ | Size | Mode | Resolved (ET) | Winner | Result | P&L | Reasoning |
 | ----------------- | ---------------------------------------- | ------- | ---------------------- | ------- | ------ | ----- | ----------------- | ------ | -------- | --------- | -------------------------------------------------- |
+| `2026-03-04 11:21 AM ET` | **xrp-updown-15m** `0x0c92a42657…`<br>11:15 AM → 11:30 AM | **DOWN** | `trend_follow` | 0.9000 | $50.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 46% elapsed) — DOWN token at 0.900 deviates 0.390 from 0.50. Momentum c |
 | `2026-03-04 11:16 AM ET` | **eth-updown-15m** `0xd5c8ee57d4…`<br>11:15 AM → 11:30 AM | **DOWN** | `trend_follow` | 0.4200 | $19.28 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 7% elapsed) — DOWN token at 0.420 deviates 0.090 from 0.50. Momentum co |
 | `2026-03-04 11:16 AM ET` | **eth-updown-15m** `0xd5c8ee57d4…`<br>11:15 AM → 11:30 AM | **UP** | `trend_follow` | 0.6000 | $19.28 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 7% elapsed) — UP token at 0.600 deviates 0.090 from 0.50. Momentum cont |
 | `2026-03-04 11:11 AM ET` | **btc-updown-15m** `0xda24a303a8…`<br>11:00 AM → 11:15 AM | **UP** | `directional_80pct` | 0.0100 | $48.57 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 80pct (77% elapsed) — P(UP)=0.985 gives edge=0.485 toward UP. Bucket=HighVol+Trend (R |
