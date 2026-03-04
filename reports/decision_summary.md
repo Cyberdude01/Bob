@@ -1,18 +1,70 @@
 # Decision Engine Summary
 
-> **Updated:** `2026-03-04 08:29:51 AM ET` &nbsp;|&nbsp; All signals from the last 48 hours
+> **Updated:** `2026-03-04 08:33:33 AM ET` &nbsp;|&nbsp; All signals from the last 48 hours
 
 ## Signal Distribution
 | Trigger | Count |
 | -------------------- | ----- |
 | `directional_80pct` | 319 |
 | `directional_90pct` | 314 |
-| `trend_follow` | 159 |
+| `trend_follow` | 211 |
 | `directional_60pct` | 88 |
 
 ## Signal Log
 | Time (ET) | Symbol | Slug | Outcome | Trigger | Confidence | P(UP) | Bucket | Elapsed% | Reasoning |
 | --------------- | ------ | ----------------- | ------- | -------------------- | ---------- | ----- | -------------- | -------- | -------------------------------------------------- |
+| `2026-03-04 08:32 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.690 | 66.7% | HighVol+Trend | 19.3% | TREND FOLLOW (HighVol+Trend, 19% elapsed) — DOWN token at 0.650 deviates 0.190 from 0.50. Momentum continuation strategy |
+| `2026-03-04 08:32 AM ET` | XRP | xrp-updown-15m | **UP** | `trend_follow` | 0.690 | 66.7% | HighVol+Trend | 19.3% | TREND FOLLOW (HighVol+Trend, 19% elapsed) — UP token at 0.360 deviates 0.190 from 0.50. Momentum continuation strategy:  |
+| `2026-03-04 08:32 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.690 | 66.7% | HighVol+Trend | 19.1% | TREND FOLLOW (HighVol+Trend, 19% elapsed) — DOWN token at 0.990 deviates 0.190 from 0.50. Momentum continuation strategy |
+| `2026-03-04 08:32 AM ET` | XRP | xrp-updown-15m | **UP** | `trend_follow` | 0.690 | 66.7% | HighVol+Trend | 19.1% | TREND FOLLOW (HighVol+Trend, 19% elapsed) — UP token at 0.990 deviates 0.190 from 0.50. Momentum continuation strategy:  |
+| `2026-03-04 08:32 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.640 | 62.3% | HighVol+Trend | 18.4% | TREND FOLLOW (HighVol+Trend, 18% elapsed) — DOWN token at 0.690 deviates 0.140 from 0.50. Momentum continuation strategy |
+| `2026-03-04 08:32 AM ET` | XRP | xrp-updown-15m | **UP** | `trend_follow` | 0.640 | 62.3% | HighVol+Trend | 18.4% | TREND FOLLOW (HighVol+Trend, 18% elapsed) — UP token at 0.320 deviates 0.140 from 0.50. Momentum continuation strategy:  |
+| `2026-03-04 08:32 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.685 | 33.7% | HighVol+Trend | 13.7% | TREND FOLLOW (HighVol+Trend, 14% elapsed) — DOWN token at 0.700 deviates 0.185 from 0.50. Momentum continuation strategy |
+| `2026-03-04 08:32 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.685 | 33.7% | HighVol+Trend | 13.5% | TREND FOLLOW (HighVol+Trend, 14% elapsed) — DOWN token at 0.700 deviates 0.185 from 0.50. Momentum continuation strategy |
+| `2026-03-04 08:31 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.695 | 32.8% | HighVol+Trend | 13.3% | TREND FOLLOW (HighVol+Trend, 13% elapsed) — DOWN token at 0.990 deviates 0.195 from 0.50. Momentum continuation strategy |
+| `2026-03-04 08:31 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.695 | 32.8% | HighVol+Trend | 13.1% | TREND FOLLOW (HighVol+Trend, 13% elapsed) — DOWN token at 0.700 deviates 0.195 from 0.50. Momentum continuation strategy |
+| `2026-03-04 08:31 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.700 | 32.4% | HighVol+Trend | 12.8% | TREND FOLLOW (HighVol+Trend, 13% elapsed) — DOWN token at 0.710 deviates 0.200 from 0.50. Momentum continuation strategy |
+| `2026-03-04 08:31 AM ET` | BTC | btc-updown-15m | **DOWN** | `trend_follow` | 0.615 | 39.9% | HighVol+Trend | 12.8% | TREND FOLLOW (HighVol+Trend, 13% elapsed) — DOWN token at 0.590 deviates 0.115 from 0.50. Momentum continuation strategy |
+| `2026-03-04 08:31 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.680 | 34.2% | HighVol+Trend | 12.6% | TREND FOLLOW (HighVol+Trend, 13% elapsed) — DOWN token at 0.990 deviates 0.180 from 0.50. Momentum continuation strategy |
+| `2026-03-04 08:31 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.695 | 32.8% | HighVol+Trend | 12.4% | TREND FOLLOW (HighVol+Trend, 12% elapsed) — DOWN token at 0.690 deviates 0.195 from 0.50. Momentum continuation strategy |
+| `2026-03-04 08:31 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.630 | 61.4% | HighVol+Trend | 12.2% | TREND FOLLOW (HighVol+Trend, 12% elapsed) — DOWN token at 0.990 deviates 0.130 from 0.50. Momentum continuation strategy |
+| `2026-03-04 08:31 AM ET` | XRP | xrp-updown-15m | **UP** | `trend_follow` | 0.630 | 61.4% | HighVol+Trend | 12.2% | TREND FOLLOW (HighVol+Trend, 12% elapsed) — UP token at 0.990 deviates 0.130 from 0.50. Momentum continuation strategy:  |
+| `2026-03-04 08:31 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.630 | 61.4% | HighVol+Trend | 11.3% | TREND FOLLOW (HighVol+Trend, 11% elapsed) — DOWN token at 0.990 deviates 0.130 from 0.50. Momentum continuation strategy |
+| `2026-03-04 08:31 AM ET` | XRP | xrp-updown-15m | **UP** | `trend_follow` | 0.630 | 61.4% | HighVol+Trend | 11.3% | TREND FOLLOW (HighVol+Trend, 11% elapsed) — UP token at 0.990 deviates 0.130 from 0.50. Momentum continuation strategy:  |
+| `2026-03-04 08:31 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.630 | 61.4% | HighVol+Trend | 11.1% | TREND FOLLOW (HighVol+Trend, 11% elapsed) — DOWN token at 0.990 deviates 0.130 from 0.50. Momentum continuation strategy |
+| `2026-03-04 08:31 AM ET` | XRP | xrp-updown-15m | **UP** | `trend_follow` | 0.630 | 61.4% | HighVol+Trend | 11.1% | TREND FOLLOW (HighVol+Trend, 11% elapsed) — UP token at 0.990 deviates 0.130 from 0.50. Momentum continuation strategy:  |
+| `2026-03-04 08:31 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.635 | 38.1% | HighVol+Trend | 10.2% | TREND FOLLOW (HighVol+Trend, 10% elapsed) — DOWN token at 0.990 deviates 0.135 from 0.50. Momentum continuation strategy |
+| `2026-03-04 08:31 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.660 | 35.9% | HighVol+Trend | 9.9% | TREND FOLLOW (HighVol+Trend, 10% elapsed) — DOWN token at 0.640 deviates 0.160 from 0.50. Momentum continuation strategy |
+| `2026-03-04 08:31 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.695 | 32.8% | HighVol+Trend | 9.7% | TREND FOLLOW (HighVol+Trend, 10% elapsed) — DOWN token at 0.700 deviates 0.195 from 0.50. Momentum continuation strategy |
+| `2026-03-04 08:31 AM ET` | BTC | btc-updown-15m | **DOWN** | `trend_follow` | 0.591 | 58.0% | HighVol+Trend | 9.7% | TREND FOLLOW (HighVol+Trend, 10% elapsed) — DOWN token at 0.990 deviates 0.091 from 0.50. Momentum continuation strategy |
+| `2026-03-04 08:31 AM ET` | BTC | btc-updown-15m | **UP** | `trend_follow` | 0.591 | 58.0% | HighVol+Trend | 9.7% | TREND FOLLOW (HighVol+Trend, 10% elapsed) — UP token at 0.990 deviates 0.091 from 0.50. Momentum continuation strategy:  |
+| `2026-03-04 08:31 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.685 | 33.7% | HighVol+Trend | 8.8% | TREND FOLLOW (HighVol+Trend, 9% elapsed) — DOWN token at 0.690 deviates 0.185 from 0.50. Momentum continuation strategy: |
+| `2026-03-04 08:31 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.685 | 33.7% | HighVol+Trend | 8.6% | TREND FOLLOW (HighVol+Trend, 9% elapsed) — DOWN token at 0.690 deviates 0.185 from 0.50. Momentum continuation strategy: |
+| `2026-03-04 08:31 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.695 | 32.8% | HighVol+Trend | 8.2% | TREND FOLLOW (HighVol+Trend, 8% elapsed) — DOWN token at 0.700 deviates 0.195 from 0.50. Momentum continuation strategy: |
+| `2026-03-04 08:31 AM ET` | BTC | btc-updown-15m | **DOWN** | `trend_follow` | 0.645 | 37.2% | HighVol+Trend | 8.2% | TREND FOLLOW (HighVol+Trend, 8% elapsed) — DOWN token at 0.630 deviates 0.145 from 0.50. Momentum continuation strategy: |
+| `2026-03-04 08:31 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.710 | 31.5% | HighVol+Trend | 7.9% | TREND FOLLOW (HighVol+Trend, 8% elapsed) — DOWN token at 0.710 deviates 0.210 from 0.50. Momentum continuation strategy: |
+| `2026-03-04 08:31 AM ET` | BTC | btc-updown-15m | **DOWN** | `trend_follow` | 0.655 | 36.4% | HighVol+Trend | 7.9% | TREND FOLLOW (HighVol+Trend, 8% elapsed) — DOWN token at 0.650 deviates 0.155 from 0.50. Momentum continuation strategy: |
+| `2026-03-04 08:31 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.750 | 28.0% | HighVol+Trend | 7.7% | TREND FOLLOW (HighVol+Trend, 8% elapsed) — DOWN token at 0.740 deviates 0.250 from 0.50. Momentum continuation strategy: |
+| `2026-03-04 08:31 AM ET` | BTC | btc-updown-15m | **DOWN** | `trend_follow` | 0.675 | 34.6% | HighVol+Trend | 7.7% | TREND FOLLOW (HighVol+Trend, 8% elapsed) — DOWN token at 0.990 deviates 0.175 from 0.50. Momentum continuation strategy: |
+| `2026-03-04 08:31 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.675 | 34.6% | HighVol+Trend | 7.5% | TREND FOLLOW (HighVol+Trend, 7% elapsed) — DOWN token at 0.740 deviates 0.175 from 0.50. Momentum continuation strategy: |
+| `2026-03-04 08:31 AM ET` | BTC | btc-updown-15m | **DOWN** | `trend_follow` | 0.645 | 37.2% | HighVol+Trend | 7.5% | TREND FOLLOW (HighVol+Trend, 7% elapsed) — DOWN token at 0.660 deviates 0.145 from 0.50. Momentum continuation strategy: |
+| `2026-03-04 08:31 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.645 | 37.2% | HighVol+Trend | 7.3% | TREND FOLLOW (HighVol+Trend, 7% elapsed) — DOWN token at 0.650 deviates 0.145 from 0.50. Momentum continuation strategy: |
+| `2026-03-04 08:31 AM ET` | BTC | btc-updown-15m | **DOWN** | `trend_follow` | 0.625 | 39.0% | HighVol+Trend | 7.3% | TREND FOLLOW (HighVol+Trend, 7% elapsed) — DOWN token at 0.630 deviates 0.125 from 0.50. Momentum continuation strategy: |
+| `2026-03-04 08:31 AM ET` | BTC | btc-updown-15m | **DOWN** | `trend_follow` | 0.625 | 39.0% | HighVol+Trend | 7.0% | TREND FOLLOW (HighVol+Trend, 7% elapsed) — DOWN token at 0.630 deviates 0.125 from 0.50. Momentum continuation strategy: |
+| `2026-03-04 08:31 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.595 | 41.6% | HighVol+Trend | 6.8% | TREND FOLLOW (HighVol+Trend, 7% elapsed) — DOWN token at 0.640 deviates 0.095 from 0.50. Momentum continuation strategy: |
+| `2026-03-04 08:31 AM ET` | BTC | btc-updown-15m | **DOWN** | `trend_follow` | 0.605 | 40.8% | HighVol+Trend | 6.8% | TREND FOLLOW (HighVol+Trend, 7% elapsed) — DOWN token at 0.630 deviates 0.105 from 0.50. Momentum continuation strategy: |
+| `2026-03-04 08:30 AM ET` | BTC | btc-updown-15m | **DOWN** | `trend_follow` | 0.605 | 40.8% | HighVol+Trend | 6.6% | TREND FOLLOW (HighVol+Trend, 7% elapsed) — DOWN token at 0.610 deviates 0.105 from 0.50. Momentum continuation strategy: |
+| `2026-03-04 08:30 AM ET` | BTC | btc-updown-15m | **DOWN** | `trend_follow` | 0.600 | 41.2% | HighVol+Trend | 6.4% | TREND FOLLOW (HighVol+Trend, 6% elapsed) — DOWN token at 0.620 deviates 0.100 from 0.50. Momentum continuation strategy: |
+| `2026-03-04 08:30 AM ET` | BTC | btc-updown-15m | **DOWN** | `trend_follow` | 0.595 | 41.6% | HighVol+Trend | 6.2% | TREND FOLLOW (HighVol+Trend, 6% elapsed) — DOWN token at 0.600 deviates 0.095 from 0.50. Momentum continuation strategy: |
+| `2026-03-04 08:30 AM ET` | BTC | btc-updown-15m | **DOWN** | `trend_follow` | 0.595 | 41.6% | HighVol+Trend | 5.7% | TREND FOLLOW (HighVol+Trend, 6% elapsed) — DOWN token at 0.600 deviates 0.095 from 0.50. Momentum continuation strategy: |
+| `2026-03-04 08:30 AM ET` | BTC | btc-updown-15m | **DOWN** | `trend_follow` | 0.595 | 41.6% | HighVol+Trend | 5.5% | TREND FOLLOW (HighVol+Trend, 5% elapsed) — DOWN token at 0.600 deviates 0.095 from 0.50. Momentum continuation strategy: |
+| `2026-03-04 08:30 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.585 | 42.5% | HighVol+Trend | 5.3% | TREND FOLLOW (HighVol+Trend, 5% elapsed) — DOWN token at 0.990 deviates 0.085 from 0.50. Momentum continuation strategy: |
+| `2026-03-04 08:30 AM ET` | BTC | btc-updown-15m | **DOWN** | `trend_follow` | 0.595 | 41.6% | HighVol+Trend | 5.3% | TREND FOLLOW (HighVol+Trend, 5% elapsed) — DOWN token at 0.600 deviates 0.095 from 0.50. Momentum continuation strategy: |
+| `2026-03-04 08:30 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.585 | 42.5% | HighVol+Trend | 5.0% | TREND FOLLOW (HighVol+Trend, 5% elapsed) — DOWN token at 0.590 deviates 0.085 from 0.50. Momentum continuation strategy: |
+| `2026-03-04 08:30 AM ET` | BTC | btc-updown-15m | **DOWN** | `trend_follow` | 0.595 | 41.6% | HighVol+Trend | 5.0% | TREND FOLLOW (HighVol+Trend, 5% elapsed) — DOWN token at 0.600 deviates 0.095 from 0.50. Momentum continuation strategy: |
+| `2026-03-04 08:30 AM ET` | BTC | btc-updown-15m | **DOWN** | `trend_follow` | 0.595 | 41.6% | HighVol+Trend | 4.8% | TREND FOLLOW (HighVol+Trend, 5% elapsed) — DOWN token at 0.600 deviates 0.095 from 0.50. Momentum continuation strategy: |
+| `2026-03-04 08:30 AM ET` | BTC | btc-updown-15m | **DOWN** | `trend_follow` | 0.595 | 41.6% | HighVol+Trend | 4.6% | TREND FOLLOW (HighVol+Trend, 5% elapsed) — DOWN token at 0.990 deviates 0.095 from 0.50. Momentum continuation strategy: |
+| `2026-03-04 08:30 AM ET` | BTC | btc-updown-15m | **DOWN** | `trend_follow` | 0.585 | 42.5% | HighVol+Trend | 4.4% | TREND FOLLOW (HighVol+Trend, 4% elapsed) — DOWN token at 0.590 deviates 0.085 from 0.50. Momentum continuation strategy: |
 | `2026-03-04 05:07 AM ET` | SOL | sol-updown-15m | **DOWN** | `trend_follow` | 0.775 | 74.2% | HighVol+Trend | 53.1% | TREND FOLLOW (HighVol+Trend, 53% elapsed) — DOWN token at 0.230 deviates 0.275 from 0.50. Momentum continuation strategy |
 | `2026-03-04 05:07 AM ET` | SOL | sol-updown-15m | **UP** | `trend_follow` | 0.775 | 74.2% | HighVol+Trend | 53.1% | TREND FOLLOW (HighVol+Trend, 53% elapsed) — UP token at 0.780 deviates 0.275 from 0.50. Momentum continuation strategy:  |
 | `2026-03-04 05:07 AM ET` | BTC | btc-updown-15m | **DOWN** | `trend_follow` | 0.835 | 79.5% | HighVol+Trend | 51.8% | TREND FOLLOW (HighVol+Trend, 52% elapsed) — DOWN token at 0.180 deviates 0.335 from 0.50. Momentum continuation strategy |
