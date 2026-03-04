@@ -1,225 +1,225 @@
 {
-  "updated": "2026-03-04 11:26:57 AM ET",
+  "updated": "2026-03-04 11:31:59 AM ET",
   "data": [
     {
       "symbol": "ETH",
       "slug": "eth-updown-15m",
       "outcome": "UP",
       "side": "BUY",
-      "size": 12.48,
-      "price": 0.41,
-      "confidence": 0.609,
-      "trigger": "directional_60pct",
-      "reason": "DIRECTIONAL at 60pct (62% elapsed) \u2014 P(UP)=0.609 gives edge=0.109 toward UP. Bucket=LowVol+Trend (RV60=2.84539, Eff60=0.028). Size scales with edge: $12.48 USDC @ conf=0.609."
+      "size": 34.98,
+      "price": 0.99,
+      "confidence": 0.869,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (89% elapsed) \u2014 P(UP)=0.869 gives edge=0.369 toward UP. Bucket=HighVol+Range (RV60=11.09052, Eff60=0.010). Size scales with edge: $34.98 USDC @ conf=0.869."
     },
     {
       "symbol": "ETH",
       "slug": "eth-updown-15m",
-      "outcome": "DOWN",
+      "outcome": "UP",
       "side": "BUY",
-      "size": 12.02,
+      "size": 34.98,
+      "price": 0.99,
+      "confidence": 0.865,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (89% elapsed) \u2014 P(UP)=0.865 gives edge=0.365 toward UP. Bucket=HighVol+Range (RV60=11.09435, Eff60=0.014). Size scales with edge: $34.98 USDC @ conf=0.865."
+    },
+    {
+      "symbol": "ETH",
+      "slug": "eth-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 34.98,
+      "price": 0.99,
+      "confidence": 0.869,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (89% elapsed) \u2014 P(UP)=0.869 gives edge=0.369 toward UP. Bucket=HighVol+Range (RV60=11.11629, Eff60=0.009). Size scales with edge: $34.98 USDC @ conf=0.869."
+    },
+    {
+      "symbol": "ETH",
+      "slug": "eth-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 34.98,
       "price": 0.5,
-      "confidence": 0.604,
-      "trigger": "directional_60pct",
-      "reason": "DIRECTIONAL at 60pct (62% elapsed) \u2014 P(UP)=0.396 gives edge=0.104 toward DOWN. Bucket=LowVol+Range (RV60=2.84414, Eff60=0.007). Size scales with edge: $12.02 USDC @ conf=0.604."
+      "confidence": 0.869,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (89% elapsed) \u2014 P(UP)=0.869 gives edge=0.369 toward UP. Bucket=HighVol+Range (RV60=11.11629, Eff60=0.009). Size scales with edge: $34.98 USDC @ conf=0.869."
     },
     {
       "symbol": "ETH",
       "slug": "eth-updown-15m",
-      "outcome": "DOWN",
+      "outcome": "UP",
       "side": "BUY",
-      "size": 13.75,
-      "price": 0.69,
-      "confidence": 0.622,
-      "trigger": "directional_60pct",
-      "reason": "DIRECTIONAL at 60pct (62% elapsed) \u2014 P(UP)=0.378 gives edge=0.122 toward DOWN. Bucket=LowVol+Range (RV60=2.92518, Eff60=0.008). Size scales with edge: $13.75 USDC @ conf=0.622."
-    },
-    {
-      "symbol": "ETH",
-      "slug": "eth-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 15.48,
-      "price": 0.7,
-      "confidence": 0.64,
-      "trigger": "directional_60pct",
-      "reason": "DIRECTIONAL at 60pct (63% elapsed) \u2014 P(UP)=0.360 gives edge=0.140 toward DOWN. Bucket=LowVol+Range (RV60=2.93574, Eff60=0.011). Size scales with edge: $15.48 USDC @ conf=0.640."
-    },
-    {
-      "symbol": "ETH",
-      "slug": "eth-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 14.44,
+      "size": 34.98,
       "price": 0.99,
-      "confidence": 0.63,
-      "trigger": "directional_60pct",
-      "reason": "DIRECTIONAL at 60pct (63% elapsed) \u2014 P(UP)=0.370 gives edge=0.130 toward DOWN. Bucket=LowVol+Range (RV60=2.92906, Eff60=0.010). Size scales with edge: $14.44 USDC @ conf=0.630."
-    },
-    {
-      "symbol": "ETH",
-      "slug": "eth-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 13.4,
-      "price": 0.63,
-      "confidence": 0.619,
-      "trigger": "directional_60pct",
-      "reason": "DIRECTIONAL at 60pct (63% elapsed) \u2014 P(UP)=0.381 gives edge=0.119 toward DOWN. Bucket=LowVol+Range (RV60=2.92384, Eff60=0.005). Size scales with edge: $13.40 USDC @ conf=0.619."
+      "confidence": 1.0,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (90% elapsed) \u2014 P(UP)=1.000 gives edge=0.500 toward UP. Bucket=HighVol+Trend (RV60=12.56095, Eff60=0.035). Size scales with edge: $34.98 USDC @ conf=1.000."
     },
     {
       "symbol": "ETH",
       "slug": "eth-updown-15m",
       "outcome": "UP",
       "side": "BUY",
-      "size": 29.22,
-      "price": 0.81,
-      "confidence": 0.784,
-      "trigger": "directional_80pct",
-      "reason": "DIRECTIONAL at 80pct (77% elapsed) \u2014 P(UP)=0.784 gives edge=0.284 toward UP. Bucket=LowVol+Trend (RV60=2.48002, Eff60=0.055). Size scales with edge: $29.22 USDC @ conf=0.784."
-    },
-    {
-      "symbol": "ETH",
-      "slug": "eth-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 30.04,
-      "price": 0.8,
-      "confidence": 0.792,
-      "trigger": "directional_80pct",
-      "reason": "DIRECTIONAL at 80pct (77% elapsed) \u2014 P(UP)=0.792 gives edge=0.292 toward UP. Bucket=HighVol+Trend (RV60=3.19857, Eff60=0.038). Size scales with edge: $30.04 USDC @ conf=0.792."
-    },
-    {
-      "symbol": "ETH",
-      "slug": "eth-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 29.56,
-      "price": 0.8,
-      "confidence": 0.787,
-      "trigger": "directional_80pct",
-      "reason": "DIRECTIONAL at 80pct (77% elapsed) \u2014 P(UP)=0.787 gives edge=0.287 toward UP. Bucket=HighVol+Trend (RV60=3.19575, Eff60=0.037). Size scales with edge: $29.56 USDC @ conf=0.787."
-    },
-    {
-      "symbol": "ETH",
-      "slug": "eth-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 29.56,
+      "size": 34.98,
       "price": 0.99,
-      "confidence": 0.787,
-      "trigger": "directional_80pct",
-      "reason": "DIRECTIONAL at 80pct (77% elapsed) \u2014 P(UP)=0.787 gives edge=0.287 toward UP. Bucket=HighVol+Trend (RV60=3.19575, Eff60=0.037). Size scales with edge: $29.56 USDC @ conf=0.787."
+      "confidence": 1.0,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (90% elapsed) \u2014 P(UP)=1.000 gives edge=0.500 toward UP. Bucket=HighVol+Trend (RV60=12.56095, Eff60=0.035). Size scales with edge: $34.98 USDC @ conf=1.000."
     },
     {
       "symbol": "ETH",
       "slug": "eth-updown-15m",
       "outcome": "UP",
       "side": "BUY",
-      "size": 23.43,
-      "price": 0.77,
-      "confidence": 0.723,
-      "trigger": "directional_80pct",
-      "reason": "DIRECTIONAL at 80pct (78% elapsed) \u2014 P(UP)=0.723 gives edge=0.223 toward UP. Bucket=HighVol+Range (RV60=3.23047, Eff60=0.009). Size scales with edge: $23.43 USDC @ conf=0.723."
+      "size": 34.98,
+      "price": 0.99,
+      "confidence": 1.0,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (90% elapsed) \u2014 P(UP)=1.000 gives edge=0.500 toward UP. Bucket=HighVol+Trend (RV60=12.56095, Eff60=0.035). Size scales with edge: $34.98 USDC @ conf=1.000."
     },
     {
       "symbol": "ETH",
       "slug": "eth-updown-15m",
       "outcome": "UP",
       "side": "BUY",
-      "size": 31.46,
-      "price": 0.82,
-      "confidence": 0.807,
-      "trigger": "directional_80pct",
-      "reason": "DIRECTIONAL at 80pct (78% elapsed) \u2014 P(UP)=0.807 gives edge=0.307 toward UP. Bucket=HighVol+Trend (RV60=3.26435, Eff60=0.037). Size scales with edge: $31.46 USDC @ conf=0.807."
+      "size": 34.98,
+      "price": 0.99,
+      "confidence": 1.0,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (90% elapsed) \u2014 P(UP)=1.000 gives edge=0.500 toward UP. Bucket=HighVol+Trend (RV60=13.86420, Eff60=0.021). Size scales with edge: $34.98 USDC @ conf=1.000."
+    },
+    {
+      "symbol": "ETH",
+      "slug": "eth-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 34.98,
+      "price": 0.99,
+      "confidence": 1.0,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (90% elapsed) \u2014 P(UP)=1.000 gives edge=0.500 toward UP. Bucket=HighVol+Trend (RV60=13.86420, Eff60=0.021). Size scales with edge: $34.98 USDC @ conf=1.000."
+    },
+    {
+      "symbol": "ETH",
+      "slug": "eth-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 34.98,
+      "price": 0.99,
+      "confidence": 1.0,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (91% elapsed) \u2014 P(UP)=1.000 gives edge=0.500 toward UP. Bucket=HighVol+Trend (RV60=15.02234, Eff60=0.020). Size scales with edge: $34.98 USDC @ conf=1.000."
+    },
+    {
+      "symbol": "ETH",
+      "slug": "eth-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 34.98,
+      "price": 0.99,
+      "confidence": 1.0,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (91% elapsed) \u2014 P(UP)=1.000 gives edge=0.500 toward UP. Bucket=HighVol+Trend (RV60=15.02234, Eff60=0.020). Size scales with edge: $34.98 USDC @ conf=1.000."
     },
     {
       "symbol": "ETH",
       "slug": "eth-updown-15m",
       "outcome": "DOWN",
       "side": "BUY",
-      "size": 23.43,
-      "price": 0.2,
-      "confidence": 0.723,
-      "trigger": "directional_80pct",
-      "reason": "DIRECTIONAL at 80pct (78% elapsed) \u2014 P(UP)=0.277 gives edge=0.223 toward DOWN. Bucket=HighVol+Range (RV60=3.69381, Eff60=0.011). Size scales with edge: $23.43 USDC @ conf=0.723."
+      "size": 34.98,
+      "price": 0.99,
+      "confidence": 0.872,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (91% elapsed) \u2014 P(UP)=0.128 gives edge=0.372 toward DOWN. Bucket=HighVol+Range (RV60=15.96937, Eff60=0.013). Size scales with edge: $34.98 USDC @ conf=0.872."
     },
     {
       "symbol": "ETH",
       "slug": "eth-updown-15m",
       "outcome": "UP",
       "side": "BUY",
-      "size": 30.99,
-      "price": 0.81,
-      "confidence": 0.802,
-      "trigger": "directional_80pct",
-      "reason": "DIRECTIONAL at 80pct (78% elapsed) \u2014 P(UP)=0.802 gives edge=0.302 toward UP. Bucket=HighVol+Trend (RV60=3.71971, Eff60=0.033). Size scales with edge: $30.99 USDC @ conf=0.802."
+      "size": 34.98,
+      "price": 0.99,
+      "confidence": 0.869,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=0.869 gives edge=0.369 toward UP. Bucket=HighVol+Range (RV60=15.97900, Eff60=0.020). Size scales with edge: $34.98 USDC @ conf=0.869."
     },
     {
       "symbol": "ETH",
       "slug": "eth-updown-15m",
       "outcome": "UP",
       "side": "BUY",
-      "size": 30.99,
-      "price": 0.81,
-      "confidence": 0.802,
-      "trigger": "directional_80pct",
-      "reason": "DIRECTIONAL at 80pct (78% elapsed) \u2014 P(UP)=0.802 gives edge=0.302 toward UP. Bucket=HighVol+Trend (RV60=3.71971, Eff60=0.033). Size scales with edge: $30.99 USDC @ conf=0.802."
+      "size": 34.98,
+      "price": 0.99,
+      "confidence": 0.869,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=0.869 gives edge=0.369 toward UP. Bucket=HighVol+Range (RV60=15.97900, Eff60=0.020). Size scales with edge: $34.98 USDC @ conf=0.869."
     },
     {
       "symbol": "ETH",
       "slug": "eth-updown-15m",
       "outcome": "UP",
       "side": "BUY",
-      "size": 29.56,
-      "price": 0.79,
-      "confidence": 0.787,
-      "trigger": "directional_80pct",
-      "reason": "DIRECTIONAL at 80pct (79% elapsed) \u2014 P(UP)=0.787 gives edge=0.287 toward UP. Bucket=HighVol+Trend (RV60=3.71118, Eff60=0.031). Size scales with edge: $29.56 USDC @ conf=0.787."
+      "size": 34.98,
+      "price": 0.99,
+      "confidence": 0.869,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=0.869 gives edge=0.369 toward UP. Bucket=HighVol+Range (RV60=17.07127, Eff60=0.019). Size scales with edge: $34.98 USDC @ conf=0.869."
     },
     {
       "symbol": "ETH",
       "slug": "eth-updown-15m",
       "outcome": "UP",
       "side": "BUY",
-      "size": 28.14,
-      "price": 0.79,
-      "confidence": 0.772,
-      "trigger": "directional_80pct",
-      "reason": "DIRECTIONAL at 80pct (79% elapsed) \u2014 P(UP)=0.772 gives edge=0.272 toward UP. Bucket=HighVol+Trend (RV60=3.70887, Eff60=0.030). Size scales with edge: $28.14 USDC @ conf=0.772."
+      "size": 34.98,
+      "price": 0.99,
+      "confidence": 0.869,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=0.869 gives edge=0.369 toward UP. Bucket=HighVol+Range (RV60=17.07127, Eff60=0.019). Size scales with edge: $34.98 USDC @ conf=0.869."
     },
     {
       "symbol": "ETH",
       "slug": "eth-updown-15m",
       "outcome": "UP",
       "side": "BUY",
-      "size": 28.61,
-      "price": 0.81,
-      "confidence": 0.777,
-      "trigger": "directional_80pct",
-      "reason": "DIRECTIONAL at 80pct (79% elapsed) \u2014 P(UP)=0.777 gives edge=0.277 toward UP. Bucket=HighVol+Trend (RV60=3.70964, Eff60=0.030). Size scales with edge: $28.61 USDC @ conf=0.777."
+      "size": 34.98,
+      "price": 1.0,
+      "confidence": 0.869,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=0.869 gives edge=0.369 toward UP. Bucket=HighVol+Range (RV60=17.05614, Eff60=0.000). Size scales with edge: $34.98 USDC @ conf=0.869."
     },
     {
       "symbol": "ETH",
       "slug": "eth-updown-15m",
-      "outcome": "UP",
+      "outcome": "DOWN",
       "side": "BUY",
-      "size": 30.04,
-      "price": 0.8,
-      "confidence": 0.792,
-      "trigger": "directional_80pct",
-      "reason": "DIRECTIONAL at 80pct (79% elapsed) \u2014 P(UP)=0.792 gives edge=0.292 toward UP. Bucket=HighVol+Trend (RV60=3.71895, Eff60=0.046). Size scales with edge: $30.04 USDC @ conf=0.792."
+      "size": 34.98,
+      "price": 0.99,
+      "confidence": 0.872,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.128 gives edge=0.372 toward DOWN. Bucket=HighVol+Range (RV60=17.92008, Eff60=0.012). Size scales with edge: $34.98 USDC @ conf=0.872."
     },
     {
       "symbol": "ETH",
       "slug": "eth-updown-15m",
-      "outcome": "UP",
+      "outcome": "DOWN",
       "side": "BUY",
-      "size": 21.01,
-      "price": 0.79,
-      "confidence": 0.698,
-      "trigger": "directional_80pct",
-      "reason": "DIRECTIONAL at 80pct (80% elapsed) \u2014 P(UP)=0.698 gives edge=0.198 toward UP. Bucket=HighVol+Range (RV60=3.68993, Eff60=0.018). Size scales with edge: $21.01 USDC @ conf=0.698."
+      "size": 34.98,
+      "price": 0.99,
+      "confidence": 0.872,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.128 gives edge=0.372 toward DOWN. Bucket=HighVol+Range (RV60=17.92008, Eff60=0.012). Size scales with edge: $34.98 USDC @ conf=0.872."
+    },
+    {
+      "symbol": "ETH",
+      "slug": "eth-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 34.98,
+      "price": 0.99,
+      "confidence": 0.872,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.128 gives edge=0.372 toward DOWN. Bucket=HighVol+Range (RV60=17.92008, Eff60=0.012). Size scales with edge: $34.98 USDC @ conf=0.872."
     }
   ]
 }
