@@ -1,225 +1,225 @@
 {
-  "updated": "2026-03-04 01:09:21 PM ET",
+  "updated": "2026-03-04 01:14:22 PM ET",
   "data": [
     {
-      "symbol": "SOL",
-      "slug": "sol-updown-15m",
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m",
       "outcome": "DOWN",
       "side": "BUY",
-      "size": 34.95,
+      "size": 41.12,
       "price": 0.99,
-      "confidence": 0.843,
-      "trigger": "directional_60pct",
-      "reason": "DIRECTIONAL at 60pct (61% elapsed) \u2014 P(UP)=0.157 gives edge=0.343 toward DOWN. Bucket=HighVol+Trend (RV60=9.15488, Eff60=0.023). Size scales with edge: $34.95 USDC @ conf=0.843."
+      "confidence": 0.908,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=0.092 gives edge=0.408 toward DOWN. Bucket=HighVol+Trend (RV60=11.68037, Eff60=0.036). Size scales with edge: $41.12 USDC @ conf=0.908."
+    },
+    {
+      "symbol": "ETH",
+      "slug": "eth-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 36.06,
+      "price": 0.91,
+      "confidence": 0.855,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=0.145 gives edge=0.355 toward DOWN. Bucket=LowVol+Range (RV60=5.21789, Eff60=0.013). Size scales with edge: $36.06 USDC @ conf=0.855."
+    },
+    {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 27.44,
+      "price": 0.22,
+      "confidence": 0.765,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=0.765 gives edge=0.265 toward UP. Bucket=LowVol+Range (RV60=6.35353, Eff60=0.001). Size scales with edge: $27.44 USDC @ conf=0.765."
     },
     {
       "symbol": "XRP",
       "slug": "xrp-updown-15m",
       "outcome": "DOWN",
       "side": "BUY",
-      "size": 18.59,
+      "size": 31.18,
       "price": 0.99,
-      "confidence": 0.673,
-      "trigger": "directional_60pct",
-      "reason": "DIRECTIONAL at 60pct (61% elapsed) \u2014 P(UP)=0.327 gives edge=0.173 toward DOWN. Bucket=HighVol+Range (RV60=3.95490, Eff60=0.018). Size scales with edge: $18.59 USDC @ conf=0.673."
+      "confidence": 0.804,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=0.196 gives edge=0.304 toward DOWN. Bucket=HighVol+Range (RV60=11.54582, Eff60=0.017). Size scales with edge: $31.18 USDC @ conf=0.804."
     },
     {
       "symbol": "ETH",
       "slug": "eth-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 34.95,
-      "price": 0.9,
-      "confidence": 0.843,
-      "trigger": "directional_60pct",
-      "reason": "DIRECTIONAL at 60pct (61% elapsed) \u2014 P(UP)=0.843 gives edge=0.343 toward UP. Bucket=HighVol+Trend (RV60=8.07578, Eff60=0.027). Size scales with edge: $34.95 USDC @ conf=0.843."
-    },
-    {
-      "symbol": "ETH",
-      "slug": "eth-updown-15m",
-      "outcome": "UP",
+      "outcome": "DOWN",
       "side": "BUY",
       "size": 41.05,
-      "price": 0.9,
-      "confidence": 0.89,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 61% elapsed) \u2014 UP token at 0.900 deviates 0.390 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$41.05 USDC (scales with deviation)."
+      "price": 0.95,
+      "confidence": 0.934,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=0.066 gives edge=0.434 toward DOWN. Bucket=LowVol+Trend (RV60=5.51999, Eff60=0.025). Size scales with edge: $41.05 USDC @ conf=0.934."
     },
     {
       "symbol": "SOL",
       "slug": "sol-updown-15m",
       "outcome": "DOWN",
       "side": "BUY",
-      "size": 25.96,
-      "price": 0.99,
-      "confidence": 0.75,
-      "trigger": "directional_60pct",
-      "reason": "DIRECTIONAL at 60pct (61% elapsed) \u2014 P(UP)=0.250 gives edge=0.250 toward DOWN. Bucket=HighVol+Range (RV60=9.12380, Eff60=0.009). Size scales with edge: $25.96 USDC @ conf=0.750."
+      "size": 28.68,
+      "price": 0.83,
+      "confidence": 0.778,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=0.222 gives edge=0.278 toward DOWN. Bucket=LowVol+Range (RV60=6.28411, Eff60=0.004). Size scales with edge: $28.68 USDC @ conf=0.778."
     },
     {
       "symbol": "XRP",
       "slug": "xrp-updown-15m",
       "outcome": "DOWN",
       "side": "BUY",
-      "size": 18.59,
+      "size": 31.18,
       "price": 0.99,
-      "confidence": 0.673,
-      "trigger": "directional_60pct",
-      "reason": "DIRECTIONAL at 60pct (61% elapsed) \u2014 P(UP)=0.327 gives edge=0.173 toward DOWN. Bucket=HighVol+Range (RV60=3.95490, Eff60=0.018). Size scales with edge: $18.59 USDC @ conf=0.673."
-    },
-    {
-      "symbol": "ETH",
-      "slug": "eth-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 34.95,
-      "price": 0.5,
-      "confidence": 0.843,
-      "trigger": "directional_60pct",
-      "reason": "DIRECTIONAL at 60pct (62% elapsed) \u2014 P(UP)=0.843 gives edge=0.343 toward UP. Bucket=HighVol+Trend (RV60=8.07578, Eff60=0.027). Size scales with edge: $34.95 USDC @ conf=0.843."
-    },
-    {
-      "symbol": "SOL",
-      "slug": "sol-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 32.84,
-      "price": 0.5,
-      "confidence": 0.821,
-      "trigger": "directional_60pct",
-      "reason": "DIRECTIONAL at 60pct (62% elapsed) \u2014 P(UP)=0.821 gives edge=0.321 toward UP. Bucket=HighVol+Trend (RV60=9.35396, Eff60=0.022). Size scales with edge: $32.84 USDC @ conf=0.821."
-    },
-    {
-      "symbol": "XRP",
-      "slug": "xrp-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 25.23,
-      "price": 0.5,
-      "confidence": 0.742,
-      "trigger": "directional_60pct",
-      "reason": "DIRECTIONAL at 60pct (62% elapsed) \u2014 P(UP)=0.742 gives edge=0.242 toward UP. Bucket=HighVol+Trend (RV60=3.90260, Eff60=0.032). Size scales with edge: $25.23 USDC @ conf=0.742."
+      "confidence": 0.804,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=0.196 gives edge=0.304 toward DOWN. Bucket=HighVol+Range (RV60=11.54582, Eff60=0.017). Size scales with edge: $31.18 USDC @ conf=0.804."
     },
     {
       "symbol": "ETH",
       "slug": "eth-updown-15m",
       "outcome": "DOWN",
       "side": "BUY",
-      "size": 26.58,
-      "price": 0.1,
-      "confidence": 0.756,
-      "trigger": "directional_60pct",
-      "reason": "DIRECTIONAL at 60pct (62% elapsed) \u2014 P(UP)=0.244 gives edge=0.256 toward DOWN. Bucket=HighVol+Range (RV60=8.20181, Eff60=0.017). Size scales with edge: $26.58 USDC @ conf=0.756."
+      "size": 38.53,
+      "price": 0.96,
+      "confidence": 0.88,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=0.120 gives edge=0.380 toward DOWN. Bucket=LowVol+Range (RV60=5.23097, Eff60=0.016). Size scales with edge: $38.53 USDC @ conf=0.880."
     },
     {
       "symbol": "SOL",
       "slug": "sol-updown-15m",
       "outcome": "DOWN",
       "side": "BUY",
-      "size": 24.73,
+      "size": 28.68,
       "price": 0.99,
-      "confidence": 0.737,
-      "trigger": "directional_60pct",
-      "reason": "DIRECTIONAL at 60pct (62% elapsed) \u2014 P(UP)=0.263 gives edge=0.237 toward DOWN. Bucket=HighVol+Range (RV60=9.70159, Eff60=0.014). Size scales with edge: $24.73 USDC @ conf=0.737."
+      "confidence": 0.778,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=0.222 gives edge=0.278 toward DOWN. Bucket=LowVol+Range (RV60=6.28411, Eff60=0.004). Size scales with edge: $28.68 USDC @ conf=0.778."
     },
     {
       "symbol": "XRP",
       "slug": "xrp-updown-15m",
       "outcome": "DOWN",
       "side": "BUY",
-      "size": 17.97,
-      "price": 0.21,
-      "confidence": 0.666,
-      "trigger": "directional_60pct",
-      "reason": "DIRECTIONAL at 60pct (62% elapsed) \u2014 P(UP)=0.334 gives edge=0.166 toward DOWN. Bucket=HighVol+Range (RV60=4.19812, Eff60=0.014). Size scales with edge: $17.97 USDC @ conf=0.666."
+      "size": 31.55,
+      "price": 0.99,
+      "confidence": 0.808,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=0.192 gives edge=0.308 toward DOWN. Bucket=HighVol+Range (RV60=11.54593, Eff60=0.017). Size scales with edge: $31.55 USDC @ conf=0.808."
     },
     {
       "symbol": "ETH",
       "slug": "eth-updown-15m",
-      "outcome": "UP",
+      "outcome": "DOWN",
       "side": "BUY",
-      "size": 26.58,
+      "size": 41.05,
+      "price": 0.96,
+      "confidence": 0.97,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.030 gives edge=0.470 toward DOWN. Bucket=HighVol+Trend (RV60=6.32135, Eff60=0.037). Size scales with edge: $41.05 USDC @ conf=0.970."
+    },
+    {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 27.44,
+      "price": 0.82,
+      "confidence": 0.765,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.235 gives edge=0.265 toward DOWN. Bucket=LowVol+Range (RV60=6.25091, Eff60=0.004). Size scales with edge: $27.44 USDC @ conf=0.765."
+    },
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 31.91,
+      "price": 0.92,
+      "confidence": 0.812,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.188 gives edge=0.312 toward DOWN. Bucket=HighVol+Range (RV60=11.56160, Eff60=0.017). Size scales with edge: $31.91 USDC @ conf=0.812."
+    },
+    {
+      "symbol": "ETH",
+      "slug": "eth-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 41.05,
+      "price": 0.95,
+      "confidence": 0.965,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.035 gives edge=0.465 toward DOWN. Bucket=HighVol+Trend (RV60=6.27752, Eff60=0.036). Size scales with edge: $41.05 USDC @ conf=0.965."
+    },
+    {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 27.44,
+      "price": 0.82,
+      "confidence": 0.765,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.235 gives edge=0.265 toward DOWN. Bucket=LowVol+Range (RV60=6.25091, Eff60=0.004). Size scales with edge: $27.44 USDC @ conf=0.765."
+    },
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 31.91,
+      "price": 0.92,
+      "confidence": 0.812,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.188 gives edge=0.312 toward DOWN. Bucket=HighVol+Range (RV60=11.56160, Eff60=0.017). Size scales with edge: $31.91 USDC @ conf=0.812."
+    },
+    {
+      "symbol": "ETH",
+      "slug": "eth-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 41.05,
+      "price": 0.93,
+      "confidence": 0.934,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.066 gives edge=0.434 toward DOWN. Bucket=LowVol+Trend (RV60=6.20349, Eff60=0.035). Size scales with edge: $41.05 USDC @ conf=0.934."
+    },
+    {
+      "symbol": "ETH",
+      "slug": "eth-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 33.01,
       "price": 0.91,
-      "confidence": 0.756,
-      "trigger": "directional_60pct",
-      "reason": "DIRECTIONAL at 60pct (62% elapsed) \u2014 P(UP)=0.756 gives edge=0.256 toward UP. Bucket=HighVol+Range (RV60=8.49102, Eff60=0.018). Size scales with edge: $26.58 USDC @ conf=0.756."
+      "confidence": 0.823,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.177 gives edge=0.323 toward DOWN. Bucket=HighVol+Range (RV60=6.76814, Eff60=0.009). Size scales with edge: $33.01 USDC @ conf=0.823."
     },
     {
       "symbol": "SOL",
       "slug": "sol-updown-15m",
       "outcome": "DOWN",
       "side": "BUY",
-      "size": 24.73,
-      "price": 0.99,
-      "confidence": 0.737,
-      "trigger": "directional_60pct",
-      "reason": "DIRECTIONAL at 60pct (62% elapsed) \u2014 P(UP)=0.263 gives edge=0.237 toward DOWN. Bucket=HighVol+Range (RV60=9.70159, Eff60=0.014). Size scales with edge: $24.73 USDC @ conf=0.737."
+      "size": 21.7,
+      "price": 0.73,
+      "confidence": 0.705,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.295 gives edge=0.205 toward DOWN. Bucket=LowVol+Range (RV60=5.83948, Eff60=0.014). Size scales with edge: $21.70 USDC @ conf=0.705."
     },
     {
       "symbol": "XRP",
       "slug": "xrp-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 26.5,
-      "price": 0.81,
-      "confidence": 0.755,
-      "trigger": "directional_60pct",
-      "reason": "DIRECTIONAL at 60pct (62% elapsed) \u2014 P(UP)=0.755 gives edge=0.255 toward UP. Bucket=HighVol+Trend (RV60=4.15870, Eff60=0.032). Size scales with edge: $26.50 USDC @ conf=0.755."
-    },
-    {
-      "symbol": "XRP",
-      "slug": "xrp-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 49.92,
-      "price": 0.81,
-      "confidence": 0.79,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 62% elapsed) \u2014 UP token at 0.810 deviates 0.290 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$49.92 USDC (scales with deviation)."
-    },
-    {
-      "symbol": "ETH",
-      "slug": "eth-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 26.58,
-      "price": 0.99,
-      "confidence": 0.756,
-      "trigger": "directional_60pct",
-      "reason": "DIRECTIONAL at 60pct (62% elapsed) \u2014 P(UP)=0.756 gives edge=0.256 toward UP. Bucket=HighVol+Range (RV60=8.49102, Eff60=0.018). Size scales with edge: $26.58 USDC @ conf=0.756."
-    },
-    {
-      "symbol": "SOL",
-      "slug": "sol-updown-15m",
       "outcome": "DOWN",
       "side": "BUY",
-      "size": 24.73,
-      "price": 0.99,
-      "confidence": 0.737,
-      "trigger": "directional_60pct",
-      "reason": "DIRECTIONAL at 60pct (62% elapsed) \u2014 P(UP)=0.263 gives edge=0.237 toward DOWN. Bucket=HighVol+Range (RV60=9.70159, Eff60=0.014). Size scales with edge: $24.73 USDC @ conf=0.737."
-    },
-    {
-      "symbol": "XRP",
-      "slug": "xrp-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 26.92,
-      "price": 0.99,
-      "confidence": 0.76,
-      "trigger": "directional_60pct",
-      "reason": "DIRECTIONAL at 60pct (62% elapsed) \u2014 P(UP)=0.760 gives edge=0.260 toward UP. Bucket=HighVol+Trend (RV60=4.15939, Eff60=0.033). Size scales with edge: $26.92 USDC @ conf=0.760."
-    },
-    {
-      "symbol": "XRP",
-      "slug": "xrp-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 49.92,
-      "price": 0.99,
-      "confidence": 0.795,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 62% elapsed) \u2014 UP token at 0.990 deviates 0.295 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$49.92 USDC (scales with deviation)."
+      "size": 30.09,
+      "price": 0.89,
+      "confidence": 0.793,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.207 gives edge=0.293 toward DOWN. Bucket=HighVol+Range (RV60=11.24633, Eff60=0.002). Size scales with edge: $30.09 USDC @ conf=0.793."
     }
   ]
 }
