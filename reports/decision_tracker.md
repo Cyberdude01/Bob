@@ -1,17 +1,19 @@
 # Decision Tracker
 
-> **Updated:** `2026-03-04 08:58:37 AM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
+> **Updated:** `2026-03-04 09:03:38 AM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
 
 ## Summary
 | Total | Resolved | Wins | Losses | ARB | Pending | Win Rate | Realised P&L |
 | ----- | -------- | ---- | ------ | --- | ------- | -------- | ------------ |
-| 62 | 0 | 0 | 0 | 0 | 62 | — | +$0.0000 |
+| 64 | 0 | 0 | 0 | 0 | 64 | — | +$0.0000 |
 
 ## Trade Log
 > Each row: Entry Time · Market Slug · Condition ID (first 12 chars) · 15-min Window
 
 | Entry Time (ET) | Market & Window | Outcome | Trigger | Entry $ | Size | Mode | Resolved (ET) | Winner | Result | P&L | Reasoning |
 | ----------------- | ---------------------------------------- | ------- | ---------------------- | ------- | ------ | ----- | ----------------- | ------ | -------- | --------- | -------------------------------------------------- |
+| `2026-03-04 09:02 AM ET` | **eth-updown-15m** `0x467348944c…`<br>09:00 AM → 09:15 AM | **DOWN** | `trend_follow` | 0.9900 | $21.80 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 15% elapsed) — DOWN token at 0.990 deviates 0.140 from 0.50. Momentum c |
+| `2026-03-04 09:02 AM ET` | **eth-updown-15m** `0x467348944c…`<br>09:00 AM → 09:15 AM | **UP** | `trend_follow` | 0.9900 | $21.80 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 15% elapsed) — UP token at 0.990 deviates 0.140 from 0.50. Momentum con |
 | `2026-03-04 08:56 AM ET` | **eth-updown-15m** `0xdde59294d2…`<br>08:45 AM → 09:00 AM | **UP** | `directional_80pct` | 0.6300 | $10.64 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 80pct (77% elapsed) — P(UP)=0.590 gives edge=0.090 toward UP. Bucket=HighVol+Range (R |
 | `2026-03-04 08:56 AM ET` | **btc-updown-15m** `0xa04f14027e…`<br>08:45 AM → 09:00 AM | **UP** | `directional_80pct` | 0.7600 | $14.32 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 80pct (77% elapsed) — P(UP)=0.752 gives edge=0.252 toward UP. Bucket=HighVol+Trend (R |
 | `2026-03-04 08:54 AM ET` | **xrp-updown-15m** `0xdad66d9974…`<br>08:45 AM → 09:00 AM | **DOWN** | `directional_60pct` | 0.9900 | $18.13 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 60pct (60% elapsed) — P(UP)=0.332 gives edge=0.168 toward DOWN. Bucket=LowVol+Trend ( |
