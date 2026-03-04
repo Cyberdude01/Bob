@@ -1,94 +1,6 @@
 {
-  "updated": "2026-03-04 10:54:09 AM ET",
+  "updated": "2026-03-04 10:59:10 AM ET",
   "data": [
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 7.6,
-      "price": 0.96,
-      "confidence": 0.955,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 56% elapsed) \u2014 UP token at 0.960 deviates 0.455 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$7.60 USDC (scales with deviation)."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 7.6,
-      "price": 0.93,
-      "confidence": 0.772,
-      "trigger": "directional_60pct",
-      "reason": "DIRECTIONAL at 60pct (57% elapsed) \u2014 P(UP)=0.772 gives edge=0.272 toward UP. Bucket=HighVol+Range (RV60=11.89604, Eff60=0.001). Size scales with edge: $7.60 USDC @ conf=0.772."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 7.6,
-      "price": 0.5,
-      "confidence": 0.772,
-      "trigger": "directional_60pct",
-      "reason": "DIRECTIONAL at 60pct (57% elapsed) \u2014 P(UP)=0.772 gives edge=0.272 toward UP. Bucket=HighVol+Range (RV60=11.89604, Eff60=0.001). Size scales with edge: $7.60 USDC @ conf=0.772."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 7.6,
-      "price": 0.93,
-      "confidence": 0.772,
-      "trigger": "directional_60pct",
-      "reason": "DIRECTIONAL at 60pct (57% elapsed) \u2014 P(UP)=0.772 gives edge=0.272 toward UP. Bucket=HighVol+Range (RV60=12.02240, Eff60=0.001). Size scales with edge: $7.60 USDC @ conf=0.772."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 7.6,
-      "price": 0.93,
-      "confidence": 0.772,
-      "trigger": "directional_60pct",
-      "reason": "DIRECTIONAL at 60pct (58% elapsed) \u2014 P(UP)=0.772 gives edge=0.272 toward UP. Bucket=HighVol+Range (RV60=12.02240, Eff60=0.001). Size scales with edge: $7.60 USDC @ conf=0.772."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 7.6,
-      "price": 0.92,
-      "confidence": 0.763,
-      "trigger": "directional_60pct",
-      "reason": "DIRECTIONAL at 60pct (58% elapsed) \u2014 P(UP)=0.763 gives edge=0.263 toward UP. Bucket=HighVol+Range (RV60=11.88874, Eff60=0.013). Size scales with edge: $7.60 USDC @ conf=0.763."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 7.6,
-      "price": 0.92,
-      "confidence": 0.766,
-      "trigger": "directional_60pct",
-      "reason": "DIRECTIONAL at 60pct (58% elapsed) \u2014 P(UP)=0.766 gives edge=0.266 toward UP. Bucket=HighVol+Range (RV60=11.65765, Eff60=0.000). Size scales with edge: $7.60 USDC @ conf=0.766."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 7.6,
-      "price": 0.94,
-      "confidence": 0.769,
-      "trigger": "directional_60pct",
-      "reason": "DIRECTIONAL at 60pct (58% elapsed) \u2014 P(UP)=0.769 gives edge=0.269 toward UP. Bucket=HighVol+Range (RV60=11.65796, Eff60=0.001). Size scales with edge: $7.60 USDC @ conf=0.769."
-    },
     {
       "symbol": "BTC",
       "slug": "btc-updown-15m",
@@ -220,6 +132,94 @@
       "confidence": 0.804,
       "trigger": "directional_60pct",
       "reason": "DIRECTIONAL at 60pct (61% elapsed) \u2014 P(UP)=0.804 gives edge=0.304 toward UP. Bucket=HighVol+Range (RV60=12.11281, Eff60=0.003). Size scales with edge: $7.60 USDC @ conf=0.804."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 7.6,
+      "price": 0.98,
+      "confidence": 0.804,
+      "trigger": "directional_60pct",
+      "reason": "DIRECTIONAL at 60pct (61% elapsed) \u2014 P(UP)=0.804 gives edge=0.304 toward UP. Bucket=HighVol+Range (RV60=12.11281, Eff60=0.003). Size scales with edge: $7.60 USDC @ conf=0.804."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 7.6,
+      "price": 0.98,
+      "confidence": 0.804,
+      "trigger": "directional_60pct",
+      "reason": "DIRECTIONAL at 60pct (61% elapsed) \u2014 P(UP)=0.804 gives edge=0.304 toward UP. Bucket=HighVol+Range (RV60=12.11281, Eff60=0.003). Size scales with edge: $7.60 USDC @ conf=0.804."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 7.6,
+      "price": 0.98,
+      "confidence": 0.804,
+      "trigger": "directional_60pct",
+      "reason": "DIRECTIONAL at 60pct (62% elapsed) \u2014 P(UP)=0.804 gives edge=0.304 toward UP. Bucket=HighVol+Range (RV60=12.85499, Eff60=0.003). Size scales with edge: $7.60 USDC @ conf=0.804."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 7.6,
+      "price": 0.98,
+      "confidence": 0.804,
+      "trigger": "directional_60pct",
+      "reason": "DIRECTIONAL at 60pct (62% elapsed) \u2014 P(UP)=0.804 gives edge=0.304 toward UP. Bucket=HighVol+Range (RV60=12.85499, Eff60=0.003). Size scales with edge: $7.60 USDC @ conf=0.804."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 7.6,
+      "price": 0.98,
+      "confidence": 0.804,
+      "trigger": "directional_60pct",
+      "reason": "DIRECTIONAL at 60pct (62% elapsed) \u2014 P(UP)=0.804 gives edge=0.304 toward UP. Bucket=HighVol+Range (RV60=13.69189, Eff60=0.017). Size scales with edge: $7.60 USDC @ conf=0.804."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 7.6,
+      "price": 0.98,
+      "confidence": 0.804,
+      "trigger": "directional_60pct",
+      "reason": "DIRECTIONAL at 60pct (62% elapsed) \u2014 P(UP)=0.804 gives edge=0.304 toward UP. Bucket=HighVol+Range (RV60=13.69189, Eff60=0.017). Size scales with edge: $7.60 USDC @ conf=0.804."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 7.6,
+      "price": 0.99,
+      "confidence": 0.804,
+      "trigger": "directional_60pct",
+      "reason": "DIRECTIONAL at 60pct (63% elapsed) \u2014 P(UP)=0.804 gives edge=0.304 toward UP. Bucket=HighVol+Range (RV60=13.69189, Eff60=0.017). Size scales with edge: $7.60 USDC @ conf=0.804."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 7.6,
+      "price": 0.99,
+      "confidence": 0.807,
+      "trigger": "directional_60pct",
+      "reason": "DIRECTIONAL at 60pct (63% elapsed) \u2014 P(UP)=0.193 gives edge=0.307 toward DOWN. Bucket=HighVol+Range (RV60=14.13407, Eff60=0.002). Size scales with edge: $7.60 USDC @ conf=0.807."
     }
   ]
 }
