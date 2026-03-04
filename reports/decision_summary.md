@@ -1,18 +1,20 @@
 # Decision Engine Summary
 
-> **Updated:** `2026-03-04 02:15:13 AM ET` &nbsp;|&nbsp; All signals from the last 48 hours
+> **Updated:** `2026-03-04 02:20:13 AM ET` &nbsp;|&nbsp; All signals from the last 48 hours
 
 ## Signal Distribution
 | Trigger | Count |
 | -------------------- | ----- |
 | `directional_90pct` | 205 |
 | `directional_80pct` | 203 |
-| `trend_follow` | 149 |
+| `trend_follow` | 151 |
 | `directional_60pct` | 88 |
 
 ## Signal Log
 | Time (ET) | Symbol | Slug | Outcome | Trigger | Confidence | P(UP) | Bucket | Elapsed% | Reasoning |
 | --------------- | ------ | ----------------- | ------- | -------------------- | ---------- | ----- | -------------- | -------- | -------------------------------------------------- |
+| `2026-03-04 02:16 AM ET` | SOL | sol-updown-15m | **DOWN** | `trend_follow` | 0.600 | 58.8% | HighVol+Trend | 11.5% | TREND FOLLOW (HighVol+Trend, 12% elapsed) — DOWN token at 0.410 deviates 0.100 from 0.50. Momentum continuation strategy |
+| `2026-03-04 02:16 AM ET` | SOL | sol-updown-15m | **UP** | `trend_follow` | 0.600 | 58.8% | HighVol+Trend | 11.5% | TREND FOLLOW (HighVol+Trend, 12% elapsed) — UP token at 0.610 deviates 0.100 from 0.50. Momentum continuation strategy:  |
 | `2026-03-04 02:13 AM ET` | SOL | sol-updown-15m | **DOWN** | `directional_90pct` | 0.842 | 21.2% | HighVol+Range | 93.3% | DIRECTIONAL at 90pct (93% elapsed) — P(UP)=0.158 gives edge=0.342 toward DOWN. Bucket=HighVol+Range (RV60=10.71902, Eff6 |
 | `2026-03-04 02:13 AM ET` | SOL | sol-updown-15m | **DOWN** | `directional_90pct` | 0.842 | 21.2% | HighVol+Range | 93.1% | DIRECTIONAL at 90pct (93% elapsed) — P(UP)=0.158 gives edge=0.342 toward DOWN. Bucket=HighVol+Range (RV60=10.71902, Eff6 |
 | `2026-03-04 02:13 AM ET` | SOL | sol-updown-15m | **DOWN** | `directional_90pct` | 0.842 | 21.2% | HighVol+Range | 92.8% | DIRECTIONAL at 90pct (93% elapsed) — P(UP)=0.158 gives edge=0.342 toward DOWN. Bucket=HighVol+Range (RV60=10.42891, Eff6 |
