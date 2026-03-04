@@ -1,17 +1,6 @@
 {
-  "updated": "2026-03-04 11:31:59 AM ET",
+  "updated": "2026-03-04 11:37:00 AM ET",
   "data": [
-    {
-      "symbol": "ETH",
-      "slug": "eth-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 34.98,
-      "price": 0.99,
-      "confidence": 0.869,
-      "trigger": "directional_90pct",
-      "reason": "DIRECTIONAL at 90pct (89% elapsed) \u2014 P(UP)=0.869 gives edge=0.369 toward UP. Bucket=HighVol+Range (RV60=11.09052, Eff60=0.010). Size scales with edge: $34.98 USDC @ conf=0.869."
-    },
     {
       "symbol": "ETH",
       "slug": "eth-updown-15m",
@@ -220,6 +209,17 @@
       "confidence": 0.872,
       "trigger": "directional_90pct",
       "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.128 gives edge=0.372 toward DOWN. Bucket=HighVol+Range (RV60=17.92008, Eff60=0.012). Size scales with edge: $34.98 USDC @ conf=0.872."
+    },
+    {
+      "symbol": "ETH",
+      "slug": "eth-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 34.98,
+      "price": 0.73,
+      "confidence": 0.725,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 38% elapsed) \u2014 UP token at 0.730 deviates 0.225 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$34.98 USDC (scales with deviation)."
     }
   ]
 }

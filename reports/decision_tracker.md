@@ -1,17 +1,18 @@
 # Decision Tracker
 
-> **Updated:** `2026-03-04 11:31:59 AM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
+> **Updated:** `2026-03-04 11:37:00 AM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
 
 ## Summary
 | Total | Resolved | Wins | Losses | ARB | Pending | Win Rate | Realised P&L |
 | ----- | -------- | ---- | ------ | --- | ------- | -------- | ------------ |
-| 102 | 97 | 49 | 48 | 0 | 5 | 50.5% | $-742.2191 |
+| 103 | 97 | 49 | 48 | 0 | 6 | 50.5% | $-742.2191 |
 
 ## Trade Log
 > Each row: Entry Time · Market Slug · Condition ID (first 12 chars) · 15-min Window
 
 | Entry Time (ET) | Market & Window | Outcome | Trigger | Entry $ | Size | Mode | Resolved (ET) | Winner | Result | P&L | Reasoning |
 | ----------------- | ---------------------------------------- | ------- | ---------------------- | ------- | ------ | ----- | ----------------- | ------ | -------- | --------- | -------------------------------------------------- |
+| `2026-03-04 11:35 AM ET` | **eth-updown-15m** `0xbcc3cc5f85…`<br>11:30 AM → 11:45 AM | **UP** | `trend_follow` | 0.7300 | $34.98 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 38% elapsed) — UP token at 0.730 deviates 0.225 from 0.50. Momentum con |
 | `2026-03-04 11:22 AM ET` | **xrp-updown-15m** `0x0c92a42657…`<br>11:15 AM → 11:30 AM | **UP** | `trend_follow` | 0.9900 | $20.19 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 49% elapsed) — UP token at 0.990 deviates 0.380 from 0.50. Momentum con |
 | `2026-03-04 11:21 AM ET` | **sol-updown-15m** `0x42d897494f…`<br>11:15 AM → 11:30 AM | **DOWN** | `trend_follow` | 0.9200 | $38.24 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 46% elapsed) — DOWN token at 0.920 deviates 0.410 from 0.50. Momentum c |
 | `2026-03-04 11:21 AM ET` | **xrp-updown-15m** `0x0c92a42657…`<br>11:15 AM → 11:30 AM | **DOWN** | `trend_follow` | 0.9000 | $50.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 46% elapsed) — DOWN token at 0.900 deviates 0.390 from 0.50. Momentum c |
