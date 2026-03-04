@@ -1,17 +1,18 @@
 # Decision Tracker
 
-> **Updated:** `2026-03-04 08:43:34 AM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
+> **Updated:** `2026-03-04 08:48:35 AM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
 
 ## Summary
 | Total | Resolved | Wins | Losses | ARB | Pending | Win Rate | Realised P&L |
 | ----- | -------- | ---- | ------ | --- | ------- | -------- | ------------ |
-| 55 | 0 | 0 | 0 | 0 | 55 | — | +$0.0000 |
+| 56 | 0 | 0 | 0 | 0 | 56 | — | +$0.0000 |
 
 ## Trade Log
 > Each row: Entry Time · Market Slug · Condition ID (first 12 chars) · 15-min Window
 
 | Entry Time (ET) | Market & Window | Outcome | Trigger | Entry $ | Size | Mode | Resolved (ET) | Winner | Result | P&L | Reasoning |
 | ----------------- | ---------------------------------------- | ------- | ---------------------- | ------- | ------ | ----- | ----------------- | ------ | -------- | --------- | -------------------------------------------------- |
+| `2026-03-04 08:45 AM ET` | **sol-updown-15m** `0x3e54daf6d3…`<br>08:45 AM → 09:00 AM | **UP** | `trend_follow` | 0.9900 | $29.76 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 0% elapsed) — UP token at 0.990 deviates 0.490 from 0.50. Momentum cont |
 | `2026-03-04 08:36 AM ET` | **sol-updown-15m** `0x80e52f24b6…`<br>08:30 AM → 08:45 AM | **DOWN** | `trend_follow` | 0.9900 | $40.40 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 45% elapsed) — DOWN token at 0.990 deviates 0.200 from 0.50. Momentum c |
 | `2026-03-04 08:35 AM ET` | **xrp-updown-15m** `0x3982c79a3d…`<br>08:30 AM → 08:45 AM | **DOWN** | `trend_follow` | 0.6600 | $32.72 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 35% elapsed) — DOWN token at 0.660 deviates 0.160 from 0.50. Momentum c |
 | `2026-03-04 08:35 AM ET` | **xrp-updown-15m** `0x3982c79a3d…`<br>08:30 AM → 08:45 AM | **UP** | `trend_follow` | 0.3500 | $32.72 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 35% elapsed) — UP token at 0.350 deviates 0.160 from 0.50. Momentum con |
