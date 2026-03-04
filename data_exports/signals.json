@@ -1,4 +1,225 @@
 {
-  "updated": "2026-03-04 11:01:17 AM ET",
-  "data": []
+  "updated": "2026-03-04 11:06:18 AM ET",
+  "data": [
+    {
+      "symbol": "ETH",
+      "slug": "eth-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 28.88,
+      "price": 0.99,
+      "confidence": 0.64,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 29% elapsed) \u2014 DOWN token at 0.990 deviates 0.140 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$28.88 USDC (scales with deviation)."
+    },
+    {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 50.0,
+      "price": 0.99,
+      "confidence": 0.84,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 33% elapsed) \u2014 UP token at 0.990 deviates 0.340 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$50.00 USDC (scales with deviation)."
+    },
+    {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 50.0,
+      "price": 0.99,
+      "confidence": 0.84,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 33% elapsed) \u2014 DOWN token at 0.990 deviates 0.340 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$50.00 USDC (scales with deviation)."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 35.6,
+      "price": 0.68,
+      "confidence": 0.675,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 33% elapsed) \u2014 DOWN token at 0.680 deviates 0.175 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$35.60 USDC (scales with deviation)."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 39.44,
+      "price": 0.7,
+      "confidence": 0.695,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 34% elapsed) \u2014 DOWN token at 0.700 deviates 0.195 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$39.44 USDC (scales with deviation)."
+    },
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 31.76,
+      "price": 0.65,
+      "confidence": 0.655,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 34% elapsed) \u2014 DOWN token at 0.650 deviates 0.155 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$31.76 USDC (scales with deviation)."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 40.4,
+      "price": 0.71,
+      "confidence": 0.7,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 34% elapsed) \u2014 DOWN token at 0.710 deviates 0.200 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$40.40 USDC (scales with deviation)."
+    },
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 29.84,
+      "price": 0.65,
+      "confidence": 0.645,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 34% elapsed) \u2014 DOWN token at 0.650 deviates 0.145 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$29.84 USDC (scales with deviation)."
+    },
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 35.6,
+      "price": 0.68,
+      "confidence": 0.675,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 34% elapsed) \u2014 DOWN token at 0.680 deviates 0.175 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$35.60 USDC (scales with deviation)."
+    },
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 35.6,
+      "price": 0.68,
+      "confidence": 0.675,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 34% elapsed) \u2014 DOWN token at 0.680 deviates 0.175 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$35.60 USDC (scales with deviation)."
+    },
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 26.96,
+      "price": 0.64,
+      "confidence": 0.63,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 35% elapsed) \u2014 DOWN token at 0.640 deviates 0.130 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$26.96 USDC (scales with deviation)."
+    },
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 25.04,
+      "price": 0.64,
+      "confidence": 0.62,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 35% elapsed) \u2014 DOWN token at 0.640 deviates 0.120 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$25.04 USDC (scales with deviation)."
+    },
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 20.24,
+      "price": 0.61,
+      "confidence": 0.595,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 35% elapsed) \u2014 DOWN token at 0.610 deviates 0.095 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$20.24 USDC (scales with deviation)."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 35.6,
+      "price": 0.69,
+      "confidence": 0.675,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 36% elapsed) \u2014 DOWN token at 0.690 deviates 0.175 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$35.60 USDC (scales with deviation)."
+    },
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 23.12,
+      "price": 0.62,
+      "confidence": 0.61,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 36% elapsed) \u2014 DOWN token at 0.620 deviates 0.110 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$23.12 USDC (scales with deviation)."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 41.36,
+      "price": 0.72,
+      "confidence": 0.705,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 36% elapsed) \u2014 DOWN token at 0.720 deviates 0.205 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$41.36 USDC (scales with deviation)."
+    },
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 24.08,
+      "price": 0.62,
+      "confidence": 0.615,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 36% elapsed) \u2014 DOWN token at 0.620 deviates 0.115 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$24.08 USDC (scales with deviation)."
+    },
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 29.84,
+      "price": 0.69,
+      "confidence": 0.645,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 36% elapsed) \u2014 DOWN token at 0.690 deviates 0.145 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$29.84 USDC (scales with deviation)."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 50.0,
+      "price": 0.78,
+      "confidence": 0.775,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 36% elapsed) \u2014 DOWN token at 0.780 deviates 0.275 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$50.00 USDC (scales with deviation)."
+    },
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 36.56,
+      "price": 0.71,
+      "confidence": 0.68,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 36% elapsed) \u2014 DOWN token at 0.710 deviates 0.180 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$36.56 USDC (scales with deviation)."
+    }
+  ]
 }
