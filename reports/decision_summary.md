@@ -1,18 +1,60 @@
 # Decision Engine Summary
 
-> **Updated:** `2026-03-04 02:05:11 AM ET` &nbsp;|&nbsp; All signals from the last 48 hours
+> **Updated:** `2026-03-04 02:10:12 AM ET` &nbsp;|&nbsp; All signals from the last 48 hours
 
 ## Signal Distribution
 | Trigger | Count |
 | -------------------- | ----- |
 | `directional_90pct` | 175 |
 | `directional_80pct` | 174 |
-| `trend_follow` | 137 |
-| `directional_60pct` | 58 |
+| `trend_follow` | 149 |
+| `directional_60pct` | 88 |
 
 ## Signal Log
 | Time (ET) | Symbol | Slug | Outcome | Trigger | Confidence | P(UP) | Bucket | Elapsed% | Reasoning |
 | --------------- | ------ | ----------------- | ------- | -------------------- | ---------- | ----- | -------------- | -------- | -------------------------------------------------- |
+| `2026-03-04 02:10 AM ET` | SOL | sol-updown-15m | **DOWN** | `trend_follow` | 0.825 | 78.6% | HighVol+Trend | 67.0% | TREND FOLLOW (HighVol+Trend, 67% elapsed) — DOWN token at 0.180 deviates 0.325 from 0.50. Momentum continuation strategy |
+| `2026-03-04 02:10 AM ET` | SOL | sol-updown-15m | **UP** | `trend_follow` | 0.825 | 78.6% | HighVol+Trend | 67.0% | TREND FOLLOW (HighVol+Trend, 67% elapsed) — UP token at 0.830 deviates 0.325 from 0.50. Momentum continuation strategy:  |
+| `2026-03-04 02:10 AM ET` | SOL | sol-updown-15m | **DOWN** | `trend_follow` | 0.885 | 83.9% | HighVol+Trend | 66.8% | TREND FOLLOW (HighVol+Trend, 67% elapsed) — DOWN token at 0.130 deviates 0.385 from 0.50. Momentum continuation strategy |
+| `2026-03-04 02:10 AM ET` | SOL | sol-updown-15m | **UP** | `trend_follow` | 0.885 | 83.9% | HighVol+Trend | 66.8% | TREND FOLLOW (HighVol+Trend, 67% elapsed) — UP token at 0.900 deviates 0.385 from 0.50. Momentum continuation strategy:  |
+| `2026-03-04 02:09 AM ET` | SOL | sol-updown-15m | **DOWN** | `trend_follow` | 0.865 | 82.1% | HighVol+Trend | 66.5% | TREND FOLLOW (HighVol+Trend, 67% elapsed) — DOWN token at 0.140 deviates 0.365 from 0.50. Momentum continuation strategy |
+| `2026-03-04 02:09 AM ET` | SOL | sol-updown-15m | **UP** | `trend_follow` | 0.865 | 82.1% | HighVol+Trend | 66.5% | TREND FOLLOW (HighVol+Trend, 67% elapsed) — UP token at 0.870 deviates 0.365 from 0.50. Momentum continuation strategy:  |
+| `2026-03-04 02:09 AM ET` | SOL | sol-updown-15m | **DOWN** | `trend_follow` | 0.910 | 86.1% | HighVol+Trend | 66.3% | TREND FOLLOW (HighVol+Trend, 66% elapsed) — DOWN token at 0.110 deviates 0.410 from 0.50. Momentum continuation strategy |
+| `2026-03-04 02:09 AM ET` | SOL | sol-updown-15m | **UP** | `trend_follow` | 0.910 | 86.1% | HighVol+Trend | 66.3% | TREND FOLLOW (HighVol+Trend, 66% elapsed) — UP token at 0.930 deviates 0.410 from 0.50. Momentum continuation strategy:  |
+| `2026-03-04 02:09 AM ET` | SOL | sol-updown-15m | **UP** | `trend_follow` | 0.890 | 84.3% | HighVol+Trend | 66.1% | TREND FOLLOW (HighVol+Trend, 66% elapsed) — UP token at 0.990 deviates 0.390 from 0.50. Momentum continuation strategy:  |
+| `2026-03-04 02:09 AM ET` | SOL | sol-updown-15m | **DOWN** | `trend_follow` | 0.895 | 84.8% | HighVol+Trend | 65.9% | TREND FOLLOW (HighVol+Trend, 66% elapsed) — DOWN token at 0.990 deviates 0.395 from 0.50. Momentum continuation strategy |
+| `2026-03-04 02:09 AM ET` | SOL | sol-updown-15m | **UP** | `trend_follow` | 0.895 | 84.8% | HighVol+Trend | 65.9% | TREND FOLLOW (HighVol+Trend, 66% elapsed) — UP token at 0.990 deviates 0.395 from 0.50. Momentum continuation strategy:  |
+| `2026-03-04 02:09 AM ET` | SOL | sol-updown-15m | **UP** | `directional_60pct` | 0.697 | 69.7% | LowVol+Trend | 63.2% | DIRECTIONAL at 60pct (63% elapsed) — P(UP)=0.697 gives edge=0.197 toward UP. Bucket=LowVol+Trend (RV60=3.50773, Eff60=0. |
+| `2026-03-04 02:09 AM ET` | SOL | sol-updown-15m | **UP** | `directional_60pct` | 0.697 | 69.7% | LowVol+Trend | 63.0% | DIRECTIONAL at 60pct (63% elapsed) — P(UP)=0.697 gives edge=0.197 toward UP. Bucket=LowVol+Trend (RV60=3.50773, Eff60=0. |
+| `2026-03-04 02:09 AM ET` | SOL | sol-updown-15m | **UP** | `directional_60pct` | 0.718 | 71.8% | LowVol+Trend | 62.7% | DIRECTIONAL at 60pct (63% elapsed) — P(UP)=0.718 gives edge=0.218 toward UP. Bucket=LowVol+Trend (RV60=3.18442, Eff60=0. |
+| `2026-03-04 02:09 AM ET` | SOL | sol-updown-15m | **UP** | `directional_60pct` | 0.731 | 73.1% | LowVol+Trend | 62.5% | DIRECTIONAL at 60pct (63% elapsed) — P(UP)=0.731 gives edge=0.231 toward UP. Bucket=LowVol+Trend (RV60=3.19298, Eff60=0. |
+| `2026-03-04 02:09 AM ET` | SOL | sol-updown-15m | **UP** | `directional_60pct` | 0.748 | 74.8% | LowVol+Trend | 62.3% | DIRECTIONAL at 60pct (62% elapsed) — P(UP)=0.748 gives edge=0.248 toward UP. Bucket=LowVol+Trend (RV60=3.20428, Eff60=0. |
+| `2026-03-04 02:09 AM ET` | SOL | sol-updown-15m | **UP** | `directional_60pct` | 0.752 | 75.2% | LowVol+Trend | 62.1% | DIRECTIONAL at 60pct (62% elapsed) — P(UP)=0.752 gives edge=0.252 toward UP. Bucket=LowVol+Trend (RV60=2.66115, Eff60=0. |
+| `2026-03-04 02:09 AM ET` | SOL | sol-updown-15m | **UP** | `directional_60pct` | 0.752 | 75.2% | LowVol+Trend | 61.9% | DIRECTIONAL at 60pct (62% elapsed) — P(UP)=0.752 gives edge=0.252 toward UP. Bucket=LowVol+Trend (RV60=2.66115, Eff60=0. |
+| `2026-03-04 02:09 AM ET` | SOL | sol-updown-15m | **UP** | `directional_60pct` | 0.744 | 74.4% | LowVol+Trend | 61.6% | DIRECTIONAL at 60pct (62% elapsed) — P(UP)=0.744 gives edge=0.244 toward UP. Bucket=LowVol+Trend (RV60=2.66112, Eff60=0. |
+| `2026-03-04 02:09 AM ET` | SOL | sol-updown-15m | **UP** | `directional_60pct` | 0.760 | 76.0% | LowVol+Trend | 61.4% | DIRECTIONAL at 60pct (61% elapsed) — P(UP)=0.760 gives edge=0.260 toward UP. Bucket=LowVol+Trend (RV60=2.58232, Eff60=0. |
+| `2026-03-04 02:09 AM ET` | SOL | sol-updown-15m | **UP** | `directional_60pct` | 0.744 | 74.4% | LowVol+Trend | 61.2% | DIRECTIONAL at 60pct (61% elapsed) — P(UP)=0.744 gives edge=0.244 toward UP. Bucket=LowVol+Trend (RV60=2.57064, Eff60=0. |
+| `2026-03-04 02:09 AM ET` | SOL | sol-updown-15m | **DOWN** | `directional_60pct` | 0.718 | 28.2% | LowVol+Trend | 61.0% | DIRECTIONAL at 60pct (61% elapsed) — P(UP)=0.282 gives edge=0.218 toward DOWN. Bucket=LowVol+Trend (RV60=2.27798, Eff60= |
+| `2026-03-04 02:09 AM ET` | SOL | sol-updown-15m | **UP** | `directional_60pct` | 0.664 | 66.4% | LowVol+Trend | 60.7% | DIRECTIONAL at 60pct (61% elapsed) — P(UP)=0.664 gives edge=0.164 toward UP. Bucket=LowVol+Trend (RV60=2.10199, Eff60=0. |
+| `2026-03-04 02:09 AM ET` | SOL | sol-updown-15m | **UP** | `directional_60pct` | 0.664 | 66.4% | LowVol+Trend | 60.5% | DIRECTIONAL at 60pct (61% elapsed) — P(UP)=0.664 gives edge=0.164 toward UP. Bucket=LowVol+Trend (RV60=2.10199, Eff60=0. |
+| `2026-03-04 02:09 AM ET` | SOL | sol-updown-15m | **UP** | `directional_60pct` | 0.664 | 66.4% | LowVol+Trend | 60.3% | DIRECTIONAL at 60pct (60% elapsed) — P(UP)=0.664 gives edge=0.164 toward UP. Bucket=LowVol+Trend (RV60=1.83278, Eff60=0. |
+| `2026-03-04 02:09 AM ET` | SOL | sol-updown-15m | **UP** | `directional_60pct` | 0.647 | 64.7% | LowVol+Trend | 60.1% | DIRECTIONAL at 60pct (60% elapsed) — P(UP)=0.647 gives edge=0.147 toward UP. Bucket=LowVol+Trend (RV60=1.82743, Eff60=0. |
+| `2026-03-04 02:08 AM ET` | SOL | sol-updown-15m | **UP** | `directional_60pct` | 0.672 | 67.2% | LowVol+Trend | 59.8% | DIRECTIONAL at 60pct (60% elapsed) — P(UP)=0.672 gives edge=0.172 toward UP. Bucket=LowVol+Trend (RV60=1.83555, Eff60=0. |
+| `2026-03-04 02:08 AM ET` | SOL | sol-updown-15m | **UP** | `directional_60pct` | 0.676 | 67.6% | LowVol+Trend | 59.6% | DIRECTIONAL at 60pct (60% elapsed) — P(UP)=0.676 gives edge=0.176 toward UP. Bucket=LowVol+Trend (RV60=1.76289, Eff60=0. |
+| `2026-03-04 02:08 AM ET` | SOL | sol-updown-15m | **UP** | `directional_60pct` | 0.676 | 67.6% | LowVol+Trend | 59.4% | DIRECTIONAL at 60pct (59% elapsed) — P(UP)=0.676 gives edge=0.176 toward UP. Bucket=LowVol+Trend (RV60=1.76289, Eff60=0. |
+| `2026-03-04 02:08 AM ET` | SOL | sol-updown-15m | **DOWN** | `directional_60pct` | 0.643 | 35.7% | LowVol+Trend | 59.2% | DIRECTIONAL at 60pct (59% elapsed) — P(UP)=0.357 gives edge=0.143 toward DOWN. Bucket=LowVol+Trend (RV60=1.76820, Eff60= |
+| `2026-03-04 02:08 AM ET` | SOL | sol-updown-15m | **UP** | `directional_60pct` | 0.630 | 63.0% | LowVol+Trend | 59.0% | DIRECTIONAL at 60pct (59% elapsed) — P(UP)=0.630 gives edge=0.130 toward UP. Bucket=LowVol+Trend (RV60=1.53165, Eff60=0. |
+| `2026-03-04 02:08 AM ET` | SOL | sol-updown-15m | **UP** | `directional_60pct` | 0.630 | 63.0% | LowVol+Trend | 58.7% | DIRECTIONAL at 60pct (59% elapsed) — P(UP)=0.630 gives edge=0.130 toward UP. Bucket=LowVol+Trend (RV60=1.53165, Eff60=0. |
+| `2026-03-04 02:08 AM ET` | SOL | sol-updown-15m | **UP** | `directional_60pct` | 0.608 | 60.8% | LowVol+Range | 58.5% | DIRECTIONAL at 60pct (59% elapsed) — P(UP)=0.608 gives edge=0.108 toward UP. Bucket=LowVol+Range (RV60=1.50390, Eff60=0. |
+| `2026-03-04 02:08 AM ET` | SOL | sol-updown-15m | **UP** | `directional_60pct` | 0.622 | 62.2% | LowVol+Trend | 58.3% | DIRECTIONAL at 60pct (58% elapsed) — P(UP)=0.622 gives edge=0.122 toward UP. Bucket=LowVol+Trend (RV60=1.47533, Eff60=0. |
+| `2026-03-04 02:08 AM ET` | SOL | sol-updown-15m | **DOWN** | `directional_60pct` | 0.626 | 37.4% | LowVol+Trend | 58.1% | DIRECTIONAL at 60pct (58% elapsed) — P(UP)=0.374 gives edge=0.126 toward DOWN. Bucket=LowVol+Trend (RV60=1.48805, Eff60= |
+| `2026-03-04 02:08 AM ET` | SOL | sol-updown-15m | **UP** | `directional_60pct` | 0.622 | 62.2% | LowVol+Trend | 57.8% | DIRECTIONAL at 60pct (58% elapsed) — P(UP)=0.622 gives edge=0.122 toward UP. Bucket=LowVol+Trend (RV60=1.27083, Eff60=0. |
+| `2026-03-04 02:08 AM ET` | SOL | sol-updown-15m | **UP** | `directional_60pct` | 0.622 | 62.2% | LowVol+Trend | 57.6% | DIRECTIONAL at 60pct (58% elapsed) — P(UP)=0.622 gives edge=0.122 toward UP. Bucket=LowVol+Trend (RV60=1.27083, Eff60=0. |
+| `2026-03-04 02:08 AM ET` | SOL | sol-updown-15m | **DOWN** | `directional_60pct` | 0.626 | 37.4% | LowVol+Trend | 57.4% | DIRECTIONAL at 60pct (57% elapsed) — P(UP)=0.374 gives edge=0.126 toward DOWN. Bucket=LowVol+Trend (RV60=1.28557, Eff60= |
+| `2026-03-04 02:08 AM ET` | SOL | sol-updown-15m | **UP** | `directional_60pct` | 0.618 | 61.8% | LowVol+Trend | 57.2% | DIRECTIONAL at 60pct (57% elapsed) — P(UP)=0.618 gives edge=0.118 toward UP. Bucket=LowVol+Trend (RV60=1.03191, Eff60=0. |
+| `2026-03-04 02:08 AM ET` | SOL | sol-updown-15m | **DOWN** | `directional_60pct` | 0.584 | 41.6% | LowVol+Trend | 56.9% | DIRECTIONAL at 60pct (57% elapsed) — P(UP)=0.416 gives edge=0.084 toward DOWN. Bucket=LowVol+Trend (RV60=0.91866, Eff60= |
+| `2026-03-04 02:08 AM ET` | SOL | sol-updown-15m | **DOWN** | `directional_60pct` | 0.584 | 41.6% | LowVol+Trend | 56.7% | DIRECTIONAL at 60pct (57% elapsed) — P(UP)=0.416 gives edge=0.084 toward DOWN. Bucket=LowVol+Trend (RV60=0.91866, Eff60= |
+| `2026-03-04 02:06 AM ET` | ETH | eth-updown-15m | **UP** | `trend_follow` | 0.780 | 74.6% | HighVol+Trend | 42.1% | TREND FOLLOW (HighVol+Trend, 42% elapsed) — UP token at 0.990 deviates 0.280 from 0.50. Momentum continuation strategy:  |
 | `2026-03-04 02:01 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.580 | 43.0% | HighVol+Trend | 7.3% | TREND FOLLOW (HighVol+Trend, 7% elapsed) — DOWN token at 0.410 deviates 0.080 from 0.50. Momentum continuation strategy: |
 | `2026-03-04 02:00 AM ET` | BTC | btc-updown-15m | **DOWN** | `trend_follow` | 0.585 | 57.5% | HighVol+Trend | 6.7% | TREND FOLLOW (HighVol+Trend, 7% elapsed) — DOWN token at 0.420 deviates 0.085 from 0.50. Momentum continuation strategy: |
 | `2026-03-04 02:00 AM ET` | BTC | btc-updown-15m | **UP** | `trend_follow` | 0.585 | 57.5% | HighVol+Trend | 6.7% | TREND FOLLOW (HighVol+Trend, 7% elapsed) — UP token at 0.590 deviates 0.085 from 0.50. Momentum continuation strategy: b |

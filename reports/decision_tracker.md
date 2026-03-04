@@ -1,6 +1,6 @@
 # Decision Tracker
 
-> **Updated:** `2026-03-04 02:05:11 AM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
+> **Updated:** `2026-03-04 02:10:12 AM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
 
 ## Summary
 | Total | Wins | Losses | ARB | Pending | Win Rate | Total P&L |
@@ -10,6 +10,9 @@
 ## Trade Log
 | Entry Time (ET) | Symbol | Slug | Outcome | Trigger | Entry Price | Size (USDC) | Mode | Resolved (ET) | Winner | Result | P&L | Reasoning |
 | --------------- | ------ | ----------------- | ------- | -------------------- | ----------- | ----------- | ----- | -------------- | ------ | -------- | --------- | -------------------------------------------------- |
+| `2026-03-04 02:08 AM ET` | SOL | sol-updown-15m | **UP** | `directional_60pct` | 0.6500 | $13.29 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 60pct (57% elapsed) — P(UP)=0.618 gives edge=0.118 toward UP. Bucket=LowVol+Trend (RV |
+| `2026-03-04 02:08 AM ET` | SOL | sol-updown-15m | **DOWN** | `directional_60pct` | 0.9900 | $10.06 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 60pct (57% elapsed) — P(UP)=0.416 gives edge=0.084 toward DOWN. Bucket=LowVol+Trend ( |
+| `2026-03-04 02:06 AM ET` | ETH | eth-updown-15m | **UP** | `trend_follow` | 0.9900 | $28.26 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 42% elapsed) — UP token at 0.990 deviates 0.280 from 0.50. Momentum con |
 | `2026-03-04 02:01 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.4100 | $16.18 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 7% elapsed) — DOWN token at 0.410 deviates 0.080 from 0.50. Momentum co |
 | `2026-03-04 02:01 AM ET` | BTC | btc-updown-15m | **DOWN** | `trend_follow` | 0.4200 | $18.32 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 7% elapsed) — DOWN token at 0.420 deviates 0.085 from 0.50. Momentum co |
 | `2026-03-04 02:01 AM ET` | BTC | btc-updown-15m | **UP** | `trend_follow` | 0.5900 | $18.32 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 7% elapsed) — UP token at 0.590 deviates 0.085 from 0.50. Momentum cont |
