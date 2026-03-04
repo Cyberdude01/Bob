@@ -1,6 +1,6 @@
 # Decision Tracker
 
-> **Updated:** `2026-03-04 02:00:11 AM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
+> **Updated:** `2026-03-04 02:05:11 AM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
 
 ## Summary
 | Total | Wins | Losses | ARB | Pending | Win Rate | Total P&L |
@@ -10,6 +10,9 @@
 ## Trade Log
 | Entry Time (ET) | Symbol | Slug | Outcome | Trigger | Entry Price | Size (USDC) | Mode | Resolved (ET) | Winner | Result | P&L | Reasoning |
 | --------------- | ------ | ----------------- | ------- | -------------------- | ----------- | ----------- | ----- | -------------- | ------ | -------- | --------- | -------------------------------------------------- |
+| `2026-03-04 02:01 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.4100 | $16.18 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 7% elapsed) — DOWN token at 0.410 deviates 0.080 from 0.50. Momentum co |
+| `2026-03-04 02:01 AM ET` | BTC | btc-updown-15m | **DOWN** | `trend_follow` | 0.4200 | $18.32 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 7% elapsed) — DOWN token at 0.420 deviates 0.085 from 0.50. Momentum co |
+| `2026-03-04 02:01 AM ET` | BTC | btc-updown-15m | **UP** | `trend_follow` | 0.5900 | $18.32 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 7% elapsed) — UP token at 0.590 deviates 0.085 from 0.50. Momentum cont |
 | `2026-03-04 01:57 AM ET` | ETH | eth-updown-15m | **UP** | `directional_80pct` | 0.9900 | $35.87 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 80pct (81% elapsed) — P(UP)=0.853 gives edge=0.353 toward UP. Bucket=HighVol+Range (R |
 | `2026-03-04 01:56 AM ET` | BTC | btc-updown-15m | **UP** | `directional_80pct` | 0.0600 | $44.77 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 80pct (78% elapsed) — P(UP)=0.946 gives edge=0.446 toward UP. Bucket=HighVol+Trend (R |
 | `2026-03-04 01:56 AM ET` | XRP | xrp-updown-15m | **DOWN** | `directional_80pct` | 0.8600 | $35.74 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 80pct (77% elapsed) — P(UP)=0.149 gives edge=0.351 toward DOWN. Bucket=HighVol+Trend  |

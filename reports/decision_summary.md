@@ -1,18 +1,21 @@
 # Decision Engine Summary
 
-> **Updated:** `2026-03-04 02:00:11 AM ET` &nbsp;|&nbsp; All signals from the last 48 hours
+> **Updated:** `2026-03-04 02:05:11 AM ET` &nbsp;|&nbsp; All signals from the last 48 hours
 
 ## Signal Distribution
 | Trigger | Count |
 | -------------------- | ----- |
 | `directional_90pct` | 175 |
 | `directional_80pct` | 174 |
-| `trend_follow` | 134 |
+| `trend_follow` | 137 |
 | `directional_60pct` | 58 |
 
 ## Signal Log
 | Time (ET) | Symbol | Slug | Outcome | Trigger | Confidence | P(UP) | Bucket | Elapsed% | Reasoning |
 | --------------- | ------ | ----------------- | ------- | -------------------- | ---------- | ----- | -------------- | -------- | -------------------------------------------------- |
+| `2026-03-04 02:01 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.580 | 43.0% | HighVol+Trend | 7.3% | TREND FOLLOW (HighVol+Trend, 7% elapsed) — DOWN token at 0.410 deviates 0.080 from 0.50. Momentum continuation strategy: |
+| `2026-03-04 02:00 AM ET` | BTC | btc-updown-15m | **DOWN** | `trend_follow` | 0.585 | 57.5% | HighVol+Trend | 6.7% | TREND FOLLOW (HighVol+Trend, 7% elapsed) — DOWN token at 0.420 deviates 0.085 from 0.50. Momentum continuation strategy: |
+| `2026-03-04 02:00 AM ET` | BTC | btc-updown-15m | **UP** | `trend_follow` | 0.585 | 57.5% | HighVol+Trend | 6.7% | TREND FOLLOW (HighVol+Trend, 7% elapsed) — UP token at 0.590 deviates 0.085 from 0.50. Momentum continuation strategy: b |
 | `2026-03-04 01:58 AM ET` | XRP | xrp-updown-15m | **UP** | `directional_90pct` | 0.819 | 76.9% | HighVol+Range | 93.3% | DIRECTIONAL at 90pct (93% elapsed) — P(UP)=0.819 gives edge=0.319 toward UP. Bucket=HighVol+Range (RV60=12.46384, Eff60= |
 | `2026-03-04 01:58 AM ET` | SOL | sol-updown-15m | **DOWN** | `directional_90pct` | 0.878 | 18.1% | HighVol+Range | 93.3% | DIRECTIONAL at 90pct (93% elapsed) — P(UP)=0.122 gives edge=0.378 toward DOWN. Bucket=HighVol+Range (RV60=28.61719, Eff6 |
 | `2026-03-04 01:58 AM ET` | ETH | eth-updown-15m | **UP** | `directional_90pct` | 0.879 | 81.9% | HighVol+Range | 93.3% | DIRECTIONAL at 90pct (93% elapsed) — P(UP)=0.879 gives edge=0.379 toward UP. Bucket=HighVol+Range (RV60=27.21538, Eff60= |
