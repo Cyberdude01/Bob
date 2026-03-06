@@ -1,6 +1,6 @@
 # Decision Tracker
 
-> **Updated:** `2026-03-05 07:11:34 PM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
+> **Updated:** `2026-03-05 07:16:36 PM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
 
 ## Summary
 | Total | Resolved | Wins | Losses | ARB | Pending | Win Rate | Realised P&L |
