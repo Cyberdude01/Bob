@@ -1,28 +1,6 @@
 {
-  "updated": "2026-03-06 09:31:21 AM ET",
+  "updated": "2026-03-06 09:36:22 AM ET",
   "data": [
-    {
-      "symbol": "SOL",
-      "slug": "sol-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 14.85,
-      "price": 0.7,
-      "confidence": 0.648,
-      "trigger": "directional_90pct",
-      "reason": "DIRECTIONAL at 90pct (89% elapsed) \u2014 P(UP)=0.648 gives edge=0.148 toward UP. Bucket=HighVol+Range (RV60=4.11916, Eff60=0.003). Size scales with edge: $14.85 USDC @ conf=0.648."
-    },
-    {
-      "symbol": "SOL",
-      "slug": "sol-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 12.58,
-      "price": 0.5,
-      "confidence": 0.61,
-      "trigger": "directional_90pct",
-      "reason": "DIRECTIONAL at 90pct (89% elapsed) \u2014 P(UP)=0.610 gives edge=0.110 toward UP. Bucket=HighVol+Range (RV60=4.12048, Eff60=0.007). Size scales with edge: $12.58 USDC @ conf=0.610."
-    },
     {
       "symbol": "SOL",
       "slug": "sol-updown-15m",
@@ -220,6 +198,28 @@
       "confidence": 0.842,
       "trigger": "directional_90pct",
       "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.158 gives edge=0.342 toward DOWN. Bucket=HighVol+Range (RV60=5.57201, Eff60=0.016). Size scales with edge: $14.85 USDC @ conf=0.842."
+    },
+    {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 14.85,
+      "price": 0.99,
+      "confidence": 0.6,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 11% elapsed) \u2014 UP token at 0.990 deviates 0.100 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$14.85 USDC (scales with deviation)."
+    },
+    {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 14.85,
+      "price": 0.99,
+      "confidence": 0.6,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 11% elapsed) \u2014 DOWN token at 0.990 deviates 0.100 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$14.85 USDC (scales with deviation)."
     }
   ]
 }
