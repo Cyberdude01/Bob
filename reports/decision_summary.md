@@ -1,18 +1,74 @@
 # Decision Engine Summary
 
-> **Updated:** `2026-03-06 09:26:19 AM ET` &nbsp;|&nbsp; All signals from the last 48 hours
+> **Updated:** `2026-03-06 09:31:21 AM ET` &nbsp;|&nbsp; All signals from the last 48 hours
 
 ## Signal Distribution
 | Trigger | Count |
 | -------------------- | ----- |
 | `trend_follow` | 255 |
+| `directional_90pct` | 230 |
+| `directional_80pct` | 228 |
 | `directional_60pct` | 211 |
-| `directional_90pct` | 201 |
-| `directional_80pct` | 201 |
 
 ## Signal Log
 | Time (ET) | Symbol | Slug | Outcome | Trigger | Confidence | P(UP) | Bucket | Elapsed% | Reasoning |
 | --------------- | ------ | ----------------- | ------- | -------------------- | ---------- | ----- | -------------- | -------- | -------------------------------------------------- |
+| `2026-03-06 09:28 AM ET` | SOL | sol-updown-15m | **DOWN** | `directional_90pct` | 0.842 | 21.2% | HighVol+Range | 93.3% | DIRECTIONAL at 90pct (93% elapsed) — P(UP)=0.158 gives edge=0.342 toward DOWN. Bucket=HighVol+Range (RV60=5.57201, Eff60 |
+| `2026-03-06 09:28 AM ET` | SOL | sol-updown-15m | **UP** | `directional_90pct` | 0.965 | 89.2% | HighVol+Trend | 93.1% | DIRECTIONAL at 90pct (93% elapsed) — P(UP)=0.965 gives edge=0.465 toward UP. Bucket=HighVol+Trend (RV60=4.18211, Eff60=0 |
+| `2026-03-06 09:28 AM ET` | SOL | sol-updown-15m | **UP** | `directional_90pct` | 0.965 | 89.2% | HighVol+Trend | 92.9% | DIRECTIONAL at 90pct (93% elapsed) — P(UP)=0.965 gives edge=0.465 toward UP. Bucket=HighVol+Trend (RV60=4.18211, Eff60=0 |
+| `2026-03-06 09:28 AM ET` | SOL | sol-updown-15m | **UP** | `directional_90pct` | 0.846 | 79.1% | HighVol+Range | 92.6% | DIRECTIONAL at 90pct (93% elapsed) — P(UP)=0.846 gives edge=0.346 toward UP. Bucket=HighVol+Range (RV60=4.16851, Eff60=0 |
+| `2026-03-06 09:28 AM ET` | SOL | sol-updown-15m | **UP** | `directional_90pct` | 0.815 | 76.6% | HighVol+Range | 92.4% | DIRECTIONAL at 90pct (92% elapsed) — P(UP)=0.815 gives edge=0.315 toward UP. Bucket=HighVol+Range (RV60=4.16187, Eff60=0 |
+| `2026-03-06 09:28 AM ET` | SOL | sol-updown-15m | **UP** | `directional_90pct` | 0.808 | 75.9% | HighVol+Range | 92.2% | DIRECTIONAL at 90pct (92% elapsed) — P(UP)=0.808 gives edge=0.308 toward UP. Bucket=HighVol+Range (RV60=4.16024, Eff60=0 |
+| `2026-03-06 09:28 AM ET` | SOL | sol-updown-15m | **UP** | `directional_90pct` | 0.713 | 67.9% | HighVol+Range | 92.0% | DIRECTIONAL at 90pct (92% elapsed) — P(UP)=0.713 gives edge=0.213 toward UP. Bucket=HighVol+Range (RV60=4.14093, Eff60=0 |
+| `2026-03-06 09:28 AM ET` | SOL | sol-updown-15m | **UP** | `directional_90pct` | 0.861 | 80.4% | HighVol+Trend | 91.8% | DIRECTIONAL at 90pct (92% elapsed) — P(UP)=0.861 gives edge=0.361 toward UP. Bucket=HighVol+Trend (RV60=4.19998, Eff60=0 |
+| `2026-03-06 09:28 AM ET` | SOL | sol-updown-15m | **UP** | `directional_90pct` | 0.861 | 80.4% | HighVol+Trend | 91.5% | DIRECTIONAL at 90pct (92% elapsed) — P(UP)=0.861 gives edge=0.361 toward UP. Bucket=HighVol+Trend (RV60=4.19998, Eff60=0 |
+| `2026-03-06 09:28 AM ET` | SOL | sol-updown-15m | **UP** | `directional_90pct` | 0.871 | 81.2% | HighVol+Trend | 91.3% | DIRECTIONAL at 90pct (91% elapsed) — P(UP)=0.871 gives edge=0.371 toward UP. Bucket=HighVol+Trend (RV60=4.20152, Eff60=0 |
+| `2026-03-06 09:28 AM ET` | SOL | sol-updown-15m | **UP** | `directional_90pct` | 0.789 | 74.3% | HighVol+Range | 91.1% | DIRECTIONAL at 90pct (91% elapsed) — P(UP)=0.789 gives edge=0.289 toward UP. Bucket=HighVol+Range (RV60=4.01336, Eff60=0 |
+| `2026-03-06 09:28 AM ET` | SOL | sol-updown-15m | **DOWN** | `directional_90pct` | 0.719 | 31.5% | HighVol+Trend | 90.9% | DIRECTIONAL at 90pct (91% elapsed) — P(UP)=0.281 gives edge=0.219 toward DOWN. Bucket=HighVol+Trend (RV60=4.00491, Eff60 |
+| `2026-03-06 09:28 AM ET` | SOL | sol-updown-15m | **DOWN** | `directional_90pct` | 0.719 | 31.5% | HighVol+Trend | 90.6% | DIRECTIONAL at 90pct (91% elapsed) — P(UP)=0.281 gives edge=0.219 toward DOWN. Bucket=HighVol+Trend (RV60=4.00491, Eff60 |
+| `2026-03-06 09:28 AM ET` | SOL | sol-updown-15m | **UP** | `directional_90pct` | 0.652 | 62.8% | HighVol+Range | 90.4% | DIRECTIONAL at 90pct (90% elapsed) — P(UP)=0.652 gives edge=0.152 toward UP. Bucket=HighVol+Range (RV60=3.91322, Eff60=0 |
+| `2026-03-06 09:28 AM ET` | SOL | sol-updown-15m | **DOWN** | `directional_90pct` | 0.657 | 36.8% | HighVol+Trend | 90.2% | DIRECTIONAL at 90pct (90% elapsed) — P(UP)=0.343 gives edge=0.157 toward DOWN. Bucket=HighVol+Trend (RV60=3.91143, Eff60 |
+| `2026-03-06 09:28 AM ET` | SOL | sol-updown-15m | **UP** | `directional_90pct` | 0.610 | 59.3% | HighVol+Range | 90.0% | DIRECTIONAL at 90pct (90% elapsed) — P(UP)=0.610 gives edge=0.110 toward UP. Bucket=HighVol+Range (RV60=4.13814, Eff60=0 |
+| `2026-03-06 09:28 AM ET` | SOL | sol-updown-15m | **UP** | `directional_90pct` | 0.622 | 60.2% | HighVol+Range | 89.7% | DIRECTIONAL at 90pct (90% elapsed) — P(UP)=0.622 gives edge=0.122 toward UP. Bucket=HighVol+Range (RV60=4.13973, Eff60=0 |
+| `2026-03-06 09:28 AM ET` | SOL | sol-updown-15m | **UP** | `directional_90pct` | 0.622 | 60.2% | HighVol+Range | 89.5% | DIRECTIONAL at 90pct (90% elapsed) — P(UP)=0.622 gives edge=0.122 toward UP. Bucket=HighVol+Range (RV60=4.13973, Eff60=0 |
+| `2026-03-06 09:28 AM ET` | SOL | sol-updown-15m | **UP** | `directional_90pct` | 0.610 | 59.3% | HighVol+Range | 89.3% | DIRECTIONAL at 90pct (89% elapsed) — P(UP)=0.610 gives edge=0.110 toward UP. Bucket=HighVol+Range (RV60=4.12048, Eff60=0 |
+| `2026-03-06 09:28 AM ET` | SOL | sol-updown-15m | **UP** | `directional_90pct` | 0.648 | 62.5% | HighVol+Range | 89.1% | DIRECTIONAL at 90pct (89% elapsed) — P(UP)=0.648 gives edge=0.148 toward UP. Bucket=HighVol+Range (RV60=4.11916, Eff60=0 |
+| `2026-03-06 09:28 AM ET` | SOL | sol-updown-15m | **UP** | `directional_90pct` | 0.648 | 62.5% | HighVol+Range | 88.9% | DIRECTIONAL at 90pct (89% elapsed) — P(UP)=0.648 gives edge=0.148 toward UP. Bucket=HighVol+Range (RV60=4.11916, Eff60=0 |
+| `2026-03-06 09:28 AM ET` | SOL | sol-updown-15m | **UP** | `directional_90pct` | 0.667 | 64.1% | HighVol+Range | 88.6% | DIRECTIONAL at 90pct (89% elapsed) — P(UP)=0.667 gives edge=0.167 toward UP. Bucket=HighVol+Range (RV60=4.12811, Eff60=0 |
+| `2026-03-06 09:28 AM ET` | SOL | sol-updown-15m | **UP** | `directional_90pct` | 0.641 | 61.8% | HighVol+Range | 88.4% | DIRECTIONAL at 90pct (88% elapsed) — P(UP)=0.641 gives edge=0.141 toward UP. Bucket=HighVol+Range (RV60=4.12377, Eff60=0 |
+| `2026-03-06 09:28 AM ET` | SOL | sol-updown-15m | **UP** | `directional_90pct` | 0.603 | 58.6% | HighVol+Range | 88.0% | DIRECTIONAL at 90pct (88% elapsed) — P(UP)=0.603 gives edge=0.103 toward UP. Bucket=HighVol+Range (RV60=4.16818, Eff60=0 |
+| `2026-03-06 09:28 AM ET` | SOL | sol-updown-15m | **UP** | `directional_90pct` | 0.603 | 58.6% | HighVol+Range | 87.7% | DIRECTIONAL at 90pct (88% elapsed) — P(UP)=0.603 gives edge=0.103 toward UP. Bucket=HighVol+Range (RV60=4.16818, Eff60=0 |
+| `2026-03-06 09:28 AM ET` | SOL | sol-updown-15m | **UP** | `directional_90pct` | 0.587 | 57.4% | HighVol+Range | 87.5% | DIRECTIONAL at 90pct (88% elapsed) — P(UP)=0.587 gives edge=0.087 toward UP. Bucket=HighVol+Range (RV60=4.19035, Eff60=0 |
+| `2026-03-06 09:28 AM ET` | SOL | sol-updown-15m | **UP** | `directional_90pct` | 0.587 | 57.4% | HighVol+Range | 87.3% | DIRECTIONAL at 90pct (87% elapsed) — P(UP)=0.587 gives edge=0.087 toward UP. Bucket=HighVol+Range (RV60=4.19035, Eff60=0 |
+| `2026-03-06 09:28 AM ET` | SOL | sol-updown-15m | **UP** | `directional_90pct` | 0.603 | 58.6% | HighVol+Range | 87.1% | DIRECTIONAL at 90pct (87% elapsed) — P(UP)=0.603 gives edge=0.103 toward UP. Bucket=HighVol+Range (RV60=4.19205, Eff60=0 |
+| `2026-03-06 09:28 AM ET` | SOL | sol-updown-15m | **UP** | `directional_90pct` | 0.625 | 60.6% | HighVol+Range | 86.8% | DIRECTIONAL at 90pct (87% elapsed) — P(UP)=0.625 gives edge=0.125 toward UP. Bucket=HighVol+Range (RV60=4.17924, Eff60=0 |
+| `2026-03-06 09:27 AM ET` | SOL | sol-updown-15m | **DOWN** | `directional_80pct` | 0.615 | 39.8% | HighVol+Range | 83.3% | DIRECTIONAL at 80pct (83% elapsed) — P(UP)=0.385 gives edge=0.115 toward DOWN. Bucket=HighVol+Range (RV60=3.99029, Eff60 |
+| `2026-03-06 09:27 AM ET` | SOL | sol-updown-15m | **UP** | `directional_80pct` | 0.594 | 58.3% | HighVol+Range | 82.4% | DIRECTIONAL at 80pct (82% elapsed) — P(UP)=0.594 gives edge=0.094 toward UP. Bucket=HighVol+Range (RV60=3.96144, Eff60=0 |
+| `2026-03-06 09:27 AM ET` | SOL | sol-updown-15m | **UP** | `directional_80pct` | 0.594 | 58.3% | HighVol+Range | 82.2% | DIRECTIONAL at 80pct (82% elapsed) — P(UP)=0.594 gives edge=0.094 toward UP. Bucket=HighVol+Range (RV60=3.96144, Eff60=0 |
+| `2026-03-06 09:27 AM ET` | SOL | sol-updown-15m | **UP** | `directional_80pct` | 0.648 | 63.1% | HighVol+Range | 82.0% | DIRECTIONAL at 80pct (82% elapsed) — P(UP)=0.648 gives edge=0.148 toward UP. Bucket=HighVol+Range (RV60=3.82864, Eff60=0 |
+| `2026-03-06 09:27 AM ET` | SOL | sol-updown-15m | **UP** | `directional_80pct` | 0.662 | 64.4% | HighVol+Range | 81.7% | DIRECTIONAL at 80pct (82% elapsed) — P(UP)=0.662 gives edge=0.162 toward UP. Bucket=HighVol+Range (RV60=3.83125, Eff60=0 |
+| `2026-03-06 09:27 AM ET` | SOL | sol-updown-15m | **UP** | `directional_80pct` | 0.662 | 64.4% | HighVol+Range | 81.5% | DIRECTIONAL at 80pct (82% elapsed) — P(UP)=0.662 gives edge=0.162 toward UP. Bucket=HighVol+Range (RV60=3.83125, Eff60=0 |
+| `2026-03-06 09:27 AM ET` | SOL | sol-updown-15m | **UP** | `directional_80pct` | 0.662 | 64.4% | HighVol+Range | 81.3% | DIRECTIONAL at 80pct (81% elapsed) — P(UP)=0.662 gives edge=0.162 toward UP. Bucket=HighVol+Range (RV60=3.81646, Eff60=0 |
+| `2026-03-06 09:27 AM ET` | SOL | sol-updown-15m | **UP** | `directional_80pct` | 0.644 | 62.8% | HighVol+Range | 81.1% | DIRECTIONAL at 80pct (81% elapsed) — P(UP)=0.644 gives edge=0.144 toward UP. Bucket=HighVol+Range (RV60=3.81320, Eff60=0 |
+| `2026-03-06 09:27 AM ET` | SOL | sol-updown-15m | **UP** | `directional_80pct` | 0.644 | 62.8% | HighVol+Range | 80.8% | DIRECTIONAL at 80pct (81% elapsed) — P(UP)=0.644 gives edge=0.144 toward UP. Bucket=HighVol+Range (RV60=3.81320, Eff60=0 |
+| `2026-03-06 09:27 AM ET` | SOL | sol-updown-15m | **UP** | `directional_80pct` | 0.619 | 60.6% | HighVol+Range | 80.6% | DIRECTIONAL at 80pct (81% elapsed) — P(UP)=0.619 gives edge=0.119 toward UP. Bucket=HighVol+Range (RV60=3.72830, Eff60=0 |
+| `2026-03-06 09:27 AM ET` | SOL | sol-updown-15m | **UP** | `directional_80pct` | 0.676 | 65.7% | HighVol+Range | 80.4% | DIRECTIONAL at 80pct (80% elapsed) — P(UP)=0.676 gives edge=0.176 toward UP. Bucket=HighVol+Range (RV60=3.73870, Eff60=0 |
+| `2026-03-06 09:27 AM ET` | SOL | sol-updown-15m | **UP** | `directional_80pct` | 0.702 | 67.9% | HighVol+Range | 80.2% | DIRECTIONAL at 80pct (80% elapsed) — P(UP)=0.702 gives edge=0.202 toward UP. Bucket=HighVol+Range (RV60=3.72828, Eff60=0 |
+| `2026-03-06 09:26 AM ET` | SOL | sol-updown-15m | **UP** | `directional_80pct` | 0.694 | 67.3% | HighVol+Range | 79.9% | DIRECTIONAL at 80pct (80% elapsed) — P(UP)=0.694 gives edge=0.194 toward UP. Bucket=HighVol+Range (RV60=3.77459, Eff60=0 |
+| `2026-03-06 09:26 AM ET` | SOL | sol-updown-15m | **UP** | `directional_80pct` | 0.694 | 67.3% | HighVol+Range | 79.7% | DIRECTIONAL at 80pct (80% elapsed) — P(UP)=0.694 gives edge=0.194 toward UP. Bucket=HighVol+Range (RV60=3.77459, Eff60=0 |
+| `2026-03-06 09:26 AM ET` | SOL | sol-updown-15m | **UP** | `directional_80pct` | 0.694 | 67.3% | HighVol+Range | 79.5% | DIRECTIONAL at 80pct (80% elapsed) — P(UP)=0.694 gives edge=0.194 toward UP. Bucket=HighVol+Range (RV60=3.58601, Eff60=0 |
+| `2026-03-06 09:26 AM ET` | SOL | sol-updown-15m | **UP** | `directional_80pct` | 0.734 | 70.8% | HighVol+Range | 79.3% | DIRECTIONAL at 80pct (79% elapsed) — P(UP)=0.734 gives edge=0.234 toward UP. Bucket=HighVol+Range (RV60=3.59497, Eff60=0 |
+| `2026-03-06 09:26 AM ET` | SOL | sol-updown-15m | **UP** | `directional_80pct` | 0.738 | 71.1% | HighVol+Range | 79.1% | DIRECTIONAL at 80pct (79% elapsed) — P(UP)=0.738 gives edge=0.238 toward UP. Bucket=HighVol+Range (RV60=3.59581, Eff60=0 |
+| `2026-03-06 09:26 AM ET` | SOL | sol-updown-15m | **UP** | `directional_80pct` | 0.851 | 81.2% | HighVol+Trend | 78.8% | DIRECTIONAL at 80pct (79% elapsed) — P(UP)=0.851 gives edge=0.351 toward UP. Bucket=HighVol+Trend (RV60=3.01965, Eff60=0 |
+| `2026-03-06 09:26 AM ET` | SOL | sol-updown-15m | **UP** | `directional_80pct` | 0.702 | 67.9% | HighVol+Range | 78.6% | DIRECTIONAL at 80pct (79% elapsed) — P(UP)=0.702 gives edge=0.202 toward UP. Bucket=HighVol+Range (RV60=3.00280, Eff60=0 |
+| `2026-03-06 09:26 AM ET` | SOL | sol-updown-15m | **UP** | `directional_80pct` | 0.694 | 67.3% | HighVol+Range | 78.4% | DIRECTIONAL at 80pct (78% elapsed) — P(UP)=0.694 gives edge=0.194 toward UP. Bucket=HighVol+Range (RV60=3.00065, Eff60=0 |
+| `2026-03-06 09:26 AM ET` | SOL | sol-updown-15m | **UP** | `directional_80pct` | 0.782 | 75.1% | HighVol+Trend | 78.2% | DIRECTIONAL at 80pct (78% elapsed) — P(UP)=0.782 gives edge=0.282 toward UP. Bucket=HighVol+Trend (RV60=2.94289, Eff60=0 |
+| `2026-03-06 09:26 AM ET` | SOL | sol-updown-15m | **DOWN** | `directional_80pct` | 0.777 | 25.4% | HighVol+Trend | 77.9% | DIRECTIONAL at 80pct (78% elapsed) — P(UP)=0.223 gives edge=0.277 toward DOWN. Bucket=HighVol+Trend (RV60=2.99562, Eff60 |
+| `2026-03-06 09:26 AM ET` | SOL | sol-updown-15m | **DOWN** | `directional_80pct` | 0.702 | 32.1% | HighVol+Range | 77.7% | DIRECTIONAL at 80pct (78% elapsed) — P(UP)=0.298 gives edge=0.202 toward DOWN. Bucket=HighVol+Range (RV60=2.90233, Eff60 |
+| `2026-03-06 09:26 AM ET` | SOL | sol-updown-15m | **UP** | `directional_80pct` | 0.741 | 71.4% | LowVol+Trend | 77.5% | DIRECTIONAL at 80pct (77% elapsed) — P(UP)=0.741 gives edge=0.241 toward UP. Bucket=LowVol+Trend (RV60=2.53243, Eff60=0. |
+| `2026-03-06 09:26 AM ET` | SOL | sol-updown-15m | **UP** | `directional_80pct` | 0.741 | 71.4% | LowVol+Trend | 77.3% | DIRECTIONAL at 80pct (77% elapsed) — P(UP)=0.741 gives edge=0.241 toward UP. Bucket=LowVol+Trend (RV60=2.53243, Eff60=0. |
+| `2026-03-06 09:26 AM ET` | SOL | sol-updown-15m | **UP** | `directional_80pct` | 0.715 | 69.1% | LowVol+Range | 77.0% | DIRECTIONAL at 80pct (77% elapsed) — P(UP)=0.715 gives edge=0.215 toward UP. Bucket=LowVol+Range (RV60=2.54549, Eff60=0. |
+| `2026-03-06 09:26 AM ET` | SOL | sol-updown-15m | **UP** | `directional_80pct` | 0.769 | 73.9% | LowVol+Trend | 76.8% | DIRECTIONAL at 80pct (77% elapsed) — P(UP)=0.769 gives edge=0.269 toward UP. Bucket=LowVol+Trend (RV60=2.55055, Eff60=0. |
 | `2026-03-06 09:25 AM ET` | SOL | sol-updown-15m | **UP** | `trend_follow` | 0.675 | 65.4% | HighVol+Trend | 67.3% | TREND FOLLOW (HighVol+Trend, 67% elapsed) — UP token at 0.680 deviates 0.175 from 0.50. Momentum continuation strategy:  |
 | `2026-03-06 09:25 AM ET` | SOL | sol-updown-15m | **UP** | `trend_follow` | 0.675 | 65.4% | HighVol+Trend | 67.1% | TREND FOLLOW (HighVol+Trend, 67% elapsed) — UP token at 0.680 deviates 0.175 from 0.50. Momentum continuation strategy:  |
 | `2026-03-06 09:24 AM ET` | SOL | sol-updown-15m | **DOWN** | `directional_60pct` | 0.668 | 33.2% | LowVol+Trend | 63.1% | DIRECTIONAL at 60pct (63% elapsed) — P(UP)=0.332 gives edge=0.168 toward DOWN. Bucket=LowVol+Trend (RV60=2.26543, Eff60= |
