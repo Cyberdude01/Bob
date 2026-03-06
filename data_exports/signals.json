@@ -1,93 +1,16 @@
 {
-  "updated": "2026-03-06 10:21:45 AM ET",
+  "updated": "2026-03-06 10:26:46 AM ET",
   "data": [
     {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 18.39,
-      "price": 0.72,
-      "confidence": 0.715,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 26% elapsed) \u2014 UP token at 0.720 deviates 0.215 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$18.39 USDC (scales with deviation)."
-    },
-    {
       "symbol": "SOL",
       "slug": "sol-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 12.32,
-      "price": 0.99,
-      "confidence": 0.775,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 26% elapsed) \u2014 UP token at 0.990 deviates 0.275 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$12.32 USDC (scales with deviation)."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 18.39,
-      "price": 0.73,
-      "confidence": 0.715,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 26% elapsed) \u2014 UP token at 0.730 deviates 0.215 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$18.39 USDC (scales with deviation)."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 18.39,
-      "price": 0.73,
-      "confidence": 0.735,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 26% elapsed) \u2014 UP token at 0.730 deviates 0.235 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$18.39 USDC (scales with deviation)."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 18.39,
-      "price": 0.72,
-      "confidence": 0.725,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 27% elapsed) \u2014 UP token at 0.720 deviates 0.225 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$18.39 USDC (scales with deviation)."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 18.39,
-      "price": 0.73,
-      "confidence": 0.725,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 27% elapsed) \u2014 UP token at 0.730 deviates 0.225 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$18.39 USDC (scales with deviation)."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 18.39,
-      "price": 0.72,
-      "confidence": 0.72,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 27% elapsed) \u2014 UP token at 0.720 deviates 0.220 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$18.39 USDC (scales with deviation)."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
       "outcome": "DOWN",
       "side": "BUY",
-      "size": 18.39,
-      "price": 0.29,
-      "confidence": 0.72,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 27% elapsed) \u2014 DOWN token at 0.290 deviates 0.220 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$18.39 USDC (scales with deviation)."
+      "size": 12.32,
+      "price": 0.04,
+      "confidence": 0.801,
+      "trigger": "directional_60pct",
+      "reason": "DIRECTIONAL at 60pct (62% elapsed) \u2014 P(UP)=0.199 gives edge=0.301 toward DOWN. Bucket=HighVol+Range (RV60=14.90550, Eff60=0.012). Size scales with edge: $12.32 USDC @ conf=0.801."
     },
     {
       "symbol": "SOL",
@@ -95,10 +18,43 @@
       "outcome": "UP",
       "side": "BUY",
       "size": 12.32,
-      "price": 0.99,
-      "confidence": 0.77,
+      "price": 0.97,
+      "confidence": 0.909,
+      "trigger": "directional_60pct",
+      "reason": "DIRECTIONAL at 60pct (63% elapsed) \u2014 P(UP)=0.909 gives edge=0.409 toward UP. Bucket=HighVol+Trend (RV60=14.81077, Eff60=0.027). Size scales with edge: $12.32 USDC @ conf=0.909."
+    },
+    {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 12.32,
+      "price": 0.97,
+      "confidence": 0.965,
       "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 28% elapsed) \u2014 UP token at 0.990 deviates 0.270 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$12.32 USDC (scales with deviation)."
+      "reason": "TREND FOLLOW (HighVol+Trend, 63% elapsed) \u2014 UP token at 0.970 deviates 0.465 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$12.32 USDC (scales with deviation)."
+    },
+    {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 12.32,
+      "price": 0.97,
+      "confidence": 0.909,
+      "trigger": "directional_60pct",
+      "reason": "DIRECTIONAL at 60pct (63% elapsed) \u2014 P(UP)=0.909 gives edge=0.409 toward UP. Bucket=HighVol+Trend (RV60=14.81077, Eff60=0.027). Size scales with edge: $12.32 USDC @ conf=0.909."
+    },
+    {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 12.32,
+      "price": 0.97,
+      "confidence": 0.965,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 63% elapsed) \u2014 UP token at 0.970 deviates 0.465 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$12.32 USDC (scales with deviation)."
     },
     {
       "symbol": "SOL",
@@ -106,32 +62,43 @@
       "outcome": "DOWN",
       "side": "BUY",
       "size": 12.32,
+      "price": 0.04,
+      "confidence": 0.914,
+      "trigger": "directional_60pct",
+      "reason": "DIRECTIONAL at 60pct (63% elapsed) \u2014 P(UP)=0.086 gives edge=0.414 toward DOWN. Bucket=HighVol+Trend (RV60=15.02380, Eff60=0.028). Size scales with edge: $12.32 USDC @ conf=0.914."
+    },
+    {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 12.32,
+      "price": 0.97,
+      "confidence": 0.798,
+      "trigger": "directional_60pct",
+      "reason": "DIRECTIONAL at 60pct (63% elapsed) \u2014 P(UP)=0.798 gives edge=0.298 toward UP. Bucket=HighVol+Range (RV60=15.41953, Eff60=0.003). Size scales with edge: $12.32 USDC @ conf=0.798."
+    },
+    {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 12.32,
+      "price": 0.98,
+      "confidence": 0.975,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 64% elapsed) \u2014 UP token at 0.980 deviates 0.475 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$12.32 USDC (scales with deviation)."
+    },
+    {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 12.32,
       "price": 0.99,
-      "confidence": 0.77,
+      "confidence": 0.98,
       "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 28% elapsed) \u2014 DOWN token at 0.990 deviates 0.270 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$12.32 USDC (scales with deviation)."
-    },
-    {
-      "symbol": "SOL",
-      "slug": "sol-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 12.32,
-      "price": 0.79,
-      "confidence": 0.785,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 28% elapsed) \u2014 UP token at 0.790 deviates 0.285 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$12.32 USDC (scales with deviation)."
-    },
-    {
-      "symbol": "SOL",
-      "slug": "sol-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 12.32,
-      "price": 0.85,
-      "confidence": 0.845,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 39% elapsed) \u2014 UP token at 0.850 deviates 0.345 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$12.32 USDC (scales with deviation)."
+      "reason": "TREND FOLLOW (HighVol+Trend, 64% elapsed) \u2014 UP token at 0.990 deviates 0.480 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$12.32 USDC (scales with deviation)."
     },
     {
       "symbol": "SOL",
@@ -140,9 +107,20 @@
       "side": "BUY",
       "size": 12.32,
       "price": 0.99,
-      "confidence": 0.84,
+      "confidence": 0.98,
       "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 39% elapsed) \u2014 UP token at 0.990 deviates 0.340 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$12.32 USDC (scales with deviation)."
+      "reason": "TREND FOLLOW (HighVol+Trend, 64% elapsed) \u2014 UP token at 0.990 deviates 0.480 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$12.32 USDC (scales with deviation)."
+    },
+    {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 12.32,
+      "price": 1.0,
+      "confidence": 0.99,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 65% elapsed) \u2014 UP token at 1.000 deviates 0.490 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$12.32 USDC (scales with deviation)."
     },
     {
       "symbol": "SOL",
@@ -150,10 +128,10 @@
       "outcome": "DOWN",
       "side": "BUY",
       "size": 12.32,
-      "price": 0.99,
-      "confidence": 0.84,
+      "price": 0.01,
+      "confidence": 0.99,
       "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 39% elapsed) \u2014 DOWN token at 0.990 deviates 0.340 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$12.32 USDC (scales with deviation)."
+      "reason": "TREND FOLLOW (HighVol+Trend, 65% elapsed) \u2014 DOWN token at 0.010 deviates 0.490 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$12.32 USDC (scales with deviation)."
     },
     {
       "symbol": "SOL",
@@ -161,10 +139,10 @@
       "outcome": "UP",
       "side": "BUY",
       "size": 12.32,
-      "price": 0.82,
-      "confidence": 0.815,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 40% elapsed) \u2014 UP token at 0.820 deviates 0.315 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$12.32 USDC (scales with deviation)."
+      "price": 0.999,
+      "confidence": 0.985,
+      "trigger": "directional_80pct",
+      "reason": "DIRECTIONAL at 80pct (77% elapsed) \u2014 P(UP)=0.985 gives edge=0.485 toward UP. Bucket=HighVol+Trend (RV60=11.58747, Eff60=0.021). Size scales with edge: $12.32 USDC @ conf=0.985."
     },
     {
       "symbol": "SOL",
@@ -172,10 +150,10 @@
       "outcome": "UP",
       "side": "BUY",
       "size": 12.32,
-      "price": 0.84,
-      "confidence": 0.83,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 41% elapsed) \u2014 UP token at 0.840 deviates 0.330 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$12.32 USDC (scales with deviation)."
+      "price": 0.999,
+      "confidence": 0.985,
+      "trigger": "directional_80pct",
+      "reason": "DIRECTIONAL at 80pct (77% elapsed) \u2014 P(UP)=0.985 gives edge=0.485 toward UP. Bucket=HighVol+Trend (RV60=11.26352, Eff60=0.021). Size scales with edge: $12.32 USDC @ conf=0.985."
     },
     {
       "symbol": "SOL",
@@ -183,10 +161,10 @@
       "outcome": "UP",
       "side": "BUY",
       "size": 12.32,
-      "price": 0.81,
-      "confidence": 0.805,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 43% elapsed) \u2014 UP token at 0.810 deviates 0.305 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$12.32 USDC (scales with deviation)."
+      "price": 0.999,
+      "confidence": 0.985,
+      "trigger": "directional_80pct",
+      "reason": "DIRECTIONAL at 80pct (77% elapsed) \u2014 P(UP)=0.985 gives edge=0.485 toward UP. Bucket=HighVol+Trend (RV60=11.26352, Eff60=0.021). Size scales with edge: $12.32 USDC @ conf=0.985."
     },
     {
       "symbol": "SOL",
@@ -194,10 +172,10 @@
       "outcome": "UP",
       "side": "BUY",
       "size": 12.32,
-      "price": 0.82,
-      "confidence": 0.815,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 43% elapsed) \u2014 UP token at 0.820 deviates 0.315 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$12.32 USDC (scales with deviation)."
+      "price": 0.999,
+      "confidence": 0.853,
+      "trigger": "directional_80pct",
+      "reason": "DIRECTIONAL at 80pct (78% elapsed) \u2014 P(UP)=0.853 gives edge=0.353 toward UP. Bucket=HighVol+Range (RV60=11.28186, Eff60=0.001). Size scales with edge: $12.32 USDC @ conf=0.853."
     },
     {
       "symbol": "SOL",
@@ -205,10 +183,10 @@
       "outcome": "UP",
       "side": "BUY",
       "size": 12.32,
-      "price": 0.84,
-      "confidence": 0.83,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 44% elapsed) \u2014 UP token at 0.840 deviates 0.330 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$12.32 USDC (scales with deviation)."
+      "price": 0.999,
+      "confidence": 0.853,
+      "trigger": "directional_80pct",
+      "reason": "DIRECTIONAL at 80pct (78% elapsed) \u2014 P(UP)=0.853 gives edge=0.353 toward UP. Bucket=HighVol+Range (RV60=11.28186, Eff60=0.001). Size scales with edge: $12.32 USDC @ conf=0.853."
     },
     {
       "symbol": "SOL",
@@ -216,10 +194,32 @@
       "outcome": "UP",
       "side": "BUY",
       "size": 12.32,
-      "price": 0.86,
-      "confidence": 0.835,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 44% elapsed) \u2014 UP token at 0.860 deviates 0.335 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$12.32 USDC (scales with deviation)."
+      "price": 0.999,
+      "confidence": 0.853,
+      "trigger": "directional_80pct",
+      "reason": "DIRECTIONAL at 80pct (78% elapsed) \u2014 P(UP)=0.853 gives edge=0.353 toward UP. Bucket=HighVol+Range (RV60=11.28186, Eff60=0.001). Size scales with edge: $12.32 USDC @ conf=0.853."
+    },
+    {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 12.32,
+      "price": 0.999,
+      "confidence": 0.985,
+      "trigger": "directional_80pct",
+      "reason": "DIRECTIONAL at 80pct (78% elapsed) \u2014 P(UP)=0.985 gives edge=0.485 toward UP. Bucket=HighVol+Trend (RV60=11.29892, Eff60=0.020). Size scales with edge: $12.32 USDC @ conf=0.985."
+    },
+    {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 12.32,
+      "price": 0.999,
+      "confidence": 0.985,
+      "trigger": "directional_80pct",
+      "reason": "DIRECTIONAL at 80pct (78% elapsed) \u2014 P(UP)=0.985 gives edge=0.485 toward UP. Bucket=HighVol+Trend (RV60=11.29892, Eff60=0.020). Size scales with edge: $12.32 USDC @ conf=0.985."
     }
   ]
 }
