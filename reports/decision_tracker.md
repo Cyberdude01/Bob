@@ -1,17 +1,19 @@
 # Decision Tracker
 
-> **Updated:** `2026-03-08 05:01:08 AM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
+> **Updated:** `2026-03-08 05:06:09 AM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
 
 ## Summary
 | Total | Resolved | Wins | Losses | ARB | Pending | Win Rate | Realised P&L |
 | ----- | -------- | ---- | ------ | --- | ------- | -------- | ------------ |
-| 198 | 63 | 32 | 31 | 0 | 135 | 50.8% | +$517.6165 |
+| 200 | 63 | 32 | 31 | 0 | 137 | 50.8% | +$517.6165 |
 
 ## Trade Log
 > Each row: Entry Time · Market Slug · Condition ID (first 12 chars) · 15-min Window
 
 | Entry Time (ET) | Market & Window | Outcome | Trigger | Entry $ | Size | Mode | Resolved (ET) | Winner | Result | P&L | Reasoning |
 | ----------------- | ---------------------------------------- | ------- | ---------------------- | ------- | ------ | ----- | ----------------- | ------ | -------- | --------- | -------------------------------------------------- |
+| `2026-03-08 05:02 AM ET` | **eth-updown-15m** `0xe6fa2b8e2c…`<br>05:00 AM → 05:15 AM | **UP** | `trend_follow` | 0.2000 | $9.52 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 15% elapsed) — UP token at 0.200 deviates 0.300 from 0.50. Momentum con |
+| `2026-03-08 05:01 AM ET` | **xrp-updown-15m** `0x3fc0cf77c7…`<br>05:00 AM → 05:15 AM | **UP** | `trend_follow` | 0.9900 | $13.36 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 9% elapsed) — UP token at 0.990 deviates 0.240 from 0.50. Momentum cont |
 | `2026-03-08 05:00 AM ET` | **xrp-updown-15m** `0x3fc0cf77c7…`<br>05:00 AM → 05:15 AM | **DOWN** | `trend_follow` | 0.7100 | $40.40 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 4% elapsed) — DOWN token at 0.710 deviates 0.200 from 0.50. Momentum co |
 | `2026-03-08 05:00 AM ET` | **eth-updown-15m** `0xe6fa2b8e2c…`<br>05:00 AM → 05:15 AM | **DOWN** | `trend_follow` | 0.7100 | $40.40 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 2% elapsed) — DOWN token at 0.710 deviates 0.200 from 0.50. Momentum co |
 | `2026-03-08 05:00 AM ET` | **btc-updown-15m** `0x8126667ed0…`<br>05:00 AM → 05:15 AM | **DOWN** | `trend_follow` | 0.6700 | $33.68 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 2% elapsed) — DOWN token at 0.670 deviates 0.165 from 0.50. Momentum co |
