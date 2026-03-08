@@ -1,25 +1,27 @@
 # Decision Tracker
 
-> **Updated:** `2026-03-08 10:57:56 AM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
+> **Updated:** `2026-03-08 11:02:59 AM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
 
 ## Summary
 | Total | Resolved | Wins | Losses | ARB | Pending | Win Rate | Realised P&L |
 | ----- | -------- | ---- | ------ | --- | ------- | -------- | ------------ |
-| 305 | 174 | 83 | 91 | 0 | 131 | 47.7% | +$886.7126 |
+| 307 | 178 | 84 | 94 | 0 | 129 | 47.2% | +$876.7631 |
 
 ## Trade Log
 > Each row: Entry Time · Market Slug · Condition ID (first 12 chars) · 15-min Window
 
 | Entry Time (ET) | Market & Window | Outcome | Trigger | Entry $ | Size | Mode | Resolved (ET) | Winner | Result | P&L | Reasoning |
 | ----------------- | ---------------------------------------- | ------- | ---------------------- | ------- | ------ | ----- | ----------------- | ------ | -------- | --------- | -------------------------------------------------- |
+| `2026-03-08 10:58 AM ET` | **xrp-updown-15m** `0x6672fce41c…`<br>10:45 AM → 11:00 AM | **DOWN** | `directional_90pct` | 0.0090 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 90pct (88% elapsed) — P(UP)=0.075 gives edge=0.425 toward DOWN. Bucket=LowVol+Range ( |
+| `2026-03-08 10:58 AM ET` | **eth-updown-15m** `0x87466e5427…`<br>10:45 AM → 11:00 AM | **DOWN** | `directional_90pct` | 0.0020 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 90pct (88% elapsed) — P(UP)=0.073 gives edge=0.427 toward DOWN. Bucket=LowVol+Range ( |
 | `2026-03-08 10:53 AM ET` | **sol-updown-15m** `0xa2bf2ad6c4…`<br>10:45 AM → 11:00 AM | **DOWN** | `forced` | 0.9900 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.104, choosing DOWN. Fixed $5  |
 | `2026-03-08 10:53 AM ET` | **xrp-updown-15m** `0x6672fce41c…`<br>10:45 AM → 11:00 AM | **DOWN** | `forced` | 0.9900 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.212, choosing DOWN. Fixed $5  |
 | `2026-03-08 10:53 AM ET` | **eth-updown-15m** `0x87466e5427…`<br>10:45 AM → 11:00 AM | **DOWN** | `forced` | 0.9900 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.095, choosing DOWN. Fixed $5  |
 | `2026-03-08 10:53 AM ET` | **btc-updown-15m** `0xc0cfacfc24…`<br>10:45 AM → 11:00 AM | **DOWN** | `forced` | 0.9900 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.148, choosing DOWN. Fixed $5  |
-| `2026-03-08 10:38 AM ET` | **sol-updown-15m** `0xc14419239a…`<br>10:30 AM → 10:45 AM | **UP** | `forced` | 0.9900 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.500, choosing UP. Fixed $5 US |
-| `2026-03-08 10:38 AM ET` | **xrp-updown-15m** `0x2cab69433b…`<br>10:30 AM → 10:45 AM | **DOWN** | `forced` | 0.9900 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.442, choosing DOWN. Fixed $5  |
-| `2026-03-08 10:38 AM ET` | **eth-updown-15m** `0xa226f8438e…`<br>10:30 AM → 10:45 AM | **UP** | `forced` | 0.9900 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.529, choosing UP. Fixed $5 US |
-| `2026-03-08 10:38 AM ET` | **btc-updown-15m** `0xa7f34315dc…`<br>10:30 AM → 10:45 AM | **UP** | `forced` | 0.9900 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.522, choosing UP. Fixed $5 US |
+| `2026-03-08 10:38 AM ET` | **sol-updown-15m** `0xc14419239a…`<br>10:30 AM → 10:45 AM | **UP** | `forced` | 0.9900 | $5.00 | live | 2026-03-08 11:00 AM ET | DOWN | ❌ Loss | $-5.0000 | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.500, choosing UP. Fixed $5 US |
+| `2026-03-08 10:38 AM ET` | **xrp-updown-15m** `0x2cab69433b…`<br>10:30 AM → 10:45 AM | **DOWN** | `forced` | 0.9900 | $5.00 | live | 2026-03-08 11:00 AM ET | DOWN | ✅ Win | +$5.0505 | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.442, choosing DOWN. Fixed $5  |
+| `2026-03-08 10:38 AM ET` | **eth-updown-15m** `0xa226f8438e…`<br>10:30 AM → 10:45 AM | **UP** | `forced` | 0.9900 | $5.00 | live | 2026-03-08 11:00 AM ET | DOWN | ❌ Loss | $-5.0000 | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.529, choosing UP. Fixed $5 US |
+| `2026-03-08 10:38 AM ET` | **btc-updown-15m** `0xa7f34315dc…`<br>10:30 AM → 10:45 AM | **UP** | `forced` | 0.9900 | $5.00 | live | 2026-03-08 11:00 AM ET | DOWN | ❌ Loss | $-5.0000 | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.522, choosing UP. Fixed $5 US |
 | `2026-03-08 10:23 AM ET` | **sol-updown-15m** `0x9721d65e48…`<br>10:15 AM → 10:30 AM | **DOWN** | `forced` | 0.9900 | $5.00 | live | 2026-03-08 10:30 AM ET | UP | ❌ Loss | $-5.0000 | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.334, choosing DOWN. Fixed $5  |
 | `2026-03-08 10:23 AM ET` | **eth-updown-15m** `0x448764d339…`<br>10:15 AM → 10:30 AM | **DOWN** | `forced` | 0.9900 | $5.00 | live | 2026-03-08 10:30 AM ET | UP | ❌ Loss | $-5.0000 | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.435, choosing DOWN. Fixed $5  |
 | `2026-03-08 10:23 AM ET` | **xrp-updown-15m** `0x50b2cbe1e1…`<br>10:15 AM → 10:30 AM | **UP** | `forced` | 0.9900 | $5.00 | live | 2026-03-08 10:30 AM ET | UP | ✅ Win | +$5.0505 | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.508, choosing UP. Fixed $5 US |
