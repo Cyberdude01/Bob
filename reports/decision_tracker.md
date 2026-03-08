@@ -1,25 +1,33 @@
 # Decision Tracker
 
-> **Updated:** `2026-03-08 05:55:48 AM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
+> **Updated:** `2026-03-08 06:00:50 AM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
 
 ## Summary
 | Total | Resolved | Wins | Losses | ARB | Pending | Win Rate | Realised P&L |
 | ----- | -------- | ---- | ------ | --- | ------- | -------- | ------------ |
-| 209 | 78 | 39 | 39 | 0 | 131 | 50.0% | +$501.4993 |
+| 217 | 86 | 43 | 43 | 0 | 131 | 50.0% | +$616.3486 |
 
 ## Trade Log
 > Each row: Entry Time · Market Slug · Condition ID (first 12 chars) · 15-min Window
 
 | Entry Time (ET) | Market & Window | Outcome | Trigger | Entry $ | Size | Mode | Resolved (ET) | Winner | Result | P&L | Reasoning |
 | ----------------- | ---------------------------------------- | ------- | ---------------------- | ------- | ------ | ----- | ----------------- | ------ | -------- | --------- | -------------------------------------------------- |
-| `2026-03-08 05:26 AM ET` | **btc-updown-15m** `0xaf11d10d9b…`<br>05:15 AM → 05:30 AM | **UP** | `directional_80pct` | 0.2600 | $24.81 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 80pct (77% elapsed) — P(UP)=0.738 gives edge=0.238 toward UP. Bucket=HighVol+Trend (R |
-| `2026-03-08 05:23 AM ET` | **eth-updown-15m** `0xe7f6fa1237…`<br>05:15 AM → 05:30 AM | **DOWN** | `directional_60pct` | 0.9900 | $13.83 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 60pct (59% elapsed) — P(UP)=0.377 gives edge=0.123 toward DOWN. Bucket=HighVol+Trend  |
-| `2026-03-08 05:23 AM ET` | **btc-updown-15m** `0xaf11d10d9b…`<br>05:15 AM → 05:30 AM | **DOWN** | `directional_60pct` | 0.9900 | $6.92 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 60pct (59% elapsed) — P(UP)=0.449 gives edge=0.051 toward DOWN. Bucket=HighVol+Range  |
-| `2026-03-08 05:23 AM ET` | **xrp-updown-15m** `0x29c5be14a2…`<br>05:15 AM → 05:30 AM | **DOWN** | `directional_60pct` | 0.9900 | $26.58 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 60pct (57% elapsed) — P(UP)=0.244 gives edge=0.256 toward DOWN. Bucket=HighVol+Range  |
-| `2026-03-08 05:23 AM ET` | **sol-updown-15m** `0x4007bb17bf…`<br>05:15 AM → 05:30 AM | **UP** | `directional_60pct` | 0.9900 | $7.07 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 60pct (57% elapsed) — P(UP)=0.553 gives edge=0.053 toward UP. Bucket=HighVol+Trend (R |
-| `2026-03-08 05:23 AM ET` | **sol-updown-15m** `0x4007bb17bf…`<br>05:15 AM → 05:30 AM | **DOWN** | `directional_60pct` | 0.9900 | $7.49 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 60pct (57% elapsed) — P(UP)=0.443 gives edge=0.057 toward DOWN. Bucket=HighVol+Trend  |
-| `2026-03-08 05:23 AM ET` | **xrp-updown-15m** `0x29c5be14a2…`<br>05:15 AM → 05:30 AM | **UP** | `directional_60pct` | 0.9900 | $24.73 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 60pct (57% elapsed) — P(UP)=0.737 gives edge=0.237 toward UP. Bucket=HighVol+Range (R |
-| `2026-03-08 05:23 AM ET` | **eth-updown-15m** `0xe7f6fa1237…`<br>05:15 AM → 05:30 AM | **UP** | `trend_follow` | 0.6400 | $26.96 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 56% elapsed) — UP token at 0.640 deviates 0.130 from 0.50. Momentum con |
+| `2026-03-08 05:58 AM ET` | **sol-updown-15m** `0x3e4c7c8144…`<br>05:45 AM → 06:00 AM | **DOWN** | `directional_90pct` | 0.2900 | $23.07 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 90pct (89% elapsed) — P(UP)=0.281 gives edge=0.219 toward DOWN. Bucket=HighVol+Trend  |
+| `2026-03-08 05:58 AM ET` | **sol-updown-15m** `0x3e4c7c8144…`<br>05:45 AM → 06:00 AM | **UP** | `directional_90pct` | 0.7000 | $18.05 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 90pct (87% elapsed) — P(UP)=0.667 gives edge=0.167 toward UP. Bucket=HighVol+Trend (R |
+| `2026-03-08 05:56 AM ET` | **btc-updown-15m** `0xa2d4d09a71…`<br>05:45 AM → 06:00 AM | **UP** | `directional_80pct` | 0.9900 | $15.20 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 80pct (79% elapsed) — P(UP)=0.638 gives edge=0.138 toward UP. Bucket=HighVol+Range (R |
+| `2026-03-08 05:56 AM ET` | **xrp-updown-15m** `0x92aff7dcfd…`<br>05:45 AM → 06:00 AM | **UP** | `directional_80pct` | 0.9900 | $28.96 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 80pct (79% elapsed) — P(UP)=0.781 gives edge=0.281 toward UP. Bucket=HighVol+Range (R |
+| `2026-03-08 05:56 AM ET` | **eth-updown-15m** `0x8d19583f64…`<br>05:45 AM → 06:00 AM | **UP** | `directional_80pct` | 0.9900 | $35.87 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 80pct (77% elapsed) — P(UP)=0.853 gives edge=0.353 toward UP. Bucket=HighVol+Range (R |
+| `2026-03-08 05:56 AM ET` | **xrp-updown-15m** `0x92aff7dcfd…`<br>05:45 AM → 06:00 AM | **DOWN** | `directional_80pct` | 0.8900 | $26.19 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 80pct (77% elapsed) — P(UP)=0.248 gives edge=0.252 toward DOWN. Bucket=HighVol+Range  |
+| `2026-03-08 05:56 AM ET` | **eth-updown-15m** `0x8d19583f64…`<br>05:45 AM → 06:00 AM | **DOWN** | `directional_80pct` | 1.0000 | $35.87 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 80pct (77% elapsed) — P(UP)=0.147 gives edge=0.353 toward DOWN. Bucket=HighVol+Range  |
+| `2026-03-08 05:56 AM ET` | **btc-updown-15m** `0xa2d4d09a71…`<br>05:45 AM → 06:00 AM | **DOWN** | `directional_80pct` | 0.7000 | $20.06 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 80pct (77% elapsed) — P(UP)=0.312 gives edge=0.188 toward DOWN. Bucket=HighVol+Trend  |
+| `2026-03-08 05:26 AM ET` | **btc-updown-15m** `0xaf11d10d9b…`<br>05:15 AM → 05:30 AM | **UP** | `directional_80pct` | 0.2600 | $24.81 | live | 2026-03-08 05:57 AM ET | UP | ✅ Win | +$95.4231 | DIRECTIONAL at 80pct (77% elapsed) — P(UP)=0.738 gives edge=0.238 toward UP. Bucket=HighVol+Trend (R |
+| `2026-03-08 05:23 AM ET` | **eth-updown-15m** `0xe7f6fa1237…`<br>05:15 AM → 05:30 AM | **DOWN** | `directional_60pct` | 0.9900 | $13.83 | live | 2026-03-08 05:58 AM ET | UP | ❌ Loss | $-13.8300 | DIRECTIONAL at 60pct (59% elapsed) — P(UP)=0.377 gives edge=0.123 toward DOWN. Bucket=HighVol+Trend  |
+| `2026-03-08 05:23 AM ET` | **btc-updown-15m** `0xaf11d10d9b…`<br>05:15 AM → 05:30 AM | **DOWN** | `directional_60pct` | 0.9900 | $6.92 | live | 2026-03-08 05:57 AM ET | UP | ❌ Loss | $-6.9200 | DIRECTIONAL at 60pct (59% elapsed) — P(UP)=0.449 gives edge=0.051 toward DOWN. Bucket=HighVol+Range  |
+| `2026-03-08 05:23 AM ET` | **xrp-updown-15m** `0x29c5be14a2…`<br>05:15 AM → 05:30 AM | **DOWN** | `directional_60pct` | 0.9900 | $26.58 | live | 2026-03-08 05:57 AM ET | UP | ❌ Loss | $-26.5800 | DIRECTIONAL at 60pct (57% elapsed) — P(UP)=0.244 gives edge=0.256 toward DOWN. Bucket=HighVol+Range  |
+| `2026-03-08 05:23 AM ET` | **sol-updown-15m** `0x4007bb17bf…`<br>05:15 AM → 05:30 AM | **UP** | `directional_60pct` | 0.9900 | $7.07 | live | 2026-03-08 05:57 AM ET | UP | ✅ Win | +$7.1414 | DIRECTIONAL at 60pct (57% elapsed) — P(UP)=0.553 gives edge=0.053 toward UP. Bucket=HighVol+Trend (R |
+| `2026-03-08 05:23 AM ET` | **sol-updown-15m** `0x4007bb17bf…`<br>05:15 AM → 05:30 AM | **DOWN** | `directional_60pct` | 0.9900 | $7.49 | live | 2026-03-08 05:57 AM ET | UP | ❌ Loss | $-7.4900 | DIRECTIONAL at 60pct (57% elapsed) — P(UP)=0.443 gives edge=0.057 toward DOWN. Bucket=HighVol+Trend  |
+| `2026-03-08 05:23 AM ET` | **xrp-updown-15m** `0x29c5be14a2…`<br>05:15 AM → 05:30 AM | **UP** | `directional_60pct` | 0.9900 | $24.73 | live | 2026-03-08 05:57 AM ET | UP | ✅ Win | +$24.9798 | DIRECTIONAL at 60pct (57% elapsed) — P(UP)=0.737 gives edge=0.237 toward UP. Bucket=HighVol+Range (R |
+| `2026-03-08 05:23 AM ET` | **eth-updown-15m** `0xe7f6fa1237…`<br>05:15 AM → 05:30 AM | **UP** | `trend_follow` | 0.6400 | $26.96 | live | 2026-03-08 05:58 AM ET | UP | ✅ Win | +$42.1250 | TREND FOLLOW (HighVol+Trend, 56% elapsed) — UP token at 0.640 deviates 0.130 from 0.50. Momentum con |
 | `2026-03-08 05:11 AM ET` | **btc-updown-15m** `0x8126667ed0…`<br>05:00 AM → 05:15 AM | **UP** | `directional_80pct` | 0.8200 | $22.96 | live | 2026-03-08 05:21 AM ET | UP | ✅ Win | +$28.0000 | DIRECTIONAL at 80pct (77% elapsed) — P(UP)=0.842 gives edge=0.342 toward UP. Bucket=HighVol+Trend (R |
 | `2026-03-08 05:02 AM ET` | **eth-updown-15m** `0xe6fa2b8e2c…`<br>05:00 AM → 05:15 AM | **UP** | `trend_follow` | 0.2000 | $9.52 | live | 2026-03-08 05:21 AM ET | UP | ✅ Win | +$47.6000 | TREND FOLLOW (HighVol+Trend, 15% elapsed) — UP token at 0.200 deviates 0.300 from 0.50. Momentum con |
 | `2026-03-08 05:01 AM ET` | **xrp-updown-15m** `0x3fc0cf77c7…`<br>05:00 AM → 05:15 AM | **UP** | `trend_follow` | 0.9900 | $13.36 | live | 2026-03-08 05:21 AM ET | UP | ✅ Win | +$13.4949 | TREND FOLLOW (HighVol+Trend, 9% elapsed) — UP token at 0.990 deviates 0.240 from 0.50. Momentum cont |
