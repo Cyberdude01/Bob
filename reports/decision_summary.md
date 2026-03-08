@@ -1,18 +1,19 @@
 # Decision Engine Summary
 
-> **Updated:** `2026-03-08 05:11:11 AM ET` &nbsp;|&nbsp; All signals from the last 48 hours
+> **Updated:** `2026-03-08 05:16:13 AM ET` &nbsp;|&nbsp; All signals from the last 48 hours
 
 ## Signal Distribution
 | Trigger | Count |
 | -------------------- | ----- |
 | `trend_follow` | 438 |
 | `directional_90pct` | 257 |
-| `directional_80pct` | 247 |
+| `directional_80pct` | 248 |
 | `directional_60pct` | 186 |
 
 ## Signal Log
 | Time (ET) | Symbol | Slug | Outcome | Trigger | Confidence | P(UP) | Bucket | Elapsed% | Reasoning |
 | --------------- | ------ | ----------------- | ------- | -------------------- | ---------- | ----- | -------------- | -------- | -------------------------------------------------- |
+| `2026-03-08 05:11 AM ET` | BTC | btc-updown-15m | **UP** | `directional_80pct` | 0.842 | 80.4% | HighVol+Trend | 76.8% | DIRECTIONAL at 80pct (77% elapsed) — P(UP)=0.842 gives edge=0.342 toward UP. Bucket=HighVol+Trend (RV60=3.66507, Eff60=0 |
 | `2026-03-08 05:09 AM ET` | BTC | btc-updown-15m | **DOWN** | `directional_60pct` | 0.572 | 42.8% | LowVol+Range | 63.3% | DIRECTIONAL at 60pct (63% elapsed) — P(UP)=0.428 gives edge=0.072 toward DOWN. Bucket=LowVol+Range (RV60=1.10589, Eff60= |
 | `2026-03-08 05:09 AM ET` | BTC | btc-updown-15m | **DOWN** | `directional_60pct` | 0.555 | 44.5% | LowVol+Trend | 62.9% | DIRECTIONAL at 60pct (63% elapsed) — P(UP)=0.445 gives edge=0.055 toward DOWN. Bucket=LowVol+Trend (RV60=1.11615, Eff60= |
 | `2026-03-08 05:09 AM ET` | BTC | btc-updown-15m | **DOWN** | `directional_60pct` | 0.555 | 44.5% | LowVol+Trend | 62.6% | DIRECTIONAL at 60pct (63% elapsed) — P(UP)=0.445 gives edge=0.055 toward DOWN. Bucket=LowVol+Trend (RV60=1.11615, Eff60= |
