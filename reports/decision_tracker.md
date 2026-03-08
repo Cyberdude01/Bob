@@ -1,17 +1,21 @@
 # Decision Tracker
 
-> **Updated:** `2026-03-08 06:01:34 PM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
+> **Updated:** `2026-03-08 06:06:38 PM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
 
 ## Summary
 | Total | Resolved | Wins | Losses | ARB | Pending | Win Rate | Realised P&L |
 | ----- | -------- | ---- | ------ | --- | ------- | -------- | ------------ |
-| 424 | 297 | 152 | 145 | 0 | 127 | 51.2% | +$1040.9826 |
+| 428 | 297 | 152 | 145 | 0 | 131 | 51.2% | +$1040.9826 |
 
 ## Trade Log
 > Each row: Entry Time · Market Slug · Condition ID (first 12 chars) · 15-min Window
 
 | Entry Time (ET) | Market & Window | Outcome | Trigger | Entry $ | Size | Mode | Resolved (ET) | Winner | Result | P&L | Reasoning |
 | ----------------- | ---------------------------------------- | ------- | ---------------------- | ------- | ------ | ----- | ----------------- | ------ | -------- | --------- | -------------------------------------------------- |
+| `2026-03-08 06:05 PM ET` | **eth-updown-15m** `0x7935153019…`<br>06:00 PM → 06:15 PM | **DOWN** | `trend_follow` | 0.9900 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 35% elapsed) — DOWN token at 0.990 deviates 0.485 from 0.50. Momentum c |
+| `2026-03-08 06:04 PM ET` | **xrp-updown-15m** `0x7eda5cfdcb…`<br>06:00 PM → 06:15 PM | **DOWN** | `trend_follow` | 0.9600 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 27% elapsed) — DOWN token at 0.960 deviates 0.450 from 0.50. Momentum c |
+| `2026-03-08 06:01 PM ET` | **sol-updown-15m** `0xf7a7ddf59a…`<br>06:00 PM → 06:15 PM | **DOWN** | `trend_follow` | 0.8900 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 13% elapsed) — DOWN token at 0.890 deviates 0.385 from 0.50. Momentum c |
+| `2026-03-08 06:01 PM ET` | **btc-updown-15m** `0xcbdc3956b3…`<br>06:00 PM → 06:15 PM | **DOWN** | `trend_follow` | 0.8500 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 12% elapsed) — DOWN token at 0.850 deviates 0.345 from 0.50. Momentum c |
 | `2026-03-08 05:53 PM ET` | **sol-updown-15m** `0x413d1edd8e…`<br>05:45 PM → 06:00 PM | **DOWN** | `forced` | 0.9900 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.254, choosing DOWN. Fixed $5  |
 | `2026-03-08 05:53 PM ET` | **btc-updown-15m** `0x8e8476898e…`<br>05:45 PM → 06:00 PM | **DOWN** | `forced` | 0.9900 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.232, choosing DOWN. Fixed $5  |
 | `2026-03-08 05:53 PM ET` | **xrp-updown-15m** `0xc85dae3f0c…`<br>05:45 PM → 06:00 PM | **DOWN** | `forced` | 0.9900 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.442, choosing DOWN. Fixed $5  |
