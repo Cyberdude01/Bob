@@ -1,21 +1,25 @@
 # Decision Tracker
 
-> **Updated:** `2026-03-08 09:22:40 AM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
+> **Updated:** `2026-03-08 09:27:42 AM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
 
 ## Summary
 | Total | Resolved | Wins | Losses | ARB | Pending | Win Rate | Realised P&L |
 | ----- | -------- | ---- | ------ | --- | ------- | -------- | ------------ |
-| 274 | 147 | 69 | 78 | 0 | 127 | 46.9% | +$871.9847 |
+| 278 | 150 | 71 | 79 | 0 | 128 | 47.3% | +$877.7823 |
 
 ## Trade Log
 > Each row: Entry Time · Market Slug · Condition ID (first 12 chars) · 15-min Window
 
 | Entry Time (ET) | Market & Window | Outcome | Trigger | Entry $ | Size | Mode | Resolved (ET) | Winner | Result | P&L | Reasoning |
 | ----------------- | ---------------------------------------- | ------- | ---------------------- | ------- | ------ | ----- | ----------------- | ------ | -------- | --------- | -------------------------------------------------- |
+| `2026-03-08 09:23 AM ET` | **btc-updown-15m** `0x569d869e14…`<br>09:15 AM → 09:30 AM | **DOWN** | `forced` | 0.9900 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.289, choosing DOWN. Fixed $5  |
+| `2026-03-08 09:23 AM ET` | **eth-updown-15m** `0xb17cf8ca8b…`<br>09:15 AM → 09:30 AM | **DOWN** | `forced` | 0.9900 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.250, choosing DOWN. Fixed $5  |
+| `2026-03-08 09:23 AM ET` | **xrp-updown-15m** `0xa25c9c574b…`<br>09:15 AM → 09:30 AM | **DOWN** | `forced` | 0.9900 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.139, choosing DOWN. Fixed $5  |
+| `2026-03-08 09:23 AM ET` | **sol-updown-15m** `0xae55b7892e…`<br>09:15 AM → 09:30 AM | **DOWN** | `forced` | 0.9900 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.214, choosing DOWN. Fixed $5  |
 | `2026-03-08 09:07 AM ET` | **btc-updown-15m** `0xcb6b060e09…`<br>09:00 AM → 09:15 AM | **DOWN** | `trend_follow` | 0.6800 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 49% elapsed) — DOWN token at 0.680 deviates 0.175 from 0.50. Momentum c |
-| `2026-03-08 09:06 AM ET` | **eth-updown-15m** `0xc3ad32ae60…`<br>09:00 AM → 09:15 AM | **DOWN** | `trend_follow` | 0.8700 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 43% elapsed) — DOWN token at 0.870 deviates 0.355 from 0.50. Momentum c |
-| `2026-03-08 09:04 AM ET` | **sol-updown-15m** `0xb4c7c861ed…`<br>09:00 AM → 09:15 AM | **DOWN** | `trend_follow` | 0.9900 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 31% elapsed) — DOWN token at 0.990 deviates 0.260 from 0.50. Momentum c |
-| `2026-03-08 09:00 AM ET` | **xrp-updown-15m** `0x10a469c98f…`<br>09:00 AM → 09:15 AM | **UP** | `trend_follow` | 0.6300 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 4% elapsed) — UP token at 0.630 deviates 0.115 from 0.50. Momentum cont |
+| `2026-03-08 09:06 AM ET` | **eth-updown-15m** `0xc3ad32ae60…`<br>09:00 AM → 09:15 AM | **DOWN** | `trend_follow` | 0.8700 | $5.00 | live | 2026-03-08 09:26 AM ET | DOWN | ✅ Win | +$5.7471 | TREND FOLLOW (HighVol+Trend, 43% elapsed) — DOWN token at 0.870 deviates 0.355 from 0.50. Momentum c |
+| `2026-03-08 09:04 AM ET` | **sol-updown-15m** `0xb4c7c861ed…`<br>09:00 AM → 09:15 AM | **DOWN** | `trend_follow` | 0.9900 | $5.00 | live | 2026-03-08 09:24 AM ET | DOWN | ✅ Win | +$5.0505 | TREND FOLLOW (HighVol+Trend, 31% elapsed) — DOWN token at 0.990 deviates 0.260 from 0.50. Momentum c |
+| `2026-03-08 09:00 AM ET` | **xrp-updown-15m** `0x10a469c98f…`<br>09:00 AM → 09:15 AM | **UP** | `trend_follow` | 0.6300 | $5.00 | live | 2026-03-08 09:22 AM ET | DOWN | ❌ Loss | $-5.0000 | TREND FOLLOW (HighVol+Trend, 4% elapsed) — UP token at 0.630 deviates 0.115 from 0.50. Momentum cont |
 | `2026-03-08 08:58 AM ET` | **btc-updown-15m** `0x7e5ef5ca5a…`<br>08:45 AM → 09:00 AM | **UP** | `directional_90pct` | 0.9900 | $5.00 | live | 2026-03-08 09:00 AM ET | DOWN | ❌ Loss | $-5.0000 | DIRECTIONAL at 90pct (93% elapsed) — P(UP)=0.872 gives edge=0.372 toward UP. Bucket=HighVol+Range (R |
 | `2026-03-08 08:58 AM ET` | **eth-updown-15m** `0xced273a246…`<br>08:45 AM → 09:00 AM | **UP** | `directional_90pct` | 0.9900 | $5.00 | live | 2026-03-08 09:00 AM ET | DOWN | ❌ Loss | $-5.0000 | DIRECTIONAL at 90pct (88% elapsed) — P(UP)=0.842 gives edge=0.342 toward UP. Bucket=HighVol+Range (R |
 | `2026-03-08 08:58 AM ET` | **xrp-updown-15m** `0x7c1d775f22…`<br>08:45 AM → 09:00 AM | **DOWN** | `directional_90pct` | 0.9900 | $5.00 | live | 2026-03-08 09:00 AM ET | DOWN | ✅ Win | +$5.0505 | DIRECTIONAL at 90pct (87% elapsed) — P(UP)=0.200 gives edge=0.300 toward DOWN. Bucket=HighVol+Range  |
