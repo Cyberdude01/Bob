@@ -1,127 +1,6 @@
 {
-  "updated": "2026-03-08 05:06:09 AM ET",
+  "updated": "2026-03-08 05:11:11 AM ET",
   "data": [
-    {
-      "symbol": "ETH",
-      "slug": "eth-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 9.52,
-      "price": 0.99,
-      "confidence": 0.625,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 9% elapsed) \u2014 DOWN token at 0.990 deviates 0.125 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$9.52 USDC (scales with deviation)."
-    },
-    {
-      "symbol": "XRP",
-      "slug": "xrp-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 13.36,
-      "price": 0.99,
-      "confidence": 0.74,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 9% elapsed) \u2014 UP token at 0.990 deviates 0.240 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$13.36 USDC (scales with deviation)."
-    },
-    {
-      "symbol": "XRP",
-      "slug": "xrp-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 13.36,
-      "price": 0.99,
-      "confidence": 0.74,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 9% elapsed) \u2014 DOWN token at 0.990 deviates 0.240 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$13.36 USDC (scales with deviation)."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 22.96,
-      "price": 0.65,
-      "confidence": 0.635,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 10% elapsed) \u2014 DOWN token at 0.650 deviates 0.135 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$22.96 USDC (scales with deviation)."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 22.96,
-      "price": 0.65,
-      "confidence": 0.64,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 10% elapsed) \u2014 DOWN token at 0.650 deviates 0.140 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$22.96 USDC (scales with deviation)."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 22.96,
-      "price": 0.68,
-      "confidence": 0.65,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 11% elapsed) \u2014 DOWN token at 0.680 deviates 0.150 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$22.96 USDC (scales with deviation)."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 22.96,
-      "price": 0.66,
-      "confidence": 0.685,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 11% elapsed) \u2014 DOWN token at 0.660 deviates 0.185 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$22.96 USDC (scales with deviation)."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 22.96,
-      "price": 0.65,
-      "confidence": 0.645,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 11% elapsed) \u2014 DOWN token at 0.650 deviates 0.145 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$22.96 USDC (scales with deviation)."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 22.96,
-      "price": 0.64,
-      "confidence": 0.635,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 11% elapsed) \u2014 DOWN token at 0.640 deviates 0.135 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$22.96 USDC (scales with deviation)."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 22.96,
-      "price": 0.68,
-      "confidence": 0.635,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 12% elapsed) \u2014 DOWN token at 0.680 deviates 0.135 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$22.96 USDC (scales with deviation)."
-    },
-    {
-      "symbol": "ETH",
-      "slug": "eth-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 9.52,
-      "price": 0.77,
-      "confidence": 0.765,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 12% elapsed) \u2014 DOWN token at 0.770 deviates 0.265 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$9.52 USDC (scales with deviation)."
-    },
     {
       "symbol": "ETH",
       "slug": "eth-updown-15m",
@@ -220,6 +99,127 @@
       "confidence": 0.8,
       "trigger": "trend_follow",
       "reason": "TREND FOLLOW (HighVol+Trend, 15% elapsed) \u2014 DOWN token at 0.810 deviates 0.300 from 0.50. Momentum continuation strategy: buying the already-winning leg. Size=$9.52 USDC (scales with deviation)."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 8.85,
+      "price": 0.6,
+      "confidence": 0.571,
+      "trigger": "directional_60pct",
+      "reason": "DIRECTIONAL at 60pct (57% elapsed) \u2014 P(UP)=0.429 gives edge=0.071 toward DOWN. Bucket=LowVol+Trend (RV60=1.11051, Eff60=0.034). Size scales with edge: $8.85 USDC @ conf=0.571."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 9.26,
+      "price": 0.6,
+      "confidence": 0.576,
+      "trigger": "directional_60pct",
+      "reason": "DIRECTIONAL at 60pct (57% elapsed) \u2014 P(UP)=0.424 gives edge=0.076 toward DOWN. Bucket=LowVol+Trend (RV60=1.11048, Eff60=0.035). Size scales with edge: $9.26 USDC @ conf=0.576."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 9.26,
+      "price": 0.6,
+      "confidence": 0.576,
+      "trigger": "directional_60pct",
+      "reason": "DIRECTIONAL at 60pct (57% elapsed) \u2014 P(UP)=0.424 gives edge=0.076 toward DOWN. Bucket=LowVol+Trend (RV60=1.11048, Eff60=0.035). Size scales with edge: $9.26 USDC @ conf=0.576."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 8.05,
+      "price": 0.58,
+      "confidence": 0.563,
+      "trigger": "directional_60pct",
+      "reason": "DIRECTIONAL at 60pct (58% elapsed) \u2014 P(UP)=0.437 gives edge=0.063 toward DOWN. Bucket=LowVol+Trend (RV60=1.16871, Eff60=0.026). Size scales with edge: $8.05 USDC @ conf=0.563."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 8.05,
+      "price": 0.58,
+      "confidence": 0.563,
+      "trigger": "directional_60pct",
+      "reason": "DIRECTIONAL at 60pct (58% elapsed) \u2014 P(UP)=0.437 gives edge=0.063 toward DOWN. Bucket=LowVol+Trend (RV60=1.16871, Eff60=0.026). Size scales with edge: $8.05 USDC @ conf=0.563."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 8.05,
+      "price": 0.99,
+      "confidence": 0.563,
+      "trigger": "directional_60pct",
+      "reason": "DIRECTIONAL at 60pct (58% elapsed) \u2014 P(UP)=0.437 gives edge=0.063 toward DOWN. Bucket=LowVol+Trend (RV60=1.16871, Eff60=0.026). Size scales with edge: $8.05 USDC @ conf=0.563."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 7.24,
+      "price": 0.51,
+      "confidence": 0.555,
+      "trigger": "directional_60pct",
+      "reason": "DIRECTIONAL at 60pct (58% elapsed) \u2014 P(UP)=0.445 gives edge=0.055 toward DOWN. Bucket=LowVol+Trend (RV60=1.17404, Eff60=0.022). Size scales with edge: $7.24 USDC @ conf=0.555."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 9.26,
+      "price": 0.57,
+      "confidence": 0.576,
+      "trigger": "directional_60pct",
+      "reason": "DIRECTIONAL at 60pct (62% elapsed) \u2014 P(UP)=0.424 gives edge=0.076 toward DOWN. Bucket=LowVol+Trend (RV60=1.11711, Eff60=0.034). Size scales with edge: $9.26 USDC @ conf=0.576."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 7.24,
+      "price": 0.57,
+      "confidence": 0.555,
+      "trigger": "directional_60pct",
+      "reason": "DIRECTIONAL at 60pct (63% elapsed) \u2014 P(UP)=0.445 gives edge=0.055 toward DOWN. Bucket=LowVol+Trend (RV60=1.11615, Eff60=0.026). Size scales with edge: $7.24 USDC @ conf=0.555."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 7.24,
+      "price": 0.5,
+      "confidence": 0.555,
+      "trigger": "directional_60pct",
+      "reason": "DIRECTIONAL at 60pct (63% elapsed) \u2014 P(UP)=0.445 gives edge=0.055 toward DOWN. Bucket=LowVol+Trend (RV60=1.11615, Eff60=0.026). Size scales with edge: $7.24 USDC @ conf=0.555."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 8.91,
+      "price": 0.61,
+      "confidence": 0.572,
+      "trigger": "directional_60pct",
+      "reason": "DIRECTIONAL at 60pct (63% elapsed) \u2014 P(UP)=0.428 gives edge=0.072 toward DOWN. Bucket=LowVol+Range (RV60=1.10589, Eff60=0.011). Size scales with edge: $8.91 USDC @ conf=0.572."
     }
   ]
 }

@@ -1,6 +1,6 @@
 # Decision Engine Summary
 
-> **Updated:** `2026-03-08 05:06:09 AM ET` &nbsp;|&nbsp; All signals from the last 48 hours
+> **Updated:** `2026-03-08 05:11:11 AM ET` &nbsp;|&nbsp; All signals from the last 48 hours
 
 ## Signal Distribution
 | Trigger | Count |
@@ -8,11 +8,22 @@
 | `trend_follow` | 438 |
 | `directional_90pct` | 257 |
 | `directional_80pct` | 247 |
-| `directional_60pct` | 175 |
+| `directional_60pct` | 186 |
 
 ## Signal Log
 | Time (ET) | Symbol | Slug | Outcome | Trigger | Confidence | P(UP) | Bucket | Elapsed% | Reasoning |
 | --------------- | ------ | ----------------- | ------- | -------------------- | ---------- | ----- | -------------- | -------- | -------------------------------------------------- |
+| `2026-03-08 05:09 AM ET` | BTC | btc-updown-15m | **DOWN** | `directional_60pct` | 0.572 | 42.8% | LowVol+Range | 63.3% | DIRECTIONAL at 60pct (63% elapsed) — P(UP)=0.428 gives edge=0.072 toward DOWN. Bucket=LowVol+Range (RV60=1.10589, Eff60= |
+| `2026-03-08 05:09 AM ET` | BTC | btc-updown-15m | **DOWN** | `directional_60pct` | 0.555 | 44.5% | LowVol+Trend | 62.9% | DIRECTIONAL at 60pct (63% elapsed) — P(UP)=0.445 gives edge=0.055 toward DOWN. Bucket=LowVol+Trend (RV60=1.11615, Eff60= |
+| `2026-03-08 05:09 AM ET` | BTC | btc-updown-15m | **DOWN** | `directional_60pct` | 0.555 | 44.5% | LowVol+Trend | 62.6% | DIRECTIONAL at 60pct (63% elapsed) — P(UP)=0.445 gives edge=0.055 toward DOWN. Bucket=LowVol+Trend (RV60=1.11615, Eff60= |
+| `2026-03-08 05:09 AM ET` | BTC | btc-updown-15m | **DOWN** | `directional_60pct` | 0.576 | 42.4% | LowVol+Trend | 62.4% | DIRECTIONAL at 60pct (62% elapsed) — P(UP)=0.424 gives edge=0.076 toward DOWN. Bucket=LowVol+Trend (RV60=1.11711, Eff60= |
+| `2026-03-08 05:08 AM ET` | BTC | btc-updown-15m | **DOWN** | `directional_60pct` | 0.555 | 44.5% | LowVol+Trend | 58.2% | DIRECTIONAL at 60pct (58% elapsed) — P(UP)=0.445 gives edge=0.055 toward DOWN. Bucket=LowVol+Trend (RV60=1.17404, Eff60= |
+| `2026-03-08 05:08 AM ET` | BTC | btc-updown-15m | **DOWN** | `directional_60pct` | 0.563 | 43.7% | LowVol+Trend | 58.0% | DIRECTIONAL at 60pct (58% elapsed) — P(UP)=0.437 gives edge=0.063 toward DOWN. Bucket=LowVol+Trend (RV60=1.16871, Eff60= |
+| `2026-03-08 05:08 AM ET` | BTC | btc-updown-15m | **DOWN** | `directional_60pct` | 0.563 | 43.7% | LowVol+Trend | 57.7% | DIRECTIONAL at 60pct (58% elapsed) — P(UP)=0.437 gives edge=0.063 toward DOWN. Bucket=LowVol+Trend (RV60=1.16871, Eff60= |
+| `2026-03-08 05:08 AM ET` | BTC | btc-updown-15m | **DOWN** | `directional_60pct` | 0.563 | 43.7% | LowVol+Trend | 57.5% | DIRECTIONAL at 60pct (58% elapsed) — P(UP)=0.437 gives edge=0.063 toward DOWN. Bucket=LowVol+Trend (RV60=1.16871, Eff60= |
+| `2026-03-08 05:08 AM ET` | BTC | btc-updown-15m | **DOWN** | `directional_60pct` | 0.576 | 42.4% | LowVol+Trend | 57.3% | DIRECTIONAL at 60pct (57% elapsed) — P(UP)=0.424 gives edge=0.076 toward DOWN. Bucket=LowVol+Trend (RV60=1.11048, Eff60= |
+| `2026-03-08 05:08 AM ET` | BTC | btc-updown-15m | **DOWN** | `directional_60pct` | 0.576 | 42.4% | LowVol+Trend | 57.1% | DIRECTIONAL at 60pct (57% elapsed) — P(UP)=0.424 gives edge=0.076 toward DOWN. Bucket=LowVol+Trend (RV60=1.11048, Eff60= |
+| `2026-03-08 05:08 AM ET` | BTC | btc-updown-15m | **DOWN** | `directional_60pct` | 0.571 | 42.9% | LowVol+Trend | 56.8% | DIRECTIONAL at 60pct (57% elapsed) — P(UP)=0.429 gives edge=0.071 toward DOWN. Bucket=LowVol+Trend (RV60=1.11051, Eff60= |
 | `2026-03-08 05:02 AM ET` | ETH | eth-updown-15m | **DOWN** | `trend_follow` | 0.800 | 76.4% | HighVol+Trend | 14.7% | TREND FOLLOW (HighVol+Trend, 15% elapsed) — DOWN token at 0.810 deviates 0.300 from 0.50. Momentum continuation strategy |
 | `2026-03-08 05:02 AM ET` | ETH | eth-updown-15m | **UP** | `trend_follow` | 0.800 | 76.4% | HighVol+Trend | 14.7% | TREND FOLLOW (HighVol+Trend, 15% elapsed) — UP token at 0.200 deviates 0.300 from 0.50. Momentum continuation strategy:  |
 | `2026-03-08 05:02 AM ET` | ETH | eth-updown-15m | **DOWN** | `trend_follow` | 0.805 | 23.2% | HighVol+Trend | 14.0% | TREND FOLLOW (HighVol+Trend, 14% elapsed) — DOWN token at 0.810 deviates 0.305 from 0.50. Momentum continuation strategy |
