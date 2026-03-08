@@ -1,17 +1,20 @@
 # Decision Tracker
 
-> **Updated:** `2026-03-08 07:57:16 AM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
+> **Updated:** `2026-03-08 08:02:18 AM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
 
 ## Summary
 | Total | Resolved | Wins | Losses | ARB | Pending | Win Rate | Realised P&L |
 | ----- | -------- | ---- | ------ | --- | ------- | -------- | ------------ |
-| 247 | 120 | 60 | 60 | 0 | 127 | 50.0% | +$904.3293 |
+| 250 | 120 | 60 | 60 | 0 | 130 | 50.0% | +$904.3293 |
 
 ## Trade Log
 > Each row: Entry Time · Market Slug · Condition ID (first 12 chars) · 15-min Window
 
 | Entry Time (ET) | Market & Window | Outcome | Trigger | Entry $ | Size | Mode | Resolved (ET) | Winner | Result | P&L | Reasoning |
 | ----------------- | ---------------------------------------- | ------- | ---------------------- | ------- | ------ | ----- | ----------------- | ------ | -------- | --------- | -------------------------------------------------- |
+| `2026-03-08 07:58 AM ET` | **btc-updown-15m** `0x1fb98314d6…`<br>07:45 AM → 08:00 AM | **DOWN** | `directional_90pct` | 0.9900 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 90pct (89% elapsed) — P(UP)=0.061 gives edge=0.439 toward DOWN. Bucket=HighVol+Trend  |
+| `2026-03-08 07:58 AM ET` | **xrp-updown-15m** `0x36676da2fa…`<br>07:45 AM → 08:00 AM | **DOWN** | `directional_90pct` | 0.9900 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 90pct (87% elapsed) — P(UP)=0.249 gives edge=0.251 toward DOWN. Bucket=HighVol+Trend  |
+| `2026-03-08 07:58 AM ET` | **sol-updown-15m** `0xd9338ca842…`<br>07:45 AM → 08:00 AM | **UP** | `directional_90pct` | 0.9900 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 90pct (87% elapsed) — P(UP)=0.781 gives edge=0.281 toward UP. Bucket=HighVol+Range (R |
 | `2026-03-08 07:57 AM ET` | **btc-updown-15m** `0x1fb98314d6…`<br>07:45 AM → 08:00 AM | **DOWN** | `directional_80pct` | 0.1700 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 80pct (81% elapsed) — P(UP)=0.256 gives edge=0.244 toward DOWN. Bucket=HighVol+Range  |
 | `2026-03-08 07:56 AM ET` | **xrp-updown-15m** `0x36676da2fa…`<br>07:45 AM → 08:00 AM | **DOWN** | `directional_80pct` | 0.3100 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 80pct (77% elapsed) — P(UP)=0.282 gives edge=0.218 toward DOWN. Bucket=HighVol+Trend  |
 | `2026-03-08 07:56 AM ET` | **eth-updown-15m** `0x53f546d6da…`<br>07:45 AM → 08:00 AM | **DOWN** | `directional_80pct` | 0.0200 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 80pct (77% elapsed) — P(UP)=0.147 gives edge=0.353 toward DOWN. Bucket=HighVol+Range  |
