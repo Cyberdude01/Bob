@@ -1,17 +1,25 @@
 # Decision Tracker
 
-> **Updated:** `2026-03-08 05:23:14 AM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
+> **Updated:** `2026-03-08 05:28:16 AM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
 
 ## Summary
 | Total | Resolved | Wins | Losses | ARB | Pending | Win Rate | Realised P&L |
 | ----- | -------- | ---- | ------ | --- | ------- | -------- | ------------ |
-| 201 | 78 | 39 | 39 | 0 | 123 | 50.0% | +$501.4993 |
+| 209 | 78 | 39 | 39 | 0 | 131 | 50.0% | +$501.4993 |
 
 ## Trade Log
 > Each row: Entry Time · Market Slug · Condition ID (first 12 chars) · 15-min Window
 
 | Entry Time (ET) | Market & Window | Outcome | Trigger | Entry $ | Size | Mode | Resolved (ET) | Winner | Result | P&L | Reasoning |
 | ----------------- | ---------------------------------------- | ------- | ---------------------- | ------- | ------ | ----- | ----------------- | ------ | -------- | --------- | -------------------------------------------------- |
+| `2026-03-08 05:26 AM ET` | **btc-updown-15m** `0xaf11d10d9b…`<br>05:15 AM → 05:30 AM | **UP** | `directional_80pct` | 0.2600 | $24.81 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 80pct (77% elapsed) — P(UP)=0.738 gives edge=0.238 toward UP. Bucket=HighVol+Trend (R |
+| `2026-03-08 05:23 AM ET` | **eth-updown-15m** `0xe7f6fa1237…`<br>05:15 AM → 05:30 AM | **DOWN** | `directional_60pct` | 0.9900 | $13.83 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 60pct (59% elapsed) — P(UP)=0.377 gives edge=0.123 toward DOWN. Bucket=HighVol+Trend  |
+| `2026-03-08 05:23 AM ET` | **btc-updown-15m** `0xaf11d10d9b…`<br>05:15 AM → 05:30 AM | **DOWN** | `directional_60pct` | 0.9900 | $6.92 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 60pct (59% elapsed) — P(UP)=0.449 gives edge=0.051 toward DOWN. Bucket=HighVol+Range  |
+| `2026-03-08 05:23 AM ET` | **xrp-updown-15m** `0x29c5be14a2…`<br>05:15 AM → 05:30 AM | **DOWN** | `directional_60pct` | 0.9900 | $26.58 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 60pct (57% elapsed) — P(UP)=0.244 gives edge=0.256 toward DOWN. Bucket=HighVol+Range  |
+| `2026-03-08 05:23 AM ET` | **sol-updown-15m** `0x4007bb17bf…`<br>05:15 AM → 05:30 AM | **UP** | `directional_60pct` | 0.9900 | $7.07 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 60pct (57% elapsed) — P(UP)=0.553 gives edge=0.053 toward UP. Bucket=HighVol+Trend (R |
+| `2026-03-08 05:23 AM ET` | **sol-updown-15m** `0x4007bb17bf…`<br>05:15 AM → 05:30 AM | **DOWN** | `directional_60pct` | 0.9900 | $7.49 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 60pct (57% elapsed) — P(UP)=0.443 gives edge=0.057 toward DOWN. Bucket=HighVol+Trend  |
+| `2026-03-08 05:23 AM ET` | **xrp-updown-15m** `0x29c5be14a2…`<br>05:15 AM → 05:30 AM | **UP** | `directional_60pct` | 0.9900 | $24.73 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | DIRECTIONAL at 60pct (57% elapsed) — P(UP)=0.737 gives edge=0.237 toward UP. Bucket=HighVol+Range (R |
+| `2026-03-08 05:23 AM ET` | **eth-updown-15m** `0xe7f6fa1237…`<br>05:15 AM → 05:30 AM | **UP** | `trend_follow` | 0.6400 | $26.96 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 56% elapsed) — UP token at 0.640 deviates 0.130 from 0.50. Momentum con |
 | `2026-03-08 05:11 AM ET` | **btc-updown-15m** `0x8126667ed0…`<br>05:00 AM → 05:15 AM | **UP** | `directional_80pct` | 0.8200 | $22.96 | live | 2026-03-08 05:21 AM ET | UP | ✅ Win | +$28.0000 | DIRECTIONAL at 80pct (77% elapsed) — P(UP)=0.842 gives edge=0.342 toward UP. Bucket=HighVol+Trend (R |
 | `2026-03-08 05:02 AM ET` | **eth-updown-15m** `0xe6fa2b8e2c…`<br>05:00 AM → 05:15 AM | **UP** | `trend_follow` | 0.2000 | $9.52 | live | 2026-03-08 05:21 AM ET | UP | ✅ Win | +$47.6000 | TREND FOLLOW (HighVol+Trend, 15% elapsed) — UP token at 0.200 deviates 0.300 from 0.50. Momentum con |
 | `2026-03-08 05:01 AM ET` | **xrp-updown-15m** `0x3fc0cf77c7…`<br>05:00 AM → 05:15 AM | **UP** | `trend_follow` | 0.9900 | $13.36 | live | 2026-03-08 05:21 AM ET | UP | ✅ Win | +$13.4949 | TREND FOLLOW (HighVol+Trend, 9% elapsed) — UP token at 0.990 deviates 0.240 from 0.50. Momentum cont |
