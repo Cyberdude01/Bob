@@ -1,6 +1,6 @@
 # Decision Engine Summary
 
-> **Updated:** `2026-03-08 04:36:28 PM ET` &nbsp;|&nbsp; All signals from the last 48 hours
+> **Updated:** `2026-03-08 04:41:31 PM ET` &nbsp;|&nbsp; All signals from the last 48 hours
 
 ## Signal Distribution
 | Trigger | Count |
@@ -9,11 +9,14 @@
 | `directional_80pct` | 2094 |
 | `trend_follow` | 1738 |
 | `directional_60pct` | 354 |
-| `forced` | 75 |
+| `forced` | 78 |
 
 ## Signal Log
 | Time (ET) | Symbol | Slug | Outcome | Trigger | Confidence | P(UP) | Bucket | Elapsed% | Reasoning |
 | --------------- | ------ | ----------------- | ------- | -------------------- | ---------- | ----- | -------------- | -------- | -------------------------------------------------- |
+| `2026-03-08 04:38 PM ET` | ETH | eth-updown-15m | **UP** | `forced` | 0.500 | 50.0% | HighVol+Trend | 57.3% | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.500, choosing UP. Fixed $5 USDC stake (every mark |
+| `2026-03-08 04:38 PM ET` | BTC | btc-updown-15m | **UP** | `forced` | 0.500 | 50.0% | HighVol+Range | 57.3% | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.500, choosing UP. Fixed $5 USDC stake (every mark |
+| `2026-03-08 04:38 PM ET` | XRP | xrp-updown-15m | **DOWN** | `forced` | 0.814 | 18.6% | HighVol+Range | 56.9% | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.186, choosing DOWN. Fixed $5 USDC stake (every ma |
 | `2026-03-08 04:30 PM ET` | SOL | sol-updown-15m | **UP** | `trend_follow` | 0.640 | 62.3% | HighVol+Trend | 4.2% | TREND FOLLOW (HighVol+Trend, 4% elapsed) — UP token at 0.990 deviates 0.140 from 0.50. Momentum continuation strategy: b |
 | `2026-03-08 04:30 PM ET` | SOL | sol-updown-15m | **UP** | `trend_follow` | 0.640 | 62.3% | HighVol+Trend | 3.9% | TREND FOLLOW (HighVol+Trend, 4% elapsed) — UP token at 0.990 deviates 0.140 from 0.50. Momentum continuation strategy: b |
 | `2026-03-08 04:30 PM ET` | SOL | sol-updown-15m | **UP** | `trend_follow` | 0.640 | 62.3% | HighVol+Trend | 3.7% | TREND FOLLOW (HighVol+Trend, 4% elapsed) — UP token at 0.990 deviates 0.140 from 0.50. Momentum continuation strategy: b |

@@ -1,22 +1,25 @@
 # Decision Tracker
 
-> **Updated:** `2026-03-08 04:36:28 PM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
+> **Updated:** `2026-03-08 04:41:31 PM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
 
 ## Summary
 | Total | Resolved | Wins | Losses | ARB | Pending | Win Rate | Realised P&L |
 | ----- | -------- | ---- | ------ | --- | ------- | -------- | ------------ |
-| 401 | 273 | 135 | 138 | 0 | 128 | 49.5% | +$973.5178 |
+| 404 | 276 | 137 | 139 | 0 | 128 | 49.6% | +$982.6799 |
 
 ## Trade Log
 > Each row: Entry Time · Market Slug · Condition ID (first 12 chars) · 15-min Window
 
 | Entry Time (ET) | Market & Window | Outcome | Trigger | Entry $ | Size | Mode | Resolved (ET) | Winner | Result | P&L | Reasoning |
 | ----------------- | ---------------------------------------- | ------- | ---------------------- | ------- | ------ | ----- | ----------------- | ------ | -------- | --------- | -------------------------------------------------- |
+| `2026-03-08 04:38 PM ET` | **eth-updown-15m** `0x1e96f1df5f…`<br>04:30 PM → 04:45 PM | **UP** | `forced` | 0.9990 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.500, choosing UP. Fixed $5 US |
+| `2026-03-08 04:38 PM ET` | **btc-updown-15m** `0xe67946c79f…`<br>04:30 PM → 04:45 PM | **UP** | `forced` | 0.9990 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.500, choosing UP. Fixed $5 US |
+| `2026-03-08 04:38 PM ET` | **xrp-updown-15m** `0x93c4f38df3…`<br>04:30 PM → 04:45 PM | **DOWN** | `forced` | 0.9900 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.186, choosing DOWN. Fixed $5  |
 | `2026-03-08 04:30 PM ET` | **sol-updown-15m** `0xedab078361…`<br>04:30 PM → 04:45 PM | **UP** | `trend_follow` | 0.9900 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 4% elapsed) — UP token at 0.990 deviates 0.140 from 0.50. Momentum cont |
 | `2026-03-08 04:23 PM ET` | **xrp-updown-15m** `0xad004b13da…`<br>04:15 PM → 04:30 PM | **UP** | `trend_follow` | 0.8500 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 54% elapsed) — UP token at 0.850 deviates 0.345 from 0.50. Momentum con |
-| `2026-03-08 04:20 PM ET` | **sol-updown-15m** `0x55e8e624a2…`<br>04:15 PM → 04:30 PM | **UP** | `trend_follow` | 0.8200 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 38% elapsed) — UP token at 0.820 deviates 0.315 from 0.50. Momentum con |
-| `2026-03-08 04:15 PM ET` | **eth-updown-15m** `0x502f620276…`<br>04:15 PM → 04:30 PM | **UP** | `trend_follow` | 0.6200 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 2% elapsed) — UP token at 0.620 deviates 0.115 from 0.50. Momentum cont |
-| `2026-03-08 04:15 PM ET` | **btc-updown-15m** `0xf84c0d551e…`<br>04:15 PM → 04:30 PM | **UP** | `trend_follow` | 0.6000 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 2% elapsed) — UP token at 0.600 deviates 0.090 from 0.50. Momentum cont |
+| `2026-03-08 04:20 PM ET` | **sol-updown-15m** `0x55e8e624a2…`<br>04:15 PM → 04:30 PM | **UP** | `trend_follow` | 0.8200 | $5.00 | live | 2026-03-08 04:40 PM ET | UP | ✅ Win | +$6.0976 | TREND FOLLOW (HighVol+Trend, 38% elapsed) — UP token at 0.820 deviates 0.315 from 0.50. Momentum con |
+| `2026-03-08 04:15 PM ET` | **eth-updown-15m** `0x502f620276…`<br>04:15 PM → 04:30 PM | **UP** | `trend_follow` | 0.6200 | $5.00 | live | 2026-03-08 04:36 PM ET | UP | ✅ Win | +$8.0645 | TREND FOLLOW (HighVol+Trend, 2% elapsed) — UP token at 0.620 deviates 0.115 from 0.50. Momentum cont |
+| `2026-03-08 04:15 PM ET` | **btc-updown-15m** `0xf84c0d551e…`<br>04:15 PM → 04:30 PM | **UP** | `trend_follow` | 0.6000 | $5.00 | live | 2026-03-08 04:36 PM ET | DOWN | ❌ Loss | $-5.0000 | TREND FOLLOW (HighVol+Trend, 2% elapsed) — UP token at 0.600 deviates 0.090 from 0.50. Momentum cont |
 | `2026-03-08 04:03 PM ET` | **sol-updown-15m** `0x349b08be30…`<br>04:00 PM → 04:15 PM | **DOWN** | `trend_follow` | 0.7200 | $5.00 | live | 2026-03-08 04:24 PM ET | DOWN | ✅ Win | +$6.9444 | TREND FOLLOW (HighVol+Trend, 22% elapsed) — DOWN token at 0.720 deviates 0.215 from 0.50. Momentum c |
 | `2026-03-08 04:01 PM ET` | **xrp-updown-15m** `0x03008a3274…`<br>04:00 PM → 04:15 PM | **DOWN** | `trend_follow` | 0.6000 | $5.00 | live | 2026-03-08 04:22 PM ET | DOWN | ✅ Win | +$8.3333 | TREND FOLLOW (HighVol+Trend, 13% elapsed) — DOWN token at 0.600 deviates 0.090 from 0.50. Momentum c |
 | `2026-03-08 04:01 PM ET` | **eth-updown-15m** `0xcbceb5e5f1…`<br>04:00 PM → 04:15 PM | **DOWN** | `trend_follow` | 0.6700 | $5.00 | live | 2026-03-08 04:22 PM ET | DOWN | ✅ Win | +$7.4627 | TREND FOLLOW (HighVol+Trend, 12% elapsed) — DOWN token at 0.670 deviates 0.145 from 0.50. Momentum c |
