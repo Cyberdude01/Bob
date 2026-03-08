@@ -1,17 +1,18 @@
 # Decision Tracker
 
-> **Updated:** `2026-03-08 04:16:15 PM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
+> **Updated:** `2026-03-08 04:21:18 PM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
 
 ## Summary
 | Total | Resolved | Wins | Losses | ARB | Pending | Win Rate | Realised P&L |
 | ----- | -------- | ---- | ------ | --- | ------- | -------- | ------------ |
-| 398 | 269 | 131 | 138 | 0 | 129 | 48.7% | +$943.6345 |
+| 399 | 269 | 131 | 138 | 0 | 130 | 48.7% | +$943.6345 |
 
 ## Trade Log
 > Each row: Entry Time · Market Slug · Condition ID (first 12 chars) · 15-min Window
 
 | Entry Time (ET) | Market & Window | Outcome | Trigger | Entry $ | Size | Mode | Resolved (ET) | Winner | Result | P&L | Reasoning |
 | ----------------- | ---------------------------------------- | ------- | ---------------------- | ------- | ------ | ----- | ----------------- | ------ | -------- | --------- | -------------------------------------------------- |
+| `2026-03-08 04:20 PM ET` | **sol-updown-15m** `0x55e8e624a2…`<br>04:15 PM → 04:30 PM | **UP** | `trend_follow` | 0.8200 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 38% elapsed) — UP token at 0.820 deviates 0.315 from 0.50. Momentum con |
 | `2026-03-08 04:15 PM ET` | **eth-updown-15m** `0x502f620276…`<br>04:15 PM → 04:30 PM | **UP** | `trend_follow` | 0.6200 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 2% elapsed) — UP token at 0.620 deviates 0.115 from 0.50. Momentum cont |
 | `2026-03-08 04:15 PM ET` | **btc-updown-15m** `0xf84c0d551e…`<br>04:15 PM → 04:30 PM | **UP** | `trend_follow` | 0.6000 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 2% elapsed) — UP token at 0.600 deviates 0.090 from 0.50. Momentum cont |
 | `2026-03-08 04:03 PM ET` | **sol-updown-15m** `0x349b08be30…`<br>04:00 PM → 04:15 PM | **DOWN** | `trend_follow` | 0.7200 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 22% elapsed) — DOWN token at 0.720 deviates 0.215 from 0.50. Momentum c |
