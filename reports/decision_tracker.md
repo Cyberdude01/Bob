@@ -1,17 +1,25 @@
 # Decision Tracker
 
-> **Updated:** `2026-03-08 04:46:02 AM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
+> **Updated:** `2026-03-08 04:51:04 AM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
 
 ## Summary
 | Total | Resolved | Wins | Losses | ARB | Pending | Win Rate | Realised P&L |
 | ----- | -------- | ---- | ------ | --- | ------- | -------- | ------------ |
-| 186 | 63 | 32 | 31 | 0 | 123 | 50.8% | +$517.6165 |
+| 194 | 63 | 32 | 31 | 0 | 131 | 50.8% | +$517.6165 |
 
 ## Trade Log
 > Each row: Entry Time · Market Slug · Condition ID (first 12 chars) · 15-min Window
 
 | Entry Time (ET) | Market & Window | Outcome | Trigger | Entry $ | Size | Mode | Resolved (ET) | Winner | Result | P&L | Reasoning |
 | ----------------- | ---------------------------------------- | ------- | ---------------------- | ------- | ------ | ----- | ----------------- | ------ | -------- | --------- | -------------------------------------------------- |
+| `2026-03-08 04:50 AM ET` | **sol-updown-15m** `0xedc8151a3b…`<br>04:45 AM → 05:00 AM | **DOWN** | `trend_follow` | 0.9900 | $29.84 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 34% elapsed) — DOWN token at 0.990 deviates 0.145 from 0.50. Momentum c |
+| `2026-03-08 04:50 AM ET` | **eth-updown-15m** `0xb7a0ef30c6…`<br>04:45 AM → 05:00 AM | **DOWN** | `trend_follow` | 0.6600 | $26.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 34% elapsed) — DOWN token at 0.660 deviates 0.125 from 0.50. Momentum c |
+| `2026-03-08 04:49 AM ET` | **xrp-updown-15m** `0x519b44e917…`<br>04:45 AM → 05:00 AM | **DOWN** | `trend_follow` | 0.6000 | $20.24 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 27% elapsed) — DOWN token at 0.600 deviates 0.095 from 0.50. Momentum c |
+| `2026-03-08 04:48 AM ET` | **btc-updown-15m** `0x77fc3d6630…`<br>04:45 AM → 05:00 AM | **DOWN** | `trend_follow` | 0.6000 | $18.32 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 24% elapsed) — DOWN token at 0.600 deviates 0.085 from 0.50. Momentum c |
+| `2026-03-08 04:46 AM ET` | **btc-updown-15m** `0x77fc3d6630…`<br>04:45 AM → 05:00 AM | **UP** | `trend_follow` | 0.6300 | $25.04 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 12% elapsed) — UP token at 0.630 deviates 0.120 from 0.50. Momentum con |
+| `2026-03-08 04:46 AM ET` | **xrp-updown-15m** `0x519b44e917…`<br>04:45 AM → 05:00 AM | **UP** | `trend_follow` | 0.6300 | $26.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 12% elapsed) — UP token at 0.630 deviates 0.125 from 0.50. Momentum con |
+| `2026-03-08 04:46 AM ET` | **sol-updown-15m** `0xedc8151a3b…`<br>04:45 AM → 05:00 AM | **UP** | `trend_follow` | 0.6300 | $26.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 12% elapsed) — UP token at 0.630 deviates 0.125 from 0.50. Momentum con |
+| `2026-03-08 04:46 AM ET` | **eth-updown-15m** `0xb7a0ef30c6…`<br>04:45 AM → 05:00 AM | **UP** | `trend_follow` | 0.6200 | $24.08 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 12% elapsed) — UP token at 0.620 deviates 0.115 from 0.50. Momentum con |
 | `2026-03-07 10:30 AM ET` | **eth-updown-15m** `0x222b9411c9…`<br>10:30 AM → 10:45 AM | **DOWN** | `trend_follow` | 0.9900 | $19.96 | live | 2026-03-07 10:50 AM ET | DOWN | ✅ Win | +$20.1616 | TREND FOLLOW (HighVol+Trend, 0% elapsed) — DOWN token at 0.990 deviates 0.499 from 0.50. Momentum co |
 | `2026-03-07 10:30 AM ET` | **eth-updown-15m** `0x222b9411c9…`<br>10:30 AM → 10:45 AM | **UP** | `trend_follow` | 0.9900 | $19.96 | live | 2026-03-07 10:50 AM ET | DOWN | ❌ Loss | $-19.9600 | TREND FOLLOW (HighVol+Trend, 0% elapsed) — UP token at 0.990 deviates 0.499 from 0.50. Momentum cont |
 | `2026-03-07 10:30 AM ET` | **btc-updown-15m** `0x13c142ee66…`<br>10:30 AM → 10:45 AM | **UP** | `trend_follow` | 0.9900 | $10.11 | live | 2026-03-07 10:50 AM ET | DOWN | ❌ Loss | $-10.1100 | TREND FOLLOW (HighVol+Trend, 0% elapsed) — UP token at 0.990 deviates 0.360 from 0.50. Momentum cont |
