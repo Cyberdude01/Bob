@@ -1,17 +1,17 @@
 # Trigger Performance Summary
 
-> **Updated:** `2026-03-08 11:12:06 AM ET` &nbsp;|&nbsp; **Tracking from:** `2026-03-08 07:54 AM ET`
+> **Updated:** `2026-03-08 11:17:09 AM ET` &nbsp;|&nbsp; **Tracking from:** `2026-03-08 07:54 AM ET`
 
 > Counts only trades placed after the tracking start date. Historical trades are excluded. Unresolved trades are not counted in wins/losses.
 
 | Trigger | UP Trades | UP Wins | UP Losses | DOWN Trades | DOWN Wins | DOWN Losses | Total | Win Rate |
 | ---------------------- | --------- | ------- | --------- | ----------- | --------- | ----------- | ----- | -------- |
 | `directional_60pct` | 2 | 0 | 2 | 0 | 0 | 0 | 2 | 0.0% |
-| `directional_80pct` | 0 | 0 | 0 | 5 | 1 | 2 | 5 | 33.3% |
-| `directional_90pct` | 4 | 2 | 2 | 8 | 2 | 4 | 12 | 40.0% |
-| `forced` | 5 | 1 | 4 | 27 | 9 | 14 | 32 | 35.7% |
-| `trend_follow` | 11 | 6 | 5 | 9 | 3 | 1 | 20 | 60.0% |
-| **TOTAL** | — | — | — | — | — | — | **71** | **41.4%** |
+| `directional_80pct` | 0 | 0 | 0 | 6 | 1 | 2 | 6 | 33.3% |
+| `directional_90pct` | 4 | 2 | 2 | 8 | 2 | 6 | 12 | 33.3% |
+| `forced` | 5 | 1 | 4 | 27 | 9 | 18 | 32 | 31.2% |
+| `trend_follow` | 12 | 6 | 5 | 12 | 3 | 1 | 24 | 60.0% |
+| **TOTAL** | — | — | — | — | — | — | **76** | **37.5%** |
 
 ## Performance by Market Bucket
 
