@@ -1,6 +1,6 @@
 # Trigger Performance Summary
 
-> **Updated:** `2026-03-08 12:12:20 PM ET` &nbsp;|&nbsp; **Tracking from:** `2026-03-08 07:54 AM ET`
+> **Updated:** `2026-03-08 12:17:23 PM ET` &nbsp;|&nbsp; **Tracking from:** `2026-03-08 07:54 AM ET`
 
 > Counts only trades placed after the tracking start date. Historical trades are excluded. Unresolved trades are not counted in wins/losses.
 
@@ -9,9 +9,9 @@
 | `directional_60pct` | 2 | 0 | 2 | 0 | 0 | 0 | 2 | 0.0% |
 | `directional_80pct` | 0 | 0 | 0 | 6 | 2 | 4 | 6 | 33.3% |
 | `directional_90pct` | 4 | 2 | 2 | 8 | 2 | 6 | 12 | 33.3% |
-| `forced` | 7 | 1 | 5 | 35 | 10 | 20 | 42 | 30.6% |
-| `trend_follow` | 12 | 6 | 6 | 14 | 9 | 3 | 26 | 62.5% |
-| **TOTAL** | — | — | — | — | — | — | **88** | **40.0%** |
+| `forced` | 7 | 1 | 5 | 35 | 10 | 24 | 42 | 27.5% |
+| `trend_follow` | 12 | 6 | 6 | 17 | 9 | 3 | 29 | 62.5% |
+| **TOTAL** | — | — | — | — | — | — | **91** | **38.1%** |
 
 ## Performance by Market Bucket
 
