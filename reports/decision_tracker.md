@@ -1,17 +1,18 @@
 # Decision Tracker
 
-> **Updated:** `2026-03-08 12:22:26 PM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
+> **Updated:** `2026-03-08 12:27:29 PM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
 
 ## Summary
 | Total | Resolved | Wins | Losses | ARB | Pending | Win Rate | Realised P&L |
 | ----- | -------- | ---- | ------ | --- | ------- | -------- | ------------ |
-| 334 | 204 | 92 | 112 | 0 | 130 | 45.1% | +$837.8815 |
+| 335 | 204 | 92 | 112 | 0 | 131 | 45.1% | +$837.8815 |
 
 ## Trade Log
 > Each row: Entry Time · Market Slug · Condition ID (first 12 chars) · 15-min Window
 
 | Entry Time (ET) | Market & Window | Outcome | Trigger | Entry $ | Size | Mode | Resolved (ET) | Winner | Result | P&L | Reasoning |
 | ----------------- | ---------------------------------------- | ------- | ---------------------- | ------- | ------ | ----- | ----------------- | ------ | -------- | --------- | -------------------------------------------------- |
+| `2026-03-08 12:22 PM ET` | **xrp-updown-15m** `0x4ba5dcff45…`<br>12:15 PM → 12:30 PM | **DOWN** | `trend_follow` | 0.7700 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 50% elapsed) — DOWN token at 0.770 deviates 0.295 from 0.50. Momentum c |
 | `2026-03-08 12:16 PM ET` | **btc-updown-15m** `0xa440d46b8b…`<br>12:15 PM → 12:30 PM | **DOWN** | `trend_follow` | 0.6700 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 8% elapsed) — DOWN token at 0.670 deviates 0.155 from 0.50. Momentum co |
 | `2026-03-08 12:16 PM ET` | **eth-updown-15m** `0xfe3b722f4a…`<br>12:15 PM → 12:30 PM | **DOWN** | `trend_follow` | 0.6700 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 8% elapsed) — DOWN token at 0.670 deviates 0.165 from 0.50. Momentum co |
 | `2026-03-08 12:16 PM ET` | **sol-updown-15m** `0x10446f2520…`<br>12:15 PM → 12:30 PM | **DOWN** | `trend_follow` | 0.6900 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 7% elapsed) — DOWN token at 0.690 deviates 0.145 from 0.50. Momentum co |

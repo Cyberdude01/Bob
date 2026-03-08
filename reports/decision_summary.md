@@ -1,19 +1,58 @@
 # Decision Engine Summary
 
-> **Updated:** `2026-03-08 12:22:26 PM ET` &nbsp;|&nbsp; All signals from the last 48 hours
+> **Updated:** `2026-03-08 12:27:29 PM ET` &nbsp;|&nbsp; All signals from the last 48 hours
 
 ## Signal Distribution
 | Trigger | Count |
 | -------------------- | ----- |
 | `directional_90pct` | 1718 |
-| `directional_80pct` | 1357 |
-| `trend_follow` | 1016 |
+| `directional_80pct` | 1392 |
+| `trend_follow` | 1020 |
 | `directional_60pct` | 354 |
 | `forced` | 42 |
 
 ## Signal Log
 | Time (ET) | Symbol | Slug | Outcome | Trigger | Confidence | P(UP) | Bucket | Elapsed% | Reasoning |
 | --------------- | ------ | ----------------- | ------- | -------------------- | ---------- | ----- | -------------- | -------- | -------------------------------------------------- |
+| `2026-03-08 12:27 PM ET` | SOL | sol-updown-15m | **DOWN** | `directional_80pct` | 0.741 | 28.6% | LowVol+Trend | 83.1% | DIRECTIONAL at 80pct (83% elapsed) — P(UP)=0.259 gives edge=0.241 toward DOWN. Bucket=LowVol+Trend (RV60=2.21035, Eff60= |
+| `2026-03-08 12:27 PM ET` | SOL | sol-updown-15m | **DOWN** | `directional_80pct` | 0.746 | 28.2% | LowVol+Trend | 82.9% | DIRECTIONAL at 80pct (83% elapsed) — P(UP)=0.254 gives edge=0.246 toward DOWN. Bucket=LowVol+Trend (RV60=2.21709, Eff60= |
+| `2026-03-08 12:27 PM ET` | SOL | sol-updown-15m | **DOWN** | `directional_80pct` | 0.703 | 32.0% | LowVol+Range | 82.6% | DIRECTIONAL at 80pct (83% elapsed) — P(UP)=0.297 gives edge=0.203 toward DOWN. Bucket=LowVol+Range (RV60=2.09733, Eff60= |
+| `2026-03-08 12:27 PM ET` | ETH | eth-updown-15m | **DOWN** | `directional_80pct` | 0.730 | 29.5% | HighVol+Range | 82.6% | DIRECTIONAL at 80pct (83% elapsed) — P(UP)=0.270 gives edge=0.230 toward DOWN. Bucket=HighVol+Range (RV60=7.38848, Eff60 |
+| `2026-03-08 12:27 PM ET` | SOL | sol-updown-15m | **DOWN** | `directional_80pct` | 0.717 | 30.7% | LowVol+Trend | 82.4% | DIRECTIONAL at 80pct (82% elapsed) — P(UP)=0.283 gives edge=0.217 toward DOWN. Bucket=LowVol+Trend (RV60=1.97922, Eff60= |
+| `2026-03-08 12:27 PM ET` | SOL | sol-updown-15m | **DOWN** | `directional_80pct` | 0.708 | 31.5% | LowVol+Trend | 82.2% | DIRECTIONAL at 80pct (82% elapsed) — P(UP)=0.292 gives edge=0.208 toward DOWN. Bucket=LowVol+Trend (RV60=1.97643, Eff60= |
+| `2026-03-08 12:27 PM ET` | XRP | xrp-updown-15m | **DOWN** | `directional_80pct` | 0.573 | 43.5% | LowVol+Range | 82.0% | DIRECTIONAL at 80pct (82% elapsed) — P(UP)=0.427 gives edge=0.073 toward DOWN. Bucket=LowVol+Range (RV60=2.10399, Eff60= |
+| `2026-03-08 12:27 PM ET` | XRP | xrp-updown-15m | **DOWN** | `directional_80pct` | 0.573 | 43.5% | LowVol+Range | 81.7% | DIRECTIONAL at 80pct (82% elapsed) — P(UP)=0.427 gives edge=0.073 toward DOWN. Bucket=LowVol+Range (RV60=2.10399, Eff60= |
+| `2026-03-08 12:27 PM ET` | SOL | sol-updown-15m | **DOWN** | `directional_80pct` | 0.628 | 38.7% | LowVol+Trend | 81.7% | DIRECTIONAL at 80pct (82% elapsed) — P(UP)=0.372 gives edge=0.128 toward DOWN. Bucket=LowVol+Trend (RV60=1.88530, Eff60= |
+| `2026-03-08 12:27 PM ET` | XRP | xrp-updown-15m | **DOWN** | `directional_80pct` | 0.573 | 43.5% | LowVol+Range | 81.5% | DIRECTIONAL at 80pct (82% elapsed) — P(UP)=0.427 gives edge=0.073 toward DOWN. Bucket=LowVol+Range (RV60=2.10399, Eff60= |
+| `2026-03-08 12:27 PM ET` | SOL | sol-updown-15m | **DOWN** | `directional_80pct` | 0.637 | 37.8% | LowVol+Trend | 81.5% | DIRECTIONAL at 80pct (82% elapsed) — P(UP)=0.363 gives edge=0.137 toward DOWN. Bucket=LowVol+Trend (RV60=1.88530, Eff60= |
+| `2026-03-08 12:27 PM ET` | XRP | xrp-updown-15m | **DOWN** | `directional_80pct` | 0.585 | 42.4% | LowVol+Trend | 81.3% | DIRECTIONAL at 80pct (81% elapsed) — P(UP)=0.415 gives edge=0.085 toward DOWN. Bucket=LowVol+Trend (RV60=2.93945, Eff60= |
+| `2026-03-08 12:27 PM ET` | SOL | sol-updown-15m | **DOWN** | `directional_80pct` | 0.623 | 39.1% | LowVol+Trend | 81.3% | DIRECTIONAL at 80pct (81% elapsed) — P(UP)=0.377 gives edge=0.123 toward DOWN. Bucket=LowVol+Trend (RV60=1.93219, Eff60= |
+| `2026-03-08 12:27 PM ET` | XRP | xrp-updown-15m | **DOWN** | `directional_80pct` | 0.585 | 42.4% | LowVol+Trend | 81.1% | DIRECTIONAL at 80pct (81% elapsed) — P(UP)=0.415 gives edge=0.085 toward DOWN. Bucket=LowVol+Trend (RV60=2.93945, Eff60= |
+| `2026-03-08 12:27 PM ET` | SOL | sol-updown-15m | **DOWN** | `directional_80pct` | 0.623 | 39.1% | LowVol+Trend | 81.1% | DIRECTIONAL at 80pct (81% elapsed) — P(UP)=0.377 gives edge=0.123 toward DOWN. Bucket=LowVol+Trend (RV60=1.93219, Eff60= |
+| `2026-03-08 12:27 PM ET` | XRP | xrp-updown-15m | **DOWN** | `directional_80pct` | 0.585 | 42.4% | LowVol+Trend | 80.8% | DIRECTIONAL at 80pct (81% elapsed) — P(UP)=0.415 gives edge=0.085 toward DOWN. Bucket=LowVol+Trend (RV60=2.93945, Eff60= |
+| `2026-03-08 12:27 PM ET` | ETH | eth-updown-15m | **DOWN** | `directional_80pct` | 0.774 | 25.7% | HighVol+Range | 80.8% | DIRECTIONAL at 80pct (81% elapsed) — P(UP)=0.226 gives edge=0.274 toward DOWN. Bucket=HighVol+Range (RV60=7.08634, Eff60 |
+| `2026-03-08 12:27 PM ET` | SOL | sol-updown-15m | **DOWN** | `directional_80pct` | 0.642 | 37.4% | LowVol+Trend | 80.6% | DIRECTIONAL at 80pct (81% elapsed) — P(UP)=0.358 gives edge=0.142 toward DOWN. Bucket=LowVol+Trend (RV60=1.92801, Eff60= |
+| `2026-03-08 12:27 PM ET` | SOL | sol-updown-15m | **DOWN** | `directional_80pct` | 0.642 | 37.4% | LowVol+Trend | 80.4% | DIRECTIONAL at 80pct (80% elapsed) — P(UP)=0.358 gives edge=0.142 toward DOWN. Bucket=LowVol+Trend (RV60=1.92801, Eff60= |
+| `2026-03-08 12:27 PM ET` | SOL | sol-updown-15m | **DOWN** | `directional_80pct` | 0.642 | 37.4% | LowVol+Trend | 80.2% | DIRECTIONAL at 80pct (80% elapsed) — P(UP)=0.358 gives edge=0.142 toward DOWN. Bucket=LowVol+Trend (RV60=1.92801, Eff60= |
+| `2026-03-08 12:26 PM ET` | SOL | sol-updown-15m | **DOWN** | `directional_80pct` | 0.651 | 36.6% | LowVol+Trend | 80.0% | DIRECTIONAL at 80pct (80% elapsed) — P(UP)=0.349 gives edge=0.151 toward DOWN. Bucket=LowVol+Trend (RV60=1.92183, Eff60= |
+| `2026-03-08 12:26 PM ET` | ETH | eth-updown-15m | **DOWN** | `directional_80pct` | 0.774 | 25.7% | HighVol+Range | 80.0% | DIRECTIONAL at 80pct (80% elapsed) — P(UP)=0.226 gives edge=0.274 toward DOWN. Bucket=HighVol+Range (RV60=6.94277, Eff60 |
+| `2026-03-08 12:26 PM ET` | SOL | sol-updown-15m | **DOWN** | `directional_80pct` | 0.646 | 37.0% | LowVol+Trend | 79.7% | DIRECTIONAL at 80pct (80% elapsed) — P(UP)=0.354 gives edge=0.146 toward DOWN. Bucket=LowVol+Trend (RV60=1.91770, Eff60= |
+| `2026-03-08 12:26 PM ET` | ETH | eth-updown-15m | **DOWN** | `directional_80pct` | 0.774 | 25.7% | HighVol+Range | 79.7% | DIRECTIONAL at 80pct (80% elapsed) — P(UP)=0.226 gives edge=0.274 toward DOWN. Bucket=HighVol+Range (RV60=6.94277, Eff60 |
+| `2026-03-08 12:26 PM ET` | ETH | eth-updown-15m | **DOWN** | `directional_80pct` | 0.774 | 25.7% | HighVol+Range | 79.5% | DIRECTIONAL at 80pct (80% elapsed) — P(UP)=0.226 gives edge=0.274 toward DOWN. Bucket=HighVol+Range (RV60=6.94277, Eff60 |
+| `2026-03-08 12:26 PM ET` | SOL | sol-updown-15m | **DOWN** | `directional_80pct` | 0.590 | 42.0% | LowVol+Trend | 79.3% | DIRECTIONAL at 80pct (79% elapsed) — P(UP)=0.410 gives edge=0.090 toward DOWN. Bucket=LowVol+Trend (RV60=1.83324, Eff60= |
+| `2026-03-08 12:26 PM ET` | SOL | sol-updown-15m | **DOWN** | `directional_80pct` | 0.599 | 41.2% | LowVol+Trend | 79.1% | DIRECTIONAL at 80pct (79% elapsed) — P(UP)=0.401 gives edge=0.099 toward DOWN. Bucket=LowVol+Trend (RV60=1.83807, Eff60= |
+| `2026-03-08 12:26 PM ET` | SOL | sol-updown-15m | **DOWN** | `directional_80pct` | 0.569 | 43.9% | LowVol+Range | 78.6% | DIRECTIONAL at 80pct (79% elapsed) — P(UP)=0.431 gives edge=0.069 toward DOWN. Bucket=LowVol+Range (RV60=1.81147, Eff60= |
+| `2026-03-08 12:26 PM ET` | SOL | sol-updown-15m | **DOWN** | `directional_80pct` | 0.585 | 42.4% | LowVol+Trend | 78.2% | DIRECTIONAL at 80pct (78% elapsed) — P(UP)=0.415 gives edge=0.085 toward DOWN. Bucket=LowVol+Trend (RV60=1.77308, Eff60= |
+| `2026-03-08 12:26 PM ET` | SOL | sol-updown-15m | **DOWN** | `directional_80pct` | 0.585 | 42.4% | LowVol+Trend | 77.9% | DIRECTIONAL at 80pct (78% elapsed) — P(UP)=0.415 gives edge=0.085 toward DOWN. Bucket=LowVol+Trend (RV60=1.77308, Eff60= |
+| `2026-03-08 12:26 PM ET` | SOL | sol-updown-15m | **DOWN** | `directional_80pct` | 0.613 | 39.9% | LowVol+Trend | 77.7% | DIRECTIONAL at 80pct (78% elapsed) — P(UP)=0.387 gives edge=0.113 toward DOWN. Bucket=LowVol+Trend (RV60=1.77145, Eff60= |
+| `2026-03-08 12:26 PM ET` | SOL | sol-updown-15m | **DOWN** | `directional_80pct` | 0.609 | 40.3% | LowVol+Trend | 77.5% | DIRECTIONAL at 80pct (77% elapsed) — P(UP)=0.391 gives edge=0.109 toward DOWN. Bucket=LowVol+Trend (RV60=1.73645, Eff60= |
+| `2026-03-08 12:26 PM ET` | SOL | sol-updown-15m | **DOWN** | `directional_80pct` | 0.609 | 40.3% | LowVol+Trend | 77.3% | DIRECTIONAL at 80pct (77% elapsed) — P(UP)=0.391 gives edge=0.109 toward DOWN. Bucket=LowVol+Trend (RV60=1.73645, Eff60= |
+| `2026-03-08 12:26 PM ET` | SOL | sol-updown-15m | **DOWN** | `directional_80pct` | 0.609 | 40.3% | LowVol+Trend | 77.1% | DIRECTIONAL at 80pct (77% elapsed) — P(UP)=0.391 gives edge=0.109 toward DOWN. Bucket=LowVol+Trend (RV60=1.73645, Eff60= |
+| `2026-03-08 12:26 PM ET` | SOL | sol-updown-15m | **DOWN** | `directional_80pct` | 0.618 | 39.5% | LowVol+Trend | 76.8% | DIRECTIONAL at 80pct (77% elapsed) — P(UP)=0.382 gives edge=0.118 toward DOWN. Bucket=LowVol+Trend (RV60=1.63293, Eff60= |
+| `2026-03-08 12:23 PM ET` | BTC | btc-updown-15m | **DOWN** | `trend_follow` | 0.665 | 35.5% | HighVol+Trend | 54.8% | TREND FOLLOW (HighVol+Trend, 55% elapsed) — DOWN token at 0.670 deviates 0.165 from 0.50. Momentum continuation strategy |
+| `2026-03-08 12:23 PM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.715 | 31.1% | HighVol+Trend | 53.5% | TREND FOLLOW (HighVol+Trend, 53% elapsed) — DOWN token at 0.720 deviates 0.215 from 0.50. Momentum continuation strategy |
+| `2026-03-08 12:22 PM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.780 | 25.4% | HighVol+Trend | 53.3% | TREND FOLLOW (HighVol+Trend, 53% elapsed) — DOWN token at 0.720 deviates 0.280 from 0.50. Momentum continuation strategy |
+| `2026-03-08 12:22 PM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.795 | 24.0% | HighVol+Trend | 49.9% | TREND FOLLOW (HighVol+Trend, 50% elapsed) — DOWN token at 0.770 deviates 0.295 from 0.50. Momentum continuation strategy |
 | `2026-03-08 12:20 PM ET` | SOL | sol-updown-15m | **DOWN** | `trend_follow` | 0.585 | 42.5% | HighVol+Trend | 36.7% | TREND FOLLOW (HighVol+Trend, 37% elapsed) — DOWN token at 0.590 deviates 0.085 from 0.50. Momentum continuation strategy |
 | `2026-03-08 12:20 PM ET` | SOL | sol-updown-15m | **DOWN** | `trend_follow` | 0.600 | 41.2% | HighVol+Trend | 35.6% | TREND FOLLOW (HighVol+Trend, 36% elapsed) — DOWN token at 0.610 deviates 0.100 from 0.50. Momentum continuation strategy |
 | `2026-03-08 12:20 PM ET` | SOL | sol-updown-15m | **DOWN** | `trend_follow` | 0.705 | 32.0% | HighVol+Trend | 35.4% | TREND FOLLOW (HighVol+Trend, 35% elapsed) — DOWN token at 0.720 deviates 0.205 from 0.50. Momentum continuation strategy |
