@@ -1,6 +1,6 @@
 # Trigger Performance Summary v2
 
-> **Updated:** `2026-03-09 04:16:47 PM ET` &nbsp;|&nbsp; **Tracking from:** `2026-03-09 09:23 AM ET`
+> **Updated:** `2026-03-09 04:21:57 PM ET` &nbsp;|&nbsp; **Tracking from:** `2026-03-09 09:23 AM ET`
 
 > Fresh epoch — tracks only trades placed after the v2 start date. Includes realised P&L per trigger.
 
