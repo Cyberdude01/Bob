@@ -1,6 +1,6 @@
 # Decision Engine Summary
 
-> **Updated:** `2026-03-09 08:52:42 AM ET` &nbsp;|&nbsp; All signals from the last 48 hours
+> **Updated:** `2026-03-09 08:57:49 AM ET` &nbsp;|&nbsp; All signals from the last 48 hours
 
 ## Signal Distribution
 | Trigger | Count |
@@ -10,13 +10,21 @@
 | `directional_80pct` | 4163 |
 | `directional_60pct` | 247 |
 | `forced` | 180 |
-| `pre_open` | 48 |
+| `pre_open` | 56 |
 | `forced_edge` | 29 |
 | `forced_coin` | 7 |
 
 ## Signal Log
 | Time (ET) | Symbol | Slug | Outcome | Trigger | Confidence | P(UP) | Bucket | Elapsed% | Reasoning |
 | --------------- | ------ | ----------------- | ------- | -------------------- | ---------- | ----- | -------------- | -------- | -------------------------------------------------- |
+| `2026-03-09 08:54 AM ET` | XRP | xrp-updown-15m | **DOWN** | `pre_open` | 0.520 | 32.4% | LowVol+Trend | 63.5% | PRE-OPEN limit order — 328s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Current regime: LowVol+Tr |
+| `2026-03-09 08:54 AM ET` | XRP | xrp-updown-15m | **UP** | `pre_open` | 0.520 | 32.4% | LowVol+Trend | 63.5% | PRE-OPEN limit order — 328s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current regime: LowVol+Tren |
+| `2026-03-09 08:54 AM ET` | SOL | sol-updown-15m | **DOWN** | `pre_open` | 0.520 | 63.4% | LowVol+Trend | 63.5% | PRE-OPEN limit order — 328s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Current regime: LowVol+Tr |
+| `2026-03-09 08:54 AM ET` | SOL | sol-updown-15m | **UP** | `pre_open` | 0.520 | 63.4% | LowVol+Trend | 63.5% | PRE-OPEN limit order — 328s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current regime: LowVol+Tren |
+| `2026-03-09 08:54 AM ET` | ETH | eth-updown-15m | **DOWN** | `pre_open` | 0.520 | 50.0% | LowVol+Range | 63.5% | PRE-OPEN limit order — 328s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Current regime: LowVol+Ra |
+| `2026-03-09 08:54 AM ET` | ETH | eth-updown-15m | **UP** | `pre_open` | 0.520 | 50.0% | LowVol+Range | 63.5% | PRE-OPEN limit order — 328s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current regime: LowVol+Rang |
+| `2026-03-09 08:54 AM ET` | BTC | btc-updown-15m | **DOWN** | `pre_open` | 0.520 | 35.7% | LowVol+Trend | 63.5% | PRE-OPEN limit order — 328s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Current regime: LowVol+Tr |
+| `2026-03-09 08:54 AM ET` | BTC | btc-updown-15m | **UP** | `pre_open` | 0.520 | 35.7% | LowVol+Trend | 63.5% | PRE-OPEN limit order — 328s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current regime: LowVol+Tren |
 | `2026-03-09 08:39 AM ET` | XRP | xrp-updown-15m | **DOWN** | `pre_open` | 0.520 | 56.7% | LowVol+Trend | 63.4% | PRE-OPEN limit order — 329s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Current regime: LowVol+Tr |
 | `2026-03-09 08:39 AM ET` | XRP | xrp-updown-15m | **UP** | `pre_open` | 0.520 | 56.7% | LowVol+Trend | 63.4% | PRE-OPEN limit order — 329s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current regime: LowVol+Tren |
 | `2026-03-09 08:39 AM ET` | SOL | sol-updown-15m | **DOWN** | `pre_open` | 0.520 | 23.6% | HighVol+Trend | 63.4% | PRE-OPEN limit order — 329s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Current regime: HighVol+T |
