@@ -1,21 +1,21 @@
 # Decision Tracker
 
-> **Updated:** `2026-03-08 09:47:56 PM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
+> **Updated:** `2026-03-08 09:53:00 PM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
 
 ## Summary
 | Total | Resolved | Wins | Losses | ARB | Pending | Win Rate | Realised P&L |
 | ----- | -------- | ---- | ------ | --- | ------- | -------- | ------------ |
-| 484 | 357 | 189 | 168 | 0 | 127 | 52.9% | +$1161.5379 |
+| 484 | 361 | 192 | 169 | 0 | 123 | 53.2% | +$1181.4013 |
 
 ## Trade Log
 > Each row: Entry Time · Market Slug · Condition ID (first 12 chars) · 15-min Window
 
 | Entry Time (ET) | Market & Window | Outcome | Trigger | Entry $ | Size | Mode | Resolved (ET) | Winner | Result | P&L | Reasoning |
 | ----------------- | ---------------------------------------- | ------- | ---------------------- | ------- | ------ | ----- | ----------------- | ------ | -------- | --------- | -------------------------------------------------- |
-| `2026-03-08 09:31 PM ET` | **btc-updown-15m** `0x85bcee3ebd…`<br>09:30 PM → 09:45 PM | **UP** | `trend_follow` | 0.6000 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 8% elapsed) — UP token at 0.600 deviates 0.095 from 0.50. Momentum cont |
-| `2026-03-08 09:31 PM ET` | **xrp-updown-15m** `0xe5be27a821…`<br>09:30 PM → 09:45 PM | **UP** | `trend_follow` | 0.6000 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 7% elapsed) — UP token at 0.600 deviates 0.090 from 0.50. Momentum cont |
-| `2026-03-08 09:31 PM ET` | **eth-updown-15m** `0x4d90b2a3e5…`<br>09:30 PM → 09:45 PM | **UP** | `trend_follow` | 0.6100 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 7% elapsed) — UP token at 0.610 deviates 0.105 from 0.50. Momentum cont |
-| `2026-03-08 09:30 PM ET` | **sol-updown-15m** `0xc72ff8f495…`<br>09:30 PM → 09:45 PM | **DOWN** | `trend_follow` | 0.6300 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 2% elapsed) — DOWN token at 0.630 deviates 0.115 from 0.50. Momentum co |
+| `2026-03-08 09:31 PM ET` | **btc-updown-15m** `0x85bcee3ebd…`<br>09:30 PM → 09:45 PM | **UP** | `trend_follow` | 0.6000 | $5.00 | live | 2026-03-08 09:52 PM ET | UP | ✅ Win | +$8.3333 | TREND FOLLOW (HighVol+Trend, 8% elapsed) — UP token at 0.600 deviates 0.095 from 0.50. Momentum cont |
+| `2026-03-08 09:31 PM ET` | **xrp-updown-15m** `0xe5be27a821…`<br>09:30 PM → 09:45 PM | **UP** | `trend_follow` | 0.6000 | $5.00 | live | 2026-03-08 09:52 PM ET | UP | ✅ Win | +$8.3333 | TREND FOLLOW (HighVol+Trend, 7% elapsed) — UP token at 0.600 deviates 0.090 from 0.50. Momentum cont |
+| `2026-03-08 09:31 PM ET` | **eth-updown-15m** `0x4d90b2a3e5…`<br>09:30 PM → 09:45 PM | **UP** | `trend_follow` | 0.6100 | $5.00 | live | 2026-03-08 09:52 PM ET | UP | ✅ Win | +$8.1967 | TREND FOLLOW (HighVol+Trend, 7% elapsed) — UP token at 0.610 deviates 0.105 from 0.50. Momentum cont |
+| `2026-03-08 09:30 PM ET` | **sol-updown-15m** `0xc72ff8f495…`<br>09:30 PM → 09:45 PM | **DOWN** | `trend_follow` | 0.6300 | $5.00 | live | 2026-03-08 09:50 PM ET | UP | ❌ Loss | $-5.0000 | TREND FOLLOW (HighVol+Trend, 2% elapsed) — DOWN token at 0.630 deviates 0.115 from 0.50. Momentum co |
 | `2026-03-08 09:23 PM ET` | **eth-updown-15m** `0x211f120e8a…`<br>09:15 PM → 09:30 PM | **UP** | `forced` | 0.6400 | $5.00 | live | 2026-03-08 09:44 PM ET | UP | ✅ Win | +$7.8125 | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.613, choosing UP. Fixed $5 US |
 | `2026-03-08 09:23 PM ET` | **btc-updown-15m** `0x19f4bde5ea…`<br>09:15 PM → 09:30 PM | **UP** | `forced` | 0.6200 | $5.00 | live | 2026-03-08 09:44 PM ET | UP | ✅ Win | +$8.0645 | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.597, choosing UP. Fixed $5 US |
 | `2026-03-08 09:21 PM ET` | **sol-updown-15m** `0x4f7741f9c2…`<br>09:15 PM → 09:30 PM | **UP** | `trend_follow` | 0.8600 | $5.00 | live | 2026-03-08 09:42 PM ET | UP | ✅ Win | +$5.8140 | TREND FOLLOW (HighVol+Trend, 40% elapsed) — UP token at 0.860 deviates 0.350 from 0.50. Momentum con |
