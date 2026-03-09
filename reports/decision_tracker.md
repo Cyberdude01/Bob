@@ -1,20 +1,24 @@
 # Decision Tracker
 
-> **Updated:** `2026-03-09 06:07:05 AM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
+> **Updated:** `2026-03-09 06:12:10 AM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
 
 ## Summary
 | Total | Resolved | Wins | Losses | ARB | Pending | Win Rate | Realised P&L |
 | ----- | -------- | ---- | ------ | --- | ------- | -------- | ------------ |
-| 626 | 500 | 270 | 230 | 0 | 126 | 54.0% | +$1354.9777 |
+| 630 | 501 | 271 | 230 | 0 | 129 | 54.1% | +$1361.3069 |
 
 ## Trade Log
 > Each row: Entry Time · Market Slug · Condition ID (first 12 chars) · 15-min Window
 
 | Entry Time (ET) | Market & Window | Outcome | Trigger | Entry $ | Size | Mode | Resolved (ET) | Winner | Result | P&L | Reasoning |
 | ----------------- | ---------------------------------------- | ------- | ---------------------- | ------- | ------ | ----- | ----------------- | ------ | -------- | --------- | -------------------------------------------------- |
+| `2026-03-09 06:09 AM ET` | **btc-updown-15m** `0x6d9d91e528…`<br>06:00 AM → 06:15 AM | **DOWN** | `forced_edge` | 0.9900 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.414, choosing DOWN. Fixed $5  |
+| `2026-03-09 06:08 AM ET` | **xrp-updown-15m** `0xc00bdf5cc4…`<br>06:00 AM → 06:15 AM | **DOWN** | `forced_edge` | 0.9900 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.356, choosing DOWN. Fixed $5  |
+| `2026-03-09 06:08 AM ET` | **sol-updown-15m** `0x982cda19d2…`<br>06:00 AM → 06:15 AM | **DOWN** | `forced_edge` | 0.9900 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.334, choosing DOWN. Fixed $5  |
+| `2026-03-09 06:08 AM ET` | **eth-updown-15m** `0xf1b747b7bc…`<br>06:00 AM → 06:15 AM | **DOWN** | `forced_edge` | 0.9900 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.327, choosing DOWN. Fixed $5  |
 | `2026-03-09 05:53 AM ET` | **xrp-updown-15m** `0xd2a23656df…`<br>05:45 AM → 06:00 AM | **DOWN** | `forced_edge` | 0.9000 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.172, choosing DOWN. Fixed $5  |
 | `2026-03-09 05:53 AM ET` | **sol-updown-15m** `0x43f0e9c13d…`<br>05:45 AM → 06:00 AM | **DOWN** | `trend_follow` | 0.9300 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 54% elapsed) — DOWN token at 0.930 deviates 0.425 from 0.50. Momentum c |
-| `2026-03-09 05:49 AM ET` | **eth-updown-15m** `0x036b0ec530…`<br>05:45 AM → 06:00 AM | **DOWN** | `trend_follow` | 0.7900 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 27% elapsed) — DOWN token at 0.790 deviates 0.285 from 0.50. Momentum c |
+| `2026-03-09 05:49 AM ET` | **eth-updown-15m** `0x036b0ec530…`<br>05:45 AM → 06:00 AM | **DOWN** | `trend_follow` | 0.7900 | $5.00 | live | 2026-03-09 06:10 AM ET | DOWN | ✅ Win | +$6.3291 | TREND FOLLOW (HighVol+Trend, 27% elapsed) — DOWN token at 0.790 deviates 0.285 from 0.50. Momentum c |
 | `2026-03-09 05:45 AM ET` | **btc-updown-15m** `0x546a7eb4df…`<br>05:45 AM → 06:00 AM | **DOWN** | `trend_follow` | 0.6000 | $5.00 | live | 2026-03-09 06:06 AM ET | DOWN | ✅ Win | +$8.3333 | TREND FOLLOW (HighVol+Trend, 1% elapsed) — DOWN token at 0.600 deviates 0.105 from 0.50. Momentum co |
 | `2026-03-09 05:38 AM ET` | **xrp-updown-15m** `0x1a677cb5b4…`<br>05:30 AM → 05:45 AM | **UP** | `trend_follow` | 0.9800 | $5.00 | live | 2026-03-09 05:59 AM ET | UP | ✅ Win | +$5.1020 | TREND FOLLOW (HighVol+Trend, 58% elapsed) — UP token at 0.980 deviates 0.475 from 0.50. Momentum con |
 | `2026-03-09 05:34 AM ET` | **eth-updown-15m** `0x9c5cfd7105…`<br>05:30 AM → 05:45 AM | **UP** | `trend_follow` | 0.8700 | $5.00 | live | 2026-03-09 05:55 AM ET | UP | ✅ Win | +$5.7471 | TREND FOLLOW (HighVol+Trend, 28% elapsed) — UP token at 0.870 deviates 0.360 from 0.50. Momentum con |
