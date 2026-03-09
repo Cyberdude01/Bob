@@ -1,6 +1,6 @@
 # Decision Engine Summary
 
-> **Updated:** `2026-03-09 11:19:56 AM ET` &nbsp;|&nbsp; All signals from the last 48 hours
+> **Updated:** `2026-03-09 11:23:43 AM ET` &nbsp;|&nbsp; All signals from the last 48 hours
 
 ## Signal Distribution
 | Trigger | Count |
@@ -11,12 +11,15 @@
 | `directional_60pct` | 247 |
 | `forced` | 180 |
 | `pre_open` | 128 |
-| `forced_edge` | 59 |
-| `forced_coin` | 12 |
+| `forced_edge` | 61 |
+| `forced_coin` | 13 |
 
 ## Signal Log
 | Time (ET) | Symbol | Slug | Outcome | Trigger | Confidence | P(UP) | Bucket | Elapsed% | Reasoning |
 | --------------- | ------ | ----------------- | ------- | -------------------- | ---------- | ----- | -------------- | -------- | -------------------------------------------------- |
+| `2026-03-09 11:23 AM ET` | SOL | sol-updown-15m | **DOWN** | `forced_coin` | 0.543 | 45.7% | LowVol+Range | 56.8% | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.457, choosing DOWN. Fixed $5 USDC stake (every ma |
+| `2026-03-09 11:23 AM ET` | ETH | eth-updown-15m | **DOWN** | `forced_edge` | 0.550 | 45.0% | LowVol+Range | 56.8% | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.450, choosing DOWN. Fixed $5 USDC stake (every ma |
+| `2026-03-09 11:23 AM ET` | BTC | btc-updown-15m | **DOWN** | `forced_edge` | 0.594 | 40.6% | LowVol+Range | 56.8% | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.406, choosing DOWN. Fixed $5 USDC stake (every ma |
 | `2026-03-09 11:09 AM ET` | XRP | xrp-updown-15m | **DOWN** | `pre_open` | 0.520 | 51.4% | LowVol+Range | 63.5% | PRE-OPEN limit order — 328s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Current regime: LowVol+Ra |
 | `2026-03-09 11:09 AM ET` | XRP | xrp-updown-15m | **UP** | `pre_open` | 0.520 | 51.4% | LowVol+Range | 63.5% | PRE-OPEN limit order — 328s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current regime: LowVol+Rang |
 | `2026-03-09 11:09 AM ET` | SOL | sol-updown-15m | **DOWN** | `pre_open` | 0.520 | 33.4% | LowVol+Range | 63.5% | PRE-OPEN limit order — 328s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Current regime: LowVol+Ra |
