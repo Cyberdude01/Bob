@@ -1,13 +1,13 @@
 # Decision Engine Summary
 
-> **Updated:** `2026-03-09 05:14:10 AM ET` &nbsp;|&nbsp; All signals from the last 48 hours
+> **Updated:** `2026-03-09 05:19:14 AM ET` &nbsp;|&nbsp; All signals from the last 48 hours
 
 ## Signal Distribution
 | Trigger | Count |
 | -------------------- | ----- |
 | `directional_90pct` | 5885 |
 | `directional_80pct` | 4138 |
-| `trend_follow` | 4063 |
+| `trend_follow` | 4066 |
 | `directional_60pct` | 247 |
 | `forced` | 180 |
 | `forced_edge` | 9 |
@@ -16,6 +16,9 @@
 ## Signal Log
 | Time (ET) | Symbol | Slug | Outcome | Trigger | Confidence | P(UP) | Bucket | Elapsed% | Reasoning |
 | --------------- | ------ | ----------------- | ------- | -------------------- | ---------- | ----- | -------------- | -------- | -------------------------------------------------- |
+| `2026-03-09 05:16 AM ET` | BTC | btc-updown-15m | **UP** | `trend_follow` | 0.620 | 60.6% | HighVol+Trend | 8.6% | TREND FOLLOW (HighVol+Trend, 9% elapsed) — UP token at 0.990 deviates 0.120 from 0.50. Momentum continuation strategy: b |
+| `2026-03-09 05:16 AM ET` | BTC | btc-updown-15m | **UP** | `trend_follow` | 0.620 | 60.6% | HighVol+Trend | 8.3% | TREND FOLLOW (HighVol+Trend, 8% elapsed) — UP token at 0.990 deviates 0.120 from 0.50. Momentum continuation strategy: b |
+| `2026-03-09 05:16 AM ET` | BTC | btc-updown-15m | **UP** | `trend_follow` | 0.620 | 60.6% | HighVol+Trend | 8.1% | TREND FOLLOW (HighVol+Trend, 8% elapsed) — UP token at 0.990 deviates 0.120 from 0.50. Momentum continuation strategy: b |
 | `2026-03-09 05:13 AM ET` | XRP | xrp-updown-15m | **DOWN** | `directional_90pct` | 0.869 | 19.0% | HighVol+Range | 93.3% | DIRECTIONAL at 90pct (93% elapsed) — P(UP)=0.131 gives edge=0.369 toward DOWN. Bucket=HighVol+Range (RV60=14.36490, Eff6 |
 | `2026-03-09 05:13 AM ET` | SOL | sol-updown-15m | **DOWN** | `directional_90pct` | 0.804 | 24.4% | LowVol+Range | 93.3% | DIRECTIONAL at 90pct (93% elapsed) — P(UP)=0.196 gives edge=0.304 toward DOWN. Bucket=LowVol+Range (RV60=10.10991, Eff60 |
 | `2026-03-09 05:13 AM ET` | ETH | eth-updown-15m | **DOWN** | `directional_90pct` | 0.996 | 8.2% | HighVol+Trend | 93.3% | DIRECTIONAL at 90pct (93% elapsed) — P(UP)=0.004 gives edge=0.496 toward DOWN. Bucket=HighVol+Trend (RV60=15.23073, Eff6 |
