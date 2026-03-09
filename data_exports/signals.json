@@ -1,17 +1,6 @@
 {
-  "updated": "2026-03-09 01:43:55 AM ET",
+  "updated": "2026-03-09 01:48:59 AM ET",
   "data": [
-    {
-      "symbol": "XRP",
-      "slug": "xrp-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.99,
-      "confidence": 0.985,
-      "trigger": "directional_80pct",
-      "reason": "DIRECTIONAL at 80pct (82% elapsed) \u2014 P(UP)=0.015 gives edge=0.485 toward DOWN. Bucket=HighVol+Trend (RV60=14.35037, Eff60=0.018). Fixed $5 USDC stake @ conf=0.985. [adaptive edge=0.050]"
-    },
     {
       "symbol": "BTC",
       "slug": "btc-updown-15m",
@@ -220,6 +209,17 @@
       "confidence": 0.879,
       "trigger": "directional_90pct",
       "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.121 gives edge=0.379 toward DOWN. Bucket=HighVol+Range (RV60=17.91729, Eff60=0.002). Fixed $5 USDC stake @ conf=0.879. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.999,
+      "confidence": 0.879,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.121 gives edge=0.379 toward DOWN. Bucket=HighVol+Range (RV60=18.83580, Eff60=0.000). Fixed $5 USDC stake @ conf=0.879. [adaptive edge=0.050]"
     }
   ]
 }
