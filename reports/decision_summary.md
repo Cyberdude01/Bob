@@ -1,12 +1,12 @@
 # Decision Engine Summary
 
-> **Updated:** `2026-03-09 03:53:34 AM ET` &nbsp;|&nbsp; All signals from the last 48 hours
+> **Updated:** `2026-03-09 03:58:38 AM ET` &nbsp;|&nbsp; All signals from the last 48 hours
 
 ## Signal Distribution
 | Trigger | Count |
 | -------------------- | ----- |
-| `directional_90pct` | 5477 |
-| `directional_80pct` | 3971 |
+| `directional_90pct` | 5483 |
+| `directional_80pct` | 3988 |
 | `trend_follow` | 3797 |
 | `directional_60pct` | 247 |
 | `forced` | 180 |
@@ -14,6 +14,29 @@
 ## Signal Log
 | Time (ET) | Symbol | Slug | Outcome | Trigger | Confidence | P(UP) | Bucket | Elapsed% | Reasoning |
 | --------------- | ------ | ----------------- | ------- | -------------------- | ---------- | ----- | -------------- | -------- | -------------------------------------------------- |
+| `2026-03-09 03:58 AM ET` | XRP | xrp-updown-15m | **DOWN** | `directional_90pct` | 0.970 | 10.4% | HighVol+Trend | 88.8% | DIRECTIONAL at 90pct (89% elapsed) — P(UP)=0.030 gives edge=0.470 toward DOWN. Bucket=HighVol+Trend (RV60=8.27819, Eff60 |
+| `2026-03-09 03:58 AM ET` | XRP | xrp-updown-15m | **DOWN** | `directional_90pct` | 0.834 | 21.8% | HighVol+Range | 88.1% | DIRECTIONAL at 90pct (88% elapsed) — P(UP)=0.166 gives edge=0.334 toward DOWN. Bucket=HighVol+Range (RV60=7.91627, Eff60 |
+| `2026-03-09 03:58 AM ET` | SOL | sol-updown-15m | **DOWN** | `directional_90pct` | 0.789 | 25.7% | HighVol+Range | 88.1% | DIRECTIONAL at 90pct (88% elapsed) — P(UP)=0.211 gives edge=0.289 toward DOWN. Bucket=HighVol+Range (RV60=5.93470, Eff60 |
+| `2026-03-09 03:58 AM ET` | BTC | btc-updown-15m | **DOWN** | `directional_90pct` | 1.000 | 6.9% | HighVol+Trend | 88.1% | DIRECTIONAL at 90pct (88% elapsed) — P(UP)=0.000 gives edge=0.500 toward DOWN. Bucket=HighVol+Trend (RV60=14.98333, Eff6 |
+| `2026-03-09 03:58 AM ET` | SOL | sol-updown-15m | **DOWN** | `directional_90pct` | 0.758 | 28.2% | HighVol+Range | 87.2% | DIRECTIONAL at 90pct (87% elapsed) — P(UP)=0.242 gives edge=0.258 toward DOWN. Bucket=HighVol+Range (RV60=5.46419, Eff60 |
+| `2026-03-09 03:58 AM ET` | SOL | sol-updown-15m | **DOWN** | `directional_90pct` | 0.758 | 28.2% | HighVol+Range | 87.0% | DIRECTIONAL at 90pct (87% elapsed) — P(UP)=0.242 gives edge=0.258 toward DOWN. Bucket=HighVol+Range (RV60=5.46419, Eff60 |
+| `2026-03-09 03:57 AM ET` | XRP | xrp-updown-15m | **DOWN** | `directional_80pct` | 0.876 | 16.6% | HighVol+Trend | 83.2% | DIRECTIONAL at 80pct (83% elapsed) — P(UP)=0.124 gives edge=0.376 toward DOWN. Bucket=HighVol+Trend (RV60=5.55060, Eff60 |
+| `2026-03-09 03:57 AM ET` | ETH | eth-updown-15m | **DOWN** | `directional_80pct` | 0.797 | 23.6% | HighVol+Trend | 83.2% | DIRECTIONAL at 80pct (83% elapsed) — P(UP)=0.203 gives edge=0.297 toward DOWN. Bucket=HighVol+Trend (RV60=4.26806, Eff60 |
+| `2026-03-09 03:57 AM ET` | SOL | sol-updown-15m | **DOWN** | `directional_80pct` | 0.673 | 34.6% | HighVol+Range | 80.6% | DIRECTIONAL at 80pct (81% elapsed) — P(UP)=0.327 gives edge=0.173 toward DOWN. Bucket=HighVol+Range (RV60=2.89282, Eff60 |
+| `2026-03-09 03:57 AM ET` | SOL | sol-updown-15m | **DOWN** | `directional_80pct` | 0.673 | 34.6% | HighVol+Range | 80.3% | DIRECTIONAL at 80pct (80% elapsed) — P(UP)=0.327 gives edge=0.173 toward DOWN. Bucket=HighVol+Range (RV60=2.89282, Eff60 |
+| `2026-03-09 03:57 AM ET` | XRP | xrp-updown-15m | **DOWN** | `directional_80pct` | 0.673 | 34.6% | HighVol+Range | 80.1% | DIRECTIONAL at 80pct (80% elapsed) — P(UP)=0.327 gives edge=0.173 toward DOWN. Bucket=HighVol+Range (RV60=5.01034, Eff60 |
+| `2026-03-09 03:57 AM ET` | SOL | sol-updown-15m | **DOWN** | `directional_80pct` | 0.673 | 34.6% | HighVol+Range | 80.1% | DIRECTIONAL at 80pct (80% elapsed) — P(UP)=0.327 gives edge=0.173 toward DOWN. Bucket=HighVol+Range (RV60=2.89282, Eff60 |
+| `2026-03-09 03:56 AM ET` | XRP | xrp-updown-15m | **DOWN** | `directional_80pct` | 0.673 | 34.6% | HighVol+Range | 79.9% | DIRECTIONAL at 80pct (80% elapsed) — P(UP)=0.327 gives edge=0.173 toward DOWN. Bucket=HighVol+Range (RV60=5.12539, Eff60 |
+| `2026-03-09 03:56 AM ET` | SOL | sol-updown-15m | **DOWN** | `directional_80pct` | 0.673 | 34.6% | HighVol+Range | 79.9% | DIRECTIONAL at 80pct (80% elapsed) — P(UP)=0.327 gives edge=0.173 toward DOWN. Bucket=HighVol+Range (RV60=2.69101, Eff60 |
+| `2026-03-09 03:56 AM ET` | XRP | xrp-updown-15m | **DOWN** | `directional_80pct` | 0.673 | 34.6% | HighVol+Range | 79.7% | DIRECTIONAL at 80pct (80% elapsed) — P(UP)=0.327 gives edge=0.173 toward DOWN. Bucket=HighVol+Range (RV60=5.12539, Eff60 |
+| `2026-03-09 03:56 AM ET` | SOL | sol-updown-15m | **DOWN** | `directional_80pct` | 0.673 | 34.6% | HighVol+Range | 79.7% | DIRECTIONAL at 80pct (80% elapsed) — P(UP)=0.327 gives edge=0.173 toward DOWN. Bucket=HighVol+Range (RV60=2.69101, Eff60 |
+| `2026-03-09 03:56 AM ET` | XRP | xrp-updown-15m | **DOWN** | `directional_80pct` | 0.673 | 34.6% | HighVol+Range | 79.4% | DIRECTIONAL at 80pct (79% elapsed) — P(UP)=0.327 gives edge=0.173 toward DOWN. Bucket=HighVol+Range (RV60=5.16938, Eff60 |
+| `2026-03-09 03:56 AM ET` | SOL | sol-updown-15m | **DOWN** | `directional_80pct` | 0.673 | 34.6% | HighVol+Range | 79.4% | DIRECTIONAL at 80pct (79% elapsed) — P(UP)=0.327 gives edge=0.173 toward DOWN. Bucket=HighVol+Range (RV60=2.69101, Eff60 |
+| `2026-03-09 03:56 AM ET` | BTC | btc-updown-15m | **DOWN** | `directional_80pct` | 0.946 | 10.4% | HighVol+Trend | 79.4% | DIRECTIONAL at 80pct (79% elapsed) — P(UP)=0.054 gives edge=0.446 toward DOWN. Bucket=HighVol+Trend (RV60=9.48741, Eff60 |
+| `2026-03-09 03:56 AM ET` | SOL | sol-updown-15m | **DOWN** | `directional_80pct` | 0.615 | 39.8% | HighVol+Range | 79.0% | DIRECTIONAL at 80pct (79% elapsed) — P(UP)=0.385 gives edge=0.115 toward DOWN. Bucket=HighVol+Range (RV60=2.40303, Eff60 |
+| `2026-03-09 03:56 AM ET` | XRP | xrp-updown-15m | **DOWN** | `directional_80pct` | 0.572 | 43.6% | HighVol+Range | 77.9% | DIRECTIONAL at 80pct (78% elapsed) — P(UP)=0.428 gives edge=0.072 toward DOWN. Bucket=HighVol+Range (RV60=5.46416, Eff60 |
+| `2026-03-09 03:56 AM ET` | XRP | xrp-updown-15m | **DOWN** | `directional_80pct` | 0.572 | 43.6% | HighVol+Range | 77.7% | DIRECTIONAL at 80pct (78% elapsed) — P(UP)=0.428 gives edge=0.072 toward DOWN. Bucket=HighVol+Range (RV60=5.47637, Eff60 |
+| `2026-03-09 03:56 AM ET` | ETH | eth-updown-15m | **DOWN** | `directional_80pct` | 0.554 | 45.2% | HighVol+Trend | 77.4% | DIRECTIONAL at 80pct (77% elapsed) — P(UP)=0.446 gives edge=0.054 toward DOWN. Bucket=HighVol+Trend (RV60=1.27778, Eff60 |
 | `2026-03-09 03:53 AM ET` | XRP | xrp-updown-15m | **DOWN** | `forced` | 0.517 | 48.3% | LowVol+Trend | 56.8% | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.483, choosing DOWN. Fixed $5 USDC stake (every ma |
 | `2026-03-09 03:53 AM ET` | SOL | sol-updown-15m | **DOWN** | `forced` | 0.559 | 44.1% | LowVol+Trend | 56.8% | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.441, choosing DOWN. Fixed $5 USDC stake (every ma |
 | `2026-03-09 03:53 AM ET` | ETH | eth-updown-15m | **DOWN** | `forced` | 0.507 | 49.3% | LowVol+Range | 56.8% | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.493, choosing DOWN. Fixed $5 USDC stake (every ma |
