@@ -1,6 +1,6 @@
 # Market P&L Summary
 
-> **Updated:** `2026-03-09 01:00:08 PM ET`
+> **Updated:** `2026-03-09 01:05:17 PM ET`
 
 > One row per 15-minute market window. P&L shown only for resolved markets. Unresolved trades count toward Bets but not Wins/Losses.
 
@@ -8,7 +8,7 @@
 
 | Window (ET) | Market Slug | Bets | Wins | Losses | Win Rate | P&L (USDC) | Outcome |
 | ------------------- | ---------------------------- | ---- | ---- | ------ | -------- | ---------- | ------- |
-| `2026-03-09 12:54 PM ET` | `0x5914059d…` | 2 | 0 | 0 | — | `+0.00` | pending |
+| `2026-03-09 12:54 PM ET` | `btc-updown-15m` | 2 | 0 | 0 | — | `+0.00` | pending |
 | `2026-03-09 12:39 PM ET` | `btc-updown-15m` | 3 | 2 | 1 | 67% | `+10.47` | DOWN |
 | `2026-03-09 12:24 PM ET` | `btc-updown-15m` | 3 | 1 | 2 | 33% | `+0.42` | UP |
 | `2026-03-09 12:09 PM ET` | `btc-updown-15m` | 3 | 2 | 1 | 67% | `+12.77` | UP |
@@ -159,7 +159,7 @@
 
 | Window (ET) | Market Slug | Bets | Wins | Losses | Win Rate | P&L (USDC) | Outcome |
 | ------------------- | ---------------------------- | ---- | ---- | ------ | -------- | ---------- | ------- |
-| `2026-03-09 12:54 PM ET` | `0xc95d3260…` | 2 | 0 | 0 | — | `+0.00` | pending |
+| `2026-03-09 12:54 PM ET` | `eth-updown-15m` | 2 | 0 | 0 | — | `+0.00` | pending |
 | `2026-03-09 12:39 PM ET` | `eth-updown-15m` | 3 | 1 | 2 | 33% | `+0.42` | DOWN |
 | `2026-03-09 12:24 PM ET` | `eth-updown-15m` | 3 | 1 | 2 | 33% | `+0.42` | UP |
 | `2026-03-09 12:09 PM ET` | `eth-updown-15m` | 3 | 2 | 1 | 67% | `+10.47` | UP |
@@ -314,7 +314,7 @@
 
 | Window (ET) | Market Slug | Bets | Wins | Losses | Win Rate | P&L (USDC) | Outcome |
 | ------------------- | ---------------------------- | ---- | ---- | ------ | -------- | ---------- | ------- |
-| `2026-03-09 12:54 PM ET` | `0xd77e2720…` | 2 | 0 | 0 | — | `+0.00` | pending |
+| `2026-03-09 12:54 PM ET` | `sol-updown-15m` | 2 | 0 | 0 | — | `+0.00` | pending |
 | `2026-03-09 12:39 PM ET` | `sol-updown-15m` | 3 | 1 | 2 | 33% | `+0.42` | DOWN |
 | `2026-03-09 12:24 PM ET` | `sol-updown-15m` | 3 | 2 | 1 | 67% | `+10.47` | UP |
 | `2026-03-09 12:09 PM ET` | `sol-updown-15m` | 3 | 2 | 1 | 67% | `+14.19` | UP |
@@ -470,7 +470,7 @@
 
 | Window (ET) | Market Slug | Bets | Wins | Losses | Win Rate | P&L (USDC) | Outcome |
 | ------------------- | ---------------------------- | ---- | ---- | ------ | -------- | ---------- | ------- |
-| `2026-03-09 12:54 PM ET` | `0x899232bf…` | 2 | 0 | 0 | — | `+0.00` | pending |
+| `2026-03-09 12:54 PM ET` | `xrp-updown-15m` | 2 | 0 | 0 | — | `+0.00` | pending |
 | `2026-03-09 12:39 PM ET` | `xrp-updown-15m` | 3 | 2 | 1 | 67% | `+10.47` | DOWN |
 | `2026-03-09 12:24 PM ET` | `xrp-updown-15m` | 3 | 2 | 1 | 67% | `+11.30` | DOWN |
 | `2026-03-09 12:09 PM ET` | `xrp-updown-15m` | 3 | 1 | 2 | 33% | `+0.42` | UP |
