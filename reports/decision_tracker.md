@@ -1,17 +1,18 @@
 # Decision Tracker
 
-> **Updated:** `2026-03-09 12:18:16 AM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
+> **Updated:** `2026-03-09 12:23:20 AM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
 
 ## Summary
 | Total | Resolved | Wins | Losses | ARB | Pending | Win Rate | Realised P&L |
 | ----- | -------- | ---- | ------ | --- | ------- | -------- | ------------ |
-| 527 | 397 | 219 | 178 | 0 | 130 | 55.2% | +$1293.4925 |
+| 528 | 397 | 219 | 178 | 0 | 131 | 55.2% | +$1293.4925 |
 
 ## Trade Log
 > Each row: Entry Time · Market Slug · Condition ID (first 12 chars) · 15-min Window
 
 | Entry Time (ET) | Market & Window | Outcome | Trigger | Entry $ | Size | Mode | Resolved (ET) | Winner | Result | P&L | Reasoning |
 | ----------------- | ---------------------------------------- | ------- | ---------------------- | ------- | ------ | ----- | ----------------- | ------ | -------- | --------- | -------------------------------------------------- |
+| `2026-03-09 12:20 AM ET` | **sol-updown-15m** `0x9f161e337e…`<br>12:15 AM → 12:30 AM | **UP** | `trend_follow` | 0.8400 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 40% elapsed) — UP token at 0.840 deviates 0.335 from 0.50. Momentum con |
 | `2026-03-09 12:16 AM ET` | **xrp-updown-15m** `0x42d5e7d409…`<br>12:15 AM → 12:30 AM | **DOWN** | `trend_follow` | 0.9900 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 9% elapsed) — DOWN token at 0.990 deviates 0.100 from 0.50. Momentum co |
 | `2026-03-09 12:15 AM ET` | **btc-updown-15m** `0xd8bc9d1988…`<br>12:15 AM → 12:30 AM | **UP** | `trend_follow` | 0.6300 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 4% elapsed) — UP token at 0.630 deviates 0.135 from 0.50. Momentum cont |
 | `2026-03-09 12:15 AM ET` | **eth-updown-15m** `0x72c8fad60e…`<br>12:15 AM → 12:30 AM | **UP** | `trend_follow` | 0.6300 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | TREND FOLLOW (HighVol+Trend, 3% elapsed) — UP token at 0.630 deviates 0.120 from 0.50. Momentum cont |
