@@ -1,17 +1,29 @@
 # Decision Tracker
 
-> **Updated:** `2026-03-09 09:38:28 AM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
+> **Updated:** `2026-03-09 09:43:36 AM ET` &nbsp;|&nbsp; Full trade history — refreshed every 5 minutes
 
 ## Summary
 | Total | Resolved | Wins | Losses | ARB | Pending | Win Rate | Realised P&L |
 | ----- | -------- | ---- | ------ | --- | ------- | -------- | ------------ |
-| 737 | 606 | 334 | 272 | 0 | 131 | 55.1% | +$2039.4070 |
+| 749 | 606 | 334 | 272 | 0 | 143 | 55.1% | +$2039.4070 |
 
 ## Trade Log
 > Each row: Entry Time · Market Slug · Condition ID (first 12 chars) · 15-min Window
 
 | Entry Time (ET) | Market & Window | Outcome | Trigger | Entry $ | Size | Mode | Resolved (ET) | Winner | Result | P&L | Reasoning |
 | ----------------- | ---------------------------------------- | ------- | ---------------------- | ------- | ------ | ----- | ----------------- | ------ | -------- | --------- | -------------------------------------------------- |
+| `2026-03-09 09:39 AM ET` | **xrp-updown-15m** `0xce36d61861…`<br>— | **DOWN** | `pre_open` | 0.4800 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | PRE-OPEN limit order — 329s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Curre |
+| `2026-03-09 09:39 AM ET` | **xrp-updown-15m** `0xce36d61861…`<br>— | **UP** | `pre_open` | 0.4800 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | PRE-OPEN limit order — 329s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current |
+| `2026-03-09 09:39 AM ET` | **sol-updown-15m** `0x311e94834b…`<br>— | **DOWN** | `pre_open` | 0.4800 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | PRE-OPEN limit order — 329s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Curre |
+| `2026-03-09 09:39 AM ET` | **sol-updown-15m** `0x311e94834b…`<br>— | **UP** | `pre_open` | 0.4800 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | PRE-OPEN limit order — 329s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current |
+| `2026-03-09 09:39 AM ET` | **eth-updown-15m** `0xffab8c811d…`<br>— | **DOWN** | `pre_open` | 0.4800 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | PRE-OPEN limit order — 329s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Curre |
+| `2026-03-09 09:39 AM ET` | **eth-updown-15m** `0xffab8c811d…`<br>— | **UP** | `pre_open` | 0.4800 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | PRE-OPEN limit order — 329s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current |
+| `2026-03-09 09:39 AM ET` | **btc-updown-15m** `0xc0b5ea8cd2…`<br>— | **DOWN** | `pre_open` | 0.4800 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | PRE-OPEN limit order — 329s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Curre |
+| `2026-03-09 09:39 AM ET` | **btc-updown-15m** `0xc0b5ea8cd2…`<br>— | **UP** | `pre_open` | 0.4800 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | PRE-OPEN limit order — 329s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current |
+| `2026-03-09 09:38 AM ET` | **xrp-updown-15m** `0x24d24f0c26…`<br>09:30 AM → 09:45 AM | **DOWN** | `forced_edge` | 0.7200 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.319, choosing DOWN. Fixed $5  |
+| `2026-03-09 09:38 AM ET` | **sol-updown-15m** `0x2a4cd1991b…`<br>09:30 AM → 09:45 AM | **DOWN** | `forced_edge` | 0.7500 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.294, choosing DOWN. Fixed $5  |
+| `2026-03-09 09:38 AM ET` | **eth-updown-15m** `0xf06e04eff5…`<br>09:30 AM → 09:45 AM | **DOWN** | `forced_edge` | 0.8000 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.291, choosing DOWN. Fixed $5  |
+| `2026-03-09 09:38 AM ET` | **btc-updown-15m** `0x685d92a3d2…`<br>09:30 AM → 09:45 AM | **DOWN** | `forced_coin` | 0.5400 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.471, choosing DOWN. Fixed $5  |
 | `2026-03-09 09:24 AM ET` | **xrp-updown-15m** `0x24d24f0c26…`<br>09:30 AM → 09:45 AM | **DOWN** | `pre_open` | 0.4800 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | PRE-OPEN limit order — 329s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Curre |
 | `2026-03-09 09:24 AM ET` | **xrp-updown-15m** `0x24d24f0c26…`<br>09:30 AM → 09:45 AM | **UP** | `pre_open` | 0.4800 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | PRE-OPEN limit order — 329s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current |
 | `2026-03-09 09:24 AM ET` | **sol-updown-15m** `0x2a4cd1991b…`<br>09:30 AM → 09:45 AM | **DOWN** | `pre_open` | 0.4800 | $5.00 | live | ⏳ Pending | — | ⏳ Pending | ⏳ | PRE-OPEN limit order — 329s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Curre |
