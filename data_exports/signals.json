@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-09 12:49:48 PM ET",
+  "updated": "2026-03-09 12:54:57 PM ET",
   "data": [
     {
       "symbol": "BTC",
@@ -10,7 +10,7 @@
       "price": 0.48,
       "confidence": 0.52,
       "trigger": "pre_open",
-      "reason": "PRE-OPEN limit order \u2014 329s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current regime: HighVol+Trend."
+      "reason": "PRE-OPEN limit order \u2014 321s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current regime: LowVol+Range."
     },
     {
       "symbol": "BTC",
@@ -21,7 +21,7 @@
       "price": 0.48,
       "confidence": 0.52,
       "trigger": "pre_open",
-      "reason": "PRE-OPEN limit order \u2014 329s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Current regime: HighVol+Trend."
+      "reason": "PRE-OPEN limit order \u2014 321s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Current regime: LowVol+Range."
     },
     {
       "symbol": "ETH",
@@ -32,7 +32,7 @@
       "price": 0.48,
       "confidence": 0.52,
       "trigger": "pre_open",
-      "reason": "PRE-OPEN limit order \u2014 329s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current regime: HighVol+Range."
+      "reason": "PRE-OPEN limit order \u2014 321s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current regime: HighVol+Range."
     },
     {
       "symbol": "ETH",
@@ -43,7 +43,7 @@
       "price": 0.48,
       "confidence": 0.52,
       "trigger": "pre_open",
-      "reason": "PRE-OPEN limit order \u2014 329s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Current regime: HighVol+Range."
+      "reason": "PRE-OPEN limit order \u2014 321s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Current regime: HighVol+Range."
     },
     {
       "symbol": "SOL",
@@ -54,7 +54,7 @@
       "price": 0.48,
       "confidence": 0.52,
       "trigger": "pre_open",
-      "reason": "PRE-OPEN limit order \u2014 329s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current regime: HighVol+Range."
+      "reason": "PRE-OPEN limit order \u2014 321s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current regime: LowVol+Range."
     },
     {
       "symbol": "SOL",
@@ -65,7 +65,7 @@
       "price": 0.48,
       "confidence": 0.52,
       "trigger": "pre_open",
-      "reason": "PRE-OPEN limit order \u2014 329s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Current regime: HighVol+Range."
+      "reason": "PRE-OPEN limit order \u2014 321s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Current regime: LowVol+Range."
     },
     {
       "symbol": "XRP",
@@ -76,7 +76,7 @@
       "price": 0.48,
       "confidence": 0.52,
       "trigger": "pre_open",
-      "reason": "PRE-OPEN limit order \u2014 329s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current regime: HighVol+Trend."
+      "reason": "PRE-OPEN limit order \u2014 321s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current regime: HighVol+Range."
     },
     {
       "symbol": "XRP",
@@ -87,7 +87,7 @@
       "price": 0.48,
       "confidence": 0.52,
       "trigger": "pre_open",
-      "reason": "PRE-OPEN limit order \u2014 329s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Current regime: HighVol+Trend."
+      "reason": "PRE-OPEN limit order \u2014 321s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Current regime: HighVol+Range."
     },
     {
       "symbol": "BTC",
@@ -95,43 +95,43 @@
       "outcome": "DOWN",
       "side": "BUY",
       "size": 5.0,
-      "price": 0.79,
-      "confidence": 0.702,
+      "price": 0.99,
+      "confidence": 0.609,
       "trigger": "forced_edge",
-      "reason": "FORCED TRADE at 60% elapsed \u2014 no prior signal for this window. P(UP)=0.298, choosing DOWN. Fixed $5 USDC stake (every market must be entered)."
+      "reason": "FORCED TRADE at 60% elapsed \u2014 no prior signal for this window. P(UP)=0.391, choosing DOWN. Fixed $5 USDC stake (every market must be entered)."
     },
     {
-      "symbol": "SOL",
-      "slug": "sol-updown-15m",
+      "symbol": "ETH",
+      "slug": "eth-updown-15m",
       "outcome": "UP",
       "side": "BUY",
       "size": 5.0,
       "price": 0.99,
-      "confidence": 0.536,
+      "confidence": 0.5,
       "trigger": "forced_coin",
-      "reason": "FORCED TRADE at 60% elapsed \u2014 no prior signal for this window. P(UP)=0.536, choosing UP. Fixed $5 USDC stake (every market must be entered)."
+      "reason": "FORCED TRADE at 60% elapsed \u2014 no prior signal for this window. P(UP)=0.500, choosing UP. Fixed $5 USDC stake (every market must be entered)."
     },
     {
-      "symbol": "ETH",
-      "slug": "eth-updown-15m",
+      "symbol": "SOL",
+      "slug": "sol-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.99,
+      "confidence": 0.5,
+      "trigger": "forced_coin",
+      "reason": "FORCED TRADE at 60% elapsed \u2014 no prior signal for this window. P(UP)=0.500, choosing UP. Fixed $5 USDC stake (every market must be entered)."
+    },
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m",
       "outcome": "DOWN",
       "side": "BUY",
       "size": 5.0,
       "price": 0.99,
-      "confidence": 0.817,
+      "confidence": 0.718,
       "trigger": "forced_edge",
-      "reason": "FORCED TRADE at 60% elapsed \u2014 no prior signal for this window. P(UP)=0.183, choosing DOWN. Fixed $5 USDC stake (every market must be entered)."
-    },
-    {
-      "symbol": "XRP",
-      "slug": "xrp-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.85,
-      "confidence": 0.799,
-      "trigger": "forced_edge",
-      "reason": "FORCED TRADE at 60% elapsed \u2014 no prior signal for this window. P(UP)=0.201, choosing DOWN. Fixed $5 USDC stake (every market must be entered)."
+      "reason": "FORCED TRADE at 60% elapsed \u2014 no prior signal for this window. P(UP)=0.282, choosing DOWN. Fixed $5 USDC stake (every market must be entered)."
     },
     {
       "symbol": "BTC",
@@ -142,7 +142,7 @@
       "price": 0.48,
       "confidence": 0.52,
       "trigger": "pre_open",
-      "reason": "PRE-OPEN limit order \u2014 321s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current regime: LowVol+Range."
+      "reason": "PRE-OPEN limit order \u2014 328s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current regime: LowVol+Trend."
     },
     {
       "symbol": "BTC",
@@ -153,7 +153,7 @@
       "price": 0.48,
       "confidence": 0.52,
       "trigger": "pre_open",
-      "reason": "PRE-OPEN limit order \u2014 321s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Current regime: LowVol+Range."
+      "reason": "PRE-OPEN limit order \u2014 328s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Current regime: LowVol+Trend."
     },
     {
       "symbol": "ETH",
@@ -164,7 +164,7 @@
       "price": 0.48,
       "confidence": 0.52,
       "trigger": "pre_open",
-      "reason": "PRE-OPEN limit order \u2014 321s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current regime: HighVol+Range."
+      "reason": "PRE-OPEN limit order \u2014 328s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current regime: HighVol+Range."
     },
     {
       "symbol": "ETH",
@@ -175,7 +175,7 @@
       "price": 0.48,
       "confidence": 0.52,
       "trigger": "pre_open",
-      "reason": "PRE-OPEN limit order \u2014 321s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Current regime: HighVol+Range."
+      "reason": "PRE-OPEN limit order \u2014 328s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Current regime: HighVol+Range."
     },
     {
       "symbol": "SOL",
@@ -186,7 +186,7 @@
       "price": 0.48,
       "confidence": 0.52,
       "trigger": "pre_open",
-      "reason": "PRE-OPEN limit order \u2014 321s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current regime: LowVol+Range."
+      "reason": "PRE-OPEN limit order \u2014 328s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current regime: HighVol+Range."
     },
     {
       "symbol": "SOL",
@@ -197,7 +197,7 @@
       "price": 0.48,
       "confidence": 0.52,
       "trigger": "pre_open",
-      "reason": "PRE-OPEN limit order \u2014 321s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Current regime: LowVol+Range."
+      "reason": "PRE-OPEN limit order \u2014 328s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Current regime: HighVol+Range."
     },
     {
       "symbol": "XRP",
@@ -208,7 +208,7 @@
       "price": 0.48,
       "confidence": 0.52,
       "trigger": "pre_open",
-      "reason": "PRE-OPEN limit order \u2014 321s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current regime: HighVol+Range."
+      "reason": "PRE-OPEN limit order \u2014 328s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current regime: LowVol+Range."
     },
     {
       "symbol": "XRP",
@@ -219,7 +219,7 @@
       "price": 0.48,
       "confidence": 0.52,
       "trigger": "pre_open",
-      "reason": "PRE-OPEN limit order \u2014 321s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Current regime: HighVol+Range."
+      "reason": "PRE-OPEN limit order \u2014 328s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Current regime: LowVol+Range."
     }
   ]
 }
