@@ -1,6 +1,6 @@
 # Decision Engine Summary
 
-> **Updated:** `2026-03-09 06:22:21 AM ET` &nbsp;|&nbsp; All signals from the last 48 hours
+> **Updated:** `2026-03-09 06:26:38 AM ET` &nbsp;|&nbsp; All signals from the last 48 hours
 
 ## Signal Distribution
 | Trigger | Count |
@@ -10,12 +10,16 @@
 | `directional_80pct` | 4163 |
 | `directional_60pct` | 247 |
 | `forced` | 180 |
-| `forced_edge` | 18 |
-| `forced_coin` | 4 |
+| `forced_edge` | 20 |
+| `forced_coin` | 6 |
 
 ## Signal Log
 | Time (ET) | Symbol | Slug | Outcome | Trigger | Confidence | P(UP) | Bucket | Elapsed% | Reasoning |
 | --------------- | ------ | ----------------- | ------- | -------------------- | ---------- | ----- | -------------- | -------- | -------------------------------------------------- |
+| `2026-03-09 06:23 AM ET` | SOL | sol-updown-15m | **DOWN** | `forced_coin` | 0.543 | 45.7% | LowVol+Range | 57.3% | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.457, choosing DOWN. Fixed $5 USDC stake (every ma |
+| `2026-03-09 06:23 AM ET` | BTC | btc-updown-15m | **DOWN** | `forced_edge` | 0.642 | 35.8% | LowVol+Trend | 57.3% | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.358, choosing DOWN. Fixed $5 USDC stake (every ma |
+| `2026-03-09 06:23 AM ET` | XRP | xrp-updown-15m | **DOWN** | `forced_coin` | 0.508 | 49.2% | LowVol+Trend | 56.9% | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.492, choosing DOWN. Fixed $5 USDC stake (every ma |
+| `2026-03-09 06:23 AM ET` | ETH | eth-updown-15m | **DOWN** | `forced_edge` | 0.565 | 43.5% | LowVol+Range | 56.9% | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.435, choosing DOWN. Fixed $5 USDC stake (every ma |
 | `2026-03-09 06:13 AM ET` | XRP | xrp-updown-15m | **DOWN** | `directional_90pct` | 0.756 | 28.4% | LowVol+Range | 93.2% | DIRECTIONAL at 90pct (93% elapsed) — P(UP)=0.243 gives edge=0.257 toward DOWN. Bucket=LowVol+Range (RV60=2.41044, Eff60= |
 | `2026-03-09 06:13 AM ET` | SOL | sol-updown-15m | **DOWN** | `directional_90pct` | 0.918 | 14.8% | HighVol+Trend | 93.2% | DIRECTIONAL at 90pct (93% elapsed) — P(UP)=0.082 gives edge=0.418 toward DOWN. Bucket=HighVol+Trend (RV60=6.97481, Eff60 |
 | `2026-03-09 06:13 AM ET` | ETH | eth-updown-15m | **DOWN** | `directional_90pct` | 0.865 | 19.3% | HighVol+Range | 93.2% | DIRECTIONAL at 90pct (93% elapsed) — P(UP)=0.135 gives edge=0.365 toward DOWN. Bucket=HighVol+Range (RV60=8.34761, Eff60 |
