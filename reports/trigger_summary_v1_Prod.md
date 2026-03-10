@@ -1,8 +1,8 @@
-# Trigger Performance Summary v2
+# Trigger Performance Summary — V1.0 Production
 
 > **Updated:** `2026-03-10 02:56:37 AM ET` &nbsp;|&nbsp; **Tracking from:** `2026-03-09 09:23 AM ET`
 
-> Fresh epoch — tracks only trades placed after the v2 start date. P&L is **net profit/loss** (stake not included in wins). Pending = placed but market not yet resolved.
+> **V1.0 Production strategy** — forced_coin, forced_edge, pre_open, arb, directional_90pct (HighVol), trend_follow (HighVol+Trend). P&L is net profit/loss. Pending = not yet resolved.
 
 ## BTC
 

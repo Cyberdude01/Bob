@@ -1,8 +1,8 @@
-# Market P&L Summary
+# Market P&L Summary — V1.0 Production
 
 > **Updated:** `2026-03-10 02:56:37 AM ET`
 
-> One row per 15-minute market window. P&L shown only for resolved markets. Unresolved trades count toward Bets but not Wins/Losses.
+> **V1.0 Production strategy** trades only. One row per 15-minute market window. P&L shown only for resolved markets.
 
 ## BTC
 
