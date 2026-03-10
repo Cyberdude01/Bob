@@ -1,16 +1,27 @@
 {
-  "updated": "2026-03-10 10:33:20 AM ET",
+  "updated": "2026-03-10 10:38:34 AM ET",
   "data": [
     {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.82,
+      "confidence": 0.815,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 48% elapsed) \u2014 UP token at 0.820 deviates 0.315 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+    },
+    {
       "symbol": "BTC",
       "slug": "btc-updown-15m",
       "outcome": "UP",
       "side": "BUY",
       "size": 5.0,
-      "price": 0.62,
-      "confidence": 0.615,
+      "price": 0.82,
+      "confidence": 0.815,
       "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 2% elapsed) \u2014 UP token at 0.620 deviates 0.115 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+      "reason": "TREND FOLLOW (HighVol+Trend, 50% elapsed) \u2014 UP token at 0.820 deviates 0.315 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
     },
     {
       "symbol": "ETH",
@@ -18,10 +29,10 @@
       "outcome": "UP",
       "side": "BUY",
       "size": 5.0,
-      "price": 0.61,
-      "confidence": 0.605,
+      "price": 0.82,
+      "confidence": 0.815,
       "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 2% elapsed) \u2014 UP token at 0.610 deviates 0.105 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+      "reason": "TREND FOLLOW (HighVol+Trend, 50% elapsed) \u2014 UP token at 0.820 deviates 0.315 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
     },
     {
       "symbol": "BTC",
@@ -29,10 +40,10 @@
       "outcome": "UP",
       "side": "BUY",
       "size": 5.0,
-      "price": 0.6,
-      "confidence": 0.595,
+      "price": 0.82,
+      "confidence": 0.815,
       "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 3% elapsed) \u2014 UP token at 0.600 deviates 0.095 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+      "reason": "TREND FOLLOW (HighVol+Trend, 51% elapsed) \u2014 UP token at 0.820 deviates 0.315 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
     },
     {
       "symbol": "ETH",
@@ -40,10 +51,10 @@
       "outcome": "UP",
       "side": "BUY",
       "size": 5.0,
-      "price": 0.62,
-      "confidence": 0.61,
+      "price": 0.82,
+      "confidence": 0.815,
       "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 3% elapsed) \u2014 UP token at 0.620 deviates 0.110 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+      "reason": "TREND FOLLOW (HighVol+Trend, 51% elapsed) \u2014 UP token at 0.820 deviates 0.315 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
     },
     {
       "symbol": "BTC",
@@ -51,10 +62,54 @@
       "outcome": "UP",
       "side": "BUY",
       "size": 5.0,
-      "price": 0.6,
-      "confidence": 0.595,
+      "price": 0.81,
+      "confidence": 0.815,
       "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 3% elapsed) \u2014 UP token at 0.600 deviates 0.095 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+      "reason": "TREND FOLLOW (HighVol+Trend, 51% elapsed) \u2014 UP token at 0.810 deviates 0.315 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.83,
+      "confidence": 0.825,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 51% elapsed) \u2014 UP token at 0.830 deviates 0.325 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.8,
+      "confidence": 0.795,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 51% elapsed) \u2014 UP token at 0.800 deviates 0.295 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.79,
+      "confidence": 0.785,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 51% elapsed) \u2014 UP token at 0.790 deviates 0.285 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.79,
+      "confidence": 0.785,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 52% elapsed) \u2014 UP token at 0.790 deviates 0.285 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
     },
     {
       "symbol": "ETH",
@@ -62,10 +117,10 @@
       "outcome": "UP",
       "side": "BUY",
       "size": 5.0,
-      "price": 0.61,
-      "confidence": 0.605,
+      "price": 0.8,
+      "confidence": 0.795,
       "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 3% elapsed) \u2014 UP token at 0.610 deviates 0.105 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+      "reason": "TREND FOLLOW (HighVol+Trend, 52% elapsed) \u2014 UP token at 0.800 deviates 0.295 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
     },
     {
       "symbol": "BTC",
@@ -73,21 +128,10 @@
       "outcome": "UP",
       "side": "BUY",
       "size": 5.0,
-      "price": 0.6,
-      "confidence": 0.595,
+      "price": 0.79,
+      "confidence": 0.785,
       "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 3% elapsed) \u2014 UP token at 0.600 deviates 0.095 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.6,
-      "confidence": 0.595,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 3% elapsed) \u2014 UP token at 0.600 deviates 0.095 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+      "reason": "TREND FOLLOW (HighVol+Trend, 52% elapsed) \u2014 UP token at 0.790 deviates 0.285 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
     },
     {
       "symbol": "ETH",
@@ -95,131 +139,87 @@
       "outcome": "UP",
       "side": "BUY",
       "size": 5.0,
-      "price": 0.62,
-      "confidence": 0.61,
+      "price": 0.8,
+      "confidence": 0.795,
       "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 3% elapsed) \u2014 UP token at 0.620 deviates 0.110 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+      "reason": "TREND FOLLOW (HighVol+Trend, 52% elapsed) \u2014 UP token at 0.800 deviates 0.295 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+    },
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.94,
+      "confidence": 0.93,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 53% elapsed) \u2014 UP token at 0.940 deviates 0.430 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
     },
     {
       "symbol": "BTC",
       "slug": "btc-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.81,
+      "confidence": 0.805,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 53% elapsed) \u2014 UP token at 0.810 deviates 0.305 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.81,
+      "confidence": 0.8,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 54% elapsed) \u2014 UP token at 0.810 deviates 0.300 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.82,
+      "confidence": 0.81,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 55% elapsed) \u2014 UP token at 0.820 deviates 0.310 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.82,
+      "confidence": 0.815,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 55% elapsed) \u2014 UP token at 0.820 deviates 0.315 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+    },
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.98,
+      "confidence": 0.975,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 57% elapsed) \u2014 UP token at 0.980 deviates 0.475 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+    },
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m",
       "outcome": "UP",
       "side": "BUY",
       "size": 5.0,
       "price": 0.99,
-      "confidence": 0.595,
+      "confidence": 0.975,
       "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 3% elapsed) \u2014 UP token at 0.990 deviates 0.095 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
-      "symbol": "ETH",
-      "slug": "eth-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.99,
-      "confidence": 0.61,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 3% elapsed) \u2014 UP token at 0.990 deviates 0.110 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.6,
-      "confidence": 0.595,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 4% elapsed) \u2014 UP token at 0.600 deviates 0.095 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
-      "symbol": "ETH",
-      "slug": "eth-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.61,
-      "confidence": 0.605,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 4% elapsed) \u2014 UP token at 0.610 deviates 0.105 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.62,
-      "confidence": 0.605,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 4% elapsed) \u2014 UP token at 0.620 deviates 0.105 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
-      "symbol": "ETH",
-      "slug": "eth-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.61,
-      "confidence": 0.605,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 4% elapsed) \u2014 UP token at 0.610 deviates 0.105 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.66,
-      "confidence": 0.665,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 4% elapsed) \u2014 UP token at 0.660 deviates 0.165 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
-      "symbol": "ETH",
-      "slug": "eth-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.99,
-      "confidence": 0.645,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 4% elapsed) \u2014 UP token at 0.990 deviates 0.145 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.67,
-      "confidence": 0.665,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 4% elapsed) \u2014 UP token at 0.670 deviates 0.165 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.67,
-      "confidence": 0.665,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 5% elapsed) \u2014 UP token at 0.670 deviates 0.165 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.68,
-      "confidence": 0.665,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 5% elapsed) \u2014 UP token at 0.680 deviates 0.165 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+      "reason": "TREND FOLLOW (HighVol+Trend, 57% elapsed) \u2014 UP token at 0.990 deviates 0.475 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
     }
   ]
 }
