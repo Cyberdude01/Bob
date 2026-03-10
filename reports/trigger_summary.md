@@ -1,6 +1,6 @@
 # Trigger Performance Summary
 
-> **Updated:** `2026-03-10 11:59:41 AM ET` &nbsp;|&nbsp; **Tracking from:** `2026-03-08 07:54 AM ET`
+> **Updated:** `2026-03-10 12:02:43 PM ET` &nbsp;|&nbsp; **Tracking from:** `2026-03-08 07:54 AM ET`
 
 > Counts only trades placed after the tracking start date. Historical trades are excluded. Unresolved trades are not counted in wins/losses.
 
@@ -28,8 +28,8 @@
 |  | `forced_coin` | 3 | 1 | 2 | 33.3% |
 |  | `forced_edge` | 120 | 78 | 42 | 65.0% |
 |  | `pre_open` | 160 | 80 | 80 | 50.0% |
-|  | `trend_follow` | 55 | 46 | 9 | 83.6% |
-|  | *subtotal* | *347* | *209* | *138* | *60.2%* |
+|  | `trend_follow` | 49 | 40 | 9 | 81.6% |
+|  | *subtotal* | *341* | *203* | *138* | *59.5%* |
 | **HighVol+Range** | `directional_80pct` | 5 | 0 | 5 | 0.0% |
 |  | `directional_90pct` | 8 | 8 | 0 | 100.0% |
 |  | `forced` | 6 | 2 | 4 | 33.3% |
@@ -38,24 +38,24 @@
 |  | `pre_open` | 244 | 122 | 122 | 50.0% |
 |  | *subtotal* | *305* | *148* | *157* | *48.5%* |
 | **LowVol+Trend** | `directional_80pct` | 1 | 0 | 1 | 0.0% |
-|  | `forced` | 16 | 8 | 8 | 50.0% |
+|  | `forced` | 14 | 6 | 8 | 42.9% |
 |  | `forced_coin` | 16 | 10 | 6 | 62.5% |
 |  | `forced_edge` | 53 | 24 | 29 | 45.3% |
 |  | `pre_open` | 120 | 60 | 60 | 50.0% |
-|  | *subtotal* | *206* | *102* | *104* | *49.5%* |
+|  | *subtotal* | *204* | *100* | *104* | *49.0%* |
 | **LowVol+Range** | `directional_80pct` | 1 | 0 | 1 | 0.0% |
-|  | `forced` | 18 | 9 | 9 | 50.0% |
+|  | `forced` | 10 | 3 | 7 | 30.0% |
 |  | `forced_coin` | 25 | 15 | 10 | 60.0% |
 |  | `forced_edge` | 63 | 31 | 32 | 49.2% |
 |  | `pre_open` | 116 | 58 | 58 | 50.0% |
-|  | *subtotal* | *223* | *113* | *110* | *50.7%* |
+|  | *subtotal* | *215* | *107* | *108* | *49.8%* |
 | **unknown** | `directional_60pct` | 2 | 0 | 2 | 0.0% |
 |  | `directional_80pct` | 6 | 2 | 4 | 33.3% |
 |  | `directional_90pct` | 12 | 4 | 8 | 33.3% |
-|  | `forced` | 134 | 64 | 70 | 47.8% |
+|  | `forced` | 144 | 72 | 72 | 50.0% |
 |  | `pre_open` | 8 | 4 | 4 | 50.0% |
-|  | `trend_follow` | 107 | 75 | 32 | 70.1% |
-|  | *subtotal* | *269* | *149* | *120* | *55.4%* |
+|  | `trend_follow` | 113 | 81 | 32 | 71.7% |
+|  | *subtotal* | *285* | *163* | *122* | *57.2%* |
 | **TOTAL** |  | **1350** | **721** | **629** | **53.4%** |
 
 ---
