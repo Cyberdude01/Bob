@@ -1,18 +1,40 @@
 # Decision Engine Summary
 
-> **Updated:** `2026-03-10 07:01:17 AM ET` &nbsp;|&nbsp; All signals from the last 48 hours
+> **Updated:** `2026-03-10 07:06:34 AM ET` &nbsp;|&nbsp; All signals from the last 48 hours
 
 ## Signal Distribution
 | Trigger | Count |
 | -------------------- | ----- |
-| `directional_90pct` | 133 |
-| `trend_follow` | 56 |
+| `directional_90pct` | 111 |
+| `trend_follow` | 78 |
 | `pre_open` | 8 |
 | `forced_edge` | 3 |
 
 ## Signal Log
 | Time (ET) | Symbol | Slug | Outcome | Trigger | Confidence | P(UP) | Bucket | Elapsed% | Reasoning |
 | --------------- | ------ | ----------------- | ------- | -------------------- | ---------- | ----- | -------------- | -------- | -------------------------------------------------- |
+| `2026-03-10 07:05 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.765 | 26.7% | HighVol+Trend | 38.6% | TREND FOLLOW (HighVol+Trend, 39% elapsed) — DOWN token at 0.770 deviates 0.265 from 0.50. Momentum continuation strategy |
+| `2026-03-10 07:05 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.765 | 26.7% | HighVol+Trend | 38.3% | TREND FOLLOW (HighVol+Trend, 38% elapsed) — DOWN token at 0.770 deviates 0.265 from 0.50. Momentum continuation strategy |
+| `2026-03-10 07:05 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.740 | 28.9% | HighVol+Trend | 37.4% | TREND FOLLOW (HighVol+Trend, 37% elapsed) — DOWN token at 0.750 deviates 0.240 from 0.50. Momentum continuation strategy |
+| `2026-03-10 07:05 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.740 | 28.9% | HighVol+Trend | 37.2% | TREND FOLLOW (HighVol+Trend, 37% elapsed) — DOWN token at 0.750 deviates 0.240 from 0.50. Momentum continuation strategy |
+| `2026-03-10 07:04 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.585 | 42.5% | HighVol+Trend | 33.0% | TREND FOLLOW (HighVol+Trend, 33% elapsed) — DOWN token at 0.590 deviates 0.085 from 0.50. Momentum continuation strategy |
+| `2026-03-10 07:03 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.880 | 16.6% | HighVol+Trend | 24.8% | TREND FOLLOW (HighVol+Trend, 25% elapsed) — DOWN token at 0.990 deviates 0.380 from 0.50. Momentum continuation strategy |
+| `2026-03-10 07:03 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.880 | 16.6% | HighVol+Trend | 24.5% | TREND FOLLOW (HighVol+Trend, 25% elapsed) — DOWN token at 0.890 deviates 0.380 from 0.50. Momentum continuation strategy |
+| `2026-03-10 07:03 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.855 | 18.8% | HighVol+Trend | 24.1% | TREND FOLLOW (HighVol+Trend, 24% elapsed) — DOWN token at 0.850 deviates 0.355 from 0.50. Momentum continuation strategy |
+| `2026-03-10 07:02 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.895 | 15.2% | HighVol+Trend | 18.3% | TREND FOLLOW (HighVol+Trend, 18% elapsed) — DOWN token at 0.890 deviates 0.395 from 0.50. Momentum continuation strategy |
+| `2026-03-10 07:02 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.890 | 15.7% | HighVol+Trend | 18.1% | TREND FOLLOW (HighVol+Trend, 18% elapsed) — DOWN token at 0.900 deviates 0.390 from 0.50. Momentum continuation strategy |
+| `2026-03-10 07:02 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.880 | 16.6% | HighVol+Trend | 17.9% | TREND FOLLOW (HighVol+Trend, 18% elapsed) — DOWN token at 0.890 deviates 0.380 from 0.50. Momentum continuation strategy |
+| `2026-03-10 07:02 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.880 | 16.6% | HighVol+Trend | 17.6% | TREND FOLLOW (HighVol+Trend, 18% elapsed) — DOWN token at 0.890 deviates 0.380 from 0.50. Momentum continuation strategy |
+| `2026-03-10 07:02 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.880 | 16.6% | HighVol+Trend | 17.4% | TREND FOLLOW (HighVol+Trend, 17% elapsed) — DOWN token at 0.990 deviates 0.380 from 0.50. Momentum continuation strategy |
+| `2026-03-10 07:02 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.880 | 16.6% | HighVol+Trend | 17.2% | TREND FOLLOW (HighVol+Trend, 17% elapsed) — DOWN token at 0.890 deviates 0.380 from 0.50. Momentum continuation strategy |
+| `2026-03-10 07:02 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.875 | 17.0% | HighVol+Trend | 16.8% | TREND FOLLOW (HighVol+Trend, 17% elapsed) — DOWN token at 0.990 deviates 0.375 from 0.50. Momentum continuation strategy |
+| `2026-03-10 07:02 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.870 | 17.4% | HighVol+Trend | 16.5% | TREND FOLLOW (HighVol+Trend, 17% elapsed) — DOWN token at 0.880 deviates 0.370 from 0.50. Momentum continuation strategy |
+| `2026-03-10 07:02 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.870 | 17.4% | HighVol+Trend | 16.3% | TREND FOLLOW (HighVol+Trend, 16% elapsed) — DOWN token at 0.880 deviates 0.370 from 0.50. Momentum continuation strategy |
+| `2026-03-10 07:02 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.870 | 17.4% | HighVol+Trend | 16.1% | TREND FOLLOW (HighVol+Trend, 16% elapsed) — DOWN token at 0.880 deviates 0.370 from 0.50. Momentum continuation strategy |
+| `2026-03-10 07:02 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.870 | 17.4% | HighVol+Trend | 15.9% | TREND FOLLOW (HighVol+Trend, 16% elapsed) — DOWN token at 0.880 deviates 0.370 from 0.50. Momentum continuation strategy |
+| `2026-03-10 07:02 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.875 | 17.0% | HighVol+Trend | 15.4% | TREND FOLLOW (HighVol+Trend, 15% elapsed) — DOWN token at 0.880 deviates 0.375 from 0.50. Momentum continuation strategy |
+| `2026-03-10 07:01 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.815 | 22.3% | HighVol+Trend | 13.0% | TREND FOLLOW (HighVol+Trend, 13% elapsed) — DOWN token at 0.820 deviates 0.315 from 0.50. Momentum continuation strategy |
+| `2026-03-10 07:01 AM ET` | XRP | xrp-updown-15m | **DOWN** | `trend_follow` | 0.820 | 21.8% | HighVol+Trend | 12.7% | TREND FOLLOW (HighVol+Trend, 13% elapsed) — DOWN token at 0.820 deviates 0.320 from 0.50. Momentum continuation strategy |
 | `2026-03-10 07:00 AM ET` | SOL | sol-updown-15m | **DOWN** | `trend_follow` | 0.585 | 42.5% | HighVol+Trend | 5.4% | TREND FOLLOW (HighVol+Trend, 5% elapsed) — DOWN token at 0.990 deviates 0.085 from 0.50. Momentum continuation strategy: |
 | `2026-03-10 07:00 AM ET` | SOL | sol-updown-15m | **DOWN** | `trend_follow` | 0.595 | 41.6% | HighVol+Trend | 4.5% | TREND FOLLOW (HighVol+Trend, 4% elapsed) — DOWN token at 0.600 deviates 0.095 from 0.50. Momentum continuation strategy: |
 | `2026-03-10 06:58 AM ET` | XRP | xrp-updown-15m | **UP** | `directional_90pct` | 0.735 | 69.8% | HighVol+Trend | 93.2% | DIRECTIONAL at 90pct (93% elapsed) — P(UP)=0.735 gives edge=0.235 toward UP. Bucket=HighVol+Trend (RV60=6.34397, Eff60=0 |
@@ -191,28 +213,6 @@
 | `2026-03-10 06:43 AM ET` | XRP | xrp-updown-15m | **UP** | `directional_90pct` | 1.000 | 93.1% | HighVol+Trend | 93.3% | DIRECTIONAL at 90pct (93% elapsed) — P(UP)=1.000 gives edge=0.500 toward UP. Bucket=HighVol+Trend (RV60=12.11017, Eff60= |
 | `2026-03-10 06:43 AM ET` | SOL | sol-updown-15m | **UP** | `directional_90pct` | 1.000 | 93.1% | HighVol+Trend | 93.3% | DIRECTIONAL at 90pct (93% elapsed) — P(UP)=1.000 gives edge=0.500 toward UP. Bucket=HighVol+Trend (RV60=14.04711, Eff60= |
 | `2026-03-10 06:43 AM ET` | ETH | eth-updown-15m | **UP** | `directional_90pct` | 0.872 | 81.4% | HighVol+Range | 93.3% | DIRECTIONAL at 90pct (93% elapsed) — P(UP)=0.872 gives edge=0.372 toward UP. Bucket=HighVol+Range (RV60=20.91637, Eff60= |
-| `2026-03-10 06:43 AM ET` | XRP | xrp-updown-15m | **UP** | `directional_90pct` | 1.000 | 93.1% | HighVol+Trend | 93.0% | DIRECTIONAL at 90pct (93% elapsed) — P(UP)=1.000 gives edge=0.500 toward UP. Bucket=HighVol+Trend (RV60=12.11017, Eff60= |
-| `2026-03-10 06:43 AM ET` | SOL | sol-updown-15m | **UP** | `directional_90pct` | 1.000 | 93.1% | HighVol+Trend | 93.0% | DIRECTIONAL at 90pct (93% elapsed) — P(UP)=1.000 gives edge=0.500 toward UP. Bucket=HighVol+Trend (RV60=14.04711, Eff60= |
-| `2026-03-10 06:43 AM ET` | ETH | eth-updown-15m | **UP** | `directional_90pct` | 0.872 | 81.4% | HighVol+Range | 93.0% | DIRECTIONAL at 90pct (93% elapsed) — P(UP)=0.872 gives edge=0.372 toward UP. Bucket=HighVol+Range (RV60=20.91637, Eff60= |
-| `2026-03-10 06:43 AM ET` | XRP | xrp-updown-15m | **UP** | `directional_90pct` | 1.000 | 93.1% | HighVol+Trend | 92.8% | DIRECTIONAL at 90pct (93% elapsed) — P(UP)=1.000 gives edge=0.500 toward UP. Bucket=HighVol+Trend (RV60=12.11017, Eff60= |
-| `2026-03-10 06:43 AM ET` | SOL | sol-updown-15m | **UP** | `directional_90pct` | 1.000 | 93.1% | HighVol+Trend | 92.8% | DIRECTIONAL at 90pct (93% elapsed) — P(UP)=1.000 gives edge=0.500 toward UP. Bucket=HighVol+Trend (RV60=14.04711, Eff60= |
-| `2026-03-10 06:43 AM ET` | ETH | eth-updown-15m | **UP** | `directional_90pct` | 0.872 | 81.4% | HighVol+Range | 92.8% | DIRECTIONAL at 90pct (93% elapsed) — P(UP)=0.872 gives edge=0.372 toward UP. Bucket=HighVol+Range (RV60=20.91637, Eff60= |
-| `2026-03-10 06:43 AM ET` | XRP | xrp-updown-15m | **UP** | `directional_90pct` | 1.000 | 93.1% | HighVol+Trend | 92.6% | DIRECTIONAL at 90pct (93% elapsed) — P(UP)=1.000 gives edge=0.500 toward UP. Bucket=HighVol+Trend (RV60=13.25894, Eff60= |
-| `2026-03-10 06:43 AM ET` | SOL | sol-updown-15m | **UP** | `directional_90pct` | 0.872 | 81.4% | HighVol+Range | 92.6% | DIRECTIONAL at 90pct (93% elapsed) — P(UP)=0.872 gives edge=0.372 toward UP. Bucket=HighVol+Range (RV60=14.53269, Eff60= |
-| `2026-03-10 06:43 AM ET` | ETH | eth-updown-15m | **UP** | `directional_90pct` | 0.872 | 81.4% | HighVol+Range | 92.6% | DIRECTIONAL at 90pct (93% elapsed) — P(UP)=0.872 gives edge=0.372 toward UP. Bucket=HighVol+Range (RV60=20.91637, Eff60= |
-| `2026-03-10 06:43 AM ET` | XRP | xrp-updown-15m | **UP** | `directional_90pct` | 1.000 | 93.1% | HighVol+Trend | 92.4% | DIRECTIONAL at 90pct (92% elapsed) — P(UP)=1.000 gives edge=0.500 toward UP. Bucket=HighVol+Trend (RV60=13.25894, Eff60= |
-| `2026-03-10 06:43 AM ET` | SOL | sol-updown-15m | **UP** | `directional_90pct` | 0.872 | 81.4% | HighVol+Range | 92.4% | DIRECTIONAL at 90pct (92% elapsed) — P(UP)=0.872 gives edge=0.372 toward UP. Bucket=HighVol+Range (RV60=14.53269, Eff60= |
-| `2026-03-10 06:43 AM ET` | ETH | eth-updown-15m | **UP** | `directional_90pct` | 0.872 | 81.4% | HighVol+Range | 92.4% | DIRECTIONAL at 90pct (92% elapsed) — P(UP)=0.872 gives edge=0.372 toward UP. Bucket=HighVol+Range (RV60=20.91637, Eff60= |
-| `2026-03-10 06:43 AM ET` | XRP | xrp-updown-15m | **UP** | `directional_90pct` | 0.872 | 81.4% | HighVol+Range | 91.9% | DIRECTIONAL at 90pct (92% elapsed) — P(UP)=0.872 gives edge=0.372 toward UP. Bucket=HighVol+Range (RV60=14.33029, Eff60= |
-| `2026-03-10 06:43 AM ET` | SOL | sol-updown-15m | **UP** | `directional_90pct` | 1.000 | 93.1% | HighVol+Trend | 91.9% | DIRECTIONAL at 90pct (92% elapsed) — P(UP)=1.000 gives edge=0.500 toward UP. Bucket=HighVol+Trend (RV60=15.00256, Eff60= |
-| `2026-03-10 06:43 AM ET` | ETH | eth-updown-15m | **UP** | `directional_90pct` | 1.000 | 93.1% | HighVol+Trend | 91.9% | DIRECTIONAL at 90pct (92% elapsed) — P(UP)=1.000 gives edge=0.500 toward UP. Bucket=HighVol+Trend (RV60=21.08184, Eff60= |
-| `2026-03-10 06:43 AM ET` | XRP | xrp-updown-15m | **UP** | `directional_90pct` | 0.872 | 81.4% | HighVol+Range | 91.7% | DIRECTIONAL at 90pct (92% elapsed) — P(UP)=0.872 gives edge=0.372 toward UP. Bucket=HighVol+Range (RV60=14.33029, Eff60= |
-| `2026-03-10 06:43 AM ET` | SOL | sol-updown-15m | **UP** | `directional_90pct` | 1.000 | 93.1% | HighVol+Trend | 91.7% | DIRECTIONAL at 90pct (92% elapsed) — P(UP)=1.000 gives edge=0.500 toward UP. Bucket=HighVol+Trend (RV60=15.00256, Eff60= |
-| `2026-03-10 06:43 AM ET` | ETH | eth-updown-15m | **UP** | `directional_90pct` | 1.000 | 93.1% | HighVol+Trend | 91.7% | DIRECTIONAL at 90pct (92% elapsed) — P(UP)=1.000 gives edge=0.500 toward UP. Bucket=HighVol+Trend (RV60=21.08184, Eff60= |
-| `2026-03-10 06:43 AM ET` | XRP | xrp-updown-15m | **UP** | `directional_90pct` | 1.000 | 93.1% | HighVol+Trend | 91.5% | DIRECTIONAL at 90pct (91% elapsed) — P(UP)=1.000 gives edge=0.500 toward UP. Bucket=HighVol+Trend (RV60=14.81602, Eff60= |
-| `2026-03-10 06:43 AM ET` | SOL | sol-updown-15m | **UP** | `directional_90pct` | 1.000 | 93.1% | HighVol+Trend | 91.5% | DIRECTIONAL at 90pct (91% elapsed) — P(UP)=1.000 gives edge=0.500 toward UP. Bucket=HighVol+Trend (RV60=15.69737, Eff60= |
-| `2026-03-10 06:43 AM ET` | ETH | eth-updown-15m | **UP** | `directional_90pct` | 1.000 | 93.1% | HighVol+Trend | 91.5% | DIRECTIONAL at 90pct (91% elapsed) — P(UP)=1.000 gives edge=0.500 toward UP. Bucket=HighVol+Trend (RV60=21.23138, Eff60= |
-| `2026-03-10 06:43 AM ET` | XRP | xrp-updown-15m | **UP** | `directional_90pct` | 1.000 | 93.1% | HighVol+Trend | 91.3% | DIRECTIONAL at 90pct (91% elapsed) — P(UP)=1.000 gives edge=0.500 toward UP. Bucket=HighVol+Trend (RV60=14.81602, Eff60= |
 
 ---
 _Auto-generated by **Bob the builder**_
