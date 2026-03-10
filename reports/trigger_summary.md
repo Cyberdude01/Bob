@@ -1,6 +1,6 @@
 # Trigger Performance Summary
 
-> **Updated:** `2026-03-10 04:52:52 AM ET` &nbsp;|&nbsp; **Tracking from:** `2026-03-08 07:54 AM ET`
+> **Updated:** `2026-03-10 04:55:27 AM ET` &nbsp;|&nbsp; **Tracking from:** `2026-03-08 07:54 AM ET`
 
 > Counts only trades placed after the tracking start date. Historical trades are excluded. Unresolved trades are not counted in wins/losses.
 
@@ -24,38 +24,38 @@
 | -------------- | ---------------------- | ------ | ---- | ------ | -------- |
 | **HighVol+Trend** | `directional_80pct` | 2 | 0 | 2 | 0.0% |
 |  | `directional_90pct` | 1 | 1 | 0 | 100.0% |
-|  | `forced` | 17 | 10 | 7 | 58.8% |
+|  | `forced` | 15 | 8 | 7 | 53.3% |
 |  | `forced_coin` | 3 | 1 | 2 | 33.3% |
 |  | `forced_edge` | 120 | 78 | 42 | 65.0% |
 |  | `pre_open` | 160 | 80 | 80 | 50.0% |
-|  | `trend_follow` | 116 | 91 | 25 | 78.4% |
-|  | *subtotal* | *419* | *261* | *158* | *62.3%* |
+|  | `trend_follow` | 99 | 80 | 19 | 80.8% |
+|  | *subtotal* | *400* | *248* | *152* | *62.0%* |
 | **HighVol+Range** | `directional_80pct` | 5 | 0 | 5 | 0.0% |
 |  | `directional_90pct` | 8 | 8 | 0 | 100.0% |
-|  | `forced` | 25 | 12 | 13 | 48.0% |
+|  | `forced` | 16 | 5 | 11 | 31.2% |
 |  | `forced_coin` | 31 | 14 | 17 | 45.2% |
 |  | `forced_edge` | 11 | 2 | 9 | 18.2% |
 |  | `pre_open` | 244 | 122 | 122 | 50.0% |
-|  | *subtotal* | *324* | *158* | *166* | *48.8%* |
+|  | *subtotal* | *315* | *151* | *164* | *47.9%* |
 | **LowVol+Trend** | `directional_80pct` | 1 | 0 | 1 | 0.0% |
-|  | `forced` | 34 | 16 | 18 | 47.1% |
+|  | `forced` | 28 | 15 | 13 | 53.6% |
 |  | `forced_coin` | 16 | 10 | 6 | 62.5% |
 |  | `forced_edge` | 53 | 24 | 29 | 45.3% |
 |  | `pre_open` | 120 | 60 | 60 | 50.0% |
-|  | *subtotal* | *224* | *110* | *114* | *49.1%* |
+|  | *subtotal* | *218* | *109* | *109* | *50.0%* |
 | **LowVol+Range** | `directional_80pct` | 1 | 0 | 1 | 0.0% |
-|  | `forced` | 45 | 24 | 21 | 53.3% |
+|  | `forced` | 39 | 20 | 19 | 51.3% |
 |  | `forced_coin` | 25 | 15 | 10 | 60.0% |
 |  | `forced_edge` | 63 | 31 | 32 | 49.2% |
 |  | `pre_open` | 116 | 58 | 58 | 50.0% |
-|  | *subtotal* | *250* | *128* | *122* | *51.2%* |
+|  | *subtotal* | *244* | *124* | *120* | *50.8%* |
 | **unknown** | `directional_60pct` | 2 | 0 | 2 | 0.0% |
 |  | `directional_80pct` | 6 | 2 | 4 | 33.3% |
 |  | `directional_90pct` | 12 | 4 | 8 | 33.3% |
-|  | `forced` | 59 | 24 | 35 | 40.7% |
+|  | `forced` | 82 | 38 | 44 | 46.3% |
 |  | `pre_open` | 8 | 4 | 4 | 50.0% |
-|  | `trend_follow` | 46 | 30 | 16 | 65.2% |
-|  | *subtotal* | *133* | *64* | *69* | *48.1%* |
+|  | `trend_follow` | 63 | 41 | 22 | 65.1% |
+|  | *subtotal* | *173* | *89* | *84* | *51.4%* |
 | **TOTAL** |  | **1350** | **721** | **629** | **53.4%** |
 
 ---
