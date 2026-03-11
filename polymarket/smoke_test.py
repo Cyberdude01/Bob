@@ -120,8 +120,7 @@ async def run(execute: bool = False) -> None:
 
     # ── Stage 1: Credentials ──────────────────────────────────────────────────
     print("Stage 1 — Credentials")
-    required = ["POLY_PRIVATE_KEY", "POLY_ADDRESS", "POLY_API_KEY",
-                "POLY_API_SECRET", "POLY_API_PASSPHRASE"]
+    required = ["POLY_PRIVATE_KEY", "POLY_ADDRESS"]
     missing  = [k for k in required if not os.environ.get(k)]
     if missing:
         print(f"{_FAIL}  Missing: {', '.join(missing)}")
@@ -129,14 +128,21 @@ async def run(execute: bool = False) -> None:
         results["credentials"] = "FAIL"
         _summary(results)
         return
-    print(f"{_PASS}  All 5 credentials present")
+    print(f"{_PASS}  POLY_PRIVATE_KEY and POLY_ADDRESS present")
     print(f"{_INFO}  POLY_ADDRESS = {os.environ['POLY_ADDRESS']}")
+    # Report optional stored creds (not required — derived in Stage 2)
+    stored = [k for k in ("POLY_API_KEY", "POLY_API_SECRET", "POLY_API_PASSPHRASE")
+              if os.environ.get(k)]
+    if stored:
+        print(f"{_INFO}  Stored API creds present: {', '.join(stored)}")
+    else:
+        print(f"{_INFO}  No stored API creds — will derive from private key in Stage 2")
     results["credentials"] = "PASS"
 
     async with aiohttp.ClientSession() as session:
 
         # ── Stage 2: Balance / Auth ───────────────────────────────────────────
-        print("\nStage 2 — L2 Auth (GET /balance-allowance)")
+        print("\nStage 2 — L2 Auth (GET /balance-allowance via py_clob_client)")
         # First verify basic connectivity with a public endpoint
         try:
             async with session.get(
@@ -150,41 +156,35 @@ async def run(execute: bool = False) -> None:
         except Exception as exc:
             print(f"{_WARN}  CLOB /time failed: {exc}")
 
-        # Correct endpoint is /balance-allowance (not /balance)
-        _BALANCE_PATH = "/balance-allowance"
-        _SIG_TYPE = int(os.environ.get("POLY_SIGNATURE_TYPE", "1"))
+        # Use py_clob_client — the only reliable auth path for this wallet type
         try:
-            l2 = _l2_headers("GET", _BALANCE_PATH)
-            headers = {"Content-Type": "application/json", **l2}
-            masked_key = (l2.get("POLY-API-KEY") or "")[:8] + "…"
-            print(f"{_INFO}  Headers: POLY-ADDRESS={l2.get('POLY-ADDRESS','?')[:10]}…  POLY-API-KEY={masked_key}")
-            print(f"{_INFO}  Using signature_type={_SIG_TYPE} (POLY_SIGNATURE_TYPE)")
-            async with session.get(
-                f"{CLOB_API}{_BALANCE_PATH}?asset_type=0&signature_type={_SIG_TYPE}",
-                headers=headers,
-                timeout=aiohttp.ClientTimeout(total=10),
-            ) as r:
-                body = await r.text()
-                if r.status == 200:
-                    data      = json.loads(body)
-                    balance   = float(data.get("balance") or data.get("USDC") or
-                                      data.get("asset_balance") or 0)
-                    allowance = float(data.get("allowance") or 0)
-                    print(f"{_PASS}  Status 200 — USDC balance: ${balance:.4f}  allowance: ${allowance:.4f}")
-                    print(f"{_INFO}  Full response: {json.dumps(data)}")
-                    results["auth_balance"] = "PASS"
-                elif r.status in (401, 403):
-                    print(f"{_FAIL}  Status {r.status}: Auth rejected — credentials invalid or expired")
-                    print(f"{_INFO}  Ensure POLY_SIGNATURE_TYPE=1 is set in /etc/polymarket.env")
-                    print(f"{_INFO}  Or re-derive API keys: python -m polymarket.smoke_test --rederive")
-                    print(f"{_INFO}  Response: {body[:300]}")
-                    results["auth_balance"] = "FAIL"
-                else:
-                    print(f"{_FAIL}  Status {r.status}: {body[:300]}")
-                    print(f"{_INFO}  Check POLY_API_KEY, POLY_API_SECRET, POLY_API_PASSPHRASE")
-                    results["auth_balance"] = "FAIL"
+            from py_clob_client.client import ClobClient
+            from py_clob_client.clob_types import BalanceAllowanceParams, AssetType
+
+            _sig_type = int(os.environ.get("POLY_SIGNATURE_TYPE", "1"))
+            print(f"{_INFO}  signature_type={_sig_type} (POLY_SIGNATURE_TYPE)")
+            client = ClobClient(
+                CLOB_API,
+                key=os.environ["POLY_PRIVATE_KEY"],
+                chain_id=137,
+                signature_type=_sig_type,
+                funder=os.environ["POLY_ADDRESS"],
+            )
+            client.set_api_creds(client.derive_api_key())
+            creds = client.get_api_keys()
+            print(f"{_INFO}  Derived POLY-API-KEY={str(getattr(creds, 'api_key', creds))[:8]}…")
+
+            bal = client.get_balance_allowance(
+                BalanceAllowanceParams(asset_type=AssetType.COLLATERAL)
+            )
+            balance   = int(bal.get("balance",   0)) / 1e6
+            allowance = int(bal.get("allowance", 0)) / 1e6
+            print(f"{_PASS}  USDC balance: ${balance:.2f}  allowance: ${allowance:.2f}")
+            results["auth_balance"] = "PASS"
         except Exception as exc:
             print(f"{_FAIL}  Exception: {exc}")
+            print(f"{_INFO}  Ensure POLY_PRIVATE_KEY and POLY_ADDRESS are correct")
+            print(f"{_INFO}  Ensure POLY_SIGNATURE_TYPE=1 in /etc/polymarket.env")
             results["auth_balance"] = "FAIL"
 
         # ── Stage 3: Fetch live crypto 15-min market (BTC or ETH) ────────────

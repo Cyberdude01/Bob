@@ -85,22 +85,19 @@ def get_markets(**filters) -> List[Dict[str, Any]]:
 
 
 def get_balance() -> float:
-    path = "/balance-allowance"
+    from py_clob_client.client import ClobClient
+    from py_clob_client.clob_types import BalanceAllowanceParams, AssetType
     sig_type = int(os.environ.get("POLY_SIGNATURE_TYPE", "1"))
-    headers = {
-        "Content-Type": "application/json",
-        **_l2_headers("GET", path),
-    }
-    response = requests.get(
-        f"{CLOB_API}{path}",
-        params={"asset_type": 0, "signature_type": sig_type},
-        headers=headers,
-        timeout=10,
+    client = ClobClient(
+        CLOB_API,
+        key=os.environ["POLY_PRIVATE_KEY"],
+        chain_id=137,
+        signature_type=sig_type,
+        funder=os.environ["POLY_ADDRESS"],
     )
-    response.raise_for_status()
-    data = response.json()
-    usdc = int(data.get("balance", 0)) / 1e6
-    return usdc
+    client.set_api_creds(client.derive_api_key())
+    bal = client.get_balance_allowance(BalanceAllowanceParams(asset_type=AssetType.COLLATERAL))
+    return int(bal.get("balance", 0)) / 1e6
 
 
 def get_price(token_id: str) -> Dict[str, float]:
