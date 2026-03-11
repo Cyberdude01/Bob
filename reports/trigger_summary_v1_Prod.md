@@ -1,6 +1,6 @@
 # Trigger Performance Summary — V1.0 Production
 
-> **Updated:** `2026-03-11 12:51:32 PM ET` &nbsp;|&nbsp; **Tracking from:** `2026-03-09 09:23 AM ET`
+> **Updated:** `2026-03-11 12:56:47 PM ET` &nbsp;|&nbsp; **Tracking from:** `2026-03-09 09:23 AM ET`
 
 > **V1.0 Production strategy** — forced_coin, forced_edge, pre_open, arb, directional_90pct (HighVol), trend_follow (HighVol+Trend). P&L is net profit/loss. Pending = not yet resolved.
 
