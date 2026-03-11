@@ -1,6 +1,6 @@
 # Trigger Performance Summary — V3.0 Dev
 
-> **Updated:** `2026-03-11 10:33:16 AM ET` &nbsp;|&nbsp; **Tracking from:** `2026-03-10 02:56 AM ET`
+> **Updated:** `2026-03-11 10:38:31 AM ET` &nbsp;|&nbsp; **Tracking from:** `2026-03-10 02:56 AM ET`
 
 > **V3.0 Dev strategy** — all triggers active (minimal suppression). Expect: forced_coin, forced_edge, trend_follow, directional_90pct, pre_open and arb visible for each market. Strategy isolation is enforced at the instance level (separate STRATEGY_VERSION=v3 run).
 
