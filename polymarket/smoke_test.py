@@ -192,38 +192,73 @@ async def run(execute: bool = False) -> None:
         market: Optional[Dict[str, Any]] = None
         token_id_up: Optional[str]       = None
         condition_id: Optional[str]      = None
-        # Try BTC first, then ETH — markets alternate/run in parallel
-        _candidates = [
+
+        # Markets use timestamped slugs: btc-updown-15m-{unix_15min_boundary}
+        # Try current window and adjacent ones in case of boundary timing
+        _now     = int(time.time())
+        _current = (_now // 900) * 900
+        _ts_candidates = [_current, _current + 900, _current - 900]
+        _base_slugs = [
             ("btc-updown-15m", "BTC"),
             ("eth-updown-15m", "ETH"),
+            ("sol-updown-15m", "SOL"),
+            ("xrp-updown-15m", "XRP"),
         ]
-        for _slug_prefix, _symbol in _candidates:
-            try:
-                async with session.get(
-                    f"{GAMMA_API}/markets?tag=crypto&active=true&slug={_slug_prefix}",
-                    timeout=aiohttp.ClientTimeout(total=15),
-                ) as r:
-                    data = await r.json()
-                markets = data if isinstance(data, list) else data.get("markets", [])
-                if markets:
-                    market       = markets[0]
+
+        _found = False
+        for _base_slug, _symbol in _base_slugs:
+            if _found:
+                break
+            for _ts in _ts_candidates:
+                _slug = f"{_base_slug}-{_ts}"
+                try:
+                    async with session.get(
+                        f"{GAMMA_API}/events",
+                        params={"slug": _slug, "limit": 1},
+                        timeout=aiohttp.ClientTimeout(total=10),
+                    ) as r:
+                        data = await r.json()
+                    event = (data[0] if isinstance(data, list) and data
+                             else data if isinstance(data, dict) and data.get("id") else None)
+                    if not event:
+                        continue
+                    markets_list = event.get("markets", [])
+                    if not markets_list:
+                        _eid = str(event.get("id", ""))
+                        async with session.get(
+                            f"{GAMMA_API}/markets",
+                            params={"event_id": _eid, "limit": 20},
+                            timeout=aiohttp.ClientTimeout(total=10),
+                        ) as mr:
+                            markets_list = await mr.json()
+                        if not isinstance(markets_list, list):
+                            markets_list = []
+                    if not markets_list:
+                        continue
+                    market       = markets_list[0]
                     condition_id = market.get("conditionId") or market.get("condition_id")
-                    tokens       = market.get("tokens", [])
+                    tokens       = market.get("tokens") or market.get("clobTokenIds") or []
+                    if isinstance(tokens, str):
+                        try:
+                            tokens = json.loads(tokens)
+                        except Exception:
+                            tokens = []
                     for tok in tokens:
-                        if tok.get("outcome", "").upper() == "UP":
+                        if isinstance(tok, dict) and tok.get("outcome", "").upper() == "UP":
                             token_id_up = tok.get("token_id") or tok.get("tokenId")
                             break
-                    print(f"{_PASS}  Found {_symbol} market: {market.get('slug', '?')}")
+                    print(f"{_PASS}  Found {_symbol} market: {_slug}")
                     print(f"{_INFO}  condition_id  = {condition_id}")
                     print(f"{_INFO}  token_id_up   = {token_id_up}")
                     results["market_fetch"] = "PASS"
+                    _found = True
                     break
-            except Exception as exc:
-                print(f"{_WARN}  {_symbol} fetch error: {exc}")
-        else:
-            if market is None:
-                print(f"{_WARN}  No active BTC or ETH 15-min market found (might be between windows)")
-                results["market_fetch"] = "WARN"
+                except Exception as exc:
+                    continue
+
+        if not _found:
+            print(f"{_WARN}  No active 15-min crypto market found (might be between windows)")
+            results["market_fetch"] = "WARN"
 
         # ── Stage 4: CLOB last-trade-price ────────────────────────────────────
         print("\nStage 4 — CLOB last-trade-price")
