@@ -1,6 +1,6 @@
 # Trigger Performance Summary
 
-> **Updated:** `2026-03-10 09:03:22 PM ET` &nbsp;|&nbsp; **Tracking from:** `2026-03-08 07:54 AM ET`
+> **Updated:** `2026-03-10 09:06:21 PM ET` &nbsp;|&nbsp; **Tracking from:** `2026-03-08 07:54 AM ET`
 
 > Counts only trades placed after the tracking start date. Historical trades are excluded. Unresolved trades are not counted in wins/losses.
 
@@ -24,28 +24,28 @@
 | -------------- | ---------------------- | ------ | ---- | ------ | -------- |
 | **HighVol+Trend** | `forced_coin` | 2 | 0 | 2 | 0.0% |
 |  | `forced_edge` | 119 | 77 | 42 | 64.7% |
-|  | `pre_open` | 156 | 78 | 78 | 50.0% |
-|  | *subtotal* | *277* | *155* | *122* | *56.0%* |
+|  | `pre_open` | 148 | 74 | 74 | 50.0% |
+|  | *subtotal* | *269* | *151* | *118* | *56.1%* |
 | **HighVol+Range** | `forced_coin` | 30 | 13 | 17 | 43.3% |
-|  | `pre_open` | 234 | 117 | 117 | 50.0% |
-|  | *subtotal* | *264* | *130* | *134* | *49.2%* |
+|  | `pre_open` | 228 | 114 | 114 | 50.0% |
+|  | *subtotal* | *258* | *127* | *131* | *49.2%* |
 | **LowVol+Trend** | `forced_coin` | 14 | 9 | 5 | 64.3% |
 |  | `forced_edge` | 47 | 21 | 26 | 44.7% |
-|  | `pre_open` | 116 | 58 | 58 | 50.0% |
-|  | *subtotal* | *177* | *88* | *89* | *49.7%* |
+|  | `pre_open` | 108 | 54 | 54 | 50.0% |
+|  | *subtotal* | *169* | *84* | *85* | *49.7%* |
 | **LowVol+Range** | `forced_coin` | 22 | 13 | 9 | 59.1% |
 |  | `forced_edge` | 53 | 25 | 28 | 47.2% |
-|  | `pre_open` | 110 | 55 | 55 | 50.0% |
-|  | *subtotal* | *185* | *93* | *92* | *50.3%* |
+|  | `pre_open` | 100 | 50 | 50 | 50.0% |
+|  | *subtotal* | *175* | *88* | *87* | *50.3%* |
 | **unknown** | `directional_60pct` | 2 | 0 | 2 | 0.0% |
 |  | `directional_80pct` | 15 | 2 | 13 | 13.3% |
 |  | `directional_90pct` | 21 | 13 | 8 | 61.9% |
 |  | `forced` | 180 | 86 | 94 | 47.8% |
 |  | `forced_coin` | 7 | 5 | 2 | 71.4% |
 |  | `forced_edge` | 28 | 12 | 16 | 42.9% |
-|  | `pre_open` | 32 | 16 | 16 | 50.0% |
+|  | `pre_open` | 64 | 32 | 32 | 50.0% |
 |  | `trend_follow` | 162 | 121 | 41 | 74.7% |
-|  | *subtotal* | *447* | *255* | *192* | *57.0%* |
+|  | *subtotal* | *479* | *271* | *208* | *56.6%* |
 | **TOTAL** |  | **1350** | **721** | **629** | **53.4%** |
 
 ---
