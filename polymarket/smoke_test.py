@@ -247,6 +247,23 @@ async def run(execute: bool = False) -> None:
                         if isinstance(tok, dict) and tok.get("outcome", "").upper() == "UP":
                             token_id_up = tok.get("token_id") or tok.get("tokenId")
                             break
+
+                    # Fallback: if tokens had no outcome labels, query CLOB by condition_id
+                    # CLOB /markets/{condition_id} always returns labeled UP/DOWN tokens
+                    if token_id_up is None and condition_id:
+                        try:
+                            async with session.get(
+                                f"{CLOB_API}/markets/{condition_id}",
+                                timeout=aiohttp.ClientTimeout(total=10),
+                            ) as cr:
+                                cdata = await cr.json()
+                            for tok in (cdata.get("tokens") or []):
+                                if isinstance(tok, dict) and tok.get("outcome", "").upper() == "UP":
+                                    token_id_up = tok.get("token_id") or tok.get("tokenId")
+                                    break
+                        except Exception:
+                            pass
+
                     print(f"{_PASS}  Found {_symbol} market: {_slug}")
                     print(f"{_INFO}  condition_id  = {condition_id}")
                     print(f"{_INFO}  token_id_up   = {token_id_up}")
