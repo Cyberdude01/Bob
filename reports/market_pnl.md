@@ -1,6 +1,6 @@
 # Market P&L Summary
 
-> **Updated:** `2026-03-11 08:44:06 AM ET`
+> **Updated:** `2026-03-11 08:49:22 AM ET`
 
 > One row per 15-minute market window. P&L shown only for resolved markets. Unresolved trades count toward Bets but not Wins/Losses.
 
