@@ -1,6 +1,6 @@
 # Market P&L Summary — V1.0 Production
 
-> **Updated:** `2026-03-12 03:02:27 PM ET`
+> **Updated:** `2026-03-12 03:07:42 PM ET`
 
 > **V1.0 Production strategy** trades only. One row per 15-minute market window. P&L shown only for resolved markets.
 
