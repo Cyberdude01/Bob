@@ -291,24 +291,33 @@ async def run(execute: bool = False) -> None:
         order_body: Optional[dict] = None
         if token_id_up:
             try:
-                from .trader import OrderBuilder
-                private_key = os.environ.get("POLY_PRIVATE_KEY", "")
-                address     = os.environ.get("POLY_ADDRESS", "")
-                builder     = OrderBuilder(private_key, address)
+                from py_clob_client.client import ClobClient
+                from py_clob_client.clob_types import OrderArgs
+                from py_clob_client.order_builder.constants import BUY
 
-                # $1 minimum order, BUY UP at current price
-                order_body, sig = builder.build_limit_order(
-                    token_id = token_id_up,
-                    side     = __import__("polymarket.models", fromlist=["Side"]).Side.BUY,
-                    size     = 1.0,
-                    price    = round(up_price, 4),
+                sig_type = int(os.environ.get("POLY_SIGNATURE_TYPE", "1"))
+                _client  = ClobClient(
+                    CLOB_API,
+                    key        = os.environ["POLY_PRIVATE_KEY"],
+                    chain_id   = 137,
+                    signature_type = sig_type,
+                    funder     = os.environ["POLY_ADDRESS"],
                 )
-                sig_preview = sig[:20] + "…" if sig else "INVALID"
+                _client.set_api_creds(_client.derive_api_key())
+
+                order_args = OrderArgs(
+                    token_id = token_id_up,
+                    price    = round(up_price, 4),
+                    size     = 1.0,
+                    side     = BUY,
+                )
+                signed = _client.create_order(order_args)
+                order_body = signed
+                sig_preview = (str(signed.get("signature", ""))[:20] + "…") if signed else "NONE"
                 print(f"{_PASS}  Order built — EIP-712 sig: {sig_preview}")
-                print(f"{_INFO}  token_id:     {token_id_up}")
-                print(f"{_INFO}  side:         BUY UP  @ {up_price:.4f}")
-                print(f"{_INFO}  size:         $1.00 USDC")
-                print(json.dumps(order_body["order"], indent=4))
+                print(f"{_INFO}  token_id:  {token_id_up[:30]}…")
+                print(f"{_INFO}  side:      BUY UP  @ {up_price:.4f}")
+                print(f"{_INFO}  size:      $1.00 USDC")
                 results["order_build"] = "PASS"
             except Exception as exc:
                 print(f"{_FAIL}  Exception building order: {exc}")
