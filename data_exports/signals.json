@@ -1,28 +1,6 @@
 {
-  "updated": "2026-03-12 05:03:22 PM ET",
+  "updated": "2026-03-12 05:08:36 PM ET",
   "data": [
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.99,
-      "confidence": 0.805,
-      "trigger": "directional_90pct",
-      "reason": "DIRECTIONAL at 90pct (91% elapsed) \u2014 P(UP)=0.805 gives edge=0.305 toward UP. Bucket=HighVol+Range (RV60=7.22551, Eff60=0.006). Fixed $5 USDC stake @ conf=0.805. [adaptive edge=0.050]"
-    },
-    {
-      "symbol": "ETH",
-      "slug": "eth-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.99,
-      "confidence": 0.834,
-      "trigger": "directional_90pct",
-      "reason": "DIRECTIONAL at 90pct (91% elapsed) \u2014 P(UP)=0.166 gives edge=0.334 toward DOWN. Bucket=HighVol+Range (RV60=8.04614, Eff60=0.008). Fixed $5 USDC stake @ conf=0.834. [adaptive edge=0.050]"
-    },
     {
       "symbol": "BTC",
       "slug": "btc-updown-15m",
@@ -220,6 +198,28 @@
       "confidence": 0.991,
       "trigger": "directional_90pct",
       "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.009 gives edge=0.491 toward DOWN. Bucket=HighVol+Trend (RV60=9.30924, Eff60=0.024). Fixed $5 USDC stake @ conf=0.991. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.99,
+      "confidence": 0.559,
+      "trigger": "forced_edge",
+      "reason": "FORCED TRADE at 60% elapsed \u2014 no prior signal for this window. P(UP)=0.441, choosing DOWN. Fixed $5 USDC stake (every market must be entered)."
+    },
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.99,
+      "confidence": 0.79,
+      "trigger": "forced_edge",
+      "reason": "FORCED TRADE at 60% elapsed \u2014 no prior signal for this window. P(UP)=0.210, choosing DOWN. Fixed $5 USDC stake (every market must be entered)."
     }
   ]
 }
