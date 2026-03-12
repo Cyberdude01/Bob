@@ -312,8 +312,13 @@ async def run(execute: bool = False) -> None:
                     side     = BUY,
                 )
                 signed = _client.create_order(order_args)
-                order_body = signed
-                sig_preview = (str(signed.get("signature", ""))[:20] + "…") if signed else "NONE"
+                # SignedOrder is a dataclass: .order (dict), .signature (str), .orderType (str)
+                order_body = {
+                    "order":     signed.order if hasattr(signed, "order") else signed,
+                    "signature": signed.signature if hasattr(signed, "signature") else "",
+                    "orderType": getattr(signed, "orderType", "GTC"),
+                }
+                sig_preview = str(order_body["signature"])[:20] + "…"
                 print(f"{_PASS}  Order built — EIP-712 sig: {sig_preview}")
                 print(f"{_INFO}  token_id:  {token_id_up[:30]}…")
                 print(f"{_INFO}  side:      BUY UP  @ {up_price:.4f}")
