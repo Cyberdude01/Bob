@@ -297,12 +297,14 @@ async def run(execute: bool = False) -> None:
                 from py_clob_client.order_builder.constants import BUY
                 import dataclasses
 
-                sig_type = int(os.environ.get("POLY_SIGNATURE_TYPE", "1"))
+                # signer==funder (same EOA address) → signature_type=0 (EOA)
+                # type=1 (POLY_PROXY) causes "invalid signature" because the
+                # contract uses a different verification path for proxy wallets
                 _clob_client = ClobClient(
                     CLOB_API,
                     key            = os.environ["POLY_PRIVATE_KEY"],
                     chain_id       = 137,
-                    signature_type = sig_type,
+                    signature_type = 0,
                     funder         = os.environ["POLY_ADDRESS"],
                 )
                 _clob_client.set_api_creds(_clob_client.derive_api_key())
