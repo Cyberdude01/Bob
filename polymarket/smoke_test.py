@@ -306,8 +306,11 @@ async def run(execute: bool = False) -> None:
                     funder         = os.environ["POLY_ADDRESS"],
                 )
                 _clob_client.set_api_creds(_clob_client.derive_api_key())
-                print(f"{_INFO}  signer EOA:   {_clob_client.signer.address}")
-                print(f"{_INFO}  funder/maker: {_clob_client.funder}")
+                # signer.address is a method in this version of py_clob_client
+                _signer_addr = _clob_client.signer.address() if callable(_clob_client.signer.address) else _clob_client.signer.address
+                _funder_addr = os.environ["POLY_ADDRESS"]
+                print(f"{_INFO}  signer EOA:   {_signer_addr}")
+                print(f"{_INFO}  funder/maker: {_funder_addr}")
 
                 order_args = OrderArgs(
                     token_id = token_id_up,
