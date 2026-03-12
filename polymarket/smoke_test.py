@@ -314,10 +314,16 @@ async def run(execute: bool = False) -> None:
                 )
                 _signed_order = _clob_client.create_order(order_args)
                 sig_preview   = str(_signed_order.signature)[:20] + "…"
+                o = _signed_order.order
                 print(f"{_PASS}  Order built — EIP-712 sig: {sig_preview}")
-                print(f"{_INFO}  token_id:  {token_id_up[:30]}…")
-                print(f"{_INFO}  side:      BUY UP  @ {up_price:.4f}")
-                print(f"{_INFO}  size:      $1.00 USDC")
+                print(f"{_INFO}  token_id:     {token_id_up[:30]}…")
+                print(f"{_INFO}  side:         BUY UP  @ {up_price:.4f}")
+                print(f"{_INFO}  size:         $1.00 USDC")
+                print(f"{_INFO}  maker:        {getattr(o, 'maker', '?')}")
+                print(f"{_INFO}  signer:       {getattr(o, 'signer', '?')}")
+                print(f"{_INFO}  signatureType:{getattr(o, 'signatureType', '?')}")
+                print(f"{_INFO}  makerAmount:  {getattr(o, 'makerAmount', '?')}")
+                print(f"{_INFO}  takerAmount:  {getattr(o, 'takerAmount', '?')}")
                 results["order_build"] = "PASS"
             except Exception as exc:
                 print(f"{_FAIL}  Exception building order: {exc}")
