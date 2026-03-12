@@ -429,10 +429,18 @@ function collectMarketData() {
     const upBook   = fetchOrderBook(upTokenId);
     const downBook = fetchOrderBook(downTokenId);
 
-    const midUp   = (upBook?.bestBid !== null && upBook?.bestAsk !== null)
-      ? (upBook.bestBid + upBook.bestAsk) / 2 : upPriceGamma;
-    const midDown = (downBook?.bestBid !== null && downBook?.bestAsk !== null)
-      ? (downBook.bestBid + downBook.bestAsk) / 2 : downPriceGamma;
+    // For Chainlink-settled markets the CLOB shows a flat 0.01/0.99 book.
+    // Use the gamma outcomePrices as the canonical probability; fall back
+    // to CLOB mid only when the spread is tight (< 0.20).
+    const upClobMid = (upBook?.bestBid !== null && upBook?.bestAsk !== null)
+      ? (upBook.bestBid + upBook.bestAsk) / 2 : null;
+    const downClobMid = (downBook?.bestBid !== null && downBook?.bestAsk !== null)
+      ? (downBook.bestBid + downBook.bestAsk) / 2 : null;
+    const upClobSpread   = upBook?.spread   ?? 1;
+    const downClobSpread = downBook?.spread ?? 1;
+
+    const midUp   = (upClobSpread   < 0.2 && upClobMid   !== null) ? upClobMid   : upPriceGamma;
+    const midDown = (downClobSpread < 0.2 && downClobMid !== null) ? downClobMid : downPriceGamma;
 
     // Market timing — use CLOB question to get the true 15-min window
     let startMs, endMs;
