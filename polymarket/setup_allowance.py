@@ -82,6 +82,7 @@ def main():
 
     _rpc_candidates = [
         os.environ.get("POLYGON_RPC_URL", ""),
+        "https://rpc.ankr.com/polygon/b77f5e0dd955373ca4c9e3d668d87d8217aaa907b55aa39d430ccc686b78fe22",
         "https://polygon-bor-rpc.publicnode.com",
         "https://polygon.drpc.org",
         "https://1rpc.io/matic",
