@@ -239,17 +239,18 @@ async def run(execute: bool = False) -> None:
                     market       = markets_list[0]
                     condition_id = market.get("conditionId") or market.get("condition_id")
 
-                    # Get token IDs from CLOB (authoritative source with outcome labels)
-                    if condition_id:
-                        async with session.get(
-                            f"{CLOB_API}/markets/{condition_id}",
-                            timeout=aiohttp.ClientTimeout(total=10),
-                        ) as cr:
-                            cdata = await cr.json(content_type=None)
-                        for tok in (cdata.get("tokens") or []):
-                            if isinstance(tok, dict) and tok.get("outcome", "").upper() == "UP":
-                                token_id_up = tok.get("token_id") or tok.get("tokenId")
-                                break
+                    # market-data-collector.js approach: clobTokenIds + outcomes are
+                    # separate parallel arrays — NOT a 'tokens' dict field (that's None)
+                    raw_ids      = market.get("clobTokenIds") or "[]"
+                    raw_outcomes = market.get("outcomes") or "[]"
+                    if isinstance(raw_ids, str):
+                        raw_ids = json.loads(raw_ids)
+                    if isinstance(raw_outcomes, str):
+                        raw_outcomes = json.loads(raw_outcomes)
+                    for tid, outcome in zip(raw_ids, raw_outcomes):
+                        if str(outcome).upper() == "UP":
+                            token_id_up = str(tid)
+                            break
 
                     print(f"{_PASS}  Found {_symbol} market: {_slug}")
                     print(f"{_INFO}  condition_id  = {condition_id}")
