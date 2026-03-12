@@ -238,50 +238,18 @@ async def run(execute: bool = False) -> None:
                         continue
                     market       = markets_list[0]
                     condition_id = market.get("conditionId") or market.get("condition_id")
-                    tokens       = market.get("tokens") or market.get("clobTokenIds") or []
-                    if isinstance(tokens, str):
-                        try:
-                            tokens = json.loads(tokens)
-                        except Exception:
-                            tokens = []
-                    for tok in tokens:
-                        if isinstance(tok, dict) and tok.get("outcome", "").upper() == "UP":
-                            token_id_up = tok.get("token_id") or tok.get("tokenId")
-                            break
 
-                    # Fallback 1: query CLOB /markets/{condition_id} — returns labeled tokens
-                    if token_id_up is None and condition_id:
-                        try:
-                            async with session.get(
-                                f"{CLOB_API}/markets/{condition_id}",
-                                timeout=aiohttp.ClientTimeout(total=10),
-                            ) as cr:
-                                cdata = await cr.json(content_type=None)
-                            clob_tokens = cdata.get("tokens") or []
-                            print(f"{_INFO}  CLOB fallback: {len(clob_tokens)} tokens returned")
-                            for tok in clob_tokens:
-                                if isinstance(tok, dict) and tok.get("outcome", "").upper() == "UP":
-                                    token_id_up = tok.get("token_id") or tok.get("tokenId")
-                                    break
-                        except Exception as _fe:
-                            print(f"{_INFO}  CLOB fallback error: {_fe}")
-
-                    # Fallback 2: query data-api trades for this conditionId
-                    # The trades API returns asset (=token_id) + outcome per trade
-                    if token_id_up is None and condition_id:
-                        try:
-                            async with session.get(
-                                f"{DATA_API}/trades",
-                                params={"conditionId": condition_id, "limit": 5},
-                                timeout=aiohttp.ClientTimeout(total=10),
-                            ) as tr:
-                                trades = await tr.json(content_type=None)
-                            for trade in (trades if isinstance(trades, list) else []):
-                                if trade.get("outcome", "").lower() == "up":
-                                    token_id_up = str(trade["asset"])
-                                    break
-                        except Exception as _fe2:
-                            print(f"{_INFO}  trades fallback error: {_fe2}")
+                    # Get token IDs from CLOB (authoritative source with outcome labels)
+                    if condition_id:
+                        async with session.get(
+                            f"{CLOB_API}/markets/{condition_id}",
+                            timeout=aiohttp.ClientTimeout(total=10),
+                        ) as cr:
+                            cdata = await cr.json(content_type=None)
+                        for tok in (cdata.get("tokens") or []):
+                            if isinstance(tok, dict) and tok.get("outcome", "").upper() == "UP":
+                                token_id_up = tok.get("token_id") or tok.get("tokenId")
+                                break
 
                     print(f"{_PASS}  Found {_symbol} market: {_slug}")
                     print(f"{_INFO}  condition_id  = {condition_id}")
