@@ -292,16 +292,25 @@ async def run(execute: bool = False) -> None:
                     market       = markets_list[0]
                     condition_id = market.get("conditionId") or market.get("condition_id")
 
+                    # Debug: print all top-level market keys so we can see the structure
+                    print(f"{_INFO}  market keys: {list(market.keys())}")
+
                     # market-data-collector.js approach: clobTokenIds + outcomes are
                     # separate parallel arrays — NOT a 'tokens' dict field (that's None)
                     raw_ids      = market.get("clobTokenIds") or "[]"
                     raw_outcomes = market.get("outcomes") or "[]"
                     if isinstance(raw_ids, str):
-                        raw_ids = json.loads(raw_ids)
+                        try:
+                            raw_ids = json.loads(raw_ids)
+                        except Exception:
+                            raw_ids = []
                     if isinstance(raw_outcomes, str):
-                        raw_outcomes = json.loads(raw_outcomes)
-                    print(f"{_INFO}  outcomes: {raw_outcomes}")
-                    print(f"{_INFO}  token IDs: {[str(t)[:12]+'…' for t in (raw_ids or [])]}")
+                        try:
+                            raw_outcomes = json.loads(raw_outcomes)
+                        except Exception:
+                            raw_outcomes = []
+                    print(f"{_INFO}  outcomes:  {raw_outcomes}")
+                    print(f"{_INFO}  token IDs: {[str(t)[:16]+'…' for t in (raw_ids or [])]}")
                     for tid, outcome in zip(raw_ids, raw_outcomes):
                         if str(outcome).upper() in ("UP", "HIGHER", "YES"):
                             token_id_up = str(tid)
@@ -314,6 +323,25 @@ async def run(execute: bool = False) -> None:
                                 if out in ("UP", "HIGHER", "YES"):
                                     token_id_up = str(tok.get("token_id") or tok.get("tokenId", ""))
                                     break
+                    # Last resort: fetch tokens from CLOB API using condition_id
+                    if token_id_up is None and condition_id:
+                        try:
+                            async with session.get(
+                                f"{CLOB_API}/markets/{condition_id}",
+                                timeout=aiohttp.ClientTimeout(total=10),
+                            ) as _cr:
+                                if _cr.status == 200:
+                                    _cd = await _cr.json()
+                                    print(f"{_INFO}  CLOB market keys: {list(_cd.keys()) if isinstance(_cd,dict) else type(_cd)}")
+                                    for _tok in (_cd.get("tokens") or []):
+                                        if isinstance(_tok, dict):
+                                            _out = str(_tok.get("outcome","")).upper()
+                                            print(f"{_INFO}  CLOB token outcome={_tok.get('outcome')} id={str(_tok.get('token_id',''))[:16]}…")
+                                            if _out in ("UP", "HIGHER", "YES"):
+                                                token_id_up = str(_tok.get("token_id",""))
+                                                break
+                        except Exception as _ce:
+                            print(f"{_INFO}  CLOB market fetch: {_ce}")
                     # NegRisk markets (up/down, multi-outcome) use NegRiskExchange
                     _is_neg_risk = bool(market.get("negRisk") or market.get("neg_risk"))
 
