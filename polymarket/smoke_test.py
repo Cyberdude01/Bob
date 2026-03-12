@@ -257,12 +257,14 @@ async def run(execute: bool = False) -> None:
                                 timeout=aiohttp.ClientTimeout(total=10),
                             ) as cr:
                                 cdata = await cr.json()
-                            for tok in (cdata.get("tokens") or []):
+                            clob_tokens = cdata.get("tokens") or []
+                            print(f"{_INFO}  CLOB fallback: {len(clob_tokens)} tokens returned")
+                            for tok in clob_tokens:
                                 if isinstance(tok, dict) and tok.get("outcome", "").upper() == "UP":
                                     token_id_up = tok.get("token_id") or tok.get("tokenId")
                                     break
-                        except Exception:
-                            pass
+                        except Exception as _fe:
+                            print(f"{_INFO}  CLOB fallback error: {_fe}")
 
                     # Fallback 2: query data-api trades for this conditionId
                     # The trades API returns asset (=token_id) + outcome per trade
