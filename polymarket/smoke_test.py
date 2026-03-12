@@ -347,8 +347,21 @@ async def run(execute: bool = False) -> None:
             print(f"{_SKIP}  Stage 5 failed — cannot submit order")
             results["order_post"] = "SKIP"
         else:
-            print(f"\033[93m  ⚠ REAL MONEY: submitting $1 BUY UP order to Polymarket…\033[0m")
+            print(f"\033[93m  ⚠ REAL MONEY: submitting $5 BUY UP order to Polymarket…\033[0m")
             try:
+                # Ensure USDC allowance is set for the CTFExchange contract
+                from py_clob_client.clob_types import BalanceAllowanceParams, AssetType
+                bal = _clob_client.get_balance_allowance(
+                    BalanceAllowanceParams(asset_type=AssetType.COLLATERAL)
+                )
+                allowance = int(bal.get("allowance", 0))
+                if allowance == 0:
+                    print(f"{_INFO}  Allowance is $0 — setting USDC approval…")
+                    _clob_client.update_balance_allowance(
+                        BalanceAllowanceParams(asset_type=AssetType.COLLATERAL)
+                    )
+                    print(f"{_INFO}  Allowance set.")
+
                 # Use py_clob_client's post_order — handles Order dataclass serialization
                 resp = _clob_client.post_order(_signed_order, OrderType.GTC)
                 order_id = (resp.get("orderId") or resp.get("order_id") or "?") if isinstance(resp, dict) else str(resp)
