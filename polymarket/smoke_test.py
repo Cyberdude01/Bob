@@ -352,7 +352,9 @@ async def run(execute: bool = False) -> None:
                     _found = True
                     break
                 except Exception as exc:
-                    continue
+                    import traceback
+                    print(f"{_WARN}  Slug {_slug} error: {exc}")
+                    print(f"{_INFO}  {traceback.format_exc().splitlines()[-1]}")
 
         if not _found:
             print(f"{_WARN}  No active 15-min crypto market found (might be between windows)")
