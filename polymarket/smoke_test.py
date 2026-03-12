@@ -378,7 +378,26 @@ async def run(execute: bool = False) -> None:
                     ]
                     from web3 import Web3
                     from eth_account import Account as _Acct
-                    _w3   = Web3(Web3.HTTPProvider("https://polygon.llamarpc.com"))
+                    _rpc_candidates = [
+                        os.environ.get("POLYGON_RPC_URL", ""),
+                        "https://polygon-bor-rpc.publicnode.com",
+                        "https://polygon.drpc.org",
+                        "https://1rpc.io/matic",
+                        "https://polygon.llamarpc.com",
+                    ]
+                    _w3 = None
+                    for _rpc in _rpc_candidates:
+                        if not _rpc:
+                            continue
+                        try:
+                            _candidate = Web3(Web3.HTTPProvider(_rpc, request_kwargs={"timeout": 10}))
+                            _ = _candidate.eth.block_number
+                            _w3 = _candidate
+                            break
+                        except Exception:
+                            continue
+                    if _w3 is None:
+                        raise RuntimeError("All Polygon RPC endpoints failed")
                     _acct = _Acct.from_key(os.environ["POLY_PRIVATE_KEY"])
                     _usdc = _w3.eth.contract(
                         address=_w3.to_checksum_address(_USDC), abi=_USDC_ABI

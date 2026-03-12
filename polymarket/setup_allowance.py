@@ -80,7 +80,28 @@ def main():
         print(f"  {RED}  POLY_PRIVATE_KEY not set in .env")
         sys.exit(1)
 
-    w3   = Web3(Web3.HTTPProvider("https://polygon.llamarpc.com"))
+    _rpc_candidates = [
+        os.environ.get("POLYGON_RPC_URL", ""),
+        "https://polygon-bor-rpc.publicnode.com",
+        "https://polygon.drpc.org",
+        "https://1rpc.io/matic",
+        "https://polygon.llamarpc.com",
+    ]
+    w3 = None
+    for _rpc in _rpc_candidates:
+        if not _rpc:
+            continue
+        try:
+            _w3 = Web3(Web3.HTTPProvider(_rpc, request_kwargs={"timeout": 10}))
+            _ = _w3.eth.block_number  # connectivity check
+            w3 = _w3
+            print(f"  {INFO}  RPC:     {_rpc}")
+            break
+        except Exception:
+            continue
+    if w3 is None:
+        print(f"  {RED}  All Polygon RPC endpoints failed — check network connectivity")
+        sys.exit(1)
     acct = Account.from_key(private_key)
     print(f"  {INFO}  wallet:  {acct.address}")
     print(f"  {INFO}  chain:   {w3.eth.chain_id}  (block {w3.eth.block_number})")
