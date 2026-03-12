@@ -105,6 +105,7 @@ _SKIP  = "  \033[90m- SKIP\033[0m"
 
 CLOB_API  = "https://clob.polymarket.com"
 GAMMA_API = "https://gamma-api.polymarket.com"
+DATA_API  = "https://data-api.polymarket.com"
 
 
 # ─── Main test runner ─────────────────────────────────────────────────────────
@@ -248,8 +249,7 @@ async def run(execute: bool = False) -> None:
                             token_id_up = tok.get("token_id") or tok.get("tokenId")
                             break
 
-                    # Fallback: if tokens had no outcome labels, query CLOB by condition_id
-                    # CLOB /markets/{condition_id} always returns labeled UP/DOWN tokens
+                    # Fallback 1: query CLOB /markets/{condition_id} — returns labeled tokens
                     if token_id_up is None and condition_id:
                         try:
                             async with session.get(
@@ -260,6 +260,23 @@ async def run(execute: bool = False) -> None:
                             for tok in (cdata.get("tokens") or []):
                                 if isinstance(tok, dict) and tok.get("outcome", "").upper() == "UP":
                                     token_id_up = tok.get("token_id") or tok.get("tokenId")
+                                    break
+                        except Exception:
+                            pass
+
+                    # Fallback 2: query data-api trades for this conditionId
+                    # The trades API returns asset (=token_id) + outcome per trade
+                    if token_id_up is None and condition_id:
+                        try:
+                            async with session.get(
+                                f"{DATA_API}/trades",
+                                params={"conditionId": condition_id, "limit": 5},
+                                timeout=aiohttp.ClientTimeout(total=10),
+                            ) as tr:
+                                trades = await tr.json()
+                            for trade in (trades if isinstance(trades, list) else []):
+                                if trade.get("outcome", "").lower() == "up":
+                                    token_id_up = str(trade["asset"])
                                     break
                         except Exception:
                             pass

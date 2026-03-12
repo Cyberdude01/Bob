@@ -197,6 +197,38 @@ def main() -> None:
                         tokens = []
                 up_tok   = next((t for t in tokens if isinstance(t, dict) and t.get("outcome", "").upper() == "UP"),   None)
                 down_tok = next((t for t in tokens if isinstance(t, dict) and t.get("outcome", "").upper() == "DOWN"), None)
+                condition_id = m.get("conditionId") or m.get("condition_id")
+
+                # Fallback: CLOB /markets/{condition_id} returns labeled tokens
+                if (up_tok is None or down_tok is None) and condition_id:
+                    try:
+                        cr = requests.get(f"{CLOB_API}/markets/{condition_id}", timeout=10)
+                        cdata = cr.json()
+                        for tok in (cdata.get("tokens") or []):
+                            outcome = tok.get("outcome", "").upper()
+                            if outcome == "UP" and up_tok is None:
+                                up_tok = tok
+                            elif outcome == "DOWN" and down_tok is None:
+                                down_tok = tok
+                    except Exception:
+                        pass
+
+                # Fallback 2: data-api trades
+                if (up_tok is None or down_tok is None) and condition_id:
+                    try:
+                        tr = requests.get(f"{DATA_API}/trades",
+                                          params={"conditionId": condition_id, "limit": 10},
+                                          timeout=10)
+                        for trade in (tr.json() if isinstance(tr.json(), list) else []):
+                            outcome = trade.get("outcome", "").upper()
+                            asset_id = str(trade.get("asset", ""))
+                            if outcome == "UP" and up_tok is None:
+                                up_tok = {"token_id": asset_id, "outcome": "Up"}
+                            elif outcome == "DOWN" and down_tok is None:
+                                down_tok = {"token_id": asset_id, "outcome": "Down"}
+                    except Exception:
+                        pass
+
                 print(f"  {slug}")
                 print(f"    end       : {m.get('endDate', '?')[:19]}")
                 if up_tok:
