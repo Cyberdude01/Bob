@@ -1,14 +1,14 @@
 # Polymarket 15M Data Feed
 
-> **Mode:** LIVE &nbsp;|&nbsp; **Updated:** `2026-03-12 06:58:50 AM ET`
+> **Mode:** LIVE &nbsp;|&nbsp; **Updated:** `2026-03-12 07:04:04 AM ET`
 
 ## Live Markets
 | Symbol | Slug | UP | DOWN | Elapsed | Remaining | Bucket | Dir@60% | Dir@80% | Dir@90% | ARB |
 | ------ | ----------------- | ------ | ------ | ------- | --------- | -------------- | ------- | ------- | ------- | ----- |
-| **BTC** | btc-updown-15m | 0.9200 | 0.0800 | 92.3% | 69s | HighVol+Range | 76.9% | 80.2% | 81.9% | — |
-| **ETH** | eth-updown-15m | 0.3810 | 0.6190 | 92.3% | 69s | LowVol+Range | 41.4% | 40.4% | 39.8% | — |
-| **SOL** | sol-updown-15m | 0.0310 | 0.9690 | 92.3% | 69s | HighVol+Trend | 8.7% | 3.6% | 1.0% | — |
-| **XRP** | xrp-updown-15m | 0.0110 | 0.9890 | 92.3% | 69s | HighVol+Trend | 7.0% | 1.6% | 0.0% | — |
+| **BTC** | btc-updown-15m | 0.5000 | 0.5000 | 27.1% | 656s | LowVol+Trend | 50.0% | 50.0% | 50.0% | — |
+| **ETH** | eth-updown-15m | 0.5000 | 0.5000 | 27.1% | 656s | LowVol+Range | 50.0% | 50.0% | 50.0% | — |
+| **SOL** | sol-updown-15m | 0.5000 | 0.5000 | 27.1% | 656s | LowVol+Range | 50.0% | 50.0% | 50.0% | — |
+| **XRP** | xrp-updown-15m | 0.6400 | 0.3600 | 27.1% | 656s | LowVol+Trend | 61.8% | 63.2% | 64.0% | — |
 
 ## Portfolio
 | Balance | Realized P&L |
