@@ -394,13 +394,13 @@ async def run(execute: bool = False) -> None:
                 allowance = int(bal.get("allowance", 0)) / 1e6
                 print(f"{_INFO}  balance: ${balance:.2f}  allowance: ${allowance:.2f}")
 
-                # If CLOB reports allowance=$0, set it on-chain directly via web3.
-                # update_balance_allowance() fails with "invalid signature" so we
-                # call USDC.approve(CTFExchange, MAX_UINT) ourselves.
+                # If CLOB reports allowance=$0, ensure on-chain approvals for BOTH
+                # CTFExchange and NegRiskAdapter (BTC/ETH updown markets use NegRisk routing)
                 if allowance == 0:
-                    print(f"{_INFO}  Allowance $0 — setting via on-chain approve()…")
-                    _USDC        = "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174"
-                    _CTF         = "0x4bFb41d5B3570DeFd03C39a9A4D8dE6Bd8B8982E"
+                    print(f"{_INFO}  Allowance $0 — verifying on-chain approvals…")
+                    _USDC           = "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174"
+                    _CTF_EXCHANGE   = "0x4bFb41d5B3570DeFd03C39a9A4D8dE6Bd8B8982E"
+                    _NEG_RISK_ADAPT = "0xd91E80cF2E7be2e162c6513ceD06f1dD0dA35296"
                     _USDC_ABI    = [
                         {"inputs":[{"name":"spender","type":"address"},{"name":"amount","type":"uint256"}],
                          "name":"approve","outputs":[{"name":"","type":"bool"}],
@@ -436,34 +436,37 @@ async def run(execute: bool = False) -> None:
                     _usdc = _w3.eth.contract(
                         address=_w3.to_checksum_address(_USDC), abi=_USDC_ABI
                     )
-                    _on_chain_allowance = _usdc.functions.allowance(
-                        _w3.to_checksum_address(_acct.address),
-                        _w3.to_checksum_address(_CTF),
-                    ).call()
-                    print(f"{_INFO}  On-chain allowance: {_on_chain_allowance / 1e6:.2f} USDC")
-                    if _on_chain_allowance < 5 * 10**6:
-                        _tx = _usdc.functions.approve(
-                            _w3.to_checksum_address(_CTF), 60_000 * 10**6  # $60,000
-                        ).build_transaction({
-                            "from":                 _acct.address,
-                            "nonce":                _w3.eth.get_transaction_count(_acct.address),
-                            "gas":                  100_000,
-                            "maxFeePerGas":         _w3.to_wei("150", "gwei"),
-                            "maxPriorityFeePerGas": _w3.to_wei("30",  "gwei"),
-                            "chainId":              137,
-                        })
-                        _signed_tx = _w3.eth.account.sign_transaction(
-                            _tx, os.environ["POLY_PRIVATE_KEY"]
-                        )
-                        _tx_hash = _w3.eth.send_raw_transaction(_signed_tx.raw_transaction)
-                        print(f"{_INFO}  approve() tx: {_tx_hash.hex()}")
-                        _receipt = _w3.eth.wait_for_transaction_receipt(_tx_hash, timeout=60)
-                        if _receipt.status == 1:
-                            print(f"{_PASS}  On-chain USDC approval confirmed")
+
+                    def _ensure_approval(spender_addr, label):
+                        _cur = _usdc.functions.allowance(
+                            _w3.to_checksum_address(_acct.address),
+                            _w3.to_checksum_address(spender_addr),
+                        ).call()
+                        print(f"{_INFO}  On-chain allowance ({label}): {_cur / 1e6:.2f} USDC")
+                        if _cur < 5 * 10**6:
+                            _tx = _usdc.functions.approve(
+                                _w3.to_checksum_address(spender_addr), 60_000 * 10**6
+                            ).build_transaction({
+                                "from":                 _acct.address,
+                                "nonce":                _w3.eth.get_transaction_count(_acct.address),
+                                "gas":                  100_000,
+                                "maxFeePerGas":         _w3.to_wei("150", "gwei"),
+                                "maxPriorityFeePerGas": _w3.to_wei("30",  "gwei"),
+                                "chainId":              137,
+                            })
+                            _stx = _w3.eth.account.sign_transaction(_tx, os.environ["POLY_PRIVATE_KEY"])
+                            _txh = _w3.eth.send_raw_transaction(_stx.raw_transaction)
+                            print(f"{_INFO}  approve({label}) tx: {_txh.hex()}")
+                            _r = _w3.eth.wait_for_transaction_receipt(_txh, timeout=60)
+                            if _r.status == 1:
+                                print(f"{_PASS}  {label} approval confirmed")
+                            else:
+                                print(f"{_WARN}  {label} approve() reverted")
                         else:
-                            print(f"{_WARN}  approve() tx reverted — proceeding anyway")
-                    else:
-                        print(f"{_INFO}  On-chain allowance already set — CLOB cache lag")
+                            print(f"{_INFO}  {label} already approved")
+
+                    _ensure_approval(_CTF_EXCHANGE,   "CTFExchange")
+                    _ensure_approval(_NEG_RISK_ADAPT, "NegRiskAdapter")
 
                 # Tell Polymarket's API to refresh its view of on-chain USDC balance/allowance
                 try:
