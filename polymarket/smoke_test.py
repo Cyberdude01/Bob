@@ -360,9 +360,57 @@ async def run(execute: bool = False) -> None:
                 balance   = int(bal.get("balance",   0)) / 1e6
                 allowance = int(bal.get("allowance", 0)) / 1e6
                 print(f"{_INFO}  balance: ${balance:.2f}  allowance: ${allowance:.2f}")
-                # Note: update_balance_allowance returns "invalid signature" for
-                # EOA accounts — the on-chain USDC approval was set at deposit time.
-                # Skip the allowance update and attempt the order directly.
+
+                # If CLOB reports allowance=$0, set it on-chain directly via web3.
+                # update_balance_allowance() fails with "invalid signature" so we
+                # call USDC.approve(CTFExchange, MAX_UINT) ourselves.
+                if allowance == 0:
+                    print(f"{_INFO}  Allowance $0 — setting via on-chain approve()…")
+                    _USDC        = "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174"
+                    _CTF         = "0x4bFb41d5B3570DeFd03C39a9A4D8dE6Bd8B8982E"
+                    _USDC_ABI    = [
+                        {"inputs":[{"name":"spender","type":"address"},{"name":"amount","type":"uint256"}],
+                         "name":"approve","outputs":[{"name":"","type":"bool"}],
+                         "stateMutability":"nonpayable","type":"function"},
+                        {"inputs":[{"name":"owner","type":"address"},{"name":"spender","type":"address"}],
+                         "name":"allowance","outputs":[{"name":"","type":"uint256"}],
+                         "stateMutability":"view","type":"function"},
+                    ]
+                    from web3 import Web3
+                    from eth_account import Account as _Acct
+                    _w3   = Web3(Web3.HTTPProvider("https://polygon-rpc.com"))
+                    _acct = _Acct.from_key(os.environ["POLY_PRIVATE_KEY"])
+                    _usdc = _w3.eth.contract(
+                        address=_w3.to_checksum_address(_USDC), abi=_USDC_ABI
+                    )
+                    _on_chain_allowance = _usdc.functions.allowance(
+                        _w3.to_checksum_address(_acct.address),
+                        _w3.to_checksum_address(_CTF),
+                    ).call()
+                    print(f"{_INFO}  On-chain allowance: {_on_chain_allowance / 1e6:.2f} USDC")
+                    if _on_chain_allowance < 5 * 10**6:
+                        _tx = _usdc.functions.approve(
+                            _w3.to_checksum_address(_CTF), 2**256 - 1
+                        ).build_transaction({
+                            "from":                 _acct.address,
+                            "nonce":                _w3.eth.get_transaction_count(_acct.address),
+                            "gas":                  100_000,
+                            "maxFeePerGas":         _w3.to_wei("150", "gwei"),
+                            "maxPriorityFeePerGas": _w3.to_wei("30",  "gwei"),
+                            "chainId":              137,
+                        })
+                        _signed_tx = _w3.eth.account.sign_transaction(
+                            _tx, os.environ["POLY_PRIVATE_KEY"]
+                        )
+                        _tx_hash = _w3.eth.send_raw_transaction(_signed_tx.raw_transaction)
+                        print(f"{_INFO}  approve() tx: {_tx_hash.hex()}")
+                        _receipt = _w3.eth.wait_for_transaction_receipt(_tx_hash, timeout=60)
+                        if _receipt.status == 1:
+                            print(f"{_PASS}  On-chain USDC approval confirmed")
+                        else:
+                            print(f"{_WARN}  approve() tx reverted — proceeding anyway")
+                    else:
+                        print(f"{_INFO}  On-chain allowance already set — CLOB cache lag")
 
                 # Use py_clob_client's post_order — handles Order dataclass serialization
                 resp = _clob_client.post_order(_signed_order, OrderType.GTC)
