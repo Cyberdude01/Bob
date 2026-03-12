@@ -1,28 +1,6 @@
 {
-  "updated": "2026-03-11 09:29:01 PM ET",
+  "updated": "2026-03-11 09:34:16 PM ET",
   "data": [
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.8,
-      "confidence": 0.724,
-      "trigger": "directional_90pct",
-      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=0.724 gives edge=0.224 toward UP. Bucket=HighVol+Range (RV60=4.36953, Eff60=0.016). Fixed $5 USDC stake @ conf=0.724. [adaptive edge=0.050]"
-    },
-    {
-      "symbol": "ETH",
-      "slug": "eth-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.99,
-      "confidence": 0.865,
-      "trigger": "directional_90pct",
-      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=0.865 gives edge=0.365 toward UP. Bucket=HighVol+Range (RV60=10.89640, Eff60=0.019). Fixed $5 USDC stake @ conf=0.865. [adaptive edge=0.050]"
-    },
     {
       "symbol": "SOL",
       "slug": "sol-updown-15m",
@@ -220,6 +198,28 @@
       "confidence": 0.823,
       "trigger": "directional_90pct",
       "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.823 gives edge=0.323 toward UP. Bucket=HighVol+Range (RV60=7.45022, Eff60=0.015). Fixed $5 USDC stake @ conf=0.823. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.99,
+      "confidence": 0.95,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 0% elapsed) \u2014 DOWN token at 0.990 deviates 0.450 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+    },
+    {
+      "symbol": "ETH",
+      "slug": "eth-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.99,
+      "confidence": 0.999,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 0% elapsed) \u2014 UP token at 0.990 deviates 0.499 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
     }
   ]
 }
