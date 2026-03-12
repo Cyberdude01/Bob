@@ -299,22 +299,37 @@ async def run(execute: bool = False) -> None:
                 from py_clob_client.order_builder.constants import BUY
                 import dataclasses
 
-                # Use signature_type=1 (user's working config) for both
-                # order signing and allowance management
-                sig_type = int(os.environ.get("POLY_SIGNATURE_TYPE", "1"))
+                # Two-client approach:
+                # - sig_type=1 client: derive the registered API key + check balance
+                # - sig_type=0 client: build/post orders with direct EOA signing
+                # This is needed when POLY_ADDRESS == EOA (no proxy contract deployed):
+                # sig_type=1 works for API auth but NOT for order signing (requires proxy).
+                # sig_type=0 works for order signing but API key is derived differently.
+                _auth_sig_type = int(os.environ.get("POLY_SIGNATURE_TYPE", "1"))
+                _auth_client = ClobClient(
+                    CLOB_API,
+                    key            = os.environ["POLY_PRIVATE_KEY"],
+                    chain_id       = 137,
+                    signature_type = _auth_sig_type,
+                    funder         = os.environ["POLY_ADDRESS"],
+                )
+                _api_creds = _auth_client.derive_api_key()
+
+                # Order-signing client always uses sig_type=0 (EOA) — no proxy needed
                 _clob_client = ClobClient(
                     CLOB_API,
                     key            = os.environ["POLY_PRIVATE_KEY"],
                     chain_id       = 137,
-                    signature_type = sig_type,
+                    signature_type = 0,
                     funder         = os.environ["POLY_ADDRESS"],
                 )
-                _clob_client.set_api_creds(_clob_client.derive_api_key())
-                # signer.address is a method in this version of py_clob_client
+                _clob_client.set_api_creds(_api_creds)
+
                 _signer_addr = _clob_client.signer.address() if callable(_clob_client.signer.address) else _clob_client.signer.address
                 _funder_addr = os.environ["POLY_ADDRESS"]
                 print(f"{_INFO}  signer EOA:   {_signer_addr}")
                 print(f"{_INFO}  funder/maker: {_funder_addr}")
+                print(f"{_INFO}  auth sig_type={_auth_sig_type}, order sig_type=0 (EOA)")
 
                 # Build OrderArgs — try with neg_risk if supported by installed version
                 _neg_risk = _is_neg_risk if '_is_neg_risk' in dir() else False
@@ -446,16 +461,13 @@ async def run(execute: bool = False) -> None:
                     else:
                         print(f"{_INFO}  On-chain allowance already set — CLOB cache lag")
 
-                # Tell Polymarket's API to refresh its view of on-chain balance/allowance
+                # Tell Polymarket's API to refresh its view of on-chain USDC balance/allowance
                 try:
                     from py_clob_client.clob_types import BalanceAllowanceParams, AssetType
-                    _clob_client.update_balance_allowance(
+                    _auth_client.update_balance_allowance(
                         BalanceAllowanceParams(asset_type=AssetType.COLLATERAL)
                     )
-                    _clob_client.update_balance_allowance(
-                        BalanceAllowanceParams(asset_type=AssetType.CONDITIONAL)
-                    )
-                    print(f"{_INFO}  CLOB balance/allowance cache refreshed")
+                    print(f"{_INFO}  CLOB collateral cache refreshed")
                 except Exception as _uba_exc:
                     print(f"{_INFO}  update_balance_allowance skipped: {_uba_exc}")
 
