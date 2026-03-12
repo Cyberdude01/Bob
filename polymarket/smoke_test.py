@@ -256,7 +256,7 @@ async def run(execute: bool = False) -> None:
                                 f"{CLOB_API}/markets/{condition_id}",
                                 timeout=aiohttp.ClientTimeout(total=10),
                             ) as cr:
-                                cdata = await cr.json()
+                                cdata = await cr.json(content_type=None)
                             clob_tokens = cdata.get("tokens") or []
                             print(f"{_INFO}  CLOB fallback: {len(clob_tokens)} tokens returned")
                             for tok in clob_tokens:
@@ -275,13 +275,13 @@ async def run(execute: bool = False) -> None:
                                 params={"conditionId": condition_id, "limit": 5},
                                 timeout=aiohttp.ClientTimeout(total=10),
                             ) as tr:
-                                trades = await tr.json()
+                                trades = await tr.json(content_type=None)
                             for trade in (trades if isinstance(trades, list) else []):
                                 if trade.get("outcome", "").lower() == "up":
                                     token_id_up = str(trade["asset"])
                                     break
-                        except Exception:
-                            pass
+                        except Exception as _fe2:
+                            print(f"{_INFO}  trades fallback error: {_fe2}")
 
                     print(f"{_PASS}  Found {_symbol} market: {_slug}")
                     print(f"{_INFO}  condition_id  = {condition_id}")
