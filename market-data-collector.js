@@ -1,5 +1,15 @@
 const sqlite3 = require('sqlite3').verbose();
+const { execSync } = require('child_process');
 require('dotenv').config();
+
+// Use curl for HTTP to honour the HTTPS_PROXY env variable
+function curlGetJSON(url, timeout = 10) {
+  try {
+    const out = execSync(`curl -s --max-time ${timeout} --compressed -L "${url}"`,
+      { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] });
+    return JSON.parse(out);
+  } catch { return null; }
+}
 
 // Database setup
 const db = new sqlite3.Database('./market-data.db');
@@ -67,11 +77,21 @@ db.serialize(() => {
 
 async function getActive15MinSlugs() {
   try {
-    const response = await fetch('https://polymarket.com/crypto/15M');
-    const html = await response.text();
-    const slugMatches = html.match(/event\/([a-z0-9-]+15m-\d+)/g);
-    if (!slugMatches) return [];
-    return [...new Set(slugMatches)].map(s => s.replace('event/', ''));
+    const html = execSync(
+      'curl -s --max-time 15 --compressed -L "https://polymarket.com/crypto/15M"',
+      { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }
+    );
+    // Match both event-URL pattern and JSON "slug":"..." pattern
+    const seen = new Set();
+    const patterns = [
+      /(?:event\/)([a-z]+-updown-15m-\d+)/g,
+      /"slug":"([a-z]+-updown-15m-\d+)"/g,
+    ];
+    for (const re of patterns) {
+      let m;
+      while ((m = re.exec(html)) !== null) seen.add(m[1]);
+    }
+    return [...seen];
   } catch (err) {
     console.error('Error scraping /crypto/15M:', err.message);
     return [];
@@ -80,9 +100,8 @@ async function getActive15MinSlugs() {
 
 async function fetchMarketBySlug(slug) {
   try {
-    const response = await fetch(`https://gamma-api.polymarket.com/markets?slug=${slug}`);
-    const markets = await response.json();
-    if (markets.length === 0) return null;
+    const markets = curlGetJSON(`https://gamma-api.polymarket.com/markets?slug=${slug}`);
+    if (!markets || markets.length === 0) return null;
     const market = markets[0];
     return {
       slug: market.slug,
@@ -103,8 +122,8 @@ async function fetchMarketBySlug(slug) {
 
 async function fetchOrderBook(tokenId) {
   try {
-    const response = await fetch(`https://clob.polymarket.com/book?token_id=${tokenId}`);
-    const orderBook = await response.json();
+    const orderBook = curlGetJSON(`https://clob.polymarket.com/book?token_id=${tokenId}`);
+    if (!orderBook) return null;
     const bids = orderBook.bids || [];
     const asks = orderBook.asks || [];
     return {
@@ -124,8 +143,7 @@ async function fetchLastTradeForMarket(conditionId) {
   try {
     // Fetch latest trade for the market
     const url = `https://data-api.polymarket.com/trades?market=${conditionId}&limit=1`;
-    const res = await fetch(url);
-    const data = await res.json();
+    const data = curlGetJSON(url);
     
     if (Array.isArray(data) && data.length > 0) {
       // API usually returns latest first, but we check just in case or take 0
