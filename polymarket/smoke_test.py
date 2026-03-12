@@ -291,6 +291,7 @@ async def run(execute: bool = False) -> None:
         # ── Stage 5: Build signed order (dry-run) ─────────────────────────────
         print("\nStage 5 — Build signed EIP-712 order (dry-run, no submission)")
         _clob_client = None
+        _auth_client = None
         _signed_order = None
         if token_id_up:
             try:
@@ -314,6 +315,7 @@ async def run(execute: bool = False) -> None:
                     funder         = os.environ["POLY_ADDRESS"],
                 )
                 _api_creds = _auth_client.derive_api_key()
+                _auth_client.set_api_creds(_api_creds)  # needed for balance + update calls
 
                 # Order-signing client always uses sig_type=0 (EOA) — no proxy needed
                 _clob_client = ClobClient(
@@ -381,9 +383,11 @@ async def run(execute: bool = False) -> None:
         else:
             print(f"\033[93m  ⚠ REAL MONEY: submitting $5 BUY UP order to Polymarket…\033[0m")
             try:
-                # Ensure USDC allowance is set for the CTFExchange contract
+                # Ensure USDC allowance is set — use auth client (sig_type=1) for balance
+                # so the proxy-wallet $7 balance is visible
                 from py_clob_client.clob_types import BalanceAllowanceParams, AssetType
-                bal = _clob_client.get_balance_allowance(
+                _bal_client = _auth_client if _auth_client is not None else _clob_client
+                bal = _bal_client.get_balance_allowance(
                     BalanceAllowanceParams(asset_type=AssetType.COLLATERAL)
                 )
                 balance   = int(bal.get("balance",   0)) / 1e6
