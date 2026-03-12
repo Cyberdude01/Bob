@@ -317,9 +317,9 @@ async def run(execute: bool = False) -> None:
                 _api_creds = _auth_client.derive_api_key()
                 _auth_client.set_api_creds(_api_creds)  # needed for balance + update calls
 
-                # Order-signing client uses sig_type=0 (EOA) with its OWN derived key.
-                # Polymarket pre-validates balance/allowance against the submitting
-                # client's account context — must match the order's sig_type.
+                # Order-signing client uses sig_type=0 (EOA) for valid order signatures,
+                # but injects the STORED registered API creds so Polymarket's pre-check
+                # sees the recognised account (with $7 balance) not an unknown fresh key.
                 _clob_client = ClobClient(
                     CLOB_API,
                     key            = os.environ["POLY_PRIVATE_KEY"],
@@ -327,8 +327,23 @@ async def run(execute: bool = False) -> None:
                     signature_type = 0,
                     funder         = os.environ["POLY_ADDRESS"],
                 )
-                _order_creds = _clob_client.derive_api_key()
-                _clob_client.set_api_creds(_order_creds)
+                # Prefer stored creds (registered via web UI) over freshly derived key
+                _stored_key = os.environ.get("POLY_API_KEY", "")
+                if _stored_key:
+                    try:
+                        from py_clob_client.clob_types import ApiCreds
+                        _stored_creds = ApiCreds(
+                            api_key        = _stored_key,
+                            api_secret     = os.environ.get("POLY_API_SECRET", ""),
+                            api_passphrase = os.environ.get("POLY_API_PASSPHRASE", ""),
+                        )
+                        _clob_client.set_api_creds(_stored_creds)
+                        _auth_client.set_api_creds(_stored_creds)
+                        print(f"{_INFO}  Using stored API creds (registered account)")
+                    except Exception:
+                        _clob_client.set_api_creds(_api_creds)
+                else:
+                    _clob_client.set_api_creds(_api_creds)
 
                 _signer_addr = _clob_client.signer.address() if callable(_clob_client.signer.address) else _clob_client.signer.address
                 _funder_addr = os.environ["POLY_ADDRESS"]
@@ -419,8 +434,8 @@ async def run(execute: bool = False) -> None:
                     from eth_account import Account as _Acct
                     _rpc_quick = next((r for r in [
                         os.environ.get("POLYGON_RPC_URL",""),
-                        "https://rpc.ankr.com/polygon/b77f5e0dd955373ca4c9e3d668d87d8217aaa907b55aa39d430ccc686b78fe22",
                         "https://polygon-bor-rpc.publicnode.com",
+                        "https://polygon.drpc.org",
                     ] if r), None)
                     _w3d = Web3(Web3.HTTPProvider(_rpc_quick, request_kwargs={"timeout":10}))
                     _acct_d = _Acct.from_key(os.environ["POLY_PRIVATE_KEY"])
