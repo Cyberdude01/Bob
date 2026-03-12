@@ -398,9 +398,11 @@ async def run(execute: bool = False) -> None:
                 # CTFExchange and NegRiskAdapter (BTC/ETH updown markets use NegRisk routing)
                 if allowance == 0:
                     print(f"{_INFO}  Allowance $0 — verifying on-chain approvals…")
-                    _USDC           = "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174"
-                    _CTF_EXCHANGE   = "0x4bFb41d5B3570DeFd03C39a9A4D8dE6Bd8B8982E"
-                    _NEG_RISK_ADAPT = "0xd91E80cF2E7be2e162c6513ceD06f1dD0dA35296"
+                    _USDC              = "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174"
+                    _CTF_TOKEN         = "0x4D97DCd97eC945f40cF65F87097ACe5EA0476045"
+                    _CTF_EXCHANGE      = "0x4bFb41d5B3570DeFd03C39a9A4D8dE6Bd8B8982E"
+                    _NEG_RISK_ADAPT    = "0xd91E80cF2E7be2e162c6513ceD06f1dD0dA35296"
+                    _NEG_RISK_EXCHANGE = "0xC5d563A36AE78145C45a50134d48A1215220f80a"
                     _USDC_ABI    = [
                         {"inputs":[{"name":"spender","type":"address"},{"name":"amount","type":"uint256"}],
                          "name":"approve","outputs":[{"name":"","type":"bool"}],
@@ -465,8 +467,8 @@ async def run(execute: bool = False) -> None:
                         else:
                             print(f"{_INFO}  {label} already approved")
 
-                    _ensure_approval(_CTF_EXCHANGE,   "CTFExchange")
-                    _ensure_approval(_NEG_RISK_ADAPT, "NegRiskAdapter")
+                    _ensure_approval(_CTF_TOKEN,       "CTF Contract")
+                    _ensure_approval(_NEG_RISK_ADAPT,  "NegRiskAdapter")
 
                 # Tell Polymarket's API to refresh its view of on-chain USDC balance/allowance
                 try:
