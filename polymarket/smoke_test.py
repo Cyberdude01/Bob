@@ -327,8 +327,11 @@ async def run(execute: bool = False) -> None:
                 print(f"{_PASS}  Order built — EIP-712 sig: {sig_preview}")
                 print(f"{_INFO}  side:         BUY UP  @ {up_price:.4f}")
                 print(f"{_INFO}  size:         $5.00 USDC (minimum)")
-                print(f"{_INFO}  makerAmount:  {o_dict.get('makerAmount', '?')}")
-                print(f"{_INFO}  takerAmount:  {o_dict.get('takerAmount', '?')}")
+                print(f"{_INFO}  order fields: {list(o_dict.keys())}")
+                maker_amt = o_dict.get('makerAmount') or o_dict.get('maker_amount', '?')
+                taker_amt = o_dict.get('takerAmount') or o_dict.get('taker_amount', '?')
+                print(f"{_INFO}  makerAmount:  {maker_amt}")
+                print(f"{_INFO}  takerAmount:  {taker_amt}")
                 results["order_build"] = "PASS"
             except Exception as exc:
                 print(f"{_FAIL}  Exception building order: {exc}")
@@ -357,12 +360,9 @@ async def run(execute: bool = False) -> None:
                 balance   = int(bal.get("balance",   0)) / 1e6
                 allowance = int(bal.get("allowance", 0)) / 1e6
                 print(f"{_INFO}  balance: ${balance:.2f}  allowance: ${allowance:.2f}")
-                if allowance == 0:
-                    print(f"{_INFO}  Allowance $0 — calling update_balance_allowance…")
-                    upd = _clob_client.update_balance_allowance(
-                        BalanceAllowanceParams(asset_type=AssetType.COLLATERAL)
-                    )
-                    print(f"{_INFO}  Response: {upd}")
+                # Note: update_balance_allowance returns "invalid signature" for
+                # EOA accounts — the on-chain USDC approval was set at deposit time.
+                # Skip the allowance update and attempt the order directly.
 
                 # Use py_clob_client's post_order — handles Order dataclass serialization
                 resp = _clob_client.post_order(_signed_order, OrderType.GTC)
