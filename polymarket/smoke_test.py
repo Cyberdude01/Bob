@@ -293,8 +293,9 @@ async def run(execute: bool = False) -> None:
         if token_id_up:
             try:
                 from py_clob_client.client import ClobClient
-                from py_clob_client.clob_types import OrderArgs
+                from py_clob_client.clob_types import OrderArgs, OrderType
                 from py_clob_client.order_builder.constants import BUY
+                import dataclasses
 
                 sig_type = int(os.environ.get("POLY_SIGNATURE_TYPE", "1"))
                 _clob_client = ClobClient(
@@ -305,25 +306,24 @@ async def run(execute: bool = False) -> None:
                     funder         = os.environ["POLY_ADDRESS"],
                 )
                 _clob_client.set_api_creds(_clob_client.derive_api_key())
+                print(f"{_INFO}  signer EOA:   {_clob_client.signer.address}")
+                print(f"{_INFO}  funder/maker: {_clob_client.funder}")
 
                 order_args = OrderArgs(
                     token_id = token_id_up,
                     price    = round(up_price, 4),
-                    size     = 1.0,
+                    size     = 5.0,   # minimum_order_size=5 per CLOB
                     side     = BUY,
                 )
                 _signed_order = _clob_client.create_order(order_args)
                 sig_preview   = str(_signed_order.signature)[:20] + "…"
-                o = _signed_order.order
+                # Serialize order struct to plain dict for display
+                o_dict = dataclasses.asdict(_signed_order.order) if dataclasses.is_dataclass(_signed_order.order) else vars(_signed_order.order)
                 print(f"{_PASS}  Order built — EIP-712 sig: {sig_preview}")
-                print(f"{_INFO}  token_id:     {token_id_up[:30]}…")
                 print(f"{_INFO}  side:         BUY UP  @ {up_price:.4f}")
-                print(f"{_INFO}  size:         $1.00 USDC")
-                print(f"{_INFO}  maker:        {getattr(o, 'maker', '?')}")
-                print(f"{_INFO}  signer:       {getattr(o, 'signer', '?')}")
-                print(f"{_INFO}  signatureType:{getattr(o, 'signatureType', '?')}")
-                print(f"{_INFO}  makerAmount:  {getattr(o, 'makerAmount', '?')}")
-                print(f"{_INFO}  takerAmount:  {getattr(o, 'takerAmount', '?')}")
+                print(f"{_INFO}  size:         $5.00 USDC (minimum)")
+                print(f"{_INFO}  makerAmount:  {o_dict.get('makerAmount', '?')}")
+                print(f"{_INFO}  takerAmount:  {o_dict.get('takerAmount', '?')}")
                 results["order_build"] = "PASS"
             except Exception as exc:
                 print(f"{_FAIL}  Exception building order: {exc}")
@@ -345,7 +345,7 @@ async def run(execute: bool = False) -> None:
             print(f"\033[93m  ⚠ REAL MONEY: submitting $1 BUY UP order to Polymarket…\033[0m")
             try:
                 # Use py_clob_client's post_order — handles Order dataclass serialization
-                resp = _clob_client.post_order(_signed_order, orderType="GTC")
+                resp = _clob_client.post_order(_signed_order, OrderType.GTC)
                 order_id = (resp.get("orderId") or resp.get("order_id") or "?") if isinstance(resp, dict) else str(resp)
                 print(f"{_PASS}  Order ACCEPTED — orderId: {order_id}")
                 print(f"{_INFO}  Full response: {json.dumps(resp, indent=4) if isinstance(resp, dict) else resp}")
