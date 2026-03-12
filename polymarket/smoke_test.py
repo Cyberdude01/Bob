@@ -397,15 +397,48 @@ async def run(execute: bool = False) -> None:
                 allowance = int(bal.get("allowance", 0)) / 1e6
                 print(f"{_INFO}  balance: ${balance:.2f}  allowance: ${allowance:.2f}")
 
-                # If CLOB reports allowance=$0, ensure on-chain approvals for BOTH
-                # CTFExchange and NegRiskAdapter (BTC/ETH updown markets use NegRisk routing)
+                # Always check on-chain state to diagnose CLOB vs on-chain discrepancies
+                _USDC              = "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174"
+                _CTF_TOKEN         = "0x4D97DCd97eC945f40cF65F87097ACe5EA0476045"
+                _CTF_EXCHANGE      = "0x4bFb41d5B3570DeFd03C39a9A4D8dE6Bd8B8982E"
+                _NEG_RISK_ADAPT    = "0xd91E80cF2E7be2e162c6513ceD06f1dD0dA35296"
+                _NEG_RISK_EXCHANGE = "0xC5d563A36AE78145C45a50134d48A1215220f80a"
+                _USDC_ABI    = [
+                    {"inputs":[{"name":"account","type":"address"}],
+                     "name":"balanceOf","outputs":[{"name":"","type":"uint256"}],
+                     "stateMutability":"view","type":"function"},
+                    {"inputs":[{"name":"spender","type":"address"},{"name":"amount","type":"uint256"}],
+                     "name":"approve","outputs":[{"name":"","type":"bool"}],
+                     "stateMutability":"nonpayable","type":"function"},
+                    {"inputs":[{"name":"owner","type":"address"},{"name":"spender","type":"address"}],
+                     "name":"allowance","outputs":[{"name":"","type":"uint256"}],
+                     "stateMutability":"view","type":"function"},
+                ]
+                try:
+                    from web3 import Web3
+                    from eth_account import Account as _Acct
+                    _rpc_quick = next((r for r in [
+                        os.environ.get("POLYGON_RPC_URL",""),
+                        "https://rpc.ankr.com/polygon/b77f5e0dd955373ca4c9e3d668d87d8217aaa907b55aa39d430ccc686b78fe22",
+                        "https://polygon-bor-rpc.publicnode.com",
+                    ] if r), None)
+                    _w3d = Web3(Web3.HTTPProvider(_rpc_quick, request_kwargs={"timeout":10}))
+                    _acct_d = _Acct.from_key(os.environ["POLY_PRIVATE_KEY"])
+                    _poly_addr = os.environ["POLY_ADDRESS"]
+                    _usdc_c = _w3d.eth.contract(address=_w3d.to_checksum_address(_USDC), abi=_USDC_ABI)
+                    _eoa_bal = _usdc_c.functions.balanceOf(_w3d.to_checksum_address(_acct_d.address)).call()
+                    _proxy_bal = _usdc_c.functions.balanceOf(_w3d.to_checksum_address(_poly_addr)).call() if _poly_addr != _acct_d.address else _eoa_bal
+                    _eoa_allow_ctf = _usdc_c.functions.allowance(_w3d.to_checksum_address(_acct_d.address), _w3d.to_checksum_address(_CTF_TOKEN)).call()
+                    _proxy_allow_ctf = _usdc_c.functions.allowance(_w3d.to_checksum_address(_poly_addr), _w3d.to_checksum_address(_CTF_TOKEN)).call() if _poly_addr != _acct_d.address else _eoa_allow_ctf
+                    print(f"{_INFO}  On-chain EOA   ({_acct_d.address[:10]}…): balance=${_eoa_bal/1e6:.2f}  allow(CTF)=${_eoa_allow_ctf/1e6:.2f}")
+                    if _poly_addr != _acct_d.address:
+                        print(f"{_INFO}  On-chain Proxy ({_poly_addr[:10]}…): balance=${_proxy_bal/1e6:.2f}  allow(CTF)=${_proxy_allow_ctf/1e6:.2f}")
+                except Exception as _diag_exc:
+                    print(f"{_INFO}  On-chain diag failed: {_diag_exc}")
+
+                # If CLOB reports allowance=$0, ensure on-chain approvals
                 if allowance == 0:
                     print(f"{_INFO}  Allowance $0 — verifying on-chain approvals…")
-                    _USDC              = "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174"
-                    _CTF_TOKEN         = "0x4D97DCd97eC945f40cF65F87097ACe5EA0476045"
-                    _CTF_EXCHANGE      = "0x4bFb41d5B3570DeFd03C39a9A4D8dE6Bd8B8982E"
-                    _NEG_RISK_ADAPT    = "0xd91E80cF2E7be2e162c6513ceD06f1dD0dA35296"
-                    _NEG_RISK_EXCHANGE = "0xC5d563A36AE78145C45a50134d48A1215220f80a"
                     _USDC_ABI    = [
                         {"inputs":[{"name":"spender","type":"address"},{"name":"amount","type":"uint256"}],
                          "name":"approve","outputs":[{"name":"","type":"bool"}],
