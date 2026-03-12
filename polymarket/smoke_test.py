@@ -288,7 +288,8 @@ async def run(execute: bool = False) -> None:
 
         # ── Stage 5: Build signed order (dry-run) ─────────────────────────────
         print("\nStage 5 — Build signed EIP-712 order (dry-run, no submission)")
-        order_body: Optional[dict] = None
+        _clob_client = None
+        _signed_order = None
         if token_id_up:
             try:
                 from py_clob_client.client import ClobClient
@@ -296,14 +297,14 @@ async def run(execute: bool = False) -> None:
                 from py_clob_client.order_builder.constants import BUY
 
                 sig_type = int(os.environ.get("POLY_SIGNATURE_TYPE", "1"))
-                _client  = ClobClient(
+                _clob_client = ClobClient(
                     CLOB_API,
-                    key        = os.environ["POLY_PRIVATE_KEY"],
-                    chain_id   = 137,
+                    key            = os.environ["POLY_PRIVATE_KEY"],
+                    chain_id       = 137,
                     signature_type = sig_type,
-                    funder     = os.environ["POLY_ADDRESS"],
+                    funder         = os.environ["POLY_ADDRESS"],
                 )
-                _client.set_api_creds(_client.derive_api_key())
+                _clob_client.set_api_creds(_clob_client.derive_api_key())
 
                 order_args = OrderArgs(
                     token_id = token_id_up,
@@ -311,14 +312,8 @@ async def run(execute: bool = False) -> None:
                     size     = 1.0,
                     side     = BUY,
                 )
-                signed = _client.create_order(order_args)
-                # SignedOrder is a dataclass: .order (dict), .signature (str), .orderType (str)
-                order_body = {
-                    "order":     signed.order if hasattr(signed, "order") else signed,
-                    "signature": signed.signature if hasattr(signed, "signature") else "",
-                    "orderType": getattr(signed, "orderType", "GTC"),
-                }
-                sig_preview = str(order_body["signature"])[:20] + "…"
+                _signed_order = _clob_client.create_order(order_args)
+                sig_preview   = str(_signed_order.signature)[:20] + "…"
                 print(f"{_PASS}  Order built — EIP-712 sig: {sig_preview}")
                 print(f"{_INFO}  token_id:  {token_id_up[:30]}…")
                 print(f"{_INFO}  side:      BUY UP  @ {up_price:.4f}")
@@ -337,44 +332,18 @@ async def run(execute: bool = False) -> None:
             print(f"{_SKIP}  Dry-run mode — skipping real order submission")
             print(f"{_INFO}  Re-run with --execute to submit a real $1 order")
             results["order_post"] = "SKIP"
-        elif order_body is None:
+        elif _signed_order is None or _clob_client is None:
             print(f"{_SKIP}  Stage 5 failed — cannot submit order")
             results["order_post"] = "SKIP"
         else:
             print(f"\033[93m  ⚠ REAL MONEY: submitting $1 BUY UP order to Polymarket…\033[0m")
             try:
-                body_s  = json.dumps(order_body)
-                headers = {
-                    "Content-Type": "application/json",
-                    **_l2_headers("POST", "/order", body_s),
-                }
-                async with session.post(
-                    f"{CLOB_API}/order",
-                    data    = body_s,
-                    headers = headers,
-                    timeout = aiohttp.ClientTimeout(total=15),
-                ) as r:
-                    resp_body = await r.text()
-                    try:
-                        resp = json.loads(resp_body)
-                    except Exception:
-                        resp = {"raw": resp_body}
-
-                    if r.status == 200:
-                        order_id = resp.get("orderId") or resp.get("order_id") or "?"
-                        print(f"{_PASS}  Order ACCEPTED — orderId: {order_id}")
-                        print(f"{_INFO}  Full response: {json.dumps(resp, indent=4)}")
-                        results["order_post"] = "PASS"
-                    else:
-                        print(f"{_FAIL}  Status {r.status} — exchange rejected order")
-                        print(f"{_INFO}  Response: {resp_body[:600]}")
-                        print()
-                        print("  Common causes:")
-                        print("   • Invalid EIP-712 signature (wrong private key / domain)")
-                        print("   • Token ID mismatch or expired market")
-                        print("   • Insufficient USDC balance")
-                        print("   • API key not whitelisted for trading")
-                        results["order_post"] = "FAIL"
+                # Use py_clob_client's post_order — handles Order dataclass serialization
+                resp = _clob_client.post_order(_signed_order, orderType="GTC")
+                order_id = (resp.get("orderId") or resp.get("order_id") or "?") if isinstance(resp, dict) else str(resp)
+                print(f"{_PASS}  Order ACCEPTED — orderId: {order_id}")
+                print(f"{_INFO}  Full response: {json.dumps(resp, indent=4) if isinstance(resp, dict) else resp}")
+                results["order_post"] = "PASS"
             except Exception as exc:
                 print(f"{_FAIL}  Exception: {exc}")
                 results["order_post"] = "FAIL"
