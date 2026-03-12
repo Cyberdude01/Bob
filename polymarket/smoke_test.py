@@ -299,7 +299,7 @@ async def run(execute: bool = False) -> None:
 
                 # Use signature_type=1 (user's working config) for both
                 # order signing and allowance management
-                sig_type = int(os.environ.get("POLY_SIGNATURE_TYPE", "1"))
+                sig_type = int(os.environ.get("POLY_SIGNATURE_TYPE", "0"))
                 _clob_client = ClobClient(
                     CLOB_API,
                     key            = os.environ["POLY_PRIVATE_KEY"],
