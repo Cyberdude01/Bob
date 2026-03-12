@@ -17,7 +17,8 @@ from dotenv import load_dotenv
 from web3 import Web3
 from eth_account import Account
 
-load_dotenv()
+load_dotenv("/etc/polymarket.env")
+load_dotenv()  # also load local .env if present (overrides)
 
 # ── Contract addresses (Polygon mainnet, chain 137) ────────────────────────
 USDC            = "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174"  # USDC.e (PoS)
