@@ -539,8 +539,10 @@ async def run(execute: bool = False) -> None:
                 except Exception as _diag_exc:
                     print(f"{_INFO}  On-chain diag failed: {_diag_exc}")
 
-                # If CLOB reports allowance=$0, ensure on-chain approvals
-                if allowance == 0:
+                # Only attempt on-chain approvals if CLOB balance is also $0.
+                # If balance>0 the funds are already in Polymarket's system — allowance
+                # is irrelevant (it only matters for future deposits, not existing balance).
+                if balance < 5.0:
                     print(f"{_INFO}  Allowance $0 — verifying on-chain approvals…")
                     _USDC_ABI    = [
                         {"inputs":[{"name":"spender","type":"address"},{"name":"amount","type":"uint256"}],
@@ -609,18 +611,10 @@ async def run(execute: bool = False) -> None:
                     _ensure_approval(_CTF_TOKEN,       "CTF Contract")
                     _ensure_approval(_NEG_RISK_ADAPT,  "NegRiskAdapter")
 
-                # Refresh CLOB cache using the auth client (sig_type=1 derived, sees $7).
-                try:
-                    from py_clob_client.clob_types import BalanceAllowanceParams, AssetType
-                    _auth_client.update_balance_allowance(
-                        BalanceAllowanceParams(asset_type=AssetType.COLLATERAL)
-                    )
-                    _bal_after = _auth_client.get_balance_allowance(
-                        BalanceAllowanceParams(asset_type=AssetType.COLLATERAL)
-                    )
-                    print(f"{_INFO}  CLOB after refresh — balance: ${int(_bal_after.get('balance',0))/1e6:.2f}  allowance: ${int(_bal_after.get('allowance',0))/1e6:.2f}")
-                except Exception as _uba_exc:
-                    print(f"{_INFO}  update_balance_allowance: {_uba_exc}")
+                # NOTE: do NOT call update_balance_allowance — it rescans on-chain USDC
+                # and overwrites the CLOB's internal $7 ledger with the EOA's on-chain $0.
+                # The $7 was deposited via Polymarket's web UI and lives in their internal
+                # ledger; the initial get_balance_allowance above already confirms it's there.
 
                 # Use py_clob_client's post_order — handles Order dataclass serialization
                 resp = _clob_client.post_order(_signed_order, OrderType.GTC)
