@@ -297,14 +297,14 @@ async def run(execute: bool = False) -> None:
                 from py_clob_client.order_builder.constants import BUY
                 import dataclasses
 
-                # signer==funder (same EOA address) → signature_type=0 (EOA)
-                # type=1 (POLY_PROXY) causes "invalid signature" because the
-                # contract uses a different verification path for proxy wallets
+                # Use signature_type=1 (user's working config) for both
+                # order signing and allowance management
+                sig_type = int(os.environ.get("POLY_SIGNATURE_TYPE", "1"))
                 _clob_client = ClobClient(
                     CLOB_API,
                     key            = os.environ["POLY_PRIVATE_KEY"],
                     chain_id       = 137,
-                    signature_type = 0,
+                    signature_type = sig_type,
                     funder         = os.environ["POLY_ADDRESS"],
                 )
                 _clob_client.set_api_creds(_clob_client.derive_api_key())
@@ -354,25 +354,15 @@ async def run(execute: bool = False) -> None:
                 bal = _clob_client.get_balance_allowance(
                     BalanceAllowanceParams(asset_type=AssetType.COLLATERAL)
                 )
-                allowance = int(bal.get("allowance", 0))
+                balance   = int(bal.get("balance",   0)) / 1e6
+                allowance = int(bal.get("allowance", 0)) / 1e6
+                print(f"{_INFO}  balance: ${balance:.2f}  allowance: ${allowance:.2f}")
                 if allowance == 0:
-                    print(f"{_INFO}  Allowance is $0 — setting USDC approval…")
+                    print(f"{_INFO}  Allowance $0 — calling update_balance_allowance…")
                     upd = _clob_client.update_balance_allowance(
                         BalanceAllowanceParams(asset_type=AssetType.COLLATERAL)
                     )
-                    print(f"{_INFO}  update_balance_allowance response: {upd}")
-                    # Poll until allowance confirmed (on-chain tx needs block confirmation)
-                    for _attempt in range(10):
-                        await __import__("asyncio").sleep(2)
-                        bal2 = _clob_client.get_balance_allowance(
-                            BalanceAllowanceParams(asset_type=AssetType.COLLATERAL)
-                        )
-                        allowance = int(bal2.get("allowance", 0))
-                        print(f"{_INFO}  Allowance check #{_attempt+1}: {allowance/1e6:.2f} USDC")
-                        if allowance > 0:
-                            break
-                    else:
-                        print(f"{_WARN}  Allowance still $0 after 20s — proceeding anyway")
+                    print(f"{_INFO}  Response: {upd}")
 
                 # Use py_clob_client's post_order — handles Order dataclass serialization
                 resp = _clob_client.post_order(_signed_order, OrderType.GTC)
