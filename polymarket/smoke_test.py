@@ -378,7 +378,7 @@ async def run(execute: bool = False) -> None:
                     ]
                     from web3 import Web3
                     from eth_account import Account as _Acct
-                    _w3   = Web3(Web3.HTTPProvider("https://polygon-rpc.com"))
+                    _w3   = Web3(Web3.HTTPProvider("https://rpc.ankr.com/polygon"))
                     _acct = _Acct.from_key(os.environ["POLY_PRIVATE_KEY"])
                     _usdc = _w3.eth.contract(
                         address=_w3.to_checksum_address(_USDC), abi=_USDC_ABI
