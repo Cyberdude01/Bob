@@ -316,15 +316,24 @@ async def run(execute: bool = False) -> None:
                 print(f"{_INFO}  signer EOA:   {_signer_addr}")
                 print(f"{_INFO}  funder/maker: {_funder_addr}")
 
+                # Build OrderArgs — try with neg_risk if supported by installed version
                 _neg_risk = _is_neg_risk if '_is_neg_risk' in dir() else False
                 print(f"{_INFO}  neg_risk market: {_neg_risk}")
-                order_args = OrderArgs(
-                    token_id  = token_id_up,
-                    price     = round(up_price, 4),
-                    size      = 5.0,   # minimum_order_size=5 per CLOB
-                    side      = BUY,
-                    neg_risk  = _neg_risk,
-                )
+                try:
+                    order_args = OrderArgs(
+                        token_id  = token_id_up,
+                        price     = round(up_price, 4),
+                        size      = 5.0,
+                        side      = BUY,
+                        neg_risk  = _neg_risk,
+                    )
+                except TypeError:
+                    order_args = OrderArgs(
+                        token_id = token_id_up,
+                        price    = round(up_price, 4),
+                        size     = 5.0,
+                        side     = BUY,
+                    )
                 _signed_order = _clob_client.create_order(order_args)
                 sig_preview   = str(_signed_order.signature)[:20] + "…"
                 # Serialize order struct to plain dict for display
@@ -436,6 +445,19 @@ async def run(execute: bool = False) -> None:
                             print(f"{_WARN}  approve() tx reverted — proceeding anyway")
                     else:
                         print(f"{_INFO}  On-chain allowance already set — CLOB cache lag")
+
+                # Tell Polymarket's API to refresh its view of on-chain balance/allowance
+                try:
+                    from py_clob_client.clob_types import BalanceAllowanceParams, AssetType
+                    _clob_client.update_balance_allowance(
+                        BalanceAllowanceParams(asset_type=AssetType.COLLATERAL)
+                    )
+                    _clob_client.update_balance_allowance(
+                        BalanceAllowanceParams(asset_type=AssetType.CONDITIONAL)
+                    )
+                    print(f"{_INFO}  CLOB balance/allowance cache refreshed")
+                except Exception as _uba_exc:
+                    print(f"{_INFO}  update_balance_allowance skipped: {_uba_exc}")
 
                 # Use py_clob_client's post_order — handles Order dataclass serialization
                 resp = _clob_client.post_order(_signed_order, OrderType.GTC)
