@@ -251,6 +251,8 @@ async def run(execute: bool = False) -> None:
                         if str(outcome).upper() == "UP":
                             token_id_up = str(tid)
                             break
+                    # NegRisk markets (up/down, multi-outcome) use NegRiskExchange
+                    _is_neg_risk = bool(market.get("negRisk") or market.get("neg_risk"))
 
                     print(f"{_PASS}  Found {_symbol} market: {_slug}")
                     print(f"{_INFO}  condition_id  = {condition_id}")
@@ -299,7 +301,7 @@ async def run(execute: bool = False) -> None:
 
                 # Use signature_type=1 (user's working config) for both
                 # order signing and allowance management
-                sig_type = int(os.environ.get("POLY_SIGNATURE_TYPE", "0"))
+                sig_type = int(os.environ.get("POLY_SIGNATURE_TYPE", "1"))
                 _clob_client = ClobClient(
                     CLOB_API,
                     key            = os.environ["POLY_PRIVATE_KEY"],
@@ -314,11 +316,14 @@ async def run(execute: bool = False) -> None:
                 print(f"{_INFO}  signer EOA:   {_signer_addr}")
                 print(f"{_INFO}  funder/maker: {_funder_addr}")
 
+                _neg_risk = _is_neg_risk if '_is_neg_risk' in dir() else False
+                print(f"{_INFO}  neg_risk market: {_neg_risk}")
                 order_args = OrderArgs(
-                    token_id = token_id_up,
-                    price    = round(up_price, 4),
-                    size     = 5.0,   # minimum_order_size=5 per CLOB
-                    side     = BUY,
+                    token_id  = token_id_up,
+                    price     = round(up_price, 4),
+                    size      = 5.0,   # minimum_order_size=5 per CLOB
+                    side      = BUY,
+                    neg_risk  = _neg_risk,
                 )
                 _signed_order = _clob_client.create_order(order_args)
                 sig_preview   = str(_signed_order.signature)[:20] + "…"
