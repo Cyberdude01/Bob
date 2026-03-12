@@ -1,39 +1,6 @@
 {
-  "updated": "2026-03-11 08:33:53 PM ET",
+  "updated": "2026-03-11 08:39:09 PM ET",
   "data": [
-    {
-      "symbol": "ETH",
-      "slug": "eth-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.93,
-      "confidence": 0.944,
-      "trigger": "directional_90pct",
-      "reason": "DIRECTIONAL at 90pct (89% elapsed) \u2014 P(UP)=0.944 gives edge=0.444 toward UP. Bucket=HighVol+Trend (RV60=9.36679, Eff60=0.032). Fixed $5 USDC stake @ conf=0.944. [adaptive edge=0.050]"
-    },
-    {
-      "symbol": "ETH",
-      "slug": "eth-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.5,
-      "confidence": 0.986,
-      "trigger": "directional_90pct",
-      "reason": "DIRECTIONAL at 90pct (89% elapsed) \u2014 P(UP)=0.986 gives edge=0.486 toward UP. Bucket=HighVol+Trend (RV60=9.37917, Eff60=0.034). Fixed $5 USDC stake @ conf=0.986. [adaptive edge=0.050]"
-    },
-    {
-      "symbol": "ETH",
-      "slug": "eth-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.99,
-      "confidence": 0.99,
-      "trigger": "directional_90pct",
-      "reason": "DIRECTIONAL at 90pct (90% elapsed) \u2014 P(UP)=0.010 gives edge=0.490 toward DOWN. Bucket=HighVol+Trend (RV60=9.66558, Eff60=0.036). Fixed $5 USDC stake @ conf=0.990. [adaptive edge=0.050]"
-    },
     {
       "symbol": "SOL",
       "slug": "sol-updown-15m",
@@ -220,6 +187,39 @@
       "confidence": 0.636,
       "trigger": "directional_90pct",
       "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.636 gives edge=0.136 toward UP. Bucket=HighVol+Trend (RV60=3.99228, Eff60=0.029). Fixed $5 USDC stake @ conf=0.636. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.99,
+      "confidence": 0.55,
+      "trigger": "forced_edge",
+      "reason": "FORCED TRADE at 60% elapsed \u2014 no prior signal for this window. P(UP)=0.450, choosing DOWN. Fixed $5 USDC stake (every market must be entered)."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.99,
+      "confidence": 0.5,
+      "trigger": "forced_coin",
+      "reason": "FORCED TRADE at 60% elapsed \u2014 no prior signal for this window. P(UP)=0.500, choosing UP. Fixed $5 USDC stake (every market must be entered)."
+    },
+    {
+      "symbol": "ETH",
+      "slug": "eth-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.99,
+      "confidence": 0.5,
+      "trigger": "forced_coin",
+      "reason": "FORCED TRADE at 60% elapsed \u2014 no prior signal for this window. P(UP)=0.500, choosing UP. Fixed $5 USDC stake (every market must be entered)."
     }
   ]
 }
