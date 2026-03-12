@@ -1,27 +1,71 @@
 {
-  "updated": "2026-03-12 01:56:46 AM ET",
+  "updated": "2026-03-12 02:01:58 AM ET",
   "data": [
     {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "UP",
+      "symbol": "SOL",
+      "slug": "sol-updown-15m",
+      "outcome": "DOWN",
       "side": "BUY",
       "size": 5.0,
-      "price": 1.0,
-      "confidence": 0.879,
+      "price": 0.99,
+      "confidence": 1.0,
       "trigger": "directional_90pct",
-      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.879 gives edge=0.379 toward UP. Bucket=HighVol+Range (RV60=23.33679, Eff60=0.000). Fixed $5 USDC stake @ conf=0.879. [adaptive edge=0.050]"
+      "reason": "DIRECTIONAL at 90pct (91% elapsed) \u2014 P(UP)=0.000 gives edge=0.500 toward DOWN. Bucket=HighVol+Trend (RV60=12.25473, Eff60=0.038). Fixed $5 USDC stake @ conf=1.000. [adaptive edge=0.050]"
     },
     {
-      "symbol": "ETH",
-      "slug": "eth-updown-15m",
-      "outcome": "UP",
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m",
+      "outcome": "DOWN",
       "side": "BUY",
       "size": 5.0,
-      "price": 1.0,
-      "confidence": 0.879,
+      "price": 0.99,
+      "confidence": 1.0,
       "trigger": "directional_90pct",
-      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.879 gives edge=0.379 toward UP. Bucket=HighVol+Range (RV60=37.42759, Eff60=0.000). Fixed $5 USDC stake @ conf=0.879. [adaptive edge=0.050]"
+      "reason": "DIRECTIONAL at 90pct (91% elapsed) \u2014 P(UP)=0.000 gives edge=0.500 toward DOWN. Bucket=HighVol+Trend (RV60=15.20501, Eff60=0.023). Fixed $5 USDC stake @ conf=1.000. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.99,
+      "confidence": 1.0,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (91% elapsed) \u2014 P(UP)=0.000 gives edge=0.500 toward DOWN. Bucket=HighVol+Trend (RV60=12.25473, Eff60=0.038). Fixed $5 USDC stake @ conf=1.000. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.99,
+      "confidence": 1.0,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (91% elapsed) \u2014 P(UP)=0.000 gives edge=0.500 toward DOWN. Bucket=HighVol+Trend (RV60=15.20501, Eff60=0.023). Fixed $5 USDC stake @ conf=1.000. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.99,
+      "confidence": 1.0,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (91% elapsed) \u2014 P(UP)=0.000 gives edge=0.500 toward DOWN. Bucket=HighVol+Trend (RV60=12.25473, Eff60=0.038). Fixed $5 USDC stake @ conf=1.000. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.99,
+      "confidence": 1.0,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (91% elapsed) \u2014 P(UP)=0.000 gives edge=0.500 toward DOWN. Bucket=HighVol+Trend (RV60=15.20501, Eff60=0.023). Fixed $5 USDC stake @ conf=1.000. [adaptive edge=0.050]"
     },
     {
       "symbol": "SOL",
@@ -29,10 +73,76 @@
       "outcome": "UP",
       "side": "BUY",
       "size": 5.0,
-      "price": 0.999,
-      "confidence": 0.878,
+      "price": 0.99,
+      "confidence": 0.872,
       "trigger": "directional_90pct",
-      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.878 gives edge=0.378 toward UP. Bucket=HighVol+Range (RV60=29.02104, Eff60=0.018). Fixed $5 USDC stake @ conf=0.878. [adaptive edge=0.050]"
+      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=0.872 gives edge=0.372 toward UP. Bucket=HighVol+Range (RV60=12.65943, Eff60=0.003). Fixed $5 USDC stake @ conf=0.872. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.99,
+      "confidence": 1.0,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=0.000 gives edge=0.500 toward DOWN. Bucket=HighVol+Trend (RV60=16.16874, Eff60=0.042). Fixed $5 USDC stake @ conf=1.000. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.99,
+      "confidence": 0.872,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=0.872 gives edge=0.372 toward UP. Bucket=HighVol+Range (RV60=12.65943, Eff60=0.003). Fixed $5 USDC stake @ conf=0.872. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.99,
+      "confidence": 1.0,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=0.000 gives edge=0.500 toward DOWN. Bucket=HighVol+Trend (RV60=16.16874, Eff60=0.042). Fixed $5 USDC stake @ conf=1.000. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.99,
+      "confidence": 0.872,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=0.872 gives edge=0.372 toward UP. Bucket=HighVol+Range (RV60=12.65943, Eff60=0.003). Fixed $5 USDC stake @ conf=0.872. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.99,
+      "confidence": 1.0,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=0.000 gives edge=0.500 toward DOWN. Bucket=HighVol+Trend (RV60=16.16874, Eff60=0.042). Fixed $5 USDC stake @ conf=1.000. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.99,
+      "confidence": 1.0,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=0.000 gives edge=0.500 toward DOWN. Bucket=HighVol+Trend (RV60=13.23954, Eff60=0.038). Fixed $5 USDC stake @ conf=1.000. [adaptive edge=0.050]"
     },
     {
       "symbol": "XRP",
@@ -43,40 +153,18 @@
       "price": 0.99,
       "confidence": 1.0,
       "trigger": "directional_90pct",
-      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=1.000 gives edge=0.500 toward UP. Bucket=HighVol+Trend (RV60=15.00331, Eff60=0.037). Fixed $5 USDC stake @ conf=1.000. [adaptive edge=0.050]"
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 1.0,
-      "confidence": 0.879,
-      "trigger": "directional_90pct",
-      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.879 gives edge=0.379 toward UP. Bucket=HighVol+Range (RV60=23.33645, Eff60=0.000). Fixed $5 USDC stake @ conf=0.879. [adaptive edge=0.050]"
-    },
-    {
-      "symbol": "ETH",
-      "slug": "eth-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 1.0,
-      "confidence": 0.879,
-      "trigger": "directional_90pct",
-      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.879 gives edge=0.379 toward UP. Bucket=HighVol+Range (RV60=37.42759, Eff60=0.000). Fixed $5 USDC stake @ conf=0.879. [adaptive edge=0.050]"
+      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=1.000 gives edge=0.500 toward UP. Bucket=HighVol+Trend (RV60=16.50458, Eff60=0.042). Fixed $5 USDC stake @ conf=1.000. [adaptive edge=0.050]"
     },
     {
       "symbol": "SOL",
       "slug": "sol-updown-15m",
-      "outcome": "UP",
+      "outcome": "DOWN",
       "side": "BUY",
       "size": 5.0,
-      "price": 0.999,
-      "confidence": 0.878,
+      "price": 0.99,
+      "confidence": 1.0,
       "trigger": "directional_90pct",
-      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.878 gives edge=0.378 toward UP. Bucket=HighVol+Range (RV60=29.02104, Eff60=0.018). Fixed $5 USDC stake @ conf=0.878. [adaptive edge=0.050]"
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.000 gives edge=0.500 toward DOWN. Bucket=HighVol+Trend (RV60=13.23954, Eff60=0.038). Fixed $5 USDC stake @ conf=1.000. [adaptive edge=0.050]"
     },
     {
       "symbol": "XRP",
@@ -87,95 +175,7 @@
       "price": 0.99,
       "confidence": 1.0,
       "trigger": "directional_90pct",
-      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=1.000 gives edge=0.500 toward UP. Bucket=HighVol+Trend (RV60=15.00331, Eff60=0.037). Fixed $5 USDC stake @ conf=1.000. [adaptive edge=0.050]"
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.99,
-      "confidence": 0.752,
-      "trigger": "forced_edge",
-      "reason": "FORCED TRADE at 60% elapsed \u2014 no prior signal for this window. P(UP)=0.248, choosing DOWN. Fixed $5 USDC stake (every market must be entered)."
-    },
-    {
-      "symbol": "ETH",
-      "slug": "eth-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.99,
-      "confidence": 0.896,
-      "trigger": "forced_edge",
-      "reason": "FORCED TRADE at 60% elapsed \u2014 no prior signal for this window. P(UP)=0.104, choosing DOWN. Fixed $5 USDC stake (every market must be entered)."
-    },
-    {
-      "symbol": "SOL",
-      "slug": "sol-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.99,
-      "confidence": 0.878,
-      "trigger": "forced_edge",
-      "reason": "FORCED TRADE at 60% elapsed \u2014 no prior signal for this window. P(UP)=0.122, choosing DOWN. Fixed $5 USDC stake (every market must be entered)."
-    },
-    {
-      "symbol": "XRP",
-      "slug": "xrp-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.99,
-      "confidence": 0.592,
-      "trigger": "forced_edge",
-      "reason": "FORCED TRADE at 60% elapsed \u2014 no prior signal for this window. P(UP)=0.408, choosing DOWN. Fixed $5 USDC stake (every market must be entered)."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.48,
-      "confidence": 0.52,
-      "trigger": "pre_open",
-      "reason": "PRE-OPEN limit order \u2014 329s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current regime: LowVol+Trend."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.48,
-      "confidence": 0.52,
-      "trigger": "pre_open",
-      "reason": "PRE-OPEN limit order \u2014 329s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Current regime: LowVol+Trend."
-    },
-    {
-      "symbol": "ETH",
-      "slug": "eth-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.48,
-      "confidence": 0.52,
-      "trigger": "pre_open",
-      "reason": "PRE-OPEN limit order \u2014 329s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current regime: HighVol+Range."
-    },
-    {
-      "symbol": "ETH",
-      "slug": "eth-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.48,
-      "confidence": 0.52,
-      "trigger": "pre_open",
-      "reason": "PRE-OPEN limit order \u2014 329s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Current regime: HighVol+Range."
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=1.000 gives edge=0.500 toward UP. Bucket=HighVol+Trend (RV60=16.50458, Eff60=0.042). Fixed $5 USDC stake @ conf=1.000. [adaptive edge=0.050]"
     },
     {
       "symbol": "SOL",
@@ -183,21 +183,10 @@
       "outcome": "UP",
       "side": "BUY",
       "size": 5.0,
-      "price": 0.48,
-      "confidence": 0.52,
-      "trigger": "pre_open",
-      "reason": "PRE-OPEN limit order \u2014 329s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current regime: HighVol+Trend."
-    },
-    {
-      "symbol": "SOL",
-      "slug": "sol-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.48,
-      "confidence": 0.52,
-      "trigger": "pre_open",
-      "reason": "PRE-OPEN limit order \u2014 329s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Current regime: HighVol+Trend."
+      "price": 0.99,
+      "confidence": 1.0,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=1.000 gives edge=0.500 toward UP. Bucket=HighVol+Trend (RV60=14.00436, Eff60=0.017). Fixed $5 USDC stake @ conf=1.000. [adaptive edge=0.050]"
     },
     {
       "symbol": "XRP",
@@ -205,21 +194,32 @@
       "outcome": "UP",
       "side": "BUY",
       "size": 5.0,
-      "price": 0.48,
-      "confidence": 0.52,
-      "trigger": "pre_open",
-      "reason": "PRE-OPEN limit order \u2014 329s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current regime: LowVol+Trend."
+      "price": 0.99,
+      "confidence": 1.0,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=1.000 gives edge=0.500 toward UP. Bucket=HighVol+Trend (RV60=16.26079, Eff60=0.042). Fixed $5 USDC stake @ conf=1.000. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.99,
+      "confidence": 1.0,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=1.000 gives edge=0.500 toward UP. Bucket=HighVol+Trend (RV60=14.00436, Eff60=0.017). Fixed $5 USDC stake @ conf=1.000. [adaptive edge=0.050]"
     },
     {
       "symbol": "XRP",
       "slug": "xrp-updown-15m",
-      "outcome": "DOWN",
+      "outcome": "UP",
       "side": "BUY",
       "size": 5.0,
-      "price": 0.48,
-      "confidence": 0.52,
-      "trigger": "pre_open",
-      "reason": "PRE-OPEN limit order \u2014 329s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Current regime: LowVol+Trend."
+      "price": 0.99,
+      "confidence": 1.0,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=1.000 gives edge=0.500 toward UP. Bucket=HighVol+Trend (RV60=16.26079, Eff60=0.042). Fixed $5 USDC stake @ conf=1.000. [adaptive edge=0.050]"
     }
   ]
 }
