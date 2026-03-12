@@ -317,7 +317,9 @@ async def run(execute: bool = False) -> None:
                 _api_creds = _auth_client.derive_api_key()
                 _auth_client.set_api_creds(_api_creds)  # needed for balance + update calls
 
-                # Order-signing client always uses sig_type=0 (EOA) — no proxy needed
+                # Order-signing client uses sig_type=0 (EOA) with its OWN derived key.
+                # Polymarket pre-validates balance/allowance against the submitting
+                # client's account context — must match the order's sig_type.
                 _clob_client = ClobClient(
                     CLOB_API,
                     key            = os.environ["POLY_PRIVATE_KEY"],
@@ -325,7 +327,8 @@ async def run(execute: bool = False) -> None:
                     signature_type = 0,
                     funder         = os.environ["POLY_ADDRESS"],
                 )
-                _clob_client.set_api_creds(_api_creds)
+                _order_creds = _clob_client.derive_api_key()
+                _clob_client.set_api_creds(_order_creds)
 
                 _signer_addr = _clob_client.signer.address() if callable(_clob_client.signer.address) else _clob_client.signer.address
                 _funder_addr = os.environ["POLY_ADDRESS"]
@@ -470,15 +473,19 @@ async def run(execute: bool = False) -> None:
                     _ensure_approval(_CTF_TOKEN,       "CTF Contract")
                     _ensure_approval(_NEG_RISK_ADAPT,  "NegRiskAdapter")
 
-                # Tell Polymarket's API to refresh its view of on-chain USDC balance/allowance
+                # Refresh Polymarket's cache using the ORDER client (sig_type=0 context)
+                # so the balance/allowance pre-check matches the order's EOA context.
                 try:
                     from py_clob_client.clob_types import BalanceAllowanceParams, AssetType
-                    _auth_client.update_balance_allowance(
+                    _clob_client.update_balance_allowance(
                         BalanceAllowanceParams(asset_type=AssetType.COLLATERAL)
                     )
-                    print(f"{_INFO}  CLOB collateral cache refreshed")
+                    _bal_after = _clob_client.get_balance_allowance(
+                        BalanceAllowanceParams(asset_type=AssetType.COLLATERAL)
+                    )
+                    print(f"{_INFO}  CLOB after refresh — balance: ${int(_bal_after.get('balance',0))/1e6:.2f}  allowance: ${int(_bal_after.get('allowance',0))/1e6:.2f}")
                 except Exception as _uba_exc:
-                    print(f"{_INFO}  update_balance_allowance skipped: {_uba_exc}")
+                    print(f"{_INFO}  update_balance_allowance: {_uba_exc}")
 
                 # Use py_clob_client's post_order — handles Order dataclass serialization
                 resp = _clob_client.post_order(_signed_order, OrderType.GTC)
