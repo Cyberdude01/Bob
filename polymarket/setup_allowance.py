@@ -79,7 +79,7 @@ def main():
         print(f"  {RED}  POLY_PRIVATE_KEY not set in .env")
         sys.exit(1)
 
-    w3   = Web3(Web3.HTTPProvider("https://rpc.ankr.com/polygon"))
+    w3   = Web3(Web3.HTTPProvider("https://polygon.llamarpc.com"))
     acct = Account.from_key(private_key)
     print(f"  {INFO}  wallet:  {acct.address}")
     print(f"  {INFO}  chain:   {w3.eth.chain_id}  (block {w3.eth.block_number})")
