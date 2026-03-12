@@ -300,10 +300,20 @@ async def run(execute: bool = False) -> None:
                         raw_ids = json.loads(raw_ids)
                     if isinstance(raw_outcomes, str):
                         raw_outcomes = json.loads(raw_outcomes)
+                    print(f"{_INFO}  outcomes: {raw_outcomes}")
+                    print(f"{_INFO}  token IDs: {[str(t)[:12]+'…' for t in (raw_ids or [])]}")
                     for tid, outcome in zip(raw_ids, raw_outcomes):
-                        if str(outcome).upper() == "UP":
+                        if str(outcome).upper() in ("UP", "HIGHER", "YES"):
                             token_id_up = str(tid)
                             break
+                    # Also try tokens list format (some markets use this)
+                    if token_id_up is None:
+                        for tok in (market.get("tokens") or []):
+                            if isinstance(tok, dict):
+                                out = str(tok.get("outcome", "")).upper()
+                                if out in ("UP", "HIGHER", "YES"):
+                                    token_id_up = str(tok.get("token_id") or tok.get("tokenId", ""))
+                                    break
                     # NegRisk markets (up/down, multi-outcome) use NegRiskExchange
                     _is_neg_risk = bool(market.get("negRisk") or market.get("neg_risk"))
 
