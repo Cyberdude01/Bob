@@ -420,23 +420,12 @@ async def run(execute: bool = False) -> None:
                     signature_type = 0,
                     funder         = os.environ["POLY_ADDRESS"],
                 )
-                # Prefer stored creds (registered via web UI) over freshly derived key
-                _stored_key = os.environ.get("POLY_API_KEY", "")
-                if _stored_key:
-                    try:
-                        from py_clob_client.clob_types import ApiCreds
-                        _stored_creds = ApiCreds(
-                            api_key        = _stored_key,
-                            api_secret     = os.environ.get("POLY_API_SECRET", ""),
-                            api_passphrase = os.environ.get("POLY_API_PASSPHRASE", ""),
-                        )
-                        _clob_client.set_api_creds(_stored_creds)
-                        _auth_client.set_api_creds(_stored_creds)
-                        print(f"{_INFO}  Using stored API creds (registered account)")
-                    except Exception:
-                        _clob_client.set_api_creds(_api_creds)
-                else:
-                    _clob_client.set_api_creds(_api_creds)
+                # Use derived sig_type=1 creds for both clients.
+                # The stored POLY_API_KEY (if set) is from a different account (sig_type=0
+                # derived, $0 balance). The sig_type=1 derived key is the one seeing $7.
+                # Injecting stored creds overwrites _auth_client and breaks balance checks.
+                _clob_client.set_api_creds(_api_creds)
+                print(f"{_INFO}  Using derived sig_type=1 API creds (balance=$7 account)")
 
                 _signer_addr = _clob_client.signer.address() if callable(getattr(_clob_client.signer, 'address', None)) else getattr(_clob_client.signer, 'address', _clob_client.signer)
                 _auth_signer_raw = getattr(_auth_client.signer, 'address', None)
@@ -620,14 +609,13 @@ async def run(execute: bool = False) -> None:
                     _ensure_approval(_CTF_TOKEN,       "CTF Contract")
                     _ensure_approval(_NEG_RISK_ADAPT,  "NegRiskAdapter")
 
-                # Refresh Polymarket's cache using the ORDER client (sig_type=0 context)
-                # so the balance/allowance pre-check matches the order's EOA context.
+                # Refresh CLOB cache using the auth client (sig_type=1 derived, sees $7).
                 try:
                     from py_clob_client.clob_types import BalanceAllowanceParams, AssetType
-                    _clob_client.update_balance_allowance(
+                    _auth_client.update_balance_allowance(
                         BalanceAllowanceParams(asset_type=AssetType.COLLATERAL)
                     )
-                    _bal_after = _clob_client.get_balance_allowance(
+                    _bal_after = _auth_client.get_balance_allowance(
                         BalanceAllowanceParams(asset_type=AssetType.COLLATERAL)
                     )
                     print(f"{_INFO}  CLOB after refresh — balance: ${int(_bal_after.get('balance',0))/1e6:.2f}  allowance: ${int(_bal_after.get('allowance',0))/1e6:.2f}")
