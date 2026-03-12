@@ -112,63 +112,49 @@ def main():
     usdc = w3.eth.contract(address=w3.to_checksum_address(USDC), abi=USDC_ABI)
     ctf  = w3.eth.contract(address=w3.to_checksum_address(CTF_TOKEN), abi=CTF_ABI)
 
-    # Per docs.polymarket.com/contract-addresses, three approvals are required:
-    # 1. USDC.e → CTF Contract  (splits USDC.e into outcome tokens)
-    # 2. CTF tokens → CTF Exchange  (trade standard markets)
-    # 3. CTF tokens → Neg Risk CTF Exchange  (trade neg-risk markets)
-    # We also approve USDC.e → NegRiskAdapter for neg-risk USDC spending.
+    # Required approvals (source: Polymarket docs + user guide):
+    #
+    # USDC.e must be approved for all three exchange/adapter contracts:
+    #   CTF Exchange, NegRisk CTF Exchange, NegRisk Adapter
+    #
+    # CTF tokens (ERC-1155) must be setApprovalForAll for the same three:
+    #   CTF Exchange, NegRisk CTF Exchange, NegRisk Adapter
 
-    # ── 1. USDC.e → CTF Contract ──────────────────────────────────────────
-    cur = usdc.functions.allowance(
-        w3.to_checksum_address(acct.address),
-        w3.to_checksum_address(CTF_TOKEN),
-    ).call()
-    print(f"\n  {INFO}  USDC allowance (CTF Contract):       ${cur / 1e6:,.2f}")
-    if cur < ALLOWANCE_USDC:
-        _send(w3, acct, usdc.functions.approve(
-            w3.to_checksum_address(CTF_TOKEN), ALLOWANCE_USDC
-        ), "USDC.approve(CTF Contract, $60,000)")
-    else:
-        print(f"  {GREEN}  Already ≥ $60,000 — skipping")
+    # ── USDC.e approvals ──────────────────────────────────────────────────
+    for spender, label in [
+        (CTF_EXCHANGE,          "CTF Exchange"),
+        (NEG_RISK_CTF_EXCHANGE, "NegRisk CTF Exchange"),
+        (NEG_RISK_ADAPTER,      "NegRisk Adapter"),
+    ]:
+        cur = usdc.functions.allowance(
+            w3.to_checksum_address(acct.address),
+            w3.to_checksum_address(spender),
+        ).call()
+        print(f"\n  {INFO}  USDC allowance ({label}): ${cur / 1e6:,.2f}")
+        if cur < ALLOWANCE_USDC:
+            _send(w3, acct, usdc.functions.approve(
+                w3.to_checksum_address(spender), ALLOWANCE_USDC
+            ), f"USDC.approve({label}, $60,000)")
+        else:
+            print(f"  {GREEN}  Already ≥ $60,000 — skipping")
 
-    # ── 2. USDC.e → NegRiskAdapter ────────────────────────────────────────
-    cur2 = usdc.functions.allowance(
-        w3.to_checksum_address(acct.address),
-        w3.to_checksum_address(NEG_RISK_ADAPTER),
-    ).call()
-    print(f"\n  {INFO}  USDC allowance (NegRiskAdapter):     ${cur2 / 1e6:,.2f}")
-    if cur2 < ALLOWANCE_USDC:
-        _send(w3, acct, usdc.functions.approve(
-            w3.to_checksum_address(NEG_RISK_ADAPTER), ALLOWANCE_USDC
-        ), "USDC.approve(NegRiskAdapter, $60,000)")
-    else:
-        print(f"  {GREEN}  Already ≥ $60,000 — skipping")
-
-    # ── 3. CTF tokens → CTF Exchange ──────────────────────────────────────
-    approved = ctf.functions.isApprovedForAll(
-        w3.to_checksum_address(acct.address),
-        w3.to_checksum_address(CTF_EXCHANGE),
-    ).call()
-    print(f"\n  {INFO}  CTF.isApprovedForAll(CTFExchange):      {approved}")
-    if not approved:
-        _send(w3, acct, ctf.functions.setApprovalForAll(
-            w3.to_checksum_address(CTF_EXCHANGE), True
-        ), "CTF.setApprovalForAll(CTFExchange)")
-    else:
-        print(f"  {GREEN}  Already approved — skipping")
-
-    # ── 4. CTF tokens → Neg Risk CTF Exchange ─────────────────────────────
-    approved2 = ctf.functions.isApprovedForAll(
-        w3.to_checksum_address(acct.address),
-        w3.to_checksum_address(NEG_RISK_CTF_EXCHANGE),
-    ).call()
-    print(f"\n  {INFO}  CTF.isApprovedForAll(NegRiskCTFExchange): {approved2}")
-    if not approved2:
-        _send(w3, acct, ctf.functions.setApprovalForAll(
-            w3.to_checksum_address(NEG_RISK_CTF_EXCHANGE), True
-        ), "CTF.setApprovalForAll(NegRiskCTFExchange)")
-    else:
-        print(f"  {GREEN}  Already approved — skipping")
+    # ── CTF token (ERC-1155) approvals ────────────────────────────────────
+    for operator, label in [
+        (CTF_EXCHANGE,          "CTF Exchange"),
+        (NEG_RISK_CTF_EXCHANGE, "NegRisk CTF Exchange"),
+        (NEG_RISK_ADAPTER,      "NegRisk Adapter"),
+    ]:
+        approved = ctf.functions.isApprovedForAll(
+            w3.to_checksum_address(acct.address),
+            w3.to_checksum_address(operator),
+        ).call()
+        print(f"\n  {INFO}  CTF.isApprovedForAll({label}): {approved}")
+        if not approved:
+            _send(w3, acct, ctf.functions.setApprovalForAll(
+                w3.to_checksum_address(operator), True
+            ), f"CTF.setApprovalForAll({label})")
+        else:
+            print(f"  {GREEN}  Already approved — skipping")
 
     print(f"\n  {GREEN}  All allowances set. Ready to trade.\n")
 

@@ -531,8 +531,8 @@ async def run(execute: bool = False) -> None:
                     _usdc_c = _w3d.eth.contract(address=_w3d.to_checksum_address(_USDC), abi=_USDC_ABI)
                     _eoa_bal = _usdc_c.functions.balanceOf(_w3d.to_checksum_address(_acct_d.address)).call()
                     _proxy_bal = _usdc_c.functions.balanceOf(_w3d.to_checksum_address(_poly_addr)).call() if _poly_addr != _acct_d.address else _eoa_bal
-                    _eoa_allow_ctf = _usdc_c.functions.allowance(_w3d.to_checksum_address(_acct_d.address), _w3d.to_checksum_address(_CTF_TOKEN)).call()
-                    _proxy_allow_ctf = _usdc_c.functions.allowance(_w3d.to_checksum_address(_poly_addr), _w3d.to_checksum_address(_CTF_TOKEN)).call() if _poly_addr != _acct_d.address else _eoa_allow_ctf
+                    _eoa_allow_ctf = _usdc_c.functions.allowance(_w3d.to_checksum_address(_acct_d.address), _w3d.to_checksum_address(_CTF_EXCHANGE)).call()
+                    _proxy_allow_ctf = _usdc_c.functions.allowance(_w3d.to_checksum_address(_poly_addr), _w3d.to_checksum_address(_CTF_EXCHANGE)).call() if _poly_addr != _acct_d.address else _eoa_allow_ctf
                     print(f"{_INFO}  On-chain EOA   ({_acct_d.address[:10]}…): balance=${_eoa_bal/1e6:.2f}  allow(CTF)=${_eoa_allow_ctf/1e6:.2f}")
                     if _poly_addr != _acct_d.address:
                         print(f"{_INFO}  On-chain Proxy ({_poly_addr[:10]}…): balance=${_proxy_bal/1e6:.2f}  allow(CTF)=${_proxy_allow_ctf/1e6:.2f}")
@@ -608,8 +608,52 @@ async def run(execute: bool = False) -> None:
                         else:
                             print(f"{_INFO}  {label} already approved")
 
-                    _ensure_approval(_CTF_TOKEN,       "CTF Contract")
-                    _ensure_approval(_NEG_RISK_ADAPT,  "NegRiskAdapter")
+                    # USDC approvals: exchange/adapter contracts need to spend USDC
+                    _ensure_approval(_CTF_EXCHANGE,      "CTF Exchange")
+                    _ensure_approval(_NEG_RISK_EXCHANGE, "NegRisk Exchange")
+                    _ensure_approval(_NEG_RISK_ADAPT,    "NegRiskAdapter")
+
+                    # CTF token (ERC-1155) approvals via setApprovalForAll
+                    _CTF_ABI = [
+                        {"inputs":[{"name":"operator","type":"address"},{"name":"approved","type":"bool"}],
+                         "name":"setApprovalForAll","outputs":[],
+                         "stateMutability":"nonpayable","type":"function"},
+                        {"inputs":[{"name":"account","type":"address"},{"name":"operator","type":"address"}],
+                         "name":"isApprovedForAll","outputs":[{"name":"","type":"bool"}],
+                         "stateMutability":"view","type":"function"},
+                    ]
+                    _ctf = _w3.eth.contract(address=_w3.to_checksum_address(_CTF_TOKEN), abi=_CTF_ABI)
+                    for _op, _lbl in [
+                        (_CTF_EXCHANGE,      "CTF Exchange"),
+                        (_NEG_RISK_EXCHANGE, "NegRisk Exchange"),
+                        (_NEG_RISK_ADAPT,    "NegRiskAdapter"),
+                    ]:
+                        _is_approved = _ctf.functions.isApprovedForAll(
+                            _w3.to_checksum_address(_acct.address),
+                            _w3.to_checksum_address(_op),
+                        ).call()
+                        print(f"{_INFO}  CTF.isApprovedForAll({_lbl}): {_is_approved}")
+                        if not _is_approved:
+                            _atx = _ctf.functions.setApprovalForAll(
+                                _w3.to_checksum_address(_op), True
+                            ).build_transaction({
+                                "from":                 _acct.address,
+                                "nonce":                _w3.eth.get_transaction_count(_acct.address),
+                                "gas":                  100_000,
+                                "maxFeePerGas":         _w3.to_wei("150", "gwei"),
+                                "maxPriorityFeePerGas": _w3.to_wei("30",  "gwei"),
+                                "chainId":              137,
+                            })
+                            _satx = _w3.eth.account.sign_transaction(_atx, os.environ["POLY_PRIVATE_KEY"])
+                            _ath = _w3.eth.send_raw_transaction(_satx.raw_transaction)
+                            print(f"{_INFO}  setApprovalForAll({_lbl}) tx: {_ath.hex()}")
+                            _ar = _w3.eth.wait_for_transaction_receipt(_ath, timeout=60)
+                            if _ar.status == 1:
+                                print(f"{_PASS}  {_lbl} CTF approval confirmed")
+                            else:
+                                print(f"{_WARN}  {_lbl} setApprovalForAll reverted")
+                        else:
+                            print(f"{_INFO}  {_lbl} CTF already approved")
 
                 # NOTE: do NOT call update_balance_allowance — it rescans on-chain USDC
                 # and overwrites the CLOB's internal $7 ledger with the EOA's on-chain $0.
