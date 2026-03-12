@@ -164,16 +164,69 @@ async def run(execute: bool = False) -> None:
 
             _sig_type = int(os.environ.get("POLY_SIGNATURE_TYPE", "1"))
             print(f"{_INFO}  signature_type={_sig_type} (POLY_SIGNATURE_TYPE)")
+            _env_address = os.environ["POLY_ADDRESS"]
             client = ClobClient(
                 CLOB_API,
                 key=os.environ["POLY_PRIVATE_KEY"],
                 chain_id=137,
                 signature_type=_sig_type,
-                funder=os.environ["POLY_ADDRESS"],
+                funder=_env_address,
             )
             client.set_api_creds(client.derive_api_key())
             creds = client.get_api_keys()
             print(f"{_INFO}  Derived POLY-API-KEY={str(getattr(creds, 'api_key', creds))[:8]}…")
+
+            # Discover the actual signer/funder address used by this client
+            # For sig_type=1 (POLY_PROXY), this should be the PROXY wallet address,
+            # which may differ from POLY_ADDRESS (EOA) in /etc/polymarket.env
+            try:
+                _signer_obj = client.signer
+                _raw_addr = _signer_obj.address() if callable(getattr(_signer_obj, 'address', None)) else getattr(_signer_obj, 'address', None)
+                if _raw_addr:
+                    print(f"{_INFO}  CLOB signer address (sig_type={_sig_type}): {_raw_addr}")
+                    if str(_raw_addr).lower() != str(_env_address).lower():
+                        print(f"{_WARN}  *** PROXY WALLET DETECTED ***")
+                        print(f"{_WARN}  POLY_ADDRESS in env : {_env_address}  ← EOA")
+                        print(f"{_WARN}  Actual proxy wallet : {_raw_addr}  ← where USDC lives")
+                        print(f"{_WARN}  Action: set POLY_ADDRESS={_raw_addr} in /etc/polymarket.env")
+            except Exception as _sa_exc:
+                print(f"{_INFO}  Could not determine signer address: {_sa_exc}")
+
+            # Also try to fetch profile/me from CLOB to get the canonical address
+            try:
+                import aiohttp as _aio
+                _ts2  = str(int(time.time()))
+                _msg2 = _ts2 + "GET" + "/profile"
+                _key2 = getattr(client.creds, 'api_key', '') or ''
+                _sec2 = getattr(client.creds, 'api_secret', '') or ''
+                _pss2 = getattr(client.creds, 'api_passphrase', '') or ''
+                if _key2 and _sec2:
+                    import base64, hmac, hashlib
+                    try:
+                        _sb2 = base64.b64decode(_sec2)
+                    except Exception:
+                        _sb2 = _sec2.encode()
+                    _sig2 = base64.b64encode(hmac.new(_sb2, _msg2.encode(), hashlib.sha256).digest()).decode()
+                    _hdrs2 = {
+                        "POLY-ADDRESS":    _env_address,
+                        "POLY-SIGNATURE":  _sig2,
+                        "POLY-TIMESTAMP":  _ts2,
+                        "POLY-API-KEY":    _key2,
+                        "POLY-PASSPHRASE": _pss2,
+                    }
+                    async with session.get(
+                        f"{CLOB_API}/profile",
+                        headers=_hdrs2,
+                        timeout=aiohttp.ClientTimeout(total=5),
+                    ) as _pr:
+                        if _pr.status == 200:
+                            _profile = await _pr.json()
+                            print(f"{_INFO}  CLOB /profile: {_profile}")
+                        else:
+                            _pt = await _pr.text()
+                            print(f"{_INFO}  CLOB /profile → {_pr.status}: {_pt[:120]}")
+            except Exception as _pe:
+                print(f"{_INFO}  /profile call skipped: {_pe}")
 
             bal = client.get_balance_allowance(
                 BalanceAllowanceParams(asset_type=AssetType.COLLATERAL)
@@ -345,11 +398,17 @@ async def run(execute: bool = False) -> None:
                 else:
                     _clob_client.set_api_creds(_api_creds)
 
-                _signer_addr = _clob_client.signer.address() if callable(_clob_client.signer.address) else _clob_client.signer.address
+                _signer_addr = _clob_client.signer.address() if callable(getattr(_clob_client.signer, 'address', None)) else getattr(_clob_client.signer, 'address', _clob_client.signer)
+                _auth_signer_raw = getattr(_auth_client.signer, 'address', None)
+                _auth_signer_addr = _auth_signer_raw() if callable(_auth_signer_raw) else _auth_signer_raw
                 _funder_addr = os.environ["POLY_ADDRESS"]
-                print(f"{_INFO}  signer EOA:   {_signer_addr}")
-                print(f"{_INFO}  funder/maker: {_funder_addr}")
-                print(f"{_INFO}  auth sig_type={_auth_sig_type}, order sig_type=0 (EOA)")
+                print(f"{_INFO}  order signer (sig_type=0): {_signer_addr}")
+                print(f"{_INFO}  auth  signer (sig_type={_auth_sig_type}): {_auth_signer_addr}")
+                print(f"{_INFO}  POLY_ADDRESS (env funder):  {_funder_addr}")
+                if _auth_signer_addr and str(_auth_signer_addr).lower() != str(_funder_addr).lower():
+                    print(f"{_WARN}  *** MISMATCH: proxy wallet ({_auth_signer_addr}) != POLY_ADDRESS ({_funder_addr})")
+                    print(f"{_WARN}  The $7 USDC is at {_auth_signer_addr}")
+                    print(f"{_WARN}  Update POLY_ADDRESS={_auth_signer_addr} in /etc/polymarket.env")
 
                 # Build OrderArgs — try with neg_risk if supported by installed version
                 _neg_risk = _is_neg_risk if '_is_neg_risk' in dir() else False
