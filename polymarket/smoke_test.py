@@ -390,7 +390,7 @@ async def run(execute: bool = False) -> None:
                     print(f"{_INFO}  On-chain allowance: {_on_chain_allowance / 1e6:.2f} USDC")
                     if _on_chain_allowance < 5 * 10**6:
                         _tx = _usdc.functions.approve(
-                            _w3.to_checksum_address(_CTF), 2**256 - 1
+                            _w3.to_checksum_address(_CTF), 60_000 * 10**6  # $60,000
                         ).build_transaction({
                             "from":                 _acct.address,
                             "nonce":                _w3.eth.get_transaction_count(_acct.address),
