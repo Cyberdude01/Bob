@@ -357,10 +357,22 @@ async def run(execute: bool = False) -> None:
                 allowance = int(bal.get("allowance", 0))
                 if allowance == 0:
                     print(f"{_INFO}  Allowance is $0 — setting USDC approval…")
-                    _clob_client.update_balance_allowance(
+                    upd = _clob_client.update_balance_allowance(
                         BalanceAllowanceParams(asset_type=AssetType.COLLATERAL)
                     )
-                    print(f"{_INFO}  Allowance set.")
+                    print(f"{_INFO}  update_balance_allowance response: {upd}")
+                    # Poll until allowance confirmed (on-chain tx needs block confirmation)
+                    for _attempt in range(10):
+                        await __import__("asyncio").sleep(2)
+                        bal2 = _clob_client.get_balance_allowance(
+                            BalanceAllowanceParams(asset_type=AssetType.COLLATERAL)
+                        )
+                        allowance = int(bal2.get("allowance", 0))
+                        print(f"{_INFO}  Allowance check #{_attempt+1}: {allowance/1e6:.2f} USDC")
+                        if allowance > 0:
+                            break
+                    else:
+                        print(f"{_WARN}  Allowance still $0 after 20s — proceeding anyway")
 
                 # Use py_clob_client's post_order — handles Order dataclass serialization
                 resp = _clob_client.post_order(_signed_order, OrderType.GTC)
