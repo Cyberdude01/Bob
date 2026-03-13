@@ -1,6 +1,6 @@
 # Trigger Performance Summary — V2.0 Dev
 
-> **Updated:** `2026-03-13 12:19:31 AM ET` &nbsp;|&nbsp; **Tracking from:** `2026-03-10 02:56 AM ET`
+> **Updated:** `2026-03-13 12:24:46 AM ET` &nbsp;|&nbsp; **Tracking from:** `2026-03-10 02:56 AM ET`
 
 > **V2.0 Dev strategy** — forced_coin and forced_edge suppressed. Tests whether trend_follow and directional_90pct drive performance. Strategy isolation is enforced at the instance level (separate STRATEGY_VERSION=v2 run). Showing all trades since epoch — when running V2, forced rows will not appear.
 
