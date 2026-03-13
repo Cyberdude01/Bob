@@ -1,17 +1,29 @@
 # Decision Engine Summary
 
-> **Updated:** `2026-03-13 06:19:34 PM ET` &nbsp;|&nbsp; All signals from the last 48 hours
+> **Updated:** `2026-03-13 06:24:41 PM ET` &nbsp;|&nbsp; All signals from the last 48 hours
 
 ## Signal Distribution
 | Trigger | Count |
 | -------------------- | ----- |
 | `directional_90pct` | 117 |
-| `trend_follow` | 75 |
-| `pre_open` | 8 |
+| `trend_follow` | 64 |
+| `pre_open` | 16 |
+| `forced_edge` | 3 |
 
 ## Signal Log
 | Time (ET) | Symbol | Slug | Outcome | Trigger | Confidence | P(UP) | Bucket | Elapsed% | Reasoning |
 | --------------- | ------ | ----------------- | ------- | -------------------- | ---------- | ----- | -------------- | -------- | -------------------------------------------------- |
+| `2026-03-13 06:24 PM ET` | XRP | xrp-updown-15m | **DOWN** | `pre_open` | 0.520 | 7.8% | HighVol+Trend | 63.5% | PRE-OPEN limit order — 328s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Current regime: HighVol+T |
+| `2026-03-13 06:24 PM ET` | XRP | xrp-updown-15m | **UP** | `pre_open` | 0.520 | 7.8% | HighVol+Trend | 63.5% | PRE-OPEN limit order — 328s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current regime: HighVol+Tre |
+| `2026-03-13 06:24 PM ET` | SOL | sol-updown-15m | **DOWN** | `pre_open` | 0.520 | 21.2% | HighVol+Range | 63.5% | PRE-OPEN limit order — 328s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Current regime: HighVol+R |
+| `2026-03-13 06:24 PM ET` | SOL | sol-updown-15m | **UP** | `pre_open` | 0.520 | 21.2% | HighVol+Range | 63.5% | PRE-OPEN limit order — 328s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current regime: HighVol+Ran |
+| `2026-03-13 06:24 PM ET` | ETH | eth-updown-15m | **DOWN** | `pre_open` | 0.520 | 22.6% | LowVol+Range | 63.5% | PRE-OPEN limit order — 328s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Current regime: LowVol+Ra |
+| `2026-03-13 06:24 PM ET` | ETH | eth-updown-15m | **UP** | `pre_open` | 0.520 | 22.6% | LowVol+Range | 63.5% | PRE-OPEN limit order — 328s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current regime: LowVol+Rang |
+| `2026-03-13 06:24 PM ET` | BTC | btc-updown-15m | **DOWN** | `pre_open` | 0.520 | 21.9% | LowVol+Range | 63.5% | PRE-OPEN limit order — 328s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Current regime: LowVol+Ra |
+| `2026-03-13 06:24 PM ET` | BTC | btc-updown-15m | **UP** | `pre_open` | 0.520 | 21.9% | LowVol+Range | 63.5% | PRE-OPEN limit order — 328s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current regime: LowVol+Rang |
+| `2026-03-13 06:23 PM ET` | XRP | xrp-updown-15m | **DOWN** | `forced_edge` | 0.914 | 8.6% | HighVol+Trend | 57.3% | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.086, choosing DOWN. Fixed $5 USDC stake (every ma |
+| `2026-03-13 06:23 PM ET` | BTC | btc-updown-15m | **DOWN** | `forced_edge` | 0.752 | 24.8% | LowVol+Range | 57.3% | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.248, choosing DOWN. Fixed $5 USDC stake (every ma |
+| `2026-03-13 06:23 PM ET` | ETH | eth-updown-15m | **DOWN** | `forced_edge` | 0.716 | 28.4% | LowVol+Range | 56.8% | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.284, choosing DOWN. Fixed $5 USDC stake (every ma |
 | `2026-03-13 06:15 PM ET` | SOL | sol-updown-15m | **UP** | `trend_follow` | 0.600 | 58.8% | HighVol+Trend | 5.4% | TREND FOLLOW (HighVol+Trend, 5% elapsed) — UP token at 0.990 deviates 0.100 from 0.50. Momentum continuation strategy: b |
 | `2026-03-13 06:15 PM ET` | SOL | sol-updown-15m | **UP** | `trend_follow` | 0.600 | 58.8% | HighVol+Trend | 5.2% | TREND FOLLOW (HighVol+Trend, 5% elapsed) — UP token at 0.990 deviates 0.100 from 0.50. Momentum continuation strategy: b |
 | `2026-03-13 06:15 PM ET` | SOL | sol-updown-15m | **UP** | `trend_follow` | 0.600 | 58.8% | HighVol+Trend | 5.0% | TREND FOLLOW (HighVol+Trend, 5% elapsed) — UP token at 0.990 deviates 0.100 from 0.50. Momentum continuation strategy: b |
@@ -201,17 +213,6 @@
 | `2026-03-13 06:07 PM ET` | SOL | sol-updown-15m | **DOWN** | `trend_follow` | 0.960 | 9.5% | HighVol+Trend | 50.9% | TREND FOLLOW (HighVol+Trend, 51% elapsed) — DOWN token at 0.970 deviates 0.460 from 0.50. Momentum continuation strategy |
 | `2026-03-13 06:07 PM ET` | SOL | sol-updown-15m | **DOWN** | `trend_follow` | 0.960 | 9.5% | HighVol+Trend | 50.7% | TREND FOLLOW (HighVol+Trend, 51% elapsed) — DOWN token at 0.970 deviates 0.460 from 0.50. Momentum continuation strategy |
 | `2026-03-13 06:07 PM ET` | ETH | eth-updown-15m | **DOWN** | `trend_follow` | 0.955 | 10.0% | HighVol+Trend | 50.3% | TREND FOLLOW (HighVol+Trend, 50% elapsed) — DOWN token at 0.960 deviates 0.455 from 0.50. Momentum continuation strategy |
-| `2026-03-13 06:07 PM ET` | SOL | sol-updown-15m | **DOWN** | `trend_follow` | 0.950 | 10.4% | HighVol+Trend | 50.0% | TREND FOLLOW (HighVol+Trend, 50% elapsed) — DOWN token at 0.960 deviates 0.450 from 0.50. Momentum continuation strategy |
-| `2026-03-13 06:07 PM ET` | ETH | eth-updown-15m | **DOWN** | `trend_follow` | 0.955 | 10.0% | HighVol+Trend | 50.0% | TREND FOLLOW (HighVol+Trend, 50% elapsed) — DOWN token at 0.960 deviates 0.455 from 0.50. Momentum continuation strategy |
-| `2026-03-13 06:07 PM ET` | SOL | sol-updown-15m | **DOWN** | `trend_follow` | 0.950 | 10.4% | HighVol+Trend | 49.8% | TREND FOLLOW (HighVol+Trend, 50% elapsed) — DOWN token at 0.960 deviates 0.450 from 0.50. Momentum continuation strategy |
-| `2026-03-13 06:07 PM ET` | ETH | eth-updown-15m | **DOWN** | `trend_follow` | 0.955 | 10.0% | HighVol+Trend | 49.8% | TREND FOLLOW (HighVol+Trend, 50% elapsed) — DOWN token at 0.960 deviates 0.455 from 0.50. Momentum continuation strategy |
-| `2026-03-13 06:07 PM ET` | SOL | sol-updown-15m | **DOWN** | `trend_follow` | 0.935 | 11.7% | HighVol+Trend | 47.8% | TREND FOLLOW (HighVol+Trend, 48% elapsed) — DOWN token at 0.990 deviates 0.435 from 0.50. Momentum continuation strategy |
-| `2026-03-13 06:06 PM ET` | ETH | eth-updown-15m | **DOWN** | `trend_follow` | 0.935 | 11.7% | HighVol+Trend | 45.4% | TREND FOLLOW (HighVol+Trend, 45% elapsed) — DOWN token at 0.990 deviates 0.435 from 0.50. Momentum continuation strategy |
-| `2026-03-13 06:06 PM ET` | ETH | eth-updown-15m | **DOWN** | `trend_follow` | 0.935 | 11.7% | HighVol+Trend | 45.1% | TREND FOLLOW (HighVol+Trend, 45% elapsed) — DOWN token at 0.940 deviates 0.435 from 0.50. Momentum continuation strategy |
-| `2026-03-13 06:06 PM ET` | ETH | eth-updown-15m | **DOWN** | `trend_follow` | 0.935 | 11.7% | HighVol+Trend | 44.9% | TREND FOLLOW (HighVol+Trend, 45% elapsed) — DOWN token at 0.940 deviates 0.435 from 0.50. Momentum continuation strategy |
-| `2026-03-13 06:06 PM ET` | SOL | sol-updown-15m | **DOWN** | `trend_follow` | 0.910 | 14.8% | HighVol+Trend | 44.2% | TREND FOLLOW (HighVol+Trend, 44% elapsed) — DOWN token at 0.910 deviates 0.410 from 0.50. Momentum continuation strategy |
-| `2026-03-13 06:06 PM ET` | ETH | eth-updown-15m | **DOWN** | `trend_follow` | 0.955 | 10.0% | HighVol+Trend | 44.0% | TREND FOLLOW (HighVol+Trend, 44% elapsed) — DOWN token at 0.960 deviates 0.455 from 0.50. Momentum continuation strategy |
-| `2026-03-13 06:06 PM ET` | ETH | eth-updown-15m | **DOWN** | `trend_follow` | 0.955 | 10.0% | HighVol+Trend | 43.8% | TREND FOLLOW (HighVol+Trend, 44% elapsed) — DOWN token at 0.960 deviates 0.455 from 0.50. Momentum continuation strategy |
 
 ---
 _Auto-generated by **Bob the builder**_
