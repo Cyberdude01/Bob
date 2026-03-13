@@ -211,31 +211,37 @@ def redeem_one(
     print(f"\n  {INFO}  Redeeming: {title}")
     print(f"  {INFO}  conditionId={condition_id}  outcomeIndex={outcome_index}  indexSet={index_set}  negRisk={neg_risk}  size={size:.4f}")
 
+    # Encode the redeemPositions call.
+    # web3.py v6+ removed encodeABI(); use build_transaction to extract 'data' instead.
+    _dummy_tx_params = {
+        "from": acct.address, "nonce": 0, "gas": 300_000,
+        "gasPrice": 0, "chainId": 137,
+    }
     if neg_risk:
-        call_data = neg_risk_contract.encodeABI(
-            fn_name="redeemPositions",
-            args=[_to_bytes32(condition_id), [index_set]],
-        )
         target = w3.to_checksum_address(NEG_RISK_ADAPTER)
+        inner_data = bytes.fromhex(
+            neg_risk_contract.functions.redeemPositions(
+                _to_bytes32(condition_id), [index_set]
+            ).build_transaction(_dummy_tx_params)["data"][2:]
+        )
     else:
-        call_data = ctf.encodeABI(
-            fn_name="redeemPositions",
-            args=[
+        target = w3.to_checksum_address(CTF_TOKEN)
+        inner_data = bytes.fromhex(
+            ctf.functions.redeemPositions(
                 w3.to_checksum_address(USDC),
-                b"\x00" * 32,                     # parentCollectionId = bytes32(0)
+                b"\x00" * 32,           # parentCollectionId = bytes32(0)
                 _to_bytes32(condition_id),
                 [index_set],
-            ],
+            ).build_transaction(_dummy_tx_params)["data"][2:]
         )
-        target = w3.to_checksum_address(CTF_TOKEN)
 
     if dry_run:
-        print(f"  {INFO}  [dry-run] would call factory.proxy([{{typeCode:1, to:{target}, data:{call_data[:20]}…}}])")
+        print(f"  {INFO}  [dry-run] would call factory.proxy([{{typeCode:1, to:{target}, data:{inner_data[:8].hex()}…}}])")
         return True
 
     nonce = w3.eth.get_transaction_count(acct.address)
     tx = factory.functions.proxy([
-        {"typeCode": 1, "to": target, "value": 0, "data": bytes.fromhex(call_data[2:])}
+        {"typeCode": 1, "to": target, "value": 0, "data": inner_data}
     ]).build_transaction({
         "from":                 acct.address,
         "nonce":                nonce,
@@ -297,21 +303,20 @@ def main() -> None:
 
     proxy_address = Web3.to_checksum_address(proxy_address)
 
-    if not args.dry_run:
-        w3 = _connect_rpc()
-        print(f"  {INFO}  RPC connected  chain={w3.eth.chain_id}  block={w3.eth.block_number}")
-        acct    = Account.from_key(private_key)
-        factory = w3.eth.contract(address=w3.to_checksum_address(PROXY_FACTORY), abi=FACTORY_ABI)
-        ctf     = w3.eth.contract(address=w3.to_checksum_address(CTF_TOKEN),     abi=CTF_REDEEM_ABI)
-        neg_risk_contract = w3.eth.contract(
-            address=w3.to_checksum_address(NEG_RISK_ADAPTER), abi=NEG_RISK_REDEEM_ABI
-        )
-        pol_bal = w3.eth.get_balance(acct.address)
-        print(f"  {INFO}  Signer EOA: {acct.address}  POL: {pol_bal/1e18:.4f}")
-        print(f"  {INFO}  Proxy wallet: {proxy_address}")
-    else:
+    # Always connect — contracts needed for ABI encoding even in dry-run
+    w3 = _connect_rpc()
+    print(f"  {INFO}  RPC connected  chain={w3.eth.chain_id}  block={w3.eth.block_number}")
+    acct    = Account.from_key(private_key)
+    factory = w3.eth.contract(address=w3.to_checksum_address(PROXY_FACTORY), abi=FACTORY_ABI)
+    ctf     = w3.eth.contract(address=w3.to_checksum_address(CTF_TOKEN),     abi=CTF_REDEEM_ABI)
+    neg_risk_contract = w3.eth.contract(
+        address=w3.to_checksum_address(NEG_RISK_ADAPTER), abi=NEG_RISK_REDEEM_ABI
+    )
+    pol_bal = w3.eth.get_balance(acct.address)
+    print(f"  {INFO}  Signer EOA: {acct.address}  POL: {pol_bal/1e18:.4f}")
+    print(f"  {INFO}  Proxy wallet: {proxy_address}")
+    if args.dry_run:
         print(f"  {INFO}  [dry-run mode — no transactions will be sent]")
-        w3 = acct = factory = ctf = neg_risk_contract = None  # type: ignore
 
     if args.once or args.dry_run:
         run_once(proxy_address, w3, acct, factory, ctf, neg_risk_contract, dry_run=args.dry_run)
