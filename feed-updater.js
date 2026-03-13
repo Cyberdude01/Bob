@@ -656,11 +656,7 @@ ${rows}
 | [Data Collector](reports/data_collector.md) | Raw + calculated data log (last 48 h) |
 | [Decision Summary](reports/decision_summary.md) | Analysis behind every signal (last 200) |
 | [Decision Tracker](reports/decision_tracker.md) | Full trade history with entry, resolution and P&L |
-| [Trigger Summary](reports/trigger_summary.md) | UP/DOWN trades, wins and losses by trigger (current epoch only) |
-| [Trigger Summary v2](reports/trigger_summary_v2.md) | Trigger P&L by symbol — fresh epoch, clean baseline |
-| [**V1.0 Prod** Trigger Summary](reports/trigger_summary_v1_Prod.md) | V1.0 Production — ring-fenced trigger performance |
-| [**V2.0 Dev** Trigger Summary](reports/trigger_summary_v3.md) | V2.0 Dev — trend_follow + directional_90pct focus (forced suppressed) |
-| [**V3.0 Dev** Trigger Summary](reports/trigger_summary_v4.md) | V3.0 Dev — all triggers active |
+| [Trigger Summary](reports/trigger_summary.md) | UP/DOWN trades, wins and losses by trigger |
 | [Market P&L](reports/market_pnl.md) | Bets and P&L per market window, grouped by symbol |
 | [**V1.0 Prod** Market P&L](reports/market_V1_pnl.md) | V1.0 Production — market P&L view |
 
@@ -793,8 +789,7 @@ function run() {
   // Bump timestamps on history-only reports (data unchanged, timestamp refreshed)
   for (const f of [
     'decision_summary.md', 'decision_tracker.md',
-    'trigger_summary.md',  'trigger_summary_v1_Prod.md',
-    'trigger_summary_v2.md', 'trigger_summary_v3.md', 'trigger_summary_v4.md',
+    'trigger_summary.md',
     'market_pnl.md', 'market_V1_pnl.md',
   ]) {
     bumpReportTimestamp(path.join(REPORTS_DIR, f), tsStr);
