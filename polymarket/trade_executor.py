@@ -25,7 +25,7 @@ import json
 import os
 import sys
 import time
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
@@ -44,6 +44,11 @@ _DATA_DIR      = _PKG_ROOT / "data_exports"
 _SIGNALS_FILE  = _DATA_DIR / "signals.json"
 _MARKETS_FILE  = _DATA_DIR / "markets.json"
 _EXECUTED_FILE = _DATA_DIR / "executed.json"
+
+# ─── Constants ────────────────────────────────────────────────────────────────
+
+# Signals older than this are rejected — prevents stale signals trading future markets
+MAX_SIGNAL_AGE_HOURS = 4
 
 # ─── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -84,6 +89,48 @@ def _load_executed() -> Dict[str, Any]:
 
 def _dedup_key(slug: str, outcome: str, updated_ts: str) -> str:
     return f"{slug}:{outcome}:{updated_ts}"
+
+
+def _parse_signals_updated(updated_str: str) -> Optional[datetime]:
+    """
+    Parse the 'updated' field from signals.json, e.g. '2026-03-10 07:17:05 AM ET'.
+    Returns a UTC-aware datetime, or None if parsing fails.
+    Eastern Time is approximated as UTC-5 (conservative; covers both EST and EDT).
+    """
+    # Strip trailing timezone label and parse
+    cleaned = updated_str.strip()
+    for tz_label in (" ET", " EST", " EDT", " UTC"):
+        if cleaned.endswith(tz_label):
+            cleaned = cleaned[: -len(tz_label)].strip()
+            break
+
+    for fmt in ("%Y-%m-%d %I:%M:%S %p", "%Y-%m-%d %H:%M:%S"):
+        try:
+            naive = datetime.strptime(cleaned, fmt)
+            # Treat ET as UTC-5 (conservative; worst-case is 1h off in EDT)
+            return naive.replace(tzinfo=timezone.utc) + timedelta(hours=5)
+        except ValueError:
+            continue
+    return None
+
+
+def _check_signals_freshness(updated_str: str) -> Optional[str]:
+    """
+    Returns an error message string if signals are too old, else None.
+    """
+    signals_dt = _parse_signals_updated(updated_str)
+    if signals_dt is None:
+        return f"Could not parse signals 'updated' timestamp: {updated_str!r}"
+
+    age = datetime.now(timezone.utc) - signals_dt
+    if age > timedelta(hours=MAX_SIGNAL_AGE_HOURS):
+        hours_old = age.total_seconds() / 3600
+        return (
+            f"signals.json is {hours_old:.1f}h old (updated: {updated_str}). "
+            f"Max allowed age is {MAX_SIGNAL_AGE_HOURS}h. "
+            f"Refusing to execute — stale signals may target wrong market dates."
+        )
+    return None
 
 
 # ─── Market token lookup ───────────────────────────────────────────────────────
@@ -249,6 +296,13 @@ def run(execute: bool = False) -> None:
     signals: List[Dict[str, Any]] = signals_raw.get("data", [])
     print(f"signals.json updated : {signals_updated}")
     print(f"signals found        : {len(signals)}")
+
+    # ── Staleness guard ────────────────────────────────────────────────────
+    freshness_err = _check_signals_freshness(signals_updated)
+    if freshness_err:
+        print(f"\nERROR: {freshness_err}")
+        print("Update signals.json before re-running.\n")
+        return
 
     try:
         markets_raw = _load_json(_MARKETS_FILE)
