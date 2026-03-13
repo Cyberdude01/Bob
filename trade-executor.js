@@ -2,21 +2,19 @@ const { ClobClient, Side, OrderType } = require('@polymarket/clob-client');
 const { ethers } = require('ethers');
 const fs = require('fs');
 const path = require('path');
-require('dotenv').config();
+require('dotenv').config({ path: '/etc/polymarket.env' });
 
 // ── Config ──────────────────────────────────────────────────────────────────
-const CLOB_HOST   = 'https://clob.polymarket.com';
-const CHAIN_ID    = 137; // Polygon mainnet
+const CLOB_HOST    = process.env.POLYMARKET_API_URL || 'https://clob.polymarket.com';
+const CHAIN_ID     = 137; // Polygon mainnet
+const SIG_TYPE     = parseInt(process.env.POLY_SIGNATURE_TYPE || '0', 10);
 const SIGNALS_FILE = path.join(__dirname, 'data_exports', 'signals.json');
 const TRADES_FILE  = path.join(__dirname, 'data_exports', 'trades.json');
 const GAMMA_BASE   = 'https://gamma-api.polymarket.com';
 
 // ── Credential checks ────────────────────────────────────────────────────────
-const REQUIRED_ENV = ['PK', 'CLOB_API_KEY', 'CLOB_SECRET', 'CLOB_PASS_PHRASE'];
-const missing = REQUIRED_ENV.filter(k => !process.env[k]);
-if (missing.length > 0) {
-  console.error(`[trade-executor] Missing required env vars: ${missing.join(', ')}`);
-  console.error('Copy .env.example to .env and fill in your credentials.');
+if (!process.env.POLY_PRIVATE_KEY) {
+  console.error('[trade-executor] Missing POLY_PRIVATE_KEY in /etc/polymarket.env');
   process.exit(1);
 }
 
@@ -79,15 +77,30 @@ async function fetchBestAsk(tokenId) {
   return parseFloat(asks[0].price);
 }
 
-// ── Build CLOB client ─────────────────────────────────────────────────────────
-function buildClient() {
-  const wallet = new ethers.Wallet(process.env.PK);
-  const creds  = {
-    key:        process.env.CLOB_API_KEY,
-    secret:     process.env.CLOB_SECRET,
-    passphrase: process.env.CLOB_PASS_PHRASE,
-  };
-  return new ClobClient(CLOB_HOST, CHAIN_ID, wallet, creds);
+// ── Build CLOB client (with optional API-key derivation) ─────────────────────
+async function buildClient() {
+  const wallet = new ethers.Wallet(process.env.POLY_PRIVATE_KEY);
+
+  // Use explicit API creds if available, otherwise derive from private key
+  let creds;
+  if (process.env.POLY_API_KEY && process.env.POLY_API_SECRET && process.env.POLY_API_PASSPHRASE) {
+    creds = {
+      key:        process.env.POLY_API_KEY,
+      secret:     process.env.POLY_API_SECRET,
+      passphrase: process.env.POLY_API_PASSPHRASE,
+    };
+    console.log('[trade-executor] Using existing CLOB API credentials.');
+  } else {
+    console.log('[trade-executor] No CLOB API creds found — deriving from private key…');
+    // Build a temporary client (L1 only) to derive credentials
+    const tmpClient = new ClobClient(CLOB_HOST, CHAIN_ID, wallet);
+    creds = await tmpClient.createOrDeriveApiKey();
+    console.log(`[trade-executor] Derived API key: ${creds.key}`);
+  }
+
+  // SIG_TYPE 1 = POLY_PROXY — pass POLY_ADDRESS as funderAddress
+  const funder = SIG_TYPE === 1 ? process.env.POLY_ADDRESS : undefined;
+  return new ClobClient(CLOB_HOST, CHAIN_ID, wallet, creds, SIG_TYPE, funder);
 }
 
 // ── Execute a single signal ────────────────────────────────────────────────────
@@ -171,7 +184,7 @@ async function main() {
   }
 
   console.log(`[trade-executor] ${candidates.length} signal(s) to execute…`);
-  const client = buildClient();
+  const client = await buildClient();
 
   for (const [key, sig] of candidates) {
     try {
