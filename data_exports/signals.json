@@ -1,27 +1,27 @@
 {
-  "updated": "2026-03-13 12:40:37 AM ET",
+  "updated": "2026-03-13 12:45:53 AM ET",
   "data": [
     {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.8,
-      "confidence": 0.795,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 66% elapsed) \u2014 UP token at 0.800 deviates 0.295 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
       "symbol": "SOL",
       "slug": "sol-updown-15m",
       "outcome": "UP",
       "side": "BUY",
       "size": 5.0,
-      "price": 0.85,
-      "confidence": 0.845,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 66% elapsed) \u2014 UP token at 0.850 deviates 0.345 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+      "price": 0.5,
+      "confidence": 0.872,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=0.872 gives edge=0.372 toward UP. Bucket=HighVol+Range (RV60=13.09261, Eff60=0.000). Fixed $5 USDC stake @ conf=0.872. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.5,
+      "confidence": 1.0,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=1.000 gives edge=0.500 toward UP. Bucket=HighVol+Trend (RV60=16.70058, Eff60=0.033). Fixed $5 USDC stake @ conf=1.000. [adaptive edge=0.050]"
     },
     {
       "symbol": "BTC",
@@ -30,20 +30,64 @@
       "side": "BUY",
       "size": 5.0,
       "price": 0.99,
-      "confidence": 0.795,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 66% elapsed) \u2014 UP token at 0.990 deviates 0.295 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+      "confidence": 0.865,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=0.865 gives edge=0.365 toward UP. Bucket=HighVol+Range (RV60=16.39079, Eff60=0.001). Fixed $5 USDC stake @ conf=0.865. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "ETH",
+      "slug": "eth-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.07,
+      "confidence": 0.834,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=0.166 gives edge=0.334 toward DOWN. Bucket=HighVol+Range (RV60=11.24615, Eff60=0.017). Fixed $5 USDC stake @ conf=0.834. [adaptive edge=0.050]"
     },
     {
       "symbol": "SOL",
       "slug": "sol-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 1.0,
+      "confidence": 0.872,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=0.872 gives edge=0.372 toward UP. Bucket=HighVol+Range (RV60=13.11399, Eff60=0.020). Fixed $5 USDC stake @ conf=0.872. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 1.0,
+      "confidence": 0.872,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=0.872 gives edge=0.372 toward UP. Bucket=HighVol+Range (RV60=16.55094, Eff60=0.017). Fixed $5 USDC stake @ conf=0.872. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
       "outcome": "UP",
       "side": "BUY",
       "size": 5.0,
       "price": 0.99,
-      "confidence": 0.84,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 66% elapsed) \u2014 UP token at 0.990 deviates 0.340 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+      "confidence": 1.0,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=1.000 gives edge=0.500 toward UP. Bucket=HighVol+Trend (RV60=16.08562, Eff60=0.032). Fixed $5 USDC stake @ conf=1.000. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "ETH",
+      "slug": "eth-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.96,
+      "confidence": 0.842,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.842 gives edge=0.342 toward UP. Bucket=HighVol+Range (RV60=11.24645, Eff60=0.017). Fixed $5 USDC stake @ conf=0.842. [adaptive edge=0.050]"
     },
     {
       "symbol": "SOL",
@@ -51,10 +95,10 @@
       "outcome": "UP",
       "side": "BUY",
       "size": 5.0,
-      "price": 0.83,
-      "confidence": 0.825,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 67% elapsed) \u2014 UP token at 0.830 deviates 0.325 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+      "price": 1.0,
+      "confidence": 0.872,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.872 gives edge=0.372 toward UP. Bucket=HighVol+Range (RV60=13.11399, Eff60=0.020). Fixed $5 USDC stake @ conf=0.872. [adaptive edge=0.050]"
     },
     {
       "symbol": "XRP",
@@ -62,153 +106,43 @@
       "outcome": "UP",
       "side": "BUY",
       "size": 5.0,
-      "price": 0.93,
-      "confidence": 0.9,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 67% elapsed) \u2014 UP token at 0.930 deviates 0.400 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
-      "symbol": "XRP",
-      "slug": "xrp-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.91,
-      "confidence": 0.895,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 68% elapsed) \u2014 UP token at 0.910 deviates 0.395 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+      "price": 1.0,
+      "confidence": 0.872,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.872 gives edge=0.372 toward UP. Bucket=HighVol+Range (RV60=16.55094, Eff60=0.017). Fixed $5 USDC stake @ conf=0.872. [adaptive edge=0.050]"
     },
     {
       "symbol": "BTC",
       "slug": "btc-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.81,
-      "confidence": 0.805,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 68% elapsed) \u2014 UP token at 0.810 deviates 0.305 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.81,
-      "confidence": 0.805,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 68% elapsed) \u2014 UP token at 0.810 deviates 0.305 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.81,
-      "confidence": 0.805,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 68% elapsed) \u2014 UP token at 0.810 deviates 0.305 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
-      "symbol": "SOL",
-      "slug": "sol-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.89,
-      "confidence": 0.855,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 69% elapsed) \u2014 UP token at 0.890 deviates 0.355 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
-      "symbol": "SOL",
-      "slug": "sol-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.89,
-      "confidence": 0.875,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 69% elapsed) \u2014 UP token at 0.890 deviates 0.375 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.82,
-      "confidence": 0.815,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 69% elapsed) \u2014 UP token at 0.820 deviates 0.315 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.82,
-      "confidence": 0.815,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 69% elapsed) \u2014 UP token at 0.820 deviates 0.315 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
-      "symbol": "XRP",
-      "slug": "xrp-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.91,
-      "confidence": 0.895,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 69% elapsed) \u2014 UP token at 0.910 deviates 0.395 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
-      "symbol": "XRP",
-      "slug": "xrp-updown-15m",
       "outcome": "UP",
       "side": "BUY",
       "size": 5.0,
       "price": 0.99,
-      "confidence": 0.9,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 70% elapsed) \u2014 UP token at 0.990 deviates 0.400 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+      "confidence": 1.0,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=1.000 gives edge=0.500 toward UP. Bucket=HighVol+Trend (RV60=16.08562, Eff60=0.032). Fixed $5 USDC stake @ conf=1.000. [adaptive edge=0.050]"
     },
     {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
+      "symbol": "ETH",
+      "slug": "eth-updown-15m",
       "outcome": "UP",
       "side": "BUY",
       "size": 5.0,
-      "price": 0.82,
-      "confidence": 0.815,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 70% elapsed) \u2014 UP token at 0.820 deviates 0.315 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+      "price": 0.96,
+      "confidence": 0.842,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.842 gives edge=0.342 toward UP. Bucket=HighVol+Range (RV60=11.24645, Eff60=0.017). Fixed $5 USDC stake @ conf=0.842. [adaptive edge=0.050]"
     },
     {
-      "symbol": "XRP",
-      "slug": "xrp-updown-15m",
+      "symbol": "SOL",
+      "slug": "sol-updown-15m",
       "outcome": "UP",
       "side": "BUY",
       "size": 5.0,
-      "price": 0.91,
-      "confidence": 0.9,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 70% elapsed) \u2014 UP token at 0.910 deviates 0.400 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.82,
-      "confidence": 0.815,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 70% elapsed) \u2014 UP token at 0.820 deviates 0.315 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+      "price": 1.0,
+      "confidence": 0.872,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.872 gives edge=0.372 toward UP. Bucket=HighVol+Range (RV60=13.11560, Eff60=0.021). Fixed $5 USDC stake @ conf=0.872. [adaptive edge=0.050]"
     },
     {
       "symbol": "XRP",
@@ -216,10 +150,76 @@
       "outcome": "UP",
       "side": "BUY",
       "size": 5.0,
-      "price": 0.91,
-      "confidence": 0.9,
+      "price": 1.0,
+      "confidence": 0.872,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.872 gives edge=0.372 toward UP. Bucket=HighVol+Range (RV60=16.55094, Eff60=0.017). Fixed $5 USDC stake @ conf=0.872. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.99,
+      "confidence": 0.869,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.869 gives edge=0.369 toward UP. Bucket=HighVol+Range (RV60=16.87073, Eff60=0.001). Fixed $5 USDC stake @ conf=0.869. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "ETH",
+      "slug": "eth-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.95,
+      "confidence": 0.842,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.842 gives edge=0.342 toward UP. Bucket=HighVol+Range (RV60=11.93914, Eff60=0.017). Fixed $5 USDC stake @ conf=0.842. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 1.0,
+      "confidence": 0.872,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.872 gives edge=0.372 toward UP. Bucket=HighVol+Range (RV60=12.65838, Eff60=0.019). Fixed $5 USDC stake @ conf=0.872. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 1.0,
+      "confidence": 0.872,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.872 gives edge=0.372 toward UP. Bucket=HighVol+Range (RV60=16.55379, Eff60=0.017). Fixed $5 USDC stake @ conf=0.872. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.6,
+      "confidence": 0.595,
       "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 70% elapsed) \u2014 UP token at 0.910 deviates 0.400 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+      "reason": "TREND FOLLOW (HighVol+Trend, 5% elapsed) \u2014 DOWN token at 0.600 deviates 0.095 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.6,
+      "confidence": 0.595,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 6% elapsed) \u2014 DOWN token at 0.600 deviates 0.095 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
     }
   ]
 }
