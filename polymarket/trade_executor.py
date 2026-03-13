@@ -26,6 +26,9 @@ import os
 import sys
 import time
 from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
+
+_ET = ZoneInfo("America/New_York")
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
@@ -279,7 +282,7 @@ def _submit_order(client, token_id: str, price: float, size: float, side: str) -
 # ─── Main executor ────────────────────────────────────────────────────────────
 
 def run(execute: bool = False) -> None:
-    ts_run = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
+    ts_run = datetime.now(_ET).strftime("%Y-%m-%d %I:%M:%S %p ET")
     print(f"\n{'='*60}")
     print(f"  Polymarket Trade Executor  {'[DRY-RUN]' if not execute else '[LIVE]'}")
     print(f"  {ts_run}")
@@ -399,7 +402,7 @@ def run(execute: bool = False) -> None:
                     "price":        live_price,
                     "size":         size,
                     "order_id":     order_id,
-                    "submitted_at": datetime.now(timezone.utc).isoformat(),
+                    "submitted_at": datetime.now(_ET).strftime("%Y-%m-%d %I:%M:%S %p ET"),
                 }
                 _save_executed(executed)
                 submitted += 1
