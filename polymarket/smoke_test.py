@@ -451,14 +451,29 @@ async def run(execute: bool = False) -> None:
                     )
                 _signed_order = _clob_client.create_order(order_args)
                 sig_preview   = str(_signed_order.signature)[:20] + "…"
-                # Serialize order struct to plain dict for display
-                o_dict = dataclasses.asdict(_signed_order.order) if dataclasses.is_dataclass(_signed_order.order) else vars(_signed_order.order)
+                # Serialize order struct — newer py_clob_client uses ABI tuples (.values)
+                try:
+                    _order_values = getattr(_signed_order.order, 'values', None)
+                    if _order_values is not None:
+                        # ABI tuple: fields are positional — print raw values for diagnostics
+                        print(f"{_INFO}  order.values: {_order_values}")
+                        o_dict = {}
+                        for _f in ('salt','maker','signer','taker','tokenId','makerAmount',
+                                   'takerAmount','expiration','nonce','feeRateBps','side','signatureType'):
+                            o_dict[_f] = _order_values[list(o_dict.keys()).index(_f)] if _f in o_dict else '?'
+                        maker_amt = _order_values[6] if len(_order_values) > 6 else '?'
+                        taker_amt = _order_values[7] if len(_order_values) > 7 else '?'
+                    else:
+                        o_dict = dataclasses.asdict(_signed_order.order) if dataclasses.is_dataclass(_signed_order.order) else vars(_signed_order.order)
+                        maker_amt = o_dict.get('makerAmount') or o_dict.get('maker_amount', '?')
+                        taker_amt = o_dict.get('takerAmount') or o_dict.get('taker_amount', '?')
+                except Exception as _oe:
+                    o_dict = {}
+                    maker_amt = taker_amt = f'(err: {_oe})'
                 print(f"{_PASS}  Order built — EIP-712 sig: {sig_preview}")
                 print(f"{_INFO}  side:         BUY UP  @ {up_price:.4f}")
                 print(f"{_INFO}  size:         $5.00 USDC (minimum)")
                 print(f"{_INFO}  order fields: {list(o_dict.keys())}")
-                maker_amt = o_dict.get('makerAmount') or o_dict.get('maker_amount', '?')
-                taker_amt = o_dict.get('takerAmount') or o_dict.get('taker_amount', '?')
                 print(f"{_INFO}  makerAmount:  {maker_amt}")
                 print(f"{_INFO}  takerAmount:  {taker_amt}")
                 results["order_build"] = "PASS"
@@ -481,16 +496,30 @@ async def run(execute: bool = False) -> None:
         else:
             print(f"\033[93m  ⚠ REAL MONEY: submitting $5 BUY UP order to Polymarket…\033[0m")
             try:
-                # Ensure USDC allowance is set — use auth client (sig_type=1) for balance
-                # so the proxy-wallet $7 balance is visible
                 from py_clob_client.clob_types import BalanceAllowanceParams, AssetType
+                # Check balance under BOTH sig types to understand which account holds funds
                 _bal_client = _auth_client if _auth_client is not None else _clob_client
                 bal = _bal_client.get_balance_allowance(
                     BalanceAllowanceParams(asset_type=AssetType.COLLATERAL)
                 )
                 balance   = int(bal.get("balance",   0)) / 1e6
                 allowance = int(bal.get("allowance", 0)) / 1e6
-                print(f"{_INFO}  balance: ${balance:.2f}  allowance: ${allowance:.2f}")
+                print(f"{_INFO}  balance (sig_type={_auth_sig_type}): ${balance:.2f}  allowance: ${allowance:.2f}")
+                # Compare with sig_type=0 account balance
+                try:
+                    _st0_client = ClobClient(CLOB_API, key=os.environ["POLY_PRIVATE_KEY"],
+                                             chain_id=137, signature_type=0,
+                                             funder=os.environ["POLY_ADDRESS"])
+                    _st0_creds = _st0_client.derive_api_key()
+                    _st0_client.set_api_creds(_st0_creds)
+                    _bal0 = _st0_client.get_balance_allowance(
+                        BalanceAllowanceParams(asset_type=AssetType.COLLATERAL)
+                    )
+                    _b0 = int(_bal0.get("balance", 0)) / 1e6
+                    _a0 = int(_bal0.get("allowance", 0)) / 1e6
+                    print(f"{_INFO}  balance (sig_type=0):          ${_b0:.2f}  allowance: ${_a0:.2f}")
+                except Exception as _b0e:
+                    print(f"{_INFO}  sig_type=0 balance check failed: {_b0e}")
 
                 # Always check on-chain state to diagnose CLOB vs on-chain discrepancies
                 _USDC              = "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174"
@@ -653,13 +682,25 @@ async def run(execute: bool = False) -> None:
                 # ledger; the initial get_balance_allowance above already confirms it's there.
 
                 # Use py_clob_client's post_order — handles Order dataclass serialization
+                print(f"{_INFO}  Posting order (sig_type={_auth_sig_type})…")
                 resp = _clob_client.post_order(_signed_order, OrderType.GTC)
                 order_id = (resp.get("orderId") or resp.get("order_id") or "?") if isinstance(resp, dict) else str(resp)
                 print(f"{_PASS}  Order ACCEPTED — orderId: {order_id}")
                 print(f"{_INFO}  Full response: {json.dumps(resp, indent=4) if isinstance(resp, dict) else resp}")
                 results["order_post"] = "PASS"
             except Exception as exc:
+                import traceback
                 print(f"{_FAIL}  Exception: {exc}")
+                print(f"{_INFO}  Traceback: {traceback.format_exc().splitlines()[-3]}")
+                # If sig_type=1 fails with invalid signature, the account may not have a
+                # proxy wallet deployed. Try sig_type=0 as a fallback to see if that
+                # account also has balance (it would require on-chain USDC).
+                if "invalid signature" in str(exc).lower() and _auth_sig_type == 1:
+                    print(f"{_INFO}  sig_type=1 'invalid signature' = no proxy wallet at {os.environ['POLY_ADDRESS']}")
+                    print(f"{_INFO}  The $7 USDC is in a Polymarket custodial account.")
+                    print(f"{_INFO}  Options to fix:")
+                    print(f"{_INFO}    1. Use Polymarket web UI to withdraw $7 to on-chain, then re-deposit via API")
+                    print(f"{_INFO}    2. Set POLY_SIGNATURE_TYPE=0 in /etc/polymarket.env and ensure on-chain USDC")
                 results["order_post"] = "FAIL"
 
     _summary(results)
