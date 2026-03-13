@@ -697,10 +697,8 @@ async def run(execute: bool = False) -> None:
                 # account also has balance (it would require on-chain USDC).
                 if "invalid signature" in str(exc).lower() and _auth_sig_type == 1:
                     print(f"{_INFO}  sig_type=1 'invalid signature' = no proxy wallet at {os.environ['POLY_ADDRESS']}")
-                    print(f"{_INFO}  The $7 USDC is in a Polymarket custodial account.")
-                    print(f"{_INFO}  Options to fix:")
-                    print(f"{_INFO}    1. Use Polymarket web UI to withdraw $7 to on-chain, then re-deposit via API")
-                    print(f"{_INFO}    2. Set POLY_SIGNATURE_TYPE=0 in /etc/polymarket.env and ensure on-chain USDC")
+                    print(f"{_INFO}  Fix: deploy the proxy wallet, then update POLY_ADDRESS in /etc/polymarket.env")
+                    print(f"{_INFO}    python -m polymarket.setup_proxy_wallet")
                 results["order_post"] = "FAIL"
 
     _summary(results)
