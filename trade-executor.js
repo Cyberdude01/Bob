@@ -2,6 +2,7 @@ const { ClobClient, Side, OrderType } = require('@polymarket/clob-client');
 const { ethers } = require('ethers');
 const fs = require('fs');
 const path = require('path');
+const sqlite3 = require('sqlite3').verbose();
 require('dotenv').config({ path: '/etc/polymarket.env' });
 
 // ── Config ──────────────────────────────────────────────────────────────────
@@ -11,6 +12,7 @@ const SIG_TYPE     = parseInt(process.env.POLY_SIGNATURE_TYPE || '0', 10);
 const SIGNALS_FILE = path.join(__dirname, 'data_exports', 'signals.json');
 const TRADES_FILE  = path.join(__dirname, 'data_exports', 'trades.json');
 const GAMMA_BASE   = 'https://gamma-api.polymarket.com';
+const DB_PATH      = path.join(__dirname, 'market-data.db');
 
 // ── Credential checks ────────────────────────────────────────────────────────
 if (!process.env.POLY_PRIVATE_KEY) {
@@ -51,47 +53,29 @@ function signalKey(sig) {
   return `${sig.slug}|${sig.outcome}|${windowId()}`;
 }
 
-// ── Scrape active 15M slugs (same method as market-data-collector) ───────────
-let _activeSlugCache = null;
-async function getActiveSlugForBase(baseSlug) {
-  if (!_activeSlugCache) {
-    const res  = await fetch('https://polymarket.com/crypto/15M');
-    const html = await res.text();
-    const matches = html.match(/event\/([a-z0-9-]+15m-\d+)/g) || [];
-    _activeSlugCache = [...new Set(matches)].map(s => s.replace('event/', ''));
-  }
-  return _activeSlugCache.find(s => s.startsWith(baseSlug)) || null;
-}
-
-// ── Fetch market info (tokenId) by slug ────────────────────────────────────────
-async function fetchMarketBySlug(slug) {
-  // Try exact slug first, then resolve via active slug scrape
-  // (live markets have a numeric suffix, e.g. btc-updown-15m-12345)
-  let data;
-  const exact = await fetch(`${GAMMA_BASE}/markets?slug=${slug}`);
-  data = await exact.json();
-
-  if (!data || data.length === 0) {
-    const activeSlug = await getActiveSlugForBase(slug);
-    if (!activeSlug) throw new Error(`Market not found: ${slug}`);
-    const res = await fetch(`${GAMMA_BASE}/markets?slug=${activeSlug}`);
-    data = await res.json();
-  }
-
-  if (!data || data.length === 0) throw new Error(`Market not found: ${slug}`);
-
-  // Prefer the most recently created active market if multiple results
-  const active = data.filter(m => !m.closed && m.active);
-  const m = active.length > 0 ? active[0] : data[0];
-  const tokenIds = JSON.parse(m.clobTokenIds || '[]');
-  const outcomes = JSON.parse(m.outcomes    || '[]');
-  return {
-    conditionId: m.conditionId,
-    tokenIds,
-    outcomes,
-    closed: m.closed,
-    active: m.active,
-  };
+// ── Resolve token_id + conditionId from local SQLite DB ───────────────────────
+// Queries the most recent market_data row for a given symbol + outcome
+// recorded in the last 5 minutes, so we always get the live 15-min window.
+function resolveTokenFromDB(symbol, outcome) {
+  return new Promise((resolve, reject) => {
+    const db = new sqlite3.Database(DB_PATH, sqlite3.OPEN_READONLY);
+    const cutoff = Math.floor(Date.now() / 1000) - 300; // last 5 min
+    const sql = `
+      SELECT token_id, market_id, ask
+      FROM market_data
+      WHERE market_name LIKE ?
+        AND UPPER(outcome) = UPPER(?)
+        AND timestamp > ?
+      ORDER BY timestamp DESC
+      LIMIT 1
+    `;
+    db.get(sql, [`%${symbol}%`, outcome, cutoff], (err, row) => {
+      db.close();
+      if (err) return reject(err);
+      if (!row) return reject(new Error(`No recent DB row for ${symbol} ${outcome} (last 5 min)`));
+      resolve({ tokenId: row.token_id, conditionId: row.market_id, ask: row.ask });
+    });
+  });
 }
 
 // ── Fetch best ask from order book ─────────────────────────────────────────────
@@ -139,24 +123,13 @@ async function buildClient() {
 
 // ── Execute a single signal ────────────────────────────────────────────────────
 async function executeTrade(client, sig) {
-  const { slug, outcome, size, trigger, confidence } = sig;
+  const { symbol, slug, outcome, size, trigger, confidence } = sig;
 
-  // 1. Resolve market
-  const market = await fetchMarketBySlug(slug);
-  if (market.closed || !market.active) {
-    console.log(`[SKIP] ${slug} — market closed/inactive`);
-    return null;
-  }
+  // 1. Resolve token_id directly from the local DB (no external API call needed)
+  const resolved = await resolveTokenFromDB(symbol, outcome);
+  const tokenId  = resolved.tokenId;
 
-  // 2. Find the token for the desired outcome
-  const idx = market.outcomes.findIndex(o => o.toUpperCase() === outcome.toUpperCase());
-  if (idx === -1) {
-    console.warn(`[SKIP] ${slug} — outcome "${outcome}" not found in [${market.outcomes.join(', ')}]`);
-    return null;
-  }
-  const tokenId = market.tokenIds[idx];
-
-  // 3. Get current best ask to use as limit price
+  // 2. Get current best ask from CLOB order book
   const bestAsk = await fetchBestAsk(tokenId);
   if (!bestAsk) {
     console.warn(`[SKIP] ${slug} ${outcome} — no asks in order book`);
