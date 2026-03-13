@@ -1,0 +1,18 @@
+[Unit]
+Description=Polymarket Auto Redeem — redeem winning positions every 10 minutes
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/Bob
+ExecStart=/root/venv/bin/python -m polymarket.auto_redeem
+Restart=on-failure
+RestartSec=60
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=poly-auto-redeem
+
+[Install]
+WantedBy=multi-user.target
