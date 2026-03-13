@@ -51,17 +51,31 @@ function signalKey(sig) {
   return `${sig.slug}|${sig.outcome}|${windowId()}`;
 }
 
+// ── Scrape active 15M slugs (same method as market-data-collector) ───────────
+let _activeSlugCache = null;
+async function getActiveSlugForBase(baseSlug) {
+  if (!_activeSlugCache) {
+    const res  = await fetch('https://polymarket.com/crypto/15M');
+    const html = await res.text();
+    const matches = html.match(/event\/([a-z0-9-]+15m-\d+)/g) || [];
+    _activeSlugCache = [...new Set(matches)].map(s => s.replace('event/', ''));
+  }
+  return _activeSlugCache.find(s => s.startsWith(baseSlug)) || null;
+}
+
 // ── Fetch market info (tokenId) by slug ────────────────────────────────────────
 async function fetchMarketBySlug(slug) {
-  // Try exact slug first, then fall back to slug_like prefix search
+  // Try exact slug first, then resolve via active slug scrape
   // (live markets have a numeric suffix, e.g. btc-updown-15m-12345)
   let data;
   const exact = await fetch(`${GAMMA_BASE}/markets?slug=${slug}`);
   data = await exact.json();
 
   if (!data || data.length === 0) {
-    const like = await fetch(`${GAMMA_BASE}/markets?slug_like=${slug}&active=true&closed=false`);
-    data = await like.json();
+    const activeSlug = await getActiveSlugForBase(slug);
+    if (!activeSlug) throw new Error(`Market not found: ${slug}`);
+    const res = await fetch(`${GAMMA_BASE}/markets?slug=${activeSlug}`);
+    data = await res.json();
   }
 
   if (!data || data.length === 0) throw new Error(`Market not found: ${slug}`);
@@ -108,14 +122,11 @@ async function buildClient() {
     const tmpClient = new ClobClient(CLOB_HOST, CHAIN_ID, wallet);
     creds = await tmpClient.createOrDeriveApiKey();
     console.log(`[trade-executor] Derived API key: ${creds.key}`);
-    // Persist derived creds to env file so future runs skip this step
+    // Append active creds to env file so future runs skip derivation
     try {
-      let envText = fs.readFileSync('/etc/polymarket.env', 'utf8');
-      envText = envText.replace(/^##?POLY_API_KEY=.*$/m,   `POLY_API_KEY=${creds.key}`);
-      envText = envText.replace(/^##?POLY_API_SECRET=.*$/m, `POLY_API_SECRET=${creds.secret}`);
-      envText = envText.replace(/^##?POLY_API_PASSPHRASE=.*$/m, `POLY_API_PASSPHRASE=${creds.passphrase}`);
-      fs.writeFileSync('/etc/polymarket.env', envText);
-      console.log('[trade-executor] Saved derived creds to /etc/polymarket.env');
+      const append = `\n# Auto-derived by trade-executor\nPOLY_API_KEY=${creds.key}\nPOLY_API_SECRET=${creds.secret}\nPOLY_API_PASSPHRASE=${creds.passphrase}\n`;
+      fs.appendFileSync('/etc/polymarket.env', append);
+      console.log('[trade-executor] Appended derived creds to /etc/polymarket.env');
     } catch (e) {
       console.warn('[trade-executor] Could not save creds to env file:', e.message);
     }
