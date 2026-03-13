@@ -1,6 +1,6 @@
 # Polymarket 15M Data Feed
 
-> **Mode:** LIVE &nbsp;|&nbsp; **Updated:** `2026-03-13 07:08:37 AM ET`
+> **Mode:** LIVE &nbsp;|&nbsp; **Updated:** `2026-03-13 07:09:22 AM ET`
 
 ## Live Markets
 | Symbol | Slug | UP | DOWN | Elapsed | Remaining | Bucket | Dir@60% | Dir@80% | Dir@90% | ARB |
