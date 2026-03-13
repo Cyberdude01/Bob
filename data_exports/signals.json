@@ -1,4 +1,225 @@
 {
-  "updated": "2026-03-13 06:25:04 AM ET",
-  "data": []
+  "updated": "2026-03-13 06:30:22 AM ET",
+  "data": [
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.86,
+      "confidence": 0.766,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=0.234 gives edge=0.266 toward DOWN. Bucket=HighVol+Range (RV60=10.68006, Eff60=0.019). Fixed $5 USDC stake @ conf=0.766. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.99,
+      "confidence": 0.96,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=0.960 gives edge=0.460 toward UP. Bucket=HighVol+Trend (RV60=6.09211, Eff60=0.043). Fixed $5 USDC stake @ conf=0.960. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.99,
+      "confidence": 0.688,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=0.312 gives edge=0.188 toward DOWN. Bucket=HighVol+Trend (RV60=2.35134, Eff60=0.037). Fixed $5 USDC stake @ conf=0.688. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.99,
+      "confidence": 0.774,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=0.226 gives edge=0.274 toward DOWN. Bucket=HighVol+Range (RV60=10.66640, Eff60=0.014). Fixed $5 USDC stake @ conf=0.774. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.99,
+      "confidence": 0.834,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=0.834 gives edge=0.334 toward UP. Bucket=HighVol+Range (RV60=6.15002, Eff60=0.005). Fixed $5 USDC stake @ conf=0.834. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.69,
+      "confidence": 0.637,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=0.637 gives edge=0.137 toward UP. Bucket=HighVol+Range (RV60=2.46919, Eff60=0.019). Fixed $5 USDC stake @ conf=0.637. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.87,
+      "confidence": 0.774,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (92% elapsed) \u2014 P(UP)=0.226 gives edge=0.274 toward DOWN. Bucket=HighVol+Range (RV60=10.66046, Eff60=0.003). Fixed $5 USDC stake @ conf=0.774. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.99,
+      "confidence": 0.834,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.834 gives edge=0.334 toward UP. Bucket=HighVol+Range (RV60=6.15002, Eff60=0.005). Fixed $5 USDC stake @ conf=0.834. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.99,
+      "confidence": 0.637,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.637 gives edge=0.137 toward UP. Bucket=HighVol+Range (RV60=2.46919, Eff60=0.019). Fixed $5 USDC stake @ conf=0.637. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.99,
+      "confidence": 0.777,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.223 gives edge=0.277 toward DOWN. Bucket=HighVol+Range (RV60=10.66487, Eff60=0.004). Fixed $5 USDC stake @ conf=0.777. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.99,
+      "confidence": 0.865,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.135 gives edge=0.365 toward DOWN. Bucket=HighVol+Range (RV60=7.63250, Eff60=0.006). Fixed $5 USDC stake @ conf=0.865. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.99,
+      "confidence": 0.637,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.637 gives edge=0.137 toward UP. Bucket=HighVol+Range (RV60=2.51566, Eff60=0.017). Fixed $5 USDC stake @ conf=0.637. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.99,
+      "confidence": 0.781,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.219 gives edge=0.281 toward DOWN. Bucket=HighVol+Range (RV60=10.74662, Eff60=0.004). Fixed $5 USDC stake @ conf=0.781. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.99,
+      "confidence": 0.865,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.135 gives edge=0.365 toward DOWN. Bucket=HighVol+Range (RV60=7.63250, Eff60=0.006). Fixed $5 USDC stake @ conf=0.865. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.66,
+      "confidence": 0.633,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.633 gives edge=0.133 toward UP. Bucket=HighVol+Range (RV60=2.51525, Eff60=0.020). Fixed $5 USDC stake @ conf=0.633. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.89,
+      "confidence": 0.789,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.211 gives edge=0.289 toward DOWN. Bucket=HighVol+Range (RV60=10.74692, Eff60=0.004). Fixed $5 USDC stake @ conf=0.789. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.99,
+      "confidence": 0.857,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.857 gives edge=0.357 toward UP. Bucket=HighVol+Range (RV60=7.65558, Eff60=0.010). Fixed $5 USDC stake @ conf=0.857. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.99,
+      "confidence": 0.614,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.614 gives edge=0.114 toward UP. Bucket=HighVol+Range (RV60=2.55919, Eff60=0.026). Fixed $5 USDC stake @ conf=0.614. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.99,
+      "confidence": 0.796,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (93% elapsed) \u2014 P(UP)=0.204 gives edge=0.296 toward DOWN. Bucket=HighVol+Range (RV60=10.85914, Eff60=0.003). Fixed $5 USDC stake @ conf=0.796. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "ETH",
+      "slug": "eth-updown-15m",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.45,
+      "confidence": 0.985,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 0% elapsed) \u2014 UP token at 0.450 deviates 0.485 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+    }
+  ]
 }
