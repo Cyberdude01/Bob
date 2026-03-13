@@ -53,10 +53,22 @@ function signalKey(sig) {
 
 // ── Fetch market info (tokenId) by slug ────────────────────────────────────────
 async function fetchMarketBySlug(slug) {
-  const res  = await fetch(`${GAMMA_BASE}/markets?slug=${slug}`);
-  const data = await res.json();
+  // Try exact slug first, then fall back to slug_like prefix search
+  // (live markets have a numeric suffix, e.g. btc-updown-15m-12345)
+  let data;
+  const exact = await fetch(`${GAMMA_BASE}/markets?slug=${slug}`);
+  data = await exact.json();
+
+  if (!data || data.length === 0) {
+    const like = await fetch(`${GAMMA_BASE}/markets?slug_like=${slug}&active=true&closed=false`);
+    data = await like.json();
+  }
+
   if (!data || data.length === 0) throw new Error(`Market not found: ${slug}`);
-  const m = data[0];
+
+  // Prefer the most recently created active market if multiple results
+  const active = data.filter(m => !m.closed && m.active);
+  const m = active.length > 0 ? active[0] : data[0];
   const tokenIds = JSON.parse(m.clobTokenIds || '[]');
   const outcomes = JSON.parse(m.outcomes    || '[]');
   return {
@@ -96,6 +108,17 @@ async function buildClient() {
     const tmpClient = new ClobClient(CLOB_HOST, CHAIN_ID, wallet);
     creds = await tmpClient.createOrDeriveApiKey();
     console.log(`[trade-executor] Derived API key: ${creds.key}`);
+    // Persist derived creds to env file so future runs skip this step
+    try {
+      let envText = fs.readFileSync('/etc/polymarket.env', 'utf8');
+      envText = envText.replace(/^##?POLY_API_KEY=.*$/m,   `POLY_API_KEY=${creds.key}`);
+      envText = envText.replace(/^##?POLY_API_SECRET=.*$/m, `POLY_API_SECRET=${creds.secret}`);
+      envText = envText.replace(/^##?POLY_API_PASSPHRASE=.*$/m, `POLY_API_PASSPHRASE=${creds.passphrase}`);
+      fs.writeFileSync('/etc/polymarket.env', envText);
+      console.log('[trade-executor] Saved derived creds to /etc/polymarket.env');
+    } catch (e) {
+      console.warn('[trade-executor] Could not save creds to env file:', e.message);
+    }
   }
 
   // SIG_TYPE 1 = POLY_PROXY — pass POLY_ADDRESS as funderAddress
