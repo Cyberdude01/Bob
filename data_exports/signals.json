@@ -1,192 +1,16 @@
 {
-  "updated": "2026-03-13 04:47:38 AM ET",
+  "updated": "2026-03-13 04:52:53 AM ET",
   "data": [
     {
-      "symbol": "XRP",
-      "slug": "xrp-updown-15m",
+      "symbol": "ETH",
+      "slug": "eth-updown-15m",
       "outcome": "DOWN",
       "side": "BUY",
       "size": 5.0,
-      "price": 0.66,
-      "confidence": 0.65,
+      "price": 0.95,
+      "confidence": 0.945,
       "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 4% elapsed) \u2014 DOWN token at 0.660 deviates 0.150 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
-      "symbol": "SOL",
-      "slug": "sol-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.77,
-      "confidence": 0.755,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 5% elapsed) \u2014 DOWN token at 0.770 deviates 0.255 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
-      "symbol": "SOL",
-      "slug": "sol-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.77,
-      "confidence": 0.765,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 6% elapsed) \u2014 DOWN token at 0.770 deviates 0.265 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
-      "symbol": "SOL",
-      "slug": "sol-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.71,
-      "confidence": 0.705,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 6% elapsed) \u2014 DOWN token at 0.710 deviates 0.205 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
-      "symbol": "SOL",
-      "slug": "sol-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.99,
-      "confidence": 0.725,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 6% elapsed) \u2014 DOWN token at 0.990 deviates 0.225 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
-      "symbol": "SOL",
-      "slug": "sol-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.72,
-      "confidence": 0.72,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 7% elapsed) \u2014 DOWN token at 0.720 deviates 0.220 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
-      "symbol": "SOL",
-      "slug": "sol-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.69,
-      "confidence": 0.685,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 7% elapsed) \u2014 DOWN token at 0.690 deviates 0.185 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
-      "symbol": "SOL",
-      "slug": "sol-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.67,
-      "confidence": 0.665,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 8% elapsed) \u2014 DOWN token at 0.670 deviates 0.165 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
-      "symbol": "SOL",
-      "slug": "sol-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.67,
-      "confidence": 0.665,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 9% elapsed) \u2014 DOWN token at 0.670 deviates 0.165 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
-      "symbol": "SOL",
-      "slug": "sol-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.72,
-      "confidence": 0.665,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 9% elapsed) \u2014 DOWN token at 0.720 deviates 0.165 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
-      "symbol": "SOL",
-      "slug": "sol-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.72,
-      "confidence": 0.715,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 9% elapsed) \u2014 DOWN token at 0.720 deviates 0.215 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
-      "symbol": "SOL",
-      "slug": "sol-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.73,
-      "confidence": 0.725,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 9% elapsed) \u2014 DOWN token at 0.730 deviates 0.225 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
-      "symbol": "SOL",
-      "slug": "sol-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.75,
-      "confidence": 0.745,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 10% elapsed) \u2014 DOWN token at 0.750 deviates 0.245 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
-      "symbol": "SOL",
-      "slug": "sol-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.74,
-      "confidence": 0.735,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 10% elapsed) \u2014 DOWN token at 0.740 deviates 0.235 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.9,
-      "confidence": 0.895,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 15% elapsed) \u2014 DOWN token at 0.900 deviates 0.395 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.9,
-      "confidence": 0.895,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 15% elapsed) \u2014 DOWN token at 0.900 deviates 0.395 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 5.0,
-      "price": 0.88,
-      "confidence": 0.89,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 17% elapsed) \u2014 DOWN token at 0.880 deviates 0.390 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+      "reason": "TREND FOLLOW (HighVol+Trend, 48% elapsed) \u2014 DOWN token at 0.950 deviates 0.445 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
     },
     {
       "symbol": "ETH",
@@ -194,10 +18,164 @@
       "outcome": "DOWN",
       "side": "BUY",
       "size": 5.0,
-      "price": 0.92,
-      "confidence": 0.925,
+      "price": 0.95,
+      "confidence": 0.945,
       "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 17% elapsed) \u2014 DOWN token at 0.920 deviates 0.425 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+      "reason": "TREND FOLLOW (HighVol+Trend, 48% elapsed) \u2014 DOWN token at 0.950 deviates 0.445 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+    },
+    {
+      "symbol": "ETH",
+      "slug": "eth-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.95,
+      "confidence": 0.945,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 48% elapsed) \u2014 DOWN token at 0.950 deviates 0.445 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+    },
+    {
+      "symbol": "ETH",
+      "slug": "eth-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.99,
+      "confidence": 0.945,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 48% elapsed) \u2014 DOWN token at 0.990 deviates 0.445 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.85,
+      "confidence": 0.845,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 48% elapsed) \u2014 DOWN token at 0.850 deviates 0.345 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+    },
+    {
+      "symbol": "ETH",
+      "slug": "eth-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.96,
+      "confidence": 0.955,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 48% elapsed) \u2014 DOWN token at 0.960 deviates 0.455 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.85,
+      "confidence": 0.845,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 49% elapsed) \u2014 DOWN token at 0.850 deviates 0.345 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+    },
+    {
+      "symbol": "ETH",
+      "slug": "eth-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.96,
+      "confidence": 0.955,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 49% elapsed) \u2014 DOWN token at 0.960 deviates 0.455 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.86,
+      "confidence": 0.845,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 49% elapsed) \u2014 DOWN token at 0.860 deviates 0.345 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.86,
+      "confidence": 0.85,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 49% elapsed) \u2014 DOWN token at 0.860 deviates 0.350 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+    },
+    {
+      "symbol": "ETH",
+      "slug": "eth-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.97,
+      "confidence": 0.965,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 49% elapsed) \u2014 DOWN token at 0.970 deviates 0.465 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.87,
+      "confidence": 0.865,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 50% elapsed) \u2014 DOWN token at 0.870 deviates 0.365 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+    },
+    {
+      "symbol": "ETH",
+      "slug": "eth-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.97,
+      "confidence": 0.965,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 50% elapsed) \u2014 DOWN token at 0.970 deviates 0.465 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.87,
+      "confidence": 0.865,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 50% elapsed) \u2014 DOWN token at 0.870 deviates 0.365 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+    },
+    {
+      "symbol": "ETH",
+      "slug": "eth-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.97,
+      "confidence": 0.965,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 50% elapsed) \u2014 DOWN token at 0.970 deviates 0.465 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+    },
+    {
+      "symbol": "ETH",
+      "slug": "eth-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.97,
+      "confidence": 0.965,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 51% elapsed) \u2014 DOWN token at 0.970 deviates 0.465 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
     },
     {
       "symbol": "BTC",
@@ -208,18 +186,40 @@
       "price": 0.88,
       "confidence": 0.875,
       "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 17% elapsed) \u2014 DOWN token at 0.880 deviates 0.375 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+      "reason": "TREND FOLLOW (HighVol+Trend, 51% elapsed) \u2014 DOWN token at 0.880 deviates 0.375 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
     },
     {
-      "symbol": "ETH",
-      "slug": "eth-updown-15m",
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
       "outcome": "DOWN",
       "side": "BUY",
       "size": 5.0,
-      "price": 0.92,
-      "confidence": 0.915,
+      "price": 0.88,
+      "confidence": 0.875,
       "trigger": "trend_follow",
-      "reason": "TREND FOLLOW (HighVol+Trend, 17% elapsed) \u2014 DOWN token at 0.920 deviates 0.415 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+      "reason": "TREND FOLLOW (HighVol+Trend, 51% elapsed) \u2014 DOWN token at 0.880 deviates 0.375 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.87,
+      "confidence": 0.865,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 52% elapsed) \u2014 DOWN token at 0.870 deviates 0.365 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5.0,
+      "price": 0.87,
+      "confidence": 0.865,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW (HighVol+Trend, 52% elapsed) \u2014 DOWN token at 0.870 deviates 0.365 from 0.50. Momentum continuation strategy: buying the already-winning leg. Fixed $5 USDC stake."
     }
   ]
 }
