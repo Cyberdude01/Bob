@@ -1,17 +1,25 @@
 # Decision Engine Summary
 
-> **Updated:** `2026-03-13 07:09:22 AM ET` &nbsp;|&nbsp; All signals from the last 48 hours
+> **Updated:** `2026-03-13 07:10:08 AM ET` &nbsp;|&nbsp; All signals from the last 48 hours
 
 ## Signal Distribution
 | Trigger | Count |
 | -------------------- | ----- |
 | `directional_90pct` | 110 |
-| `trend_follow` | 74 |
-| `pre_open` | 16 |
+| `trend_follow` | 66 |
+| `pre_open` | 24 |
 
 ## Signal Log
 | Time (ET) | Symbol | Slug | Outcome | Trigger | Confidence | P(UP) | Bucket | Elapsed% | Reasoning |
 | --------------- | ------ | ----------------- | ------- | -------------------- | ---------- | ----- | -------------- | -------- | -------------------------------------------------- |
+| `2026-03-13 07:09 AM ET` | XRP | xrp-updown-15m | **DOWN** | `pre_open` | 0.520 | — | — | 64.4% | PRE-OPEN limit order — 321s before market start. Buying DOWN at 0.48 (below ~0.50 fair value).  |
+| `2026-03-13 07:09 AM ET` | XRP | xrp-updown-15m | **UP** | `pre_open` | 0.520 | — | — | 64.4% | PRE-OPEN limit order — 321s before market start. Buying UP at 0.48 (below ~0.50 fair value).  |
+| `2026-03-13 07:09 AM ET` | SOL | sol-updown-15m | **DOWN** | `pre_open` | 0.520 | — | — | 64.4% | PRE-OPEN limit order — 321s before market start. Buying DOWN at 0.48 (below ~0.50 fair value).  |
+| `2026-03-13 07:09 AM ET` | SOL | sol-updown-15m | **UP** | `pre_open` | 0.520 | — | — | 64.4% | PRE-OPEN limit order — 321s before market start. Buying UP at 0.48 (below ~0.50 fair value).  |
+| `2026-03-13 07:09 AM ET` | ETH | eth-updown-15m | **DOWN** | `pre_open` | 0.520 | — | — | 64.4% | PRE-OPEN limit order — 321s before market start. Buying DOWN at 0.48 (below ~0.50 fair value).  |
+| `2026-03-13 07:09 AM ET` | ETH | eth-updown-15m | **UP** | `pre_open` | 0.520 | — | — | 64.4% | PRE-OPEN limit order — 321s before market start. Buying UP at 0.48 (below ~0.50 fair value).  |
+| `2026-03-13 07:09 AM ET` | BTC | btc-updown-15m | **DOWN** | `pre_open` | 0.520 | — | — | 64.4% | PRE-OPEN limit order — 321s before market start. Buying DOWN at 0.48 (below ~0.50 fair value).  |
+| `2026-03-13 07:09 AM ET` | BTC | btc-updown-15m | **UP** | `pre_open` | 0.520 | — | — | 64.4% | PRE-OPEN limit order — 321s before market start. Buying UP at 0.48 (below ~0.50 fair value).  |
 | `2026-03-13 06:54 AM ET` | XRP | xrp-updown-15m | **DOWN** | `pre_open` | 0.520 | — | — | 65.3% | PRE-OPEN limit order — 312s before market start. Buying DOWN at 0.48 (below ~0.50 fair value).  |
 | `2026-03-13 06:54 AM ET` | XRP | xrp-updown-15m | **UP** | `pre_open` | 0.520 | — | — | 65.3% | PRE-OPEN limit order — 312s before market start. Buying UP at 0.48 (below ~0.50 fair value).  |
 | `2026-03-13 06:54 AM ET` | SOL | sol-updown-15m | **DOWN** | `pre_open` | 0.520 | — | — | 65.3% | PRE-OPEN limit order — 312s before market start. Buying DOWN at 0.48 (below ~0.50 fair value).  |
@@ -204,14 +212,6 @@
 | `2026-03-13 06:37 AM ET` | BTC | btc-updown-15m | **UP** | `trend_follow` | 0.685 | 66.3% | HighVol+Trend | 52.7% | TREND FOLLOW (HighVol+Trend, 53% elapsed) — UP token at 0.700 deviates 0.185 from 0.50. Momentum continuation strategy:  |
 | `2026-03-13 06:37 AM ET` | SOL | sol-updown-15m | **UP** | `trend_follow` | 0.865 | 82.1% | HighVol+Trend | 51.8% | TREND FOLLOW (HighVol+Trend, 52% elapsed) — UP token at 0.890 deviates 0.365 from 0.50. Momentum continuation strategy:  |
 | `2026-03-13 06:37 AM ET` | SOL | sol-updown-15m | **UP** | `trend_follow` | 0.865 | 82.1% | HighVol+Trend | 51.6% | TREND FOLLOW (HighVol+Trend, 52% elapsed) — UP token at 0.880 deviates 0.365 from 0.50. Momentum continuation strategy:  |
-| `2026-03-13 06:37 AM ET` | SOL | sol-updown-15m | **UP** | `trend_follow` | 0.870 | 82.6% | HighVol+Trend | 51.3% | TREND FOLLOW (HighVol+Trend, 51% elapsed) — UP token at 0.880 deviates 0.370 from 0.50. Momentum continuation strategy:  |
-| `2026-03-13 06:37 AM ET` | XRP | xrp-updown-15m | **UP** | `trend_follow` | 0.905 | 85.6% | HighVol+Trend | 51.1% | TREND FOLLOW (HighVol+Trend, 51% elapsed) — UP token at 0.910 deviates 0.405 from 0.50. Momentum continuation strategy:  |
-| `2026-03-13 06:37 AM ET` | BTC | btc-updown-15m | **UP** | `trend_follow` | 0.770 | 73.8% | HighVol+Trend | 51.1% | TREND FOLLOW (HighVol+Trend, 51% elapsed) — UP token at 0.770 deviates 0.270 from 0.50. Momentum continuation strategy:  |
-| `2026-03-13 06:37 AM ET` | XRP | xrp-updown-15m | **UP** | `trend_follow` | 0.905 | 85.6% | HighVol+Trend | 50.9% | TREND FOLLOW (HighVol+Trend, 51% elapsed) — UP token at 0.910 deviates 0.405 from 0.50. Momentum continuation strategy:  |
-| `2026-03-13 06:37 AM ET` | ETH | eth-updown-15m | **UP** | `trend_follow` | 0.795 | 76.0% | HighVol+Trend | 50.9% | TREND FOLLOW (HighVol+Trend, 51% elapsed) — UP token at 0.800 deviates 0.295 from 0.50. Momentum continuation strategy:  |
-| `2026-03-13 06:37 AM ET` | BTC | btc-updown-15m | **UP** | `trend_follow` | 0.750 | 72.0% | HighVol+Trend | 50.9% | TREND FOLLOW (HighVol+Trend, 51% elapsed) — UP token at 0.790 deviates 0.250 from 0.50. Momentum continuation strategy:  |
-| `2026-03-13 06:37 AM ET` | ETH | eth-updown-15m | **UP** | `trend_follow` | 0.795 | 76.0% | HighVol+Trend | 50.7% | TREND FOLLOW (HighVol+Trend, 51% elapsed) — UP token at 0.800 deviates 0.295 from 0.50. Momentum continuation strategy:  |
-| `2026-03-13 06:37 AM ET` | ETH | eth-updown-15m | **UP** | `trend_follow` | 0.785 | 75.1% | HighVol+Trend | 50.4% | TREND FOLLOW (HighVol+Trend, 50% elapsed) — UP token at 0.810 deviates 0.285 from 0.50. Momentum continuation strategy:  |
 
 ---
 _Auto-generated by **Bob the builder**_
