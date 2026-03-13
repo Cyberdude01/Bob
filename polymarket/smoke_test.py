@@ -185,10 +185,11 @@ async def run(execute: bool = False) -> None:
                 if _raw_addr:
                     print(f"{_INFO}  CLOB signer address (sig_type={_sig_type}): {_raw_addr}")
                     if str(_raw_addr).lower() != str(_env_address).lower():
-                        print(f"{_WARN}  *** PROXY WALLET DETECTED ***")
-                        print(f"{_WARN}  POLY_ADDRESS in env : {_env_address}  ← EOA")
-                        print(f"{_WARN}  Actual proxy wallet : {_raw_addr}  ← where USDC lives")
-                        print(f"{_WARN}  Action: set POLY_ADDRESS={_raw_addr} in /etc/polymarket.env")
+                        if _sig_type == 1:
+                            # sig_type=1 (POLY_PROXY): signer=EOA, funder/maker=proxy wallet — correct
+                            print(f"{_INFO}  sig_type=1: signer EOA={_raw_addr}, proxy wallet (maker)={_env_address}  ✓")
+                        else:
+                            print(f"{_WARN}  Signer {_raw_addr} != POLY_ADDRESS {_env_address}")
             except Exception as _sa_exc:
                 print(f"{_INFO}  Could not determine signer address: {_sa_exc}")
 
@@ -428,8 +429,11 @@ async def run(execute: bool = False) -> None:
                 print(f"{_INFO}  funder/maker: {_funder_addr}")
                 print(f"{_INFO}  auth sig_type={_auth_sig_type}, order sig_type={_auth_sig_type} (EOA)")
                 if _signer_addr and str(_signer_addr).lower() != str(_funder_addr).lower():
-                    print(f"{_WARN}  *** MISMATCH: signer ({_signer_addr}) != POLY_ADDRESS ({_funder_addr})")
-                    print(f"{_WARN}  Update POLY_ADDRESS={_signer_addr} in /etc/polymarket.env")
+                    if _auth_sig_type == 1:
+                        # Expected: EOA signs, proxy wallet is maker/funder
+                        print(f"{_INFO}  sig_type=1: signer EOA={_signer_addr}, proxy wallet maker={_funder_addr}  ✓")
+                    else:
+                        print(f"{_WARN}  Signer ({_signer_addr}) != POLY_ADDRESS ({_funder_addr})")
 
                 # Build OrderArgs — try with neg_risk if supported by installed version
                 _neg_risk = _is_neg_risk if '_is_neg_risk' in dir() else False
