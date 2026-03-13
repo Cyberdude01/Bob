@@ -1,6 +1,6 @@
 # Trigger Performance Summary v2
 
-> **Updated:** `2026-03-13 04:52:53 AM ET` &nbsp;|&nbsp; **Tracking from:** `2026-03-09 09:23 AM ET`
+> **Updated:** `2026-03-13 04:58:08 AM ET` &nbsp;|&nbsp; **Tracking from:** `2026-03-09 09:23 AM ET`
 
 > Fresh epoch — tracks only trades placed after the v2 start date. P&L is **net profit/loss** (stake not included in wins). Pending = placed but market not yet resolved.
 
