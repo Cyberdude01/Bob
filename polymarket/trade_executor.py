@@ -380,13 +380,16 @@ def run(execute: bool = False) -> None:
         print(f"    confidence: {confidence:.3f}")
         print(f"    reason    : {reason[:100]}")
 
+        # Convert dollar notional to share count (API expects shares, not dollars)
+        shares = round(size / live_price, 4)
+
         if not execute:
-            print(f"    --> DRY-RUN (would submit BUY {outcome} @ {live_price:.4f})")
+            print(f"    --> DRY-RUN (would submit BUY {outcome} @ {live_price:.4f}, {shares} shares)")
             # Record as dry-run so we can see what would fire
         else:
             print(f"    --> SUBMITTING order (REAL MONEY)…")
             try:
-                resp = _submit_order(client, token_id, live_price, size, side)
+                resp = _submit_order(client, token_id, live_price, shares, side)
                 order_id = resp.get("orderId") or resp.get("order_id") or "?"
                 print(f"    --> ACCEPTED  orderId={order_id}")
 
