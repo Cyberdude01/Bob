@@ -1,11 +1,11 @@
 # Decision Tracker
 
-> **Updated:** `2026-03-13 02:49:06 PM ET` &nbsp;|&nbsp; All decisions with market outcome — refreshed every 5 minutes
+> **Updated:** `2026-03-13 02:53:08 PM ET` &nbsp;|&nbsp; All decisions with market outcome — refreshed every 5 minutes
 
 ## Summary
 | Total Signals | Resolved | Wins | Losses | Pending | Win Rate |
 | ------------ | -------- | ---- | ------ | ------- | -------- |
-| 21895 | 2477 | 1376 | 1101 | 19418 | 55.6% |
+| 21370 | 2210 | 1170 | 1040 | 19160 | 52.9% |
 
 ## Decision Log
 > Each signal: predicted direction vs actual market outcome (UP/DOWN winner)
