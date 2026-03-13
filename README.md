@@ -1,19 +1,19 @@
 # Polymarket 15M Data Feed
 
-> **Mode:** LIVE &nbsp;|&nbsp; **Updated:** `2026-03-13 06:40:55 AM ET`
+> **Mode:** LIVE &nbsp;|&nbsp; **Updated:** `2026-03-13 06:43:57 AM ET`
 
 ## Live Markets
 | Symbol | Slug | UP | DOWN | Elapsed | Remaining | Bucket | Dir@60% | Dir@80% | Dir@90% | ARB |
 | ------ | ----------------- | ------ | ------ | ------- | --------- | -------------- | ------- | ------- | ------- | ----- |
-| **BTC** | btc-updown-15m | 0.7400 | 0.2600 | 72.8% | 244s | HighVol+Trend | 71.1% | 73.8% | 75.1% | — |
-| **ETH** | eth-updown-15m | 0.7950 | 0.2050 | 72.8% | 244s | HighVol+Range | 68.9% | 71.2% | 72.4% | — |
-| **SOL** | sol-updown-15m | 0.7300 | 0.2700 | 72.8% | 244s | LowVol+Trend | 69.3% | 71.7% | 72.9% | — |
-| **XRP** | xrp-updown-15m | 0.9250 | 0.0750 | 72.8% | 244s | HighVol+Range | 77.2% | 80.6% | 82.3% | — |
+| **BTC** | btc-updown-15m | — | — | — | — | — | — | — | — | — |
+| **ETH** | eth-updown-15m | — | — | — | — | — | — | — | — | — |
+| **SOL** | sol-updown-15m | — | — | — | — | — | — | — | — | — |
+| **XRP** | xrp-updown-15m | — | — | — | — | — | — | — | — | — |
 
 ## Portfolio
 | Balance | Realized P&L |
 | --------- | ------------- |
-| $-80.10 | +$0.0000 |
+| $0.00 | +$0.0000 |
 
 ## Reports
 | Report | Description |
@@ -21,11 +21,7 @@
 | [Data Collector](reports/data_collector.md) | Raw + calculated data log (last 48 h) |
 | [Decision Summary](reports/decision_summary.md) | Analysis behind every signal (last 200) |
 | [Decision Tracker](reports/decision_tracker.md) | Full trade history with entry, resolution and P&L |
-| [Trigger Summary](reports/trigger_summary.md) | UP/DOWN trades, wins and losses by trigger (current epoch only) |
-| [Trigger Summary v2](reports/trigger_summary_v2.md) | Trigger P&L by symbol — fresh epoch, clean baseline |
-| [**V1.0 Prod** Trigger Summary](reports/trigger_summary_v1_Prod.md) | V1.0 Production — ring-fenced trigger performance |
-| [**V2.0 Dev** Trigger Summary](reports/trigger_summary_v3.md) | V2.0 Dev — trend_follow + directional_90pct focus (forced suppressed) |
-| [**V3.0 Dev** Trigger Summary](reports/trigger_summary_v4.md) | V3.0 Dev — all triggers active |
+| [Trigger Summary](reports/trigger_summary.md) | UP/DOWN trades, wins and losses by trigger |
 | [Market P&L](reports/market_pnl.md) | Bets and P&L per market window, grouped by symbol |
 | [**V1.0 Prod** Market P&L](reports/market_V1_pnl.md) | V1.0 Production — market P&L view |
 
