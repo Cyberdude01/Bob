@@ -1,6 +1,6 @@
 # Data Collector Report
 
-> **Updated:** `2026-03-13 07:13:29 AM ET` &nbsp;|&nbsp; Last 500 market snapshots (48 h)
+> **Updated:** `2026-03-13 07:14:04 AM ET` &nbsp;|&nbsp; Last 500 market snapshots (48 h)
 
 | Time (ET) | Symbol | Slug | UP Price | DOWN Price | UP Spread | DN Spread | Elapsed% | Vol Bucket | Trend | RV60 | Eff60 | P(UP)@60% | UP Trades | DN Trades | ARB |
 | --------------- | ------ | ----------------- | -------- | -------- | -------- | -------- | -------- | --------- | ----- | ------- | ----- | --------- | --------- | --------- | ------ |
