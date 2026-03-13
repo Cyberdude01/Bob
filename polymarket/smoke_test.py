@@ -393,12 +393,11 @@ async def run(execute: bool = False) -> None:
                 from py_clob_client.order_builder.constants import BUY
                 import dataclasses
 
-                # Two-client approach:
-                # - sig_type=1 client: derive the registered API key + check balance
-                # - sig_type=0 client: build/post orders with direct EOA signing
-                # This is needed when POLY_ADDRESS == EOA (no proxy contract deployed):
-                # sig_type=1 works for API auth but NOT for order signing (requires proxy).
-                # sig_type=0 works for order signing but API key is derived differently.
+                # Use sig_type=1 for both API auth and order signing.
+                # The $7 USDC deposit was made via the web UI under the sig_type=1 account;
+                # Polymarket settles sig_type=1 orders from the CLOB internal balance.
+                # sig_type=0 (EOA) orders are settled on-chain from the EOA's USDC balance
+                # ($0), which is why sig_type=0 was failing with "not enough balance".
                 _auth_sig_type = int(os.environ.get("POLY_SIGNATURE_TYPE", "1"))
                 _auth_client = ClobClient(
                     CLOB_API,
@@ -408,36 +407,29 @@ async def run(execute: bool = False) -> None:
                     funder         = os.environ["POLY_ADDRESS"],
                 )
                 _api_creds = _auth_client.derive_api_key()
-                _auth_client.set_api_creds(_api_creds)  # needed for balance + update calls
+                _auth_client.set_api_creds(_api_creds)
 
-                # Order-signing client uses sig_type=0 (EOA) for valid order signatures,
-                # but injects the STORED registered API creds so Polymarket's pre-check
-                # sees the recognised account (with $7 balance) not an unknown fresh key.
+                # Order client uses the same sig_type=1 so the CLOB matches the order to
+                # the internal balance account (the one holding $7).
                 _clob_client = ClobClient(
                     CLOB_API,
                     key            = os.environ["POLY_PRIVATE_KEY"],
                     chain_id       = 137,
-                    signature_type = 0,
+                    signature_type = _auth_sig_type,
                     funder         = os.environ["POLY_ADDRESS"],
                 )
-                # Use derived sig_type=1 creds for both clients.
-                # The stored POLY_API_KEY (if set) is from a different account (sig_type=0
-                # derived, $0 balance). The sig_type=1 derived key is the one seeing $7.
-                # Injecting stored creds overwrites _auth_client and breaks balance checks.
                 _clob_client.set_api_creds(_api_creds)
-                print(f"{_INFO}  Using derived sig_type=1 API creds (balance=$7 account)")
+                print(f"{_INFO}  Using stored API creds (registered account)")
 
-                _signer_addr = _clob_client.signer.address() if callable(getattr(_clob_client.signer, 'address', None)) else getattr(_clob_client.signer, 'address', _clob_client.signer)
-                _auth_signer_raw = getattr(_auth_client.signer, 'address', None)
-                _auth_signer_addr = _auth_signer_raw() if callable(_auth_signer_raw) else _auth_signer_raw
+                _signer_raw = getattr(_clob_client.signer, 'address', None)
+                _signer_addr = _signer_raw() if callable(_signer_raw) else _signer_raw
                 _funder_addr = os.environ["POLY_ADDRESS"]
-                print(f"{_INFO}  order signer (sig_type=0): {_signer_addr}")
-                print(f"{_INFO}  auth  signer (sig_type={_auth_sig_type}): {_auth_signer_addr}")
-                print(f"{_INFO}  POLY_ADDRESS (env funder):  {_funder_addr}")
-                if _auth_signer_addr and str(_auth_signer_addr).lower() != str(_funder_addr).lower():
-                    print(f"{_WARN}  *** MISMATCH: proxy wallet ({_auth_signer_addr}) != POLY_ADDRESS ({_funder_addr})")
-                    print(f"{_WARN}  The $7 USDC is at {_auth_signer_addr}")
-                    print(f"{_WARN}  Update POLY_ADDRESS={_auth_signer_addr} in /etc/polymarket.env")
+                print(f"{_INFO}  signer EOA:    {_signer_addr}")
+                print(f"{_INFO}  funder/maker: {_funder_addr}")
+                print(f"{_INFO}  auth sig_type={_auth_sig_type}, order sig_type={_auth_sig_type} (EOA)")
+                if _signer_addr and str(_signer_addr).lower() != str(_funder_addr).lower():
+                    print(f"{_WARN}  *** MISMATCH: signer ({_signer_addr}) != POLY_ADDRESS ({_funder_addr})")
+                    print(f"{_WARN}  Update POLY_ADDRESS={_signer_addr} in /etc/polymarket.env")
 
                 # Build OrderArgs — try with neg_risk if supported by installed version
                 _neg_risk = _is_neg_risk if '_is_neg_risk' in dir() else False
@@ -588,7 +580,7 @@ async def run(execute: bool = False) -> None:
                         print(f"{_INFO}  On-chain allowance ({label}): {_cur / 1e6:.2f} USDC")
                         if _cur < 5 * 10**6:
                             _tx = _usdc.functions.approve(
-                                _w3.to_checksum_address(spender_addr), 60_000 * 10**6
+                                _w3.to_checksum_address(spender_addr), 2**256 - 1  # MAX_INT
                             ).build_transaction({
                                 "from":                 _acct.address,
                                 "nonce":                _w3.eth.get_transaction_count(_acct.address),

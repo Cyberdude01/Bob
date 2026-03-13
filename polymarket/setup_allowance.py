@@ -28,8 +28,10 @@ CTF_EXCHANGE         = "0x4bFb41d5B3570DeFd03C39a9A4D8dE6Bd8B8982E"  # standard 
 NEG_RISK_CTF_EXCHANGE = "0xC5d563A36AE78145C45a50134d48A1215220f80a"  # neg-risk market exchange
 NEG_RISK_ADAPTER     = "0xd91E80cF2E7be2e162c6513ceD06f1dD0dA35296"  # neg-risk adapter
 
-# $60,000 USDC (6 decimals)
-ALLOWANCE_USDC  = 60_000 * 10**6
+# MAX_INT — matches Polymarket's official example; unlimited approval so it never needs renewal
+ALLOWANCE_USDC  = 2**256 - 1
+# Threshold below which we re-approve (re-use current $60k level as the minimum)
+_APPROVE_THRESHOLD = 60_000 * 10**6
 
 # ── ABIs (minimal) ─────────────────────────────────────────────────────────
 USDC_ABI = [
@@ -131,10 +133,10 @@ def main():
             w3.to_checksum_address(spender),
         ).call()
         print(f"\n  {INFO}  USDC allowance ({label}): ${cur / 1e6:,.2f}")
-        if cur < ALLOWANCE_USDC:
+        if cur < _APPROVE_THRESHOLD:
             _send(w3, acct, usdc.functions.approve(
                 w3.to_checksum_address(spender), ALLOWANCE_USDC
-            ), f"USDC.approve({label}, $60,000)")
+            ), f"USDC.approve({label}, MAX_INT)")
         else:
             print(f"  {GREEN}  Already ≥ $60,000 — skipping")
 
