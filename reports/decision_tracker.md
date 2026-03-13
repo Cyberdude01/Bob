@@ -1,17 +1,29 @@
 # Decision Tracker
 
-> **Updated:** `2026-03-13 10:22:21 AM ET` &nbsp;|&nbsp; All decisions with market outcome — refreshed every 5 minutes
+> **Updated:** `2026-03-13 10:27:28 AM ET` &nbsp;|&nbsp; All decisions with market outcome — refreshed every 5 minutes
 
 ## Summary
 | Total Signals | Resolved | Wins | Losses | Pending | Win Rate |
 | ------------ | -------- | ---- | ------ | ------- | -------- |
-| 20978 | 2426 | 1269 | 1157 | 18552 | 52.3% |
+| 20990 | 2426 | 1269 | 1157 | 18564 | 52.3% |
 
 ## Decision Log
 > Each signal: predicted direction vs actual market outcome (UP/DOWN winner)
 
 | Time (ET) | Symbol | Slug | Predicted | Trigger | Confidence | P(UP) | Bucket | Elapsed% | Resolved (ET) | Winner | Result |
 | --------------- | ------ | ----------------- | --------- | -------------------- | ---------- | ----- | -------------- | -------- | ----------------- | ------ | ---------- |
+| `2026-03-13 10:24 AM ET` | XRP | xrp-updown-15m | **DOWN** | `pre_open` | 0.520 | 47.8% | LowVol+Range | 63.4% | — | — | ⏳ Pending |
+| `2026-03-13 10:24 AM ET` | XRP | xrp-updown-15m | **UP** | `pre_open` | 0.520 | 47.8% | LowVol+Range | 63.4% | — | — | ⏳ Pending |
+| `2026-03-13 10:24 AM ET` | SOL | sol-updown-15m | **DOWN** | `pre_open` | 0.520 | 22.7% | HighVol+Trend | 63.4% | — | — | ⏳ Pending |
+| `2026-03-13 10:24 AM ET` | SOL | sol-updown-15m | **UP** | `pre_open` | 0.520 | 22.7% | HighVol+Trend | 63.4% | — | — | ⏳ Pending |
+| `2026-03-13 10:24 AM ET` | ETH | eth-updown-15m | **DOWN** | `pre_open` | 0.520 | 25.4% | HighVol+Trend | 63.4% | — | — | ⏳ Pending |
+| `2026-03-13 10:24 AM ET` | ETH | eth-updown-15m | **UP** | `pre_open` | 0.520 | 25.4% | HighVol+Trend | 63.4% | — | — | ⏳ Pending |
+| `2026-03-13 10:24 AM ET` | BTC | btc-updown-15m | **DOWN** | `pre_open` | 0.520 | 13.9% | HighVol+Trend | 63.4% | — | — | ⏳ Pending |
+| `2026-03-13 10:24 AM ET` | BTC | btc-updown-15m | **UP** | `pre_open` | 0.520 | 13.9% | HighVol+Trend | 63.4% | — | — | ⏳ Pending |
+| `2026-03-13 10:23 AM ET` | XRP | xrp-updown-15m | **UP** | `forced_coin` | 0.522 | 52.2% | LowVol+Range | 56.7% | — | — | ⏳ Pending |
+| `2026-03-13 10:23 AM ET` | SOL | sol-updown-15m | **DOWN** | `forced_edge` | 0.760 | 24.0% | LowVol+Trend | 56.7% | — | — | ⏳ Pending |
+| `2026-03-13 10:23 AM ET` | ETH | eth-updown-15m | **DOWN** | `forced_edge` | 0.676 | 32.4% | LowVol+Trend | 56.7% | — | — | ⏳ Pending |
+| `2026-03-13 10:23 AM ET` | BTC | btc-updown-15m | **DOWN** | `forced_edge` | 0.817 | 18.3% | HighVol+Trend | 56.7% | — | — | ⏳ Pending |
 | `2026-03-13 10:13 AM ET` | XRP | xrp-updown-15m | **UP** | `directional_90pct` | 0.872 | 81.4% | HighVol+Range | 93.2% | — | — | ⏳ Pending |
 | `2026-03-13 10:13 AM ET` | SOL | sol-updown-15m | **UP** | `directional_90pct` | 1.000 | 93.1% | HighVol+Trend | 93.2% | — | — | ⏳ Pending |
 | `2026-03-13 10:13 AM ET` | ETH | eth-updown-15m | **UP** | `directional_90pct` | 1.000 | 93.1% | HighVol+Trend | 93.2% | — | — | ⏳ Pending |
@@ -500,18 +512,6 @@
 | `2026-03-13 09:28 AM ET` | BTC | btc-updown-15m | **DOWN** | `directional_90pct` | 0.879 | 18.1% | HighVol+Range | 89.4% | — | — | ⏳ Pending |
 | `2026-03-13 09:28 AM ET` | XRP | xrp-updown-15m | **DOWN** | `directional_90pct` | 0.789 | 25.7% | HighVol+Range | 89.2% | — | — | ⏳ Pending |
 | `2026-03-13 09:28 AM ET` | XRP | xrp-updown-15m | **DOWN** | `directional_90pct` | 0.789 | 25.7% | HighVol+Range | 89.0% | — | — | ⏳ Pending |
-| `2026-03-13 09:28 AM ET` | ETH | eth-updown-15m | **UP** | `directional_90pct` | 1.000 | 93.9% | HighVol+Trend | 89.0% | — | — | ⏳ Pending |
-| `2026-03-13 09:28 AM ET` | BTC | btc-updown-15m | **DOWN** | `directional_90pct` | 0.879 | 18.1% | HighVol+Range | 89.0% | — | — | ⏳ Pending |
-| `2026-03-13 09:28 AM ET` | XRP | xrp-updown-15m | **DOWN** | `directional_90pct` | 0.789 | 25.7% | HighVol+Range | 88.7% | — | — | ⏳ Pending |
-| `2026-03-13 09:28 AM ET` | ETH | eth-updown-15m | **UP** | `directional_90pct` | 1.000 | 93.9% | HighVol+Trend | 88.7% | — | — | ⏳ Pending |
-| `2026-03-13 09:28 AM ET` | BTC | btc-updown-15m | **DOWN** | `directional_90pct` | 0.879 | 18.1% | HighVol+Range | 88.7% | — | — | ⏳ Pending |
-| `2026-03-13 09:28 AM ET` | XRP | xrp-updown-15m | **DOWN** | `directional_90pct` | 0.897 | 16.6% | HighVol+Trend | 88.5% | — | — | ⏳ Pending |
-| `2026-03-13 09:28 AM ET` | ETH | eth-updown-15m | **UP** | `directional_90pct` | 1.000 | 93.9% | HighVol+Trend | 88.5% | — | — | ⏳ Pending |
-| `2026-03-13 09:28 AM ET` | BTC | btc-updown-15m | **DOWN** | `directional_90pct` | 0.879 | 18.1% | HighVol+Range | 88.5% | — | — | ⏳ Pending |
-| `2026-03-13 09:28 AM ET` | XRP | xrp-updown-15m | **DOWN** | `directional_90pct` | 0.897 | 16.6% | HighVol+Trend | 88.3% | — | — | ⏳ Pending |
-| `2026-03-13 09:28 AM ET` | ETH | eth-updown-15m | **UP** | `directional_90pct` | 1.000 | 93.9% | HighVol+Trend | 88.3% | — | — | ⏳ Pending |
-| `2026-03-13 09:28 AM ET` | BTC | btc-updown-15m | **DOWN** | `directional_90pct` | 0.879 | 18.1% | HighVol+Range | 88.3% | — | — | ⏳ Pending |
-| `2026-03-13 09:28 AM ET` | XRP | xrp-updown-15m | **DOWN** | `directional_90pct` | 0.897 | 16.6% | HighVol+Trend | 88.1% | — | — | ⏳ Pending |
 
 ---
 _Auto-generated by **Bob the builder**_
