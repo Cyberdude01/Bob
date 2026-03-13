@@ -47,9 +47,10 @@ FACTORY_ABI = [
                 "name": "calls",
                 "type": "tuple[]",
                 "components": [
-                    {"name": "to",    "type": "address"},
-                    {"name": "value", "type": "uint256"},
-                    {"name": "data",  "type": "bytes"},
+                    {"name": "typeCode", "type": "uint8"},   # 0=INVALID 1=CALL 2=DELEGATECALL
+                    {"name": "to",       "type": "address"},
+                    {"name": "value",    "type": "uint256"},
+                    {"name": "data",     "type": "bytes"},
                 ],
             }
         ],
