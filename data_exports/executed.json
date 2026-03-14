@@ -128,10 +128,11 @@
     "token_id": "61184958712683200301295920082815867675085507623525961453099050390692464807798",
     "order_id": "?",
     "submitted_at": "2026-03-14 08:40:37 AM ET",
-    "settled": false,
-    "result": null,
-    "pnl": null,
-    "total_return": null
+    "settled": true,
+    "result": "WIN",
+    "pnl": 0.6818,
+    "total_return": 5.6818,
+    "settled_at": "2026-03-14 09:52:15 AM ET"
   },
   "btc-updown-15m-1773491400:DOWN:pre_order": {
     "slug": "btc-updown-15m-1773491400",
@@ -144,10 +145,11 @@
     "token_id": "6635221253235063527610135580912838020943596714979227351609900150582777451129",
     "order_id": "?",
     "submitted_at": "2026-03-14 08:40:37 AM ET",
-    "settled": false,
-    "result": null,
-    "pnl": null,
-    "total_return": null
+    "settled": true,
+    "result": "LOSS",
+    "pnl": -5.0,
+    "total_return": 0.0,
+    "settled_at": "2026-03-14 09:52:16 AM ET"
   },
   "eth-updown-15m-1773491400:DOWN:pre_order": {
     "slug": "eth-updown-15m-1773491400",
@@ -160,10 +162,11 @@
     "token_id": "56435412471081984459289161329503246532062664432640722088726996197915063749182",
     "order_id": "?",
     "submitted_at": "2026-03-14 08:40:38 AM ET",
-    "settled": false,
-    "result": null,
-    "pnl": null,
-    "total_return": null
+    "settled": true,
+    "result": "LOSS",
+    "pnl": -5.0,
+    "total_return": 0.0,
+    "settled_at": "2026-03-14 09:52:16 AM ET"
   },
   "sol-updown-15m-1773491400:DOWN:pre_order": {
     "slug": "sol-updown-15m-1773491400",
@@ -176,10 +179,11 @@
     "token_id": "54041880813147983832889662372108841810400980893875950937007477429231639866079",
     "order_id": "?",
     "submitted_at": "2026-03-14 08:40:38 AM ET",
-    "settled": false,
-    "result": null,
-    "pnl": null,
-    "total_return": null
+    "settled": true,
+    "result": "LOSS",
+    "pnl": -5.0,
+    "total_return": 0.0,
+    "settled_at": "2026-03-14 09:52:16 AM ET"
   },
   "btc-updown-15m-1773492300:UP:pre_order": {
     "slug": "btc-updown-15m-1773492300",

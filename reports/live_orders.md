@@ -1,6 +1,6 @@
 # Live Orders
 
-*Updated: 2026-03-14 09:47 AM ET*
+*Updated: 2026-03-14 09:52 AM ET*
 
 ## Open Positions
 
@@ -43,16 +43,16 @@
 | 2026-03-14 08:56:08 AM ET | ETH | **UP** | `pre_order` | 0.4800 | 10.4167 | $5.00 | `?` |
 | 2026-03-14 08:56:07 AM ET | BTC | **UP** | `pre_order` | 0.4800 | 10.4167 | $5.00 | `?` |
 | 2026-03-14 08:56:07 AM ET | BTC | **DOWN** | `pre_order` | 0.4800 | 10.4167 | $5.00 | `?` |
-| 2026-03-14 08:40:38 AM ET | ETH | **DOWN** | `pre_order` | 0.4500 | 11.1111 | $5.00 | `?` |
-| 2026-03-14 08:40:38 AM ET | SOL | **DOWN** | `pre_order` | 0.4700 | 10.6383 | $5.00 | `?` |
-| 2026-03-14 08:40:37 AM ET | BTC | **DOWN** | `directional_90pct` | 0.8800 | 5.6818 | $5.00 | `?` |
-| 2026-03-14 08:40:37 AM ET | BTC | **DOWN** | `pre_order` | 0.4600 | 10.8696 | $5.00 | `?` |
 | 2026-03-14 08:25:17 AM ET | XRP | **UP** | `trend_follow` | 0.6100 | 8.1967 | $5.00 | `?` |
 
 ## Settled Trades
 
 | Submitted (ET) | Symbol | Outcome | Trigger | Entry Price | Shares | Stake | Result | PnL | Total Return |
 |----------------|--------|---------|---------|-------------|--------|-------|--------|-----|--------------|
+| 2026-03-14 08:40:38 AM ET | ETH | **DOWN** | `pre_order` | 0.4500 | 11.1111 | $5.00 | LOSS | -$5.00 | $0.00 |
+| 2026-03-14 08:40:38 AM ET | SOL | **DOWN** | `pre_order` | 0.4700 | 10.6383 | $5.00 | LOSS | -$5.00 | $0.00 |
+| 2026-03-14 08:40:37 AM ET | BTC | **DOWN** | `directional_90pct` | 0.8800 | 5.6818 | $5.00 | WIN | +$0.68 | $5.68 |
+| 2026-03-14 08:40:37 AM ET | BTC | **DOWN** | `pre_order` | 0.4600 | 10.8696 | $5.00 | LOSS | -$5.00 | $0.00 |
 | 2026-03-14 08:10:11 AM ET | XRP | **UP** | `trend_follow` | 0.2800 | 17.8571 | $5.00 | LOSS | -$5.00 | $0.00 |
 | 2026-03-14 08:10:10 AM ET | ETH | **UP** | `directional_90pct` | 0.8700 | 5.7471 | $5.00 | WIN | +$0.75 | $5.75 |
 | 2026-03-14 08:10:10 AM ET | SOL | **UP** | `directional_90pct` | 0.6000 | 8.3333 | $5.00 | WIN | +$3.33 | $8.33 |
@@ -65,7 +65,7 @@
 | Metric | Value |
 |--------|-------|
 | Total Trades | 48 |
-| Open | 42 ($210.00 at risk) |
-| Settled | 6 — 5W / 1L |
+| Open | 38 ($190.00 at risk) |
+| Settled | 10 — 6W / 4L |
 | Total Staked | $240.00 |
-| Realized PnL | +$254.00 |
+| Realized PnL | +$239.68 |
