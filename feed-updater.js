@@ -253,14 +253,27 @@ function discoverActiveSlugs() {
         }
       } catch {}
     }
-    result[sym] = best || entries.sort((a, b) => b.ts - a.ts)[0].slug;
+    if (!best) {
+      // Fallback: pick the slug whose window has already started (ts <= now),
+      // choosing the most recent one. Avoids latching onto future markets.
+      const nowSec = Math.floor(Date.now() / 1000);
+      const past = entries.filter(e => e.ts <= nowSec);
+      best = past.length > 0
+        ? past.sort((a, b) => b.ts - a.ts)[0].slug
+        : entries.sort((a, b) => a.ts - b.ts)[0].slug; // absolute last resort
+    }
+    result[sym] = best;
   }
   // Fall back to hardcoded if discovery fails
   if (Object.keys(result).length < 4) {
     console.warn('  Slug discovery incomplete, using timestamp-sorted fallback');
+    const nowSec2 = Math.floor(Date.now() / 1000);
     for (const [sym, entries] of Object.entries(bySymbol)) {
       if (!result[sym] && entries.length > 0) {
-        result[sym] = entries.sort((a, b) => b.ts - a.ts)[0].slug;
+        const past = entries.filter(e => e.ts <= nowSec2);
+        result[sym] = past.length > 0
+          ? past.sort((a, b) => b.ts - a.ts)[0].slug
+          : entries.sort((a, b) => a.ts - b.ts)[0].slug;
       }
     }
   }
