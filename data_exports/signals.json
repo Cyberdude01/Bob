@@ -1,4 +1,16 @@
 {
-  "updated": "2026-03-14 07:35 AM ET",
-  "data": []
+  "updated": "2026-03-14 07:40 AM ET",
+  "data": [
+    {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m-1773487800",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5,
+      "price": 0.8,
+      "confidence": 0.8,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 67% elapsed — P(UP)=0.200 gives edge=0.300 toward DOWN. Bucket=HighVol+Range (RV60=995.93933, Eff60=0.006). Fixed $5 USDC stake @ conf=0.800."
+    }
+  ]
 }
