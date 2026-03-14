@@ -39,7 +39,7 @@ _PKG_ROOT      = _THIS_DIR.parent
 if str(_PKG_ROOT) not in sys.path:
     sys.path.insert(0, str(_PKG_ROOT))
 
-from polymarket.config import CLOB_API
+from .config import CLOB_API
 
 _DATA_DIR      = _PKG_ROOT / "data_exports"
 _EXECUTED_FILE = _DATA_DIR / "executed.json"
