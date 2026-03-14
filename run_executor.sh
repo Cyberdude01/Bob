@@ -9,4 +9,4 @@ git fetch origin main
 git checkout origin/main -- data_exports/signals.json data_exports/markets.json
 
 echo "[run_executor] Running trade executor..."
-python -m polymarket.trade_executor "$@"
+python3 -m polymarket.trade_executor "$@"
