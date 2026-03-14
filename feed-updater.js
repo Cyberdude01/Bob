@@ -34,7 +34,7 @@ const VOL_THRESHOLD   = 5.0;   // rv60 above this = HighVol
 const TREND_THRESHOLD = 0.016; // eff60 above this = Trend
 // Signal thresholds
 const MIN_EDGE_TREND_FOLLOW = 0.12;  // |probUp - 0.5| >= 0.12 to fire trend_follow
-const MIN_EDGE_DIRECTIONAL  = 0.35;  // |probUp - 0.5| >= 0.35 to fire directional_90pct
+const MIN_EDGE_DIRECTIONAL  = 0.25;  // |probUp - 0.5| >= 0.25 to fire directional (75%+ probability)
 const TRADE_SIZE            = 5.0;   // Fixed $5 USDC stake per signal
 // ─── Time helpers ─────────────────────────────────────────────────────────────
 function isDSTActive(date) {
@@ -584,8 +584,8 @@ function generateSignals(results) {
       });
     }
 
-    // directional_90pct: 90%+ elapsed, high edge
-    if (elapsedPct >= 0.90 && edge >= MIN_EDGE_DIRECTIONAL) {
+    // directional: 67%+ elapsed, any bucket, edge >= 0.25 (75%+ probability)
+    if (elapsedPct >= 0.667 && edge >= MIN_EDGE_DIRECTIONAL) {
       signals.push({
         symbol,
         slug,
@@ -595,10 +595,10 @@ function generateSignals(results) {
         price,
         confidence,
         trigger:    'directional_90pct',
-        reason:     `DIRECTIONAL at 90pct (${(elapsedPct * 100).toFixed(0)}% elapsed) — `
+        reason:     `DIRECTIONAL at ${(elapsedPct * 100).toFixed(0)}% elapsed — `
           + `P(UP)=${probUp.toFixed(3)} gives edge=${edge.toFixed(3)} toward ${outcome}. `
           + `Bucket=${volBucket}+${trendBucket} (RV60=${rv60.toFixed(5)}, Eff60=${eff60.toFixed(3)}). `
-          + `Fixed $${TRADE_SIZE} USDC stake @ conf=${confidence.toFixed(3)}. [adaptive edge=0.050]`,
+          + `Fixed $${TRADE_SIZE} USDC stake @ conf=${confidence.toFixed(3)}.`,
       });
     }
   }
