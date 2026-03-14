@@ -1,38 +1,16 @@
 {
-  "updated": "2026-03-14 07:55 AM ET",
+  "updated": "2026-03-14 08:00 AM ET",
   "data": [
     {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m-1773488700",
-      "outcome": "UP",
+      "symbol": "ETH",
+      "slug": "eth-updown-15m-1773488700",
+      "outcome": "DOWN",
       "side": "BUY",
       "size": 5,
-      "price": 0.865,
-      "confidence": 0.865,
+      "price": 0.965,
+      "confidence": 0.965,
       "trigger": "directional_90pct",
-      "reason": "DIRECTIONAL at 67% elapsed — P(UP)=0.865 gives edge=0.365 toward UP. Bucket=HighVol+Range (RV60=999.69579, Eff60=0.002). Fixed $5 USDC stake @ conf=0.865."
-    },
-    {
-      "symbol": "SOL",
-      "slug": "sol-updown-15m-1773488700",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 5,
-      "price": 0.85,
-      "confidence": 0.85,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW at 67% elapsed — P(UP)=0.850 gives edge=0.350 toward UP. Bucket=HighVol+Trend (RV60=1014.41575, Eff60=0.016). Fixed $5 USDC stake @ conf=0.850."
-    },
-    {
-      "symbol": "SOL",
-      "slug": "sol-updown-15m-1773488700",
-      "outcome": "UP",
-      "side": "BUY",
-      "size": 5,
-      "price": 0.85,
-      "confidence": 0.85,
-      "trigger": "directional_90pct",
-      "reason": "DIRECTIONAL at 67% elapsed — P(UP)=0.850 gives edge=0.350 toward UP. Bucket=HighVol+Trend (RV60=1014.41575, Eff60=0.016). Fixed $5 USDC stake @ conf=0.850."
+      "reason": "DIRECTIONAL at 100% elapsed — P(UP)=0.035 gives edge=0.465 toward DOWN. Bucket=HighVol+Trend (RV60=1320.20374, Eff60=0.029). Fixed $5 USDC stake @ conf=0.965."
     },
     {
       "symbol": "XRP",
@@ -40,10 +18,10 @@
       "outcome": "UP",
       "side": "BUY",
       "size": 5,
-      "price": 0.78,
-      "confidence": 0.78,
+      "price": 0.845,
+      "confidence": 0.845,
       "trigger": "directional_90pct",
-      "reason": "DIRECTIONAL at 67% elapsed — P(UP)=0.780 gives edge=0.280 toward UP. Bucket=HighVol+Range (RV60=991.89525, Eff60=0.002). Fixed $5 USDC stake @ conf=0.780."
+      "reason": "DIRECTIONAL at 100% elapsed — P(UP)=0.845 gives edge=0.345 toward UP. Bucket=HighVol+Range (RV60=990.86366, Eff60=0.011). Fixed $5 USDC stake @ conf=0.845."
     }
   ]
 }
