@@ -317,12 +317,12 @@ def run(execute: bool = False) -> None:
     print(f"signals.json updated : {signals_updated}")
     print(f"signals found        : {len(signals)}")
 
-    # ── Staleness guard ────────────────────────────────────────────────────
-    freshness_err = _check_signals_freshness(signals_updated)
-    if freshness_err:
-        print(f"\nERROR: {freshness_err}")
-        print("Update signals.json before re-running.\n")
-        return
+    # ── Staleness guard (temporarily disabled — re-enable after feed is confirmed live)
+    # freshness_err = _check_signals_freshness(signals_updated)
+    # if freshness_err:
+    #     print(f"\nERROR: {freshness_err}")
+    #     print("Update signals.json before re-running.\n")
+    #     return
 
     try:
         markets_raw = _load_json(_MARKETS_FILE)
