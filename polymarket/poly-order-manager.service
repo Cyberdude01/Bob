@@ -1,0 +1,18 @@
+[Unit]
+Description=Polymarket Order Manager — continuous GTC limit order placement + pre-orders
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/Bob
+ExecStart=/root/Bob/run_order_manager.sh
+Restart=on-failure
+RestartSec=30
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=poly-order-manager
+
+[Install]
+WantedBy=multi-user.target
