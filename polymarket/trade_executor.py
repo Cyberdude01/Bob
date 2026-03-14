@@ -398,18 +398,25 @@ def run(execute: bool = False) -> None:
             errors += 1
             continue
 
-        # Fetch live price
-        live_price = _get_live_price(token_id, side)
-        if live_price is None or live_price <= 0:
-            print(f"{prefix} ERROR — could not fetch live price for token {token_id[:12]}…")
-            errors += 1
-            continue
+        # pre_order straddle: use fixed signal price (0.48); do not fetch live
+        # price — the market hasn't opened yet so there's no book to quote from.
+        if is_pre_order:
+            sig_price = float(sig.get("price", 0.48))
+            live_price = sig_price
+            print(f"{prefix} pre_order — using fixed bid price {live_price:.4f} (no live quote)")
+        else:
+            # Fetch live price
+            live_price = _get_live_price(token_id, side)
+            if live_price is None or live_price <= 0:
+                print(f"{prefix} ERROR — could not fetch live price for token {token_id[:12]}…")
+                errors += 1
+                continue
 
-        # Skip near-resolved markets (price ≥ 0.95 means candle already closed/settling)
-        if live_price >= 0.95:
-            print(f"{prefix} SKIP — market already resolved (live_price={live_price:.4f} ≥ 0.95, no edge)")
-            skipped += 1
-            continue
+            # Skip near-resolved markets (price ≥ 0.95 means candle already closed/settling)
+            if live_price >= 0.95:
+                print(f"{prefix} SKIP — market already resolved (live_price={live_price:.4f} ≥ 0.95, no edge)")
+                skipped += 1
+                continue
 
         # Balance guard
         if balance < size:
