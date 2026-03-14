@@ -1,4 +1,27 @@
 {
-  "updated": "2026-03-14 03:35 AM ET",
-  "data": []
+  "updated": "2026-03-14 03:40 AM ET",
+  "data": [
+    {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m-1773473400",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5,
+      "price": 0.86,
+      "confidence": 0.86,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW at 67% elapsed — P(UP)=0.140 gives edge=0.360 toward DOWN. Bucket=HighVol+Trend (RV60=1042.03619, Eff60=0.023). Fixed $5 USDC stake @ conf=0.860."
+    },
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m-1773473400",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5,
+      "price": 0.88,
+      "confidence": 0.88,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW at 67% elapsed — P(UP)=0.120 gives edge=0.380 toward DOWN. Bucket=HighVol+Trend (RV60=953.52393, Eff60=0.034). Fixed $5 USDC stake @ conf=0.880."
+    }
+  ]
 }
