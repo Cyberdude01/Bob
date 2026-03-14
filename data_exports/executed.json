@@ -44,10 +44,11 @@
     "token_id": "13184933877134566939360458119017575336957312076437349153510953533872015069406",
     "order_id": "?",
     "submitted_at": "2026-03-14 08:10:09 AM ET",
-    "settled": false,
-    "result": null,
-    "pnl": null,
-    "total_return": null
+    "settled": true,
+    "result": "WIN",
+    "pnl": 8.1579,
+    "total_return": 13.1579,
+    "settled_at": "2026-03-14 09:21:35 AM ET"
   },
   "eth-updown-15m-1773489600:UP:2026-03-14 08:10 AM ET": {
     "slug": "eth-updown-15m-1773489600",
@@ -60,10 +61,11 @@
     "token_id": "108515950198558339893732685215269400589151900970951039494924465355727732145076",
     "order_id": "?",
     "submitted_at": "2026-03-14 08:10:10 AM ET",
-    "settled": false,
-    "result": null,
-    "pnl": null,
-    "total_return": null
+    "settled": true,
+    "result": "WIN",
+    "pnl": 0.7471,
+    "total_return": 5.7471,
+    "settled_at": "2026-03-14 09:21:35 AM ET"
   },
   "sol-updown-15m-1773489600:UP:2026-03-14 08:10 AM ET": {
     "slug": "sol-updown-15m-1773489600",
@@ -76,10 +78,11 @@
     "token_id": "72114172124779188719174212383372515355221057575557107563005333449665580944760",
     "order_id": "?",
     "submitted_at": "2026-03-14 08:10:10 AM ET",
-    "settled": false,
-    "result": null,
-    "pnl": null,
-    "total_return": null
+    "settled": true,
+    "result": "WIN",
+    "pnl": 3.3333,
+    "total_return": 8.3333,
+    "settled_at": "2026-03-14 09:21:36 AM ET"
   },
   "xrp-updown-15m-1773489600:UP:2026-03-14 08:10 AM ET": {
     "slug": "xrp-updown-15m-1773489600",
@@ -92,10 +95,11 @@
     "token_id": "5786223542946308362801923445061813332860895808272565429355478582128710995974",
     "order_id": "?",
     "submitted_at": "2026-03-14 08:10:11 AM ET",
-    "settled": false,
-    "result": null,
-    "pnl": null,
-    "total_return": null
+    "settled": true,
+    "result": "LOSS",
+    "pnl": -5.0,
+    "total_return": 0.0,
+    "settled_at": "2026-03-14 09:21:36 AM ET"
   },
   "xrp-updown-15m-1773490500:UP:trend_follow": {
     "slug": "xrp-updown-15m-1773490500",
