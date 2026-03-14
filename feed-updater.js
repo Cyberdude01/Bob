@@ -217,11 +217,19 @@ function discoverActiveSlugs() {
   const now = Date.now();
   for (const [sym, entries] of Object.entries(bySymbol)) {
     if (entries.length === 0) continue;
-    if (entries.length === 1) { result[sym] = entries[0].slug; continue; }
+    if (entries.length === 1) {
+      // Only accept the single entry if its window has already started
+      const nowSec0 = Math.floor(Date.now() / 1000);
+      if (entries[0].ts <= nowSec0) { result[sym] = entries[0].slug; continue; }
+      // Otherwise fall through to the loop (will likely hit the fallback)
+    }
     // Query gamma for each and pick the one with the earliest endDate that is still in future
     let best = null;
     let bestEndMs = Infinity;
-    for (const { slug } of entries) {
+    const nowSec = Math.floor(Date.now() / 1000);
+    for (const { slug, ts } of entries) {
+      // Skip markets that haven't started yet (future windows pre-listed on the page)
+      if (ts > nowSec) continue;
       try {
         const data = curlGetJSON(
           `https://gamma-api.polymarket.com/markets?slug=${slug}`, 8);
