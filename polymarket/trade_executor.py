@@ -226,6 +226,12 @@ def _get_token_id(
     return None
 
 
+def _get_elapsed_pct() -> float:
+    """Returns how far through the current 15-min candle we are (0.0 – 1.0+)."""
+    now = int(time.time())
+    return (now % 900) / 900.0
+
+
 def _get_live_price(token_id: str, side: str) -> Optional[float]:
     """
     Fetch best_ask (for BUY) or best_bid (for SELL) from CLOB.
@@ -306,6 +312,154 @@ def _submit_order(client, token_id: str, price: float, size: float, side: str) -
     return resp if isinstance(resp, dict) else {"raw": str(resp)}
 
 
+# ─── Pre-order exit protection ────────────────────────────────────────────────
+
+def _run_exit_preorders(
+    signals: List[Dict[str, Any]],
+    markets_data: Dict[str, Any],
+    executed: Dict[str, Any],
+    client,
+    execute: bool,
+) -> None:
+    """
+    Protect capital by exiting one-sided pre_order positions when:
+      - Only ONE side (UP or DOWN) was bought for a market (not a full straddle)
+      - No directional_90pct signal exists for that symbol (no confidence)
+      - Current candle is >= 67% elapsed
+
+    Skip exit when:
+      - Both sides were bought (straddle — one side always wins)
+      - A directional_90pct signal exists (covers the position)
+      - Position already has an exit recorded
+    """
+    elapsed = _get_elapsed_pct()
+
+    print(f"\n{'─'*60}")
+    print(f"  Pre-order exit check  (elapsed={elapsed:.1%})")
+
+    if elapsed < 0.667:
+        print(f"  Too early — waiting until 67% of candle elapsed")
+        return
+
+    # Symbols with active directional confidence in current signals
+    directional_symbols = {
+        sig.get("symbol", "").upper()
+        for sig in signals
+        if sig.get("trigger") == "directional_90pct"
+    }
+
+    for symbol, sym_data in markets_data.get("data", {}).items():
+        symbol = symbol.upper()
+
+        # Resolve current market token IDs via condition_id
+        condition_id = sym_data.get("condition_id")
+        if not condition_id:
+            continue
+
+        current_token_ids: Dict[str, str] = {}
+        try:
+            r = requests.get(f"{CLOB_API}/markets/{condition_id}", timeout=10)
+            r.raise_for_status()
+            for tok in (r.json().get("tokens") or []):
+                out = str(tok.get("outcome", "")).upper()
+                if out in ("UP", "DOWN"):
+                    current_token_ids[out] = str(tok.get("token_id", ""))
+        except Exception as e:
+            print(f"\n  [{symbol}] SKIP exit check — could not fetch tokens: {e}")
+            continue
+
+        if not current_token_ids:
+            continue
+
+        # Find pre_order executed entries whose token_id matches the current market
+        bought: Dict[str, Any] = {}   # outcome -> executed entry
+        for entry in executed.values():
+            if entry.get("trigger") != "pre_order":
+                continue
+            if entry.get("settled"):
+                continue
+            tok_id = entry.get("token_id", "")
+            for out, cur_tok in current_token_ids.items():
+                if tok_id == cur_tok:
+                    bought[out] = entry
+                    break
+
+        if not bought:
+            continue
+
+        print(f"\n  [{symbol}] pre_order positions in current market: {sorted(bought)}")
+
+        # Full straddle — one side always wins, let it run
+        if len(bought) == 2:
+            print(f"  [{symbol}] HOLD — full straddle (UP + DOWN bought)")
+            continue
+
+        outcome = next(iter(bought))
+        entry   = bought[outcome]
+
+        # Directional signal present — it provides cover, hold
+        if symbol in directional_symbols:
+            print(f"  [{symbol}] HOLD — directional_90pct signal present, keeping {outcome}")
+            continue
+
+        # Dedup: already exited this position?
+        exit_key = f"{entry['slug']}:{outcome}:exit_pre_order"
+        if exit_key in executed:
+            print(f"  [{symbol}] SKIP — already exited {outcome}")
+            continue
+
+        # ── Submit exit (SELL) ──────────────────────────────────────────────
+        token_id = entry.get("token_id")
+        shares   = entry.get("shares", 0)
+        if not token_id or shares <= 0:
+            print(f"  [{symbol}] ERROR — bad token_id or shares in executed record")
+            continue
+
+        sell_price = _get_live_price(token_id, "SELL")
+        if not sell_price or sell_price <= 0:
+            print(f"  [{symbol}] ERROR — could not fetch sell price for {outcome}")
+            continue
+
+        buy_cost  = entry.get("size", shares * entry.get("price", 0))
+        proceeds  = round(shares * sell_price, 4)
+        pnl       = round(proceeds - buy_cost, 4)
+
+        print(f"  [{symbol} {outcome}] EXIT — one-sided pre_order, no directional confidence")
+        print(f"    token     : {token_id[:16]}…")
+        print(f"    shares    : {shares}  sell_price: {sell_price:.4f}  (bought @ {entry.get('price', 0):.4f})")
+        print(f"    est. P&L  : ${pnl:+.4f}")
+
+        if not execute:
+            print(f"    --> DRY-RUN (would SELL {shares} shares @ {sell_price:.4f})")
+        else:
+            print(f"    --> SUBMITTING SELL order…")
+            try:
+                resp     = _submit_order(client, token_id, sell_price, shares, "SELL")
+                order_id = resp.get("orderId") or resp.get("order_id") or "?"
+                print(f"    --> ACCEPTED  orderId={order_id}")
+
+                executed[exit_key] = {
+                    "slug":         entry["slug"],
+                    "symbol":       symbol,
+                    "outcome":      outcome,
+                    "trigger":      "exit_pre_order",
+                    "price":        sell_price,
+                    "size":         proceeds,
+                    "shares":       shares,
+                    "token_id":     token_id,
+                    "order_id":     order_id,
+                    "submitted_at": datetime.now(_ET).strftime("%Y-%m-%d %I:%M:%S %p ET"),
+                    "settled":      False,
+                    "result":       None,
+                    "pnl":          pnl,
+                    "total_return": None,
+                }
+                _save_executed(executed)
+
+            except Exception as exc:
+                print(f"    --> ERROR submitting sell: {exc}")
+
+
 # ─── Main executor ────────────────────────────────────────────────────────────
 
 def run(execute: bool = False) -> None:
@@ -343,10 +497,6 @@ def run(execute: bool = False) -> None:
     executed = _load_executed()
     print(f"already executed     : {len(executed)} entries\n")
 
-    if not signals:
-        print("No signals to process.")
-        return
-
     # ── Initialise CLOB client & check balance ─────────────────────────────
     try:
         client  = _build_clob_client()
@@ -360,6 +510,9 @@ def run(execute: bool = False) -> None:
     submitted = 0
     skipped   = 0
     errors    = 0
+
+    if not signals:
+        print("No buy signals to process.")
 
     for sig in signals:
         slug     = sig.get("slug", "")
@@ -479,6 +632,9 @@ def run(execute: bool = False) -> None:
     if not execute and (len(signals) - skipped - errors) > 0:
         print(f"\n  Re-run with --execute to submit real orders.")
     print()
+
+    # ── Pre-order exit protection (always runs) ────────────────────────────
+    _run_exit_preorders(signals, markets_raw, executed, client, execute)
 
 
 # ─── CLI ──────────────────────────────────────────────────────────────────────
