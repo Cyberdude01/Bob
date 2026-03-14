@@ -396,6 +396,12 @@ def run(execute: bool = False) -> None:
             errors += 1
             continue
 
+        # Skip near-resolved markets (price ≥ 0.95 means candle already closed/settling)
+        if live_price >= 0.95:
+            print(f"{prefix} SKIP — market already resolved (live_price={live_price:.4f} ≥ 0.95, no edge)")
+            skipped += 1
+            continue
+
         # Balance guard
         if balance < size:
             print(f"{prefix} SKIP — insufficient balance (${balance:.2f} < ${size:.2f})")
