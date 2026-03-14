@@ -40,7 +40,8 @@ _PKG_ROOT  = _THIS_DIR.parent
 if str(_PKG_ROOT) not in sys.path:
     sys.path.insert(0, str(_PKG_ROOT))
 
-from .config import CLOB_API, GAMMA_API
+CLOB_API  = "https://clob.polymarket.com"
+GAMMA_API = "https://gamma-api.polymarket.com"
 
 # ─── Paths ────────────────────────────────────────────────────────────────────
 _DATA_DIR      = _PKG_ROOT / "data_exports"
