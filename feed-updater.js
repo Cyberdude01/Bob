@@ -179,8 +179,36 @@ function curlGetJSON(url, timeout = 10) {
  *
  * Returns a map of { symbol → slug } for the currently-active windows.
  */
+// Symbol → primary slug prefix (updown-15m variant)
+const SYMBOL_TO_SLUG_PREFIX = {
+  BTC: 'btc-updown-15m',
+  ETH: 'eth-updown-15m',
+  SOL: 'sol-updown-15m',
+  XRP: 'xrp-updown-15m',
+};
 function discoverActiveSlugs() {
   const bySymbol = {}; // symbol → [{slug, timestamp}]
+  // ── Step 0: clock-derived fast path ──────────────────────────────────────
+  // 15-minute windows align on 900-second boundaries.  Construct the expected
+  // slug for the current window and hit the Gamma API directly.  This avoids
+  // waiting for the /crypto/15M page to surface a brand-new slug.
+  const result0 = {};
+  const nowSec0 = Math.floor(Date.now() / 1000);
+  const windowTs = Math.floor(nowSec0 / 900) * 900; // current window start
+  for (const sym of SYMBOLS) {
+    const slug = `${SYMBOL_TO_SLUG_PREFIX[sym]}-${windowTs}`;
+    try {
+      const data = curlGetJSON(`https://gamma-api.polymarket.com/markets?slug=${slug}`, 6);
+      if (Array.isArray(data) && data.length > 0 && !data[0].closed) {
+        result0[sym] = slug;
+      }
+    } catch {}
+  }
+  if (Object.keys(result0).length === 4) {
+    console.log('  (clock-derived slugs confirmed via Gamma)');
+    return result0; // all four symbols resolved — skip page scraping
+  }
+  // ── Step 1: page-scrape discovery (fallback) ──────────────────────────────
   try {
     const html = curlGet('https://polymarket.com/crypto/15M', 15);
     if (!html) throw new Error('empty response');
@@ -271,6 +299,10 @@ function discoverActiveSlugs() {
         : entries.sort((a, b) => a.ts - b.ts)[0].slug; // absolute last resort
     }
     result[sym] = best;
+  }
+  // Fill any gaps with clock-derived results from Step 0
+  for (const [sym, slug] of Object.entries(result0)) {
+    if (!result[sym]) result[sym] = slug;
   }
   // Fall back to hardcoded if discovery fails
   if (Object.keys(result).length < 4) {
