@@ -1,6 +1,28 @@
 {
-  "updated": "2026-03-14 03:40 AM ET",
+  "updated": "2026-03-14 03:45 AM ET",
   "data": [
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m-1773473400",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5,
+      "price": 0.995,
+      "confidence": 0.995,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (100% elapsed) — P(UP)=0.005 gives edge=0.495 toward DOWN. Bucket=HighVol+Trend (RV60=903.37944, Eff60=0.078). Fixed $5 USDC stake @ conf=0.995. [adaptive edge=0.050]"
+    },
+    {
+      "symbol": "ETH",
+      "slug": "eth-updown-15m-1773473400",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5,
+      "price": 0.985,
+      "confidence": 0.985,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (100% elapsed) — P(UP)=0.015 gives edge=0.485 toward DOWN. Bucket=HighVol+Trend (RV60=1173.12991, Eff60=0.047). Fixed $5 USDC stake @ conf=0.985. [adaptive edge=0.050]"
+    },
     {
       "symbol": "SOL",
       "slug": "sol-updown-15m-1773473400",
@@ -9,8 +31,8 @@
       "size": 5,
       "price": 0.86,
       "confidence": 0.86,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW at 67% elapsed — P(UP)=0.140 gives edge=0.360 toward DOWN. Bucket=HighVol+Trend (RV60=1042.03619, Eff60=0.023). Fixed $5 USDC stake @ conf=0.860."
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (100% elapsed) — P(UP)=0.140 gives edge=0.360 toward DOWN. Bucket=HighVol+Trend (RV60=1042.01446, Eff60=0.024). Fixed $5 USDC stake @ conf=0.860. [adaptive edge=0.050]"
     },
     {
       "symbol": "XRP",
@@ -20,8 +42,8 @@
       "size": 5,
       "price": 0.88,
       "confidence": 0.88,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW at 67% elapsed — P(UP)=0.120 gives edge=0.380 toward DOWN. Bucket=HighVol+Trend (RV60=953.52393, Eff60=0.034). Fixed $5 USDC stake @ conf=0.880."
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 90pct (100% elapsed) — P(UP)=0.120 gives edge=0.380 toward DOWN. Bucket=HighVol+Trend (RV60=953.50025, Eff60=0.035). Fixed $5 USDC stake @ conf=0.880. [adaptive edge=0.050]"
     }
   ]
 }
