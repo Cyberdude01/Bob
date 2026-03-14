@@ -1,4 +1,71 @@
 {
-  "updated": "2026-03-14 05:20 AM ET",
-  "data": []
+  "updated": "2026-03-14 05:25 AM ET",
+  "data": [
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m-1773479700",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5,
+      "price": 0.755,
+      "confidence": 0.755,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW at 67% elapsed — P(UP)=0.245 gives edge=0.255 toward DOWN. Bucket=HighVol+Trend (RV60=999.44223, Eff60=0.02). Fixed $5 USDC stake @ conf=0.755."
+    },
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m-1773479700",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5,
+      "price": 0.755,
+      "confidence": 0.755,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 67% elapsed — P(UP)=0.245 gives edge=0.255 toward DOWN. Bucket=HighVol+Trend (RV60=999.44223, Eff60=0.020). Fixed $5 USDC stake @ conf=0.755."
+    },
+    {
+      "symbol": "ETH",
+      "slug": "eth-updown-15m-1773479700",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5,
+      "price": 0.915,
+      "confidence": 0.915,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 67% elapsed — P(UP)=0.085 gives edge=0.415 toward DOWN. Bucket=HighVol+Range (RV60=1225.54254, Eff60=0.004). Fixed $5 USDC stake @ conf=0.915."
+    },
+    {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m-1773479700",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5,
+      "price": 0.875,
+      "confidence": 0.875,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW at 67% elapsed — P(UP)=0.125 gives edge=0.375 toward DOWN. Bucket=HighVol+Trend (RV60=977.39787, Eff60=0.038). Fixed $5 USDC stake @ conf=0.875."
+    },
+    {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m-1773479700",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5,
+      "price": 0.875,
+      "confidence": 0.875,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 67% elapsed — P(UP)=0.125 gives edge=0.375 toward DOWN. Bucket=HighVol+Trend (RV60=977.39787, Eff60=0.038). Fixed $5 USDC stake @ conf=0.875."
+    },
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m-1773479700",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5,
+      "price": 0.745,
+      "confidence": 0.745,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW at 67% elapsed — P(UP)=0.255 gives edge=0.245 toward DOWN. Bucket=HighVol+Trend (RV60=928.96232, Eff60=0.024). Fixed $5 USDC stake @ conf=0.745."
+    }
+  ]
 }
