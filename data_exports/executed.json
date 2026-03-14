@@ -10,10 +10,11 @@
     "token_id": "6565034296077498687554271762272976861634799363492936263516797884981512530575",
     "order_id": "?",
     "submitted_at": "2026-03-14 07:29:08 AM ET",
-    "settled": false,
-    "result": null,
-    "pnl": null,
-    "total_return": null
+    "settled": true,
+    "result": "WIN",
+    "pnl": 245.0,
+    "total_return": 250.0,
+    "settled_at": "2026-03-14 08:35:29 AM ET"
   },
   "sol-updown-15m-1773487800:DOWN:2026-03-14 07:40 AM ET": {
     "slug": "sol-updown-15m-1773487800",
