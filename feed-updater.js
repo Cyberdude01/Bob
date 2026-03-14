@@ -16,6 +16,7 @@ const path = require('path');
 const REPO_DIR      = path.resolve(__dirname);
 const DATA_DIR      = path.join(REPO_DIR, 'data_exports');
 const REPORTS_DIR   = path.join(REPO_DIR, 'reports');
+const DB_PATH       = path.join(REPO_DIR, 'market-data.db');
 const LOOP_INTERVAL = 5 * 60 * 1000; // 5 minutes
 const SYMBOLS = ['BTC', 'ETH', 'SOL', 'XRP'];
 // Base slug patterns → symbol mapping (slug may have a timestamp suffix like -1773294300)
@@ -179,6 +180,39 @@ function curlGetJSON(url, timeout = 10) {
  *
  * Returns a map of { symbol → slug } for the currently-active windows.
  */
+// ─── DB slug lookup ────────────────────────────────────────────────────────────
+/**
+ * Query market-data.db for the most recently confirmed slug per symbol.
+ * market-data-collector runs every 60s so the DB is almost always fresher
+ * than the 5-minute feed-updater cycle.  Only returns slugs seen within the
+ * last STALE_SECS seconds so we never serve yesterday's market.
+ *
+ * Uses the sqlite3 CLI (available on Debian by default) so no async code
+ * is needed.  Returns {} gracefully if the DB is absent or the CLI is not
+ * installed.
+ */
+const DB_STALE_SECS = 120; // reject slugs older than 2 minutes
+function querySlugsFromDB() {
+  if (!fs.existsSync(DB_PATH)) return {};
+  try {
+    const minTs = Math.floor(Date.now() / 1000) - DB_STALE_SECS;
+    const result = {};
+    for (const [prefix, sym] of [
+      ['btc-updown-15m', 'BTC'],
+      ['eth-updown-15m', 'ETH'],
+      ['sol-updown-15m', 'SOL'],
+      ['xrp-updown-15m', 'XRP'],
+    ]) {
+      const sql = `SELECT slug FROM market_data WHERE slug LIKE '${prefix}-%' AND timestamp > ${minTs} ORDER BY timestamp DESC LIMIT 1;`;
+      const slug = execSync(`sqlite3 "${DB_PATH}" "${sql}"`,
+        { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'], timeout: 3000 }).trim();
+      if (slug) result[sym] = slug;
+    }
+    return result;
+  } catch {
+    return {};
+  }
+}
 // Symbol → primary slug prefix (updown-15m variant)
 const SYMBOL_TO_SLUG_PREFIX = {
   BTC: 'btc-updown-15m',
@@ -188,14 +222,27 @@ const SYMBOL_TO_SLUG_PREFIX = {
 };
 function discoverActiveSlugs() {
   const bySymbol = {}; // symbol → [{slug, timestamp}]
-  // ── Step 0: clock-derived fast path ──────────────────────────────────────
-  // 15-minute windows align on 900-second boundaries.  Construct the expected
-  // slug for the current window and hit the Gamma API directly.  This avoids
-  // waiting for the /crypto/15M page to surface a brand-new slug.
-  const result0 = {};
+  // ── Step 0: SQLite DB (primary) ───────────────────────────────────────────
+  // market-data-collector writes confirmed open slugs every 60s — far more
+  // frequent than our 5-minute cycle.  Using the DB avoids all external API
+  // calls for slug resolution in the common case.
+  const dbSlugs = querySlugsFromDB();
+  if (Object.keys(dbSlugs).length === 4) {
+    console.log('  (slugs from SQLite DB)');
+    return dbSlugs;
+  }
+  if (Object.keys(dbSlugs).length > 0) {
+    console.log(`  (partial DB slugs: ${Object.keys(dbSlugs).join(', ')} — filling gaps)`);
+  }
+  // ── Step 1: clock-derived fast path ──────────────────────────────────────
+  // For any symbols not found in the DB (e.g. at window boundaries before the
+  // collector's next run), compute the expected slug from the clock and confirm
+  // it via the Gamma API.  15-min windows align on exact 900-second boundaries.
   const nowSec0 = Math.floor(Date.now() / 1000);
   const windowTs = Math.floor(nowSec0 / 900) * 900; // current window start
+  const result0 = Object.assign({}, dbSlugs); // start with whatever the DB gave us
   for (const sym of SYMBOLS) {
+    if (result0[sym]) continue; // already resolved by DB
     const slug = `${SYMBOL_TO_SLUG_PREFIX[sym]}-${windowTs}`;
     try {
       const data = curlGetJSON(`https://gamma-api.polymarket.com/markets?slug=${slug}`, 6);
@@ -206,9 +253,9 @@ function discoverActiveSlugs() {
   }
   if (Object.keys(result0).length === 4) {
     console.log('  (clock-derived slugs confirmed via Gamma)');
-    return result0; // all four symbols resolved — skip page scraping
+    return result0;
   }
-  // ── Step 1: page-scrape discovery (fallback) ──────────────────────────────
+  // ── Step 2: page-scrape discovery (last resort) ───────────────────────────
   try {
     const html = curlGet('https://polymarket.com/crypto/15M', 15);
     if (!html) throw new Error('empty response');
@@ -300,7 +347,7 @@ function discoverActiveSlugs() {
     }
     result[sym] = best;
   }
-  // Fill any gaps with clock-derived results from Step 0
+  // Fill any gaps with DB/clock-derived results from Steps 0–1
   for (const [sym, slug] of Object.entries(result0)) {
     if (!result[sym]) result[sym] = slug;
   }
