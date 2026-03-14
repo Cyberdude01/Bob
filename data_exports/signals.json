@@ -1,27 +1,4 @@
 {
-  "updated": "2026-03-14 06:40 AM ET",
-  "data": [
-    {
-      "symbol": "SOL",
-      "slug": "sol-updown-15m-1773484200",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 5,
-      "price": 0.76,
-      "confidence": 0.76,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW at 67% elapsed — P(UP)=0.240 gives edge=0.260 toward DOWN. Bucket=HighVol+Trend (RV60=1018.49409, Eff60=0.019). Fixed $5 USDC stake @ conf=0.760."
-    },
-    {
-      "symbol": "SOL",
-      "slug": "sol-updown-15m-1773484200",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 5,
-      "price": 0.76,
-      "confidence": 0.76,
-      "trigger": "directional_90pct",
-      "reason": "DIRECTIONAL at 67% elapsed — P(UP)=0.240 gives edge=0.260 toward DOWN. Bucket=HighVol+Trend (RV60=1018.49409, Eff60=0.019). Fixed $5 USDC stake @ conf=0.760."
-    }
-  ]
+  "updated": "2026-03-14 06:45 AM ET",
+  "data": []
 }
