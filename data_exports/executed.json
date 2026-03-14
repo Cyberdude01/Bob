@@ -27,10 +27,11 @@
     "token_id": "20419608615133218363641224164723997590148117522642778989130471062685139726030",
     "order_id": "?",
     "submitted_at": "2026-03-14 07:44:29 AM ET",
-    "settled": false,
-    "result": null,
-    "pnl": null,
-    "total_return": null
+    "settled": true,
+    "result": "WIN",
+    "pnl": 1.7568,
+    "total_return": 6.7568,
+    "settled_at": "2026-03-14 08:50:55 AM ET"
   },
   "btc-updown-15m-1773489600:UP:2026-03-14 08:10 AM ET": {
     "slug": "btc-updown-15m-1773489600",
