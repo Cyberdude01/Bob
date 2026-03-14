@@ -25,6 +25,8 @@ db.serialize(() => {
       last_trade_size REAL,
       last_trade_side TEXT,
       last_trade_asset TEXT,
+      slug TEXT,
+      window_ts INTEGER,
       created_at INTEGER DEFAULT (strftime('%s', 'now'))
     )
   `);
@@ -34,7 +36,9 @@ db.serialize(() => {
     { name: 'last_price', type: 'REAL' },
     { name: 'last_trade_size', type: 'REAL' },
     { name: 'last_trade_side', type: 'TEXT' },
-    { name: 'last_trade_asset', type: 'TEXT' }
+    { name: 'last_trade_asset', type: 'TEXT' },
+    { name: 'slug', type: 'TEXT' },
+    { name: 'window_ts', type: 'INTEGER' },
   ];
 
   columnsToAdd.forEach(col => {
@@ -154,6 +158,7 @@ async function collectData() {
     
     console.log(`[${new Date().toISOString()}] Processing ${slugs.length} markets...`);
     const timestamp = Math.floor(Date.now() / 1000);
+    const windowTs = Math.floor(timestamp / 900) * 900; // current 15-min window start
     
     for (const slug of slugs) {
       const market = await fetchMarketBySlug(slug);
@@ -197,8 +202,8 @@ async function collectData() {
             timestamp, market_id, market_name, token_id, outcome,
             price, bid, ask, spread, volume_24h, bid_depth, ask_depth,
             last_price, last_trade_size, last_trade_side, last_trade_asset,
-            created_at
-          ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            slug, window_ts, created_at
+          ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         `, [
           timestamp,
           market.conditionId,
@@ -216,6 +221,8 @@ async function collectData() {
           tradeData.size,
           tradeData.side,
           tradeData.asset,
+          market.slug,
+          windowTs,
           timestamp
         ], (err) => {
           if (err) console.error('DB insert error:', err.message);
