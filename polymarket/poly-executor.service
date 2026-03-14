@@ -1,0 +1,13 @@
+[Unit]
+Description=Polymarket Trade Executor (oneshot, triggered by timer)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=root
+WorkingDirectory=/root/Bob
+ExecStart=/root/Bob/run_executor.sh --execute
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=poly-executor

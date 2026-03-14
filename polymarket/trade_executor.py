@@ -53,6 +53,10 @@ _EXECUTED_FILE = _DATA_DIR / "executed.json"
 # Signals older than this are rejected — prevents stale signals trading future markets
 MAX_SIGNAL_AGE_HOURS = 4
 
+# Pre-order window: only execute pre_order signals within this many seconds of the
+# next 15-minute market open (i.e. during the last 5 minutes of the current candle)
+PRE_ORDER_WINDOW_SEC = 300   # 5 minutes
+
 # ─── Helpers ──────────────────────────────────────────────────────────────────
 
 def _load_env(path: str) -> None:
@@ -138,34 +142,47 @@ def _check_signals_freshness(updated_str: str) -> Optional[str]:
 
 # ─── Market token lookup ───────────────────────────────────────────────────────
 
-def _get_token_id(slug: str, outcome: str, markets_data: Dict[str, Any]) -> Optional[str]:
+def _get_token_id(
+    slug: str,
+    outcome: str,
+    markets_data: Dict[str, Any],
+    next_market: bool = False,
+) -> Optional[str]:
     """
     Resolve the CLOB token_id for a given slug + outcome (UP/DOWN).
     Primary: look up condition_id from markets.json then query CLOB /markets/{cid}.
     Fallback: scan Gamma /events by slug timestamp candidates.
+
+    next_market=True targets the *next* 15-minute slot (for pre_order signals).
     """
-    # Find condition_id from markets.json
-    condition_id: Optional[str] = None
-    for sym_data in markets_data.get("data", {}).values():
-        if sym_data.get("slug", "").split("-")[0] in slug:
-            condition_id = sym_data.get("condition_id")
-            break
+    # Find condition_id from markets.json (only useful for current-market signals)
+    if not next_market:
+        condition_id: Optional[str] = None
+        for sym_data in markets_data.get("data", {}).values():
+            if sym_data.get("slug", "").split("-")[0] in slug:
+                condition_id = sym_data.get("condition_id")
+                break
 
-    if condition_id:
-        try:
-            r = requests.get(f"{CLOB_API}/markets/{condition_id}", timeout=10)
-            r.raise_for_status()
-            cd = r.json()
-            for tok in (cd.get("tokens") or []):
-                if str(tok.get("outcome", "")).upper() == outcome.upper():
-                    return str(tok.get("token_id", ""))
-        except Exception:
-            pass
+        if condition_id:
+            try:
+                r = requests.get(f"{CLOB_API}/markets/{condition_id}", timeout=10)
+                r.raise_for_status()
+                cd = r.json()
+                for tok in (cd.get("tokens") or []):
+                    if str(tok.get("outcome", "")).upper() == outcome.upper():
+                        return str(tok.get("token_id", ""))
+            except Exception:
+                pass
 
-    # Fallback: Gamma events slug scan
+    # Gamma events slug scan
     now     = int(time.time())
     current = (now // 900) * 900
-    for ts in (current, current + 900, current - 900):
+    if next_market:
+        # Target the next boundary and the one after as fallback
+        ts_candidates = (current + 900, current + 1800)
+    else:
+        ts_candidates = (current, current + 900, current - 900)
+    for ts in ts_candidates:
         full_slug = f"{slug}-{ts}"
         try:
             r = requests.get(f"{GAMMA_API}/events", params={"slug": full_slug, "limit": 1}, timeout=10)
@@ -354,8 +371,18 @@ def run(execute: bool = False) -> None:
             skipped += 1
             continue
 
-        # Resolve token_id
-        token_id = _get_token_id(slug, outcome, markets_raw)
+        # Pre-order timing gate: only execute within the last 5 minutes of the current candle
+        is_pre_order = (trigger == "pre_order")
+        if is_pre_order:
+            _now = int(time.time())
+            _time_until_next = 900 - (_now % 900)
+            if _time_until_next > PRE_ORDER_WINDOW_SEC:
+                print(f"{prefix} SKIP — pre_order window not open ({_time_until_next:.0f}s until next market, window opens at T-{PRE_ORDER_WINDOW_SEC}s)")
+                skipped += 1
+                continue
+
+        # Resolve token_id (pre_orders target the next 15-min slot)
+        token_id = _get_token_id(slug, outcome, markets_raw, next_market=is_pre_order)
         if not token_id:
             print(f"{prefix} ERROR — could not resolve token_id for {slug} {outcome}")
             errors += 1
