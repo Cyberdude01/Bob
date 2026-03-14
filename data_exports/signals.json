@@ -1,4 +1,16 @@
 {
-  "updated": "2026-03-14 06:50 AM ET",
-  "data": []
+  "updated": "2026-03-14 06:55 AM ET",
+  "data": [
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m-1773485100",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5,
+      "price": 0.785,
+      "confidence": 0.785,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 67% elapsed — P(UP)=0.785 gives edge=0.285 toward UP. Bucket=HighVol+Range (RV60=995.51045, Eff60=0.006). Fixed $5 USDC stake @ conf=0.785."
+    }
+  ]
 }
