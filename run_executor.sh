@@ -10,3 +10,6 @@ git checkout origin/main -- data_exports/signals.json data_exports/markets.json
 
 echo "[run_executor] Running trade executor..."
 python3 -m polymarket.trade_executor "$@"
+
+echo "[run_executor] Running order settler..."
+python3 -m polymarket.settle_orders

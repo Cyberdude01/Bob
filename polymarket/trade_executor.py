@@ -431,8 +431,14 @@ def run(execute: bool = False) -> None:
                     "trigger":      trigger,
                     "price":        live_price,
                     "size":         size,
+                    "shares":       shares,
+                    "token_id":     token_id,
                     "order_id":     order_id,
                     "submitted_at": datetime.now(_ET).strftime("%Y-%m-%d %I:%M:%S %p ET"),
+                    "settled":      False,
+                    "result":       None,
+                    "pnl":          None,
+                    "total_return": None,
                 }
                 _save_executed(executed)
                 submitted += 1
