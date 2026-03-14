@@ -1,17 +1,30 @@
 # Decision Engine Summary
 
-> **Updated:** `2026-03-13 09:35:51 PM ET` &nbsp;|&nbsp; All signals from the last 48 hours
+> **Updated:** `2026-03-13 09:40:57 PM ET` &nbsp;|&nbsp; All signals from the last 48 hours
 
 ## Signal Distribution
 | Trigger | Count |
 | -------------------- | ----- |
-| `directional_90pct` | 188 |
-| `pre_open` | 8 |
-| `forced_edge` | 4 |
+| `directional_90pct` | 176 |
+| `pre_open` | 16 |
+| `forced_edge` | 7 |
+| `forced_coin` | 1 |
 
 ## Signal Log
 | Time (ET) | Symbol | Slug | Outcome | Trigger | Confidence | P(UP) | Bucket | Elapsed% | Reasoning |
 | --------------- | ------ | ----------------- | ------- | -------------------- | ---------- | ----- | -------------- | -------- | -------------------------------------------------- |
+| `2026-03-13 09:39 PM ET` | XRP | xrp-updown-15m | **DOWN** | `pre_open` | 0.520 | 56.4% | HighVol+Range | 63.5% | PRE-OPEN limit order — 328s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Current regime: HighVol+R |
+| `2026-03-13 09:39 PM ET` | XRP | xrp-updown-15m | **UP** | `pre_open` | 0.520 | 56.4% | HighVol+Range | 63.5% | PRE-OPEN limit order — 328s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current regime: HighVol+Ran |
+| `2026-03-13 09:39 PM ET` | SOL | sol-updown-15m | **DOWN** | `pre_open` | 0.520 | 46.2% | HighVol+Range | 63.5% | PRE-OPEN limit order — 328s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Current regime: HighVol+R |
+| `2026-03-13 09:39 PM ET` | SOL | sol-updown-15m | **UP** | `pre_open` | 0.520 | 46.2% | HighVol+Range | 63.5% | PRE-OPEN limit order — 328s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current regime: HighVol+Ran |
+| `2026-03-13 09:39 PM ET` | ETH | eth-updown-15m | **DOWN** | `pre_open` | 0.520 | 23.3% | HighVol+Range | 63.5% | PRE-OPEN limit order — 328s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Current regime: HighVol+R |
+| `2026-03-13 09:39 PM ET` | ETH | eth-updown-15m | **UP** | `pre_open` | 0.520 | 23.3% | HighVol+Range | 63.5% | PRE-OPEN limit order — 328s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current regime: HighVol+Ran |
+| `2026-03-13 09:39 PM ET` | BTC | btc-updown-15m | **DOWN** | `pre_open` | 0.520 | 35.3% | HighVol+Range | 63.5% | PRE-OPEN limit order — 328s before market start. Buying DOWN at 0.48 (below ~0.50 fair value). Current regime: HighVol+R |
+| `2026-03-13 09:39 PM ET` | BTC | btc-updown-15m | **UP** | `pre_open` | 0.520 | 35.3% | HighVol+Range | 63.5% | PRE-OPEN limit order — 328s before market start. Buying UP at 0.48 (below ~0.50 fair value). Current regime: HighVol+Ran |
+| `2026-03-13 09:38 PM ET` | XRP | xrp-updown-15m | **UP** | `forced_coin` | 0.500 | 50.0% | HighVol+Range | 59.1% | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.500, choosing UP. Fixed $5 USDC stake (every mark |
+| `2026-03-13 09:38 PM ET` | BTC | btc-updown-15m | **DOWN** | `forced_edge` | 0.931 | 6.9% | HighVol+Trend | 58.0% | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.069, choosing DOWN. Fixed $5 USDC stake (every ma |
+| `2026-03-13 09:38 PM ET` | ETH | eth-updown-15m | **DOWN** | `forced_edge` | 0.931 | 6.9% | HighVol+Trend | 57.3% | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.069, choosing DOWN. Fixed $5 USDC stake (every ma |
+| `2026-03-13 09:38 PM ET` | SOL | sol-updown-15m | **DOWN** | `forced_edge` | 0.853 | 14.7% | LowVol+Trend | 56.8% | FORCED TRADE at 60% elapsed — no prior signal for this window. P(UP)=0.147, choosing DOWN. Fixed $5 USDC stake (every ma |
 | `2026-03-13 09:28 PM ET` | XRP | xrp-updown-15m | **DOWN** | `directional_90pct` | 0.878 | 18.1% | HighVol+Range | 93.1% | DIRECTIONAL at 90pct (93% elapsed) — P(UP)=0.122 gives edge=0.378 toward DOWN. Bucket=HighVol+Range (RV60=28.37407, Eff6 |
 | `2026-03-13 09:28 PM ET` | SOL | sol-updown-15m | **UP** | `directional_90pct` | 1.000 | 93.2% | HighVol+Trend | 93.1% | DIRECTIONAL at 90pct (93% elapsed) — P(UP)=1.000 gives edge=0.500 toward UP. Bucket=HighVol+Trend (RV60=13.65897, Eff60= |
 | `2026-03-13 09:28 PM ET` | ETH | eth-updown-15m | **DOWN** | `directional_90pct` | 0.879 | 18.1% | HighVol+Range | 93.1% | DIRECTIONAL at 90pct (93% elapsed) — P(UP)=0.121 gives edge=0.379 toward DOWN. Bucket=HighVol+Range (RV60=31.95801, Eff6 |
@@ -200,18 +213,6 @@
 | `2026-03-13 09:13 PM ET` | XRP | xrp-updown-15m | **UP** | `directional_90pct` | 0.648 | 62.5% | HighVol+Range | 88.3% | DIRECTIONAL at 90pct (88% elapsed) — P(UP)=0.648 gives edge=0.148 toward UP. Bucket=HighVol+Range (RV60=5.03616, Eff60=0 |
 | `2026-03-13 09:13 PM ET` | ETH | eth-updown-15m | **UP** | `directional_90pct` | 0.881 | 82.1% | HighVol+Trend | 88.3% | DIRECTIONAL at 90pct (88% elapsed) — P(UP)=0.881 gives edge=0.381 toward UP. Bucket=HighVol+Trend (RV60=9.32517, Eff60=0 |
 | `2026-03-13 09:13 PM ET` | BTC | btc-updown-15m | **UP** | `directional_90pct` | 0.800 | 75.3% | HighVol+Range | 88.3% | DIRECTIONAL at 90pct (88% elapsed) — P(UP)=0.800 gives edge=0.300 toward UP. Bucket=HighVol+Range (RV60=11.41959, Eff60= |
-| `2026-03-13 09:13 PM ET` | XRP | xrp-updown-15m | **UP** | `directional_90pct` | 0.622 | 60.2% | HighVol+Range | 88.1% | DIRECTIONAL at 90pct (88% elapsed) — P(UP)=0.622 gives edge=0.122 toward UP. Bucket=HighVol+Range (RV60=5.03325, Eff60=0 |
-| `2026-03-13 09:13 PM ET` | ETH | eth-updown-15m | **UP** | `directional_90pct` | 0.762 | 72.1% | HighVol+Range | 88.1% | DIRECTIONAL at 90pct (88% elapsed) — P(UP)=0.762 gives edge=0.262 toward UP. Bucket=HighVol+Range (RV60=9.32063, Eff60=0 |
-| `2026-03-13 09:13 PM ET` | BTC | btc-updown-15m | **UP** | `directional_90pct` | 0.793 | 74.6% | HighVol+Range | 88.0% | DIRECTIONAL at 90pct (88% elapsed) — P(UP)=0.793 gives edge=0.293 toward UP. Bucket=HighVol+Range (RV60=11.41903, Eff60= |
-| `2026-03-13 09:13 PM ET` | XRP | xrp-updown-15m | **UP** | `directional_90pct` | 0.622 | 60.2% | HighVol+Range | 87.8% | DIRECTIONAL at 90pct (88% elapsed) — P(UP)=0.622 gives edge=0.122 toward UP. Bucket=HighVol+Range (RV60=5.03325, Eff60=0 |
-| `2026-03-13 09:13 PM ET` | ETH | eth-updown-15m | **UP** | `directional_90pct` | 0.762 | 72.1% | HighVol+Range | 87.8% | DIRECTIONAL at 90pct (88% elapsed) — P(UP)=0.762 gives edge=0.262 toward UP. Bucket=HighVol+Range (RV60=9.32063, Eff60=0 |
-| `2026-03-13 09:13 PM ET` | BTC | btc-updown-15m | **UP** | `directional_90pct` | 0.793 | 74.6% | HighVol+Range | 87.8% | DIRECTIONAL at 90pct (88% elapsed) — P(UP)=0.793 gives edge=0.293 toward UP. Bucket=HighVol+Range (RV60=11.41903, Eff60= |
-| `2026-03-13 09:13 PM ET` | XRP | xrp-updown-15m | **UP** | `directional_90pct` | 0.625 | 60.6% | HighVol+Range | 87.6% | DIRECTIONAL at 90pct (88% elapsed) — P(UP)=0.625 gives edge=0.125 toward UP. Bucket=HighVol+Range (RV60=5.40934, Eff60=0 |
-| `2026-03-13 09:13 PM ET` | ETH | eth-updown-15m | **UP** | `directional_90pct` | 0.766 | 72.4% | HighVol+Range | 87.6% | DIRECTIONAL at 90pct (88% elapsed) — P(UP)=0.766 gives edge=0.266 toward UP. Bucket=HighVol+Range (RV60=9.53587, Eff60=0 |
-| `2026-03-13 09:13 PM ET` | BTC | btc-updown-15m | **UP** | `directional_90pct` | 0.781 | 73.7% | HighVol+Range | 87.6% | DIRECTIONAL at 90pct (88% elapsed) — P(UP)=0.781 gives edge=0.281 toward UP. Bucket=HighVol+Range (RV60=11.99179, Eff60= |
-| `2026-03-13 09:13 PM ET` | XRP | xrp-updown-15m | **UP** | `directional_90pct` | 0.808 | 76.0% | HighVol+Trend | 87.4% | DIRECTIONAL at 90pct (87% elapsed) — P(UP)=0.808 gives edge=0.308 toward UP. Bucket=HighVol+Trend (RV60=5.44866, Eff60=0 |
-| `2026-03-13 09:13 PM ET` | ETH | eth-updown-15m | **DOWN** | `directional_90pct` | 0.928 | 13.9% | HighVol+Trend | 87.4% | DIRECTIONAL at 90pct (87% elapsed) — P(UP)=0.072 gives edge=0.428 toward DOWN. Bucket=HighVol+Trend (RV60=9.26774, Eff60 |
-| `2026-03-13 09:13 PM ET` | BTC | btc-updown-15m | **UP** | `directional_90pct` | 0.815 | 76.6% | HighVol+Range | 87.4% | DIRECTIONAL at 90pct (87% elapsed) — P(UP)=0.815 gives edge=0.315 toward UP. Bucket=HighVol+Range (RV60=11.99431, Eff60= |
 
 ---
 _Auto-generated by **Bob the builder**_
