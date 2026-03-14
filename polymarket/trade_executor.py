@@ -112,7 +112,7 @@ def _parse_signals_updated(updated_str: str) -> Optional[datetime]:
             cleaned = cleaned[: -len(tz_label)].strip()
             break
 
-    for fmt in ("%Y-%m-%d %I:%M:%S %p", "%Y-%m-%d %H:%M:%S"):
+    for fmt in ("%Y-%m-%d %I:%M:%S %p", "%Y-%m-%d %I:%M %p", "%Y-%m-%d %H:%M:%S", "%Y-%m-%d %H:%M"):
         try:
             naive = datetime.strptime(cleaned, fmt)
             # Treat ET as UTC-5 (conservative; worst-case is 1h off in EDT)
