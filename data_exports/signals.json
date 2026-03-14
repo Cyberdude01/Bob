@@ -1,16 +1,4 @@
 {
-  "updated": "2026-03-14 02:40 AM ET",
-  "data": [
-    {
-      "symbol": "ETH",
-      "slug": "eth-updown-15m-1773469800",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 5,
-      "price": 0.93,
-      "confidence": 0.93,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW at 67% elapsed — P(UP)=0.070 gives edge=0.430 toward DOWN. Bucket=HighVol+Trend (RV60=1141.83425, Eff60=0.031). Fixed $5 USDC stake @ conf=0.930."
-    }
-  ]
+  "updated": "2026-03-14 02:45 AM ET",
+  "data": []
 }
