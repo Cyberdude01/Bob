@@ -96,7 +96,12 @@ def _load_executed() -> Dict[str, Any]:
 
 
 def _dedup_key(slug: str, outcome: str, updated_ts: str) -> str:
-    return f"{slug}:{outcome}:{updated_ts}"
+    # Key on slug+outcome only (not updated_ts).
+    # The slug encodes the 15-min market window, so this prevents re-executing
+    # the same trade within a window even as signals.json refreshes every 5 min.
+    # Cross-window trading is unaffected because the slug changes each window.
+    _ = updated_ts  # kept in signature for call-site compatibility
+    return f"{slug}:{outcome}"
 
 
 def _parse_signals_updated(updated_str: str) -> Optional[datetime]:
