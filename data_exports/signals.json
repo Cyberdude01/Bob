@@ -1,27 +1,38 @@
 {
-  "updated": "2026-03-14 07:25 AM ET",
+  "updated": "2026-03-14 07:30 AM ET",
   "data": [
     {
-      "symbol": "XRP",
-      "slug": "xrp-updown-15m-1773486900",
-      "outcome": "DOWN",
+      "symbol": "ETH",
+      "slug": "eth-updown-15m-1773486900",
+      "outcome": "UP",
       "side": "BUY",
       "size": 5,
-      "price": 0.785,
-      "confidence": 0.785,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW at 67% elapsed — P(UP)=0.215 gives edge=0.285 toward DOWN. Bucket=HighVol+Trend (RV60=974.87564, Eff60=0.017). Fixed $5 USDC stake @ conf=0.785."
+      "price": 0.955,
+      "confidence": 0.955,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 100% elapsed — P(UP)=0.955 gives edge=0.455 toward UP. Bucket=HighVol+Range (RV60=1288.47875, Eff60=0.005). Fixed $5 USDC stake @ conf=0.955."
+    },
+    {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m-1773486900",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5,
+      "price": 0.945,
+      "confidence": 0.945,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 100% elapsed — P(UP)=0.945 gives edge=0.445 toward UP. Bucket=HighVol+Range (RV60=992.26127, Eff60=0.013). Fixed $5 USDC stake @ conf=0.945."
     },
     {
       "symbol": "XRP",
       "slug": "xrp-updown-15m-1773486900",
-      "outcome": "DOWN",
+      "outcome": "UP",
       "side": "BUY",
       "size": 5,
-      "price": 0.785,
-      "confidence": 0.785,
+      "price": 0.9,
+      "confidence": 0.9,
       "trigger": "directional_90pct",
-      "reason": "DIRECTIONAL at 67% elapsed — P(UP)=0.215 gives edge=0.285 toward DOWN. Bucket=HighVol+Trend (RV60=974.87564, Eff60=0.017). Fixed $5 USDC stake @ conf=0.785."
+      "reason": "DIRECTIONAL at 100% elapsed — P(UP)=0.900 gives edge=0.400 toward UP. Bucket=HighVol+Range (RV60=985.12008, Eff60=0.012). Fixed $5 USDC stake @ conf=0.900."
     }
   ]
 }
