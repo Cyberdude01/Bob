@@ -1,4 +1,16 @@
 {
-  "updated": "2026-03-14 04:05 AM ET",
-  "data": []
+  "updated": "2026-03-14 04:10 AM ET",
+  "data": [
+    {
+      "symbol": "SOL",
+      "slug": "sol-updown-15m-1773475200",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5,
+      "price": 0.635,
+      "confidence": 0.635,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW at 67% elapsed — P(UP)=0.635 gives edge=0.135 toward UP. Bucket=HighVol+Trend (RV60=1043.27865, Eff60=0.019). Fixed $5 USDC stake @ conf=0.635."
+    }
+  ]
 }
