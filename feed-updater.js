@@ -36,6 +36,7 @@ const TREND_THRESHOLD = 0.016; // eff60 above this = Trend
 // Signal thresholds
 const MIN_EDGE_TREND_FOLLOW = 0.12;  // |probUp - 0.5| >= 0.12 to fire trend_follow
 const MIN_EDGE_DIRECTIONAL  = 0.25;  // |probUp - 0.5| >= 0.25 to fire directional (75%+ probability)
+const MIN_EDGE_PRE_ORDER    = 0.20;  // |probUp - 0.5| >= 0.20 to fire pre_order (70%+ probability)
 const TRADE_SIZE            = 5.0;   // Fixed $5 USDC stake per signal
 // ─── Time helpers ─────────────────────────────────────────────────────────────
 function isDSTActive(date) {
@@ -699,6 +700,27 @@ function generateSignals(results) {
           + `P(UP)=${probUp.toFixed(3)} gives edge=${edge.toFixed(3)} toward ${outcome}. `
           + `Bucket=${volBucket}+${trendBucket} (RV60=${rv60.toFixed(5)}, Eff60=${eff60.toFixed(3)}). `
           + `Fixed $${TRADE_SIZE} USDC stake @ conf=${confidence.toFixed(3)}.`,
+      });
+    }
+
+    // pre_order: bet on momentum continuing into the NEXT 15-min window.
+    // Fires in the last ~5 min of the current window (67–95% elapsed) when the
+    // current window shows a clear directional bias (edge >= MIN_EDGE_PRE_ORDER).
+    // The executor targets the next window's token via _get_token_id(next_market=True).
+    if (elapsedPct >= 0.667 && elapsedPct < 0.95 && edge >= MIN_EDGE_PRE_ORDER) {
+      signals.push({
+        symbol,
+        slug,   // current-window slug — executor strips timestamp and appends next window's
+        outcome,
+        side:       'BUY',
+        size:       TRADE_SIZE,
+        price,
+        confidence,
+        trigger:    'pre_order',
+        reason:     `PRE-ORDER next window at ${(elapsedPct * 100).toFixed(0)}% elapsed — `
+          + `P(UP)=${probUp.toFixed(3)} gives edge=${edge.toFixed(3)} toward ${outcome}. `
+          + `Momentum bet on next 15-min window. Bucket=${volBucket}+${trendBucket}. `
+          + `Fixed $${TRADE_SIZE} USDC @ conf=${confidence.toFixed(3)}.`,
       });
     }
   }

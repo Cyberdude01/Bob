@@ -95,13 +95,11 @@ def _load_executed() -> Dict[str, Any]:
         return {}
 
 
-def _dedup_key(slug: str, outcome: str, updated_ts: str) -> str:
-    # Key on slug+outcome only (not updated_ts).
-    # The slug encodes the 15-min market window, so this prevents re-executing
-    # the same trade within a window even as signals.json refreshes every 5 min.
-    # Cross-window trading is unaffected because the slug changes each window.
-    _ = updated_ts  # kept in signature for call-site compatibility
-    return f"{slug}:{outcome}"
+def _dedup_key(slug: str, outcome: str, trigger: str) -> str:
+    # slug    — encodes the 15-min market window; prevents re-executing within same window
+    # trigger — lets pre_order and directional_90pct both fire for the same symbol
+    #           (they target different markets: next vs current window)
+    return f"{slug}:{outcome}:{trigger}"
 
 
 def _parse_signals_updated(updated_str: str) -> Optional[datetime]:
@@ -188,8 +186,14 @@ def _get_token_id(
         ts_candidates = (current + 900, current + 1800)
     else:
         ts_candidates = (current, current + 900, current - 900)
+    # Strip any existing timestamp suffix from the slug so we can append the
+    # correct window timestamp.  Signals carry the current-window slug
+    # (e.g. "btc-updown-15m-1773489600"); appending the next-window ts directly
+    # would produce a double-timestamp slug that the Gamma API won't recognise.
+    import re as _re
+    base_slug = _re.sub(r'-\d+$', '', slug)
     for ts in ts_candidates:
-        full_slug = f"{slug}-{ts}"
+        full_slug = f"{base_slug}-{ts}"
         try:
             r = requests.get(f"{GAMMA_API}/events", params={"slug": full_slug, "limit": 1}, timeout=10)
             r.raise_for_status()
@@ -367,7 +371,7 @@ def run(execute: bool = False) -> None:
         reason   = sig.get("reason", "")
         confidence = sig.get("confidence", 0)
 
-        dedup_key = _dedup_key(slug, outcome, signals_updated)
+        dedup_key = _dedup_key(slug, outcome, trigger)
 
         prefix = f"  [{symbol} {outcome} | {trigger}]"
 
