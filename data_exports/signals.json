@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-15 07:53 AM ET",
+  "updated": "2026-03-15 07:54 AM ET",
   "data": [
     {
       "symbol": "BTC",
@@ -7,10 +7,10 @@
       "outcome": "UP",
       "side": "BUY",
       "size": 5,
-      "price": 0.745,
-      "confidence": 0.745,
+      "price": 0.945,
+      "confidence": 0.945,
       "trigger": "trend_follow",
-      "reason": "TREND FOLLOW at 54% elapsed — P(UP)=0.745 gives edge=0.245 toward UP. Bucket=HighVol+Trend (RV60=391.92308, Eff60=0.061). Fixed $5 USDC stake @ conf=0.745."
+      "reason": "TREND FOLLOW at 60% elapsed — P(UP)=0.945 gives edge=0.445 toward UP. Bucket=HighVol+Trend (RV60=388.65721, Eff60=0.042). Fixed $5 USDC stake @ conf=0.945."
     },
     {
       "symbol": "ETH",
@@ -21,7 +21,7 @@
       "price": 0.845,
       "confidence": 0.845,
       "trigger": "trend_follow",
-      "reason": "TREND FOLLOW at 54% elapsed — P(UP)=0.845 gives edge=0.345 toward UP. Bucket=HighVol+Trend (RV60=362.78559, Eff60=0.071). Fixed $5 USDC stake @ conf=0.845."
+      "reason": "TREND FOLLOW at 60% elapsed — P(UP)=0.845 gives edge=0.345 toward UP. Bucket=HighVol+Trend (RV60=358.10561, Eff60=0.035). Fixed $5 USDC stake @ conf=0.845."
     },
     {
       "symbol": "SOL",
@@ -29,10 +29,10 @@
       "outcome": "UP",
       "side": "BUY",
       "size": 5,
-      "price": 0.825,
-      "confidence": 0.825,
+      "price": 0.985,
+      "confidence": 0.985,
       "trigger": "trend_follow",
-      "reason": "TREND FOLLOW at 54% elapsed — P(UP)=0.825 gives edge=0.325 toward UP. Bucket=HighVol+Trend (RV60=350.87317, Eff60=0.071). Fixed $5 USDC stake @ conf=0.825."
+      "reason": "TREND FOLLOW at 60% elapsed — P(UP)=0.985 gives edge=0.485 toward UP. Bucket=HighVol+Trend (RV60=344.72446, Eff60=0.042). Fixed $5 USDC stake @ conf=0.985."
     },
     {
       "symbol": "XRP",
@@ -40,10 +40,10 @@
       "outcome": "UP",
       "side": "BUY",
       "size": 5,
-      "price": 0.915,
-      "confidence": 0.915,
+      "price": 0.995,
+      "confidence": 0.995,
       "trigger": "trend_follow",
-      "reason": "TREND FOLLOW at 54% elapsed — P(UP)=0.915 gives edge=0.415 toward UP. Bucket=HighVol+Trend (RV60=404.42278, Eff60=0.05). Fixed $5 USDC stake @ conf=0.915."
+      "reason": "TREND FOLLOW at 60% elapsed — P(UP)=0.995 gives edge=0.495 toward UP. Bucket=HighVol+Trend (RV60=403.7198, Eff60=0.041). Fixed $5 USDC stake @ conf=0.995."
     }
   ]
 }
