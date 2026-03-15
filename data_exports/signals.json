@@ -1,17 +1,6 @@
 {
-  "updated": "2026-03-15 03:23 PM ET",
+  "updated": "2026-03-15 03:24 PM ET",
   "data": [
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m-1773602100",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 5,
-      "price": 0.625,
-      "confidence": 0.625,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW at 53% elapsed — P(UP)=0.375 gives edge=0.125 toward DOWN. Bucket=HighVol+Trend (RV60=461.80378, Eff60=0.018). Fixed $5 USDC stake @ conf=0.625."
-    },
     {
       "symbol": "ETH",
       "slug": "eth-updown-15m-1773602100",
@@ -21,29 +10,18 @@
       "price": 0.775,
       "confidence": 0.775,
       "trigger": "trend_follow",
-      "reason": "TREND FOLLOW at 53% elapsed — P(UP)=0.225 gives edge=0.275 toward DOWN. Bucket=HighVol+Trend (RV60=585.60584, Eff60=0.033). Fixed $5 USDC stake @ conf=0.775."
-    },
-    {
-      "symbol": "SOL",
-      "slug": "sol-updown-15m-1773602100",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 5,
-      "price": 0.735,
-      "confidence": 0.735,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW at 53% elapsed — P(UP)=0.265 gives edge=0.235 toward DOWN. Bucket=HighVol+Trend (RV60=685.56232, Eff60=0.034). Fixed $5 USDC stake @ conf=0.735."
+      "reason": "TREND FOLLOW at 60% elapsed — P(UP)=0.225 gives edge=0.275 toward DOWN. Bucket=HighVol+Trend (RV60=585.60584, Eff60=0.033). Fixed $5 USDC stake @ conf=0.775."
     },
     {
       "symbol": "XRP",
       "slug": "xrp-updown-15m-1773602100",
-      "outcome": "DOWN",
+      "outcome": "UP",
       "side": "BUY",
       "size": 5,
-      "price": 0.675,
-      "confidence": 0.675,
+      "price": 0.635,
+      "confidence": 0.635,
       "trigger": "trend_follow",
-      "reason": "TREND FOLLOW at 53% elapsed — P(UP)=0.325 gives edge=0.175 toward DOWN. Bucket=HighVol+Trend (RV60=683.19188, Eff60=0.022). Fixed $5 USDC stake @ conf=0.675."
+      "reason": "TREND FOLLOW at 60% elapsed — P(UP)=0.635 gives edge=0.135 toward UP. Bucket=HighVol+Trend (RV60=681.9375, Eff60=0.091). Fixed $5 USDC stake @ conf=0.635."
     }
   ]
 }
