@@ -3703,5 +3703,37 @@
     "result": null,
     "pnl": null,
     "total_return": null
+  },
+  "btc-updown-15m-1773583200:DOWN:trend_follow": {
+    "slug": "btc-updown-15m-1773583200",
+    "symbol": "BTC",
+    "outcome": "DOWN",
+    "trigger": "trend_follow",
+    "price": 0.51,
+    "size": 5.0,
+    "shares": 9.8039,
+    "token_id": "74326373993336996189411662510689072571774665703121311572690842915569547098756",
+    "order_id": "?",
+    "submitted_at": "2026-03-15 10:10:07 AM ET",
+    "settled": false,
+    "result": null,
+    "pnl": null,
+    "total_return": null
+  },
+  "xrp-updown-15m-1773583200:UP:trend_follow": {
+    "slug": "xrp-updown-15m-1773583200",
+    "symbol": "XRP",
+    "outcome": "UP",
+    "trigger": "trend_follow",
+    "price": 0.75,
+    "size": 5.0,
+    "shares": 6.6667,
+    "token_id": "95240419953784154853391608630567258645588182039466615843345057728883941435544",
+    "order_id": "?",
+    "submitted_at": "2026-03-15 10:10:08 AM ET",
+    "settled": false,
+    "result": null,
+    "pnl": null,
+    "total_return": null
   }
 }
