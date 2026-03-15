@@ -1,4 +1,16 @@
 {
-  "updated": "2026-03-15 10:37 AM ET",
-  "data": []
+  "updated": "2026-03-15 10:38 AM ET",
+  "data": [
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m-1773585000",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5,
+      "price": 0.97,
+      "confidence": 0.97,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW at 54% elapsed — P(UP)=0.030 gives edge=0.470 toward DOWN. Bucket=HighVol+Trend (RV60=809.77519, Eff60=0.114). Fixed $5 USDC stake @ conf=0.970."
+    }
+  ]
 }
