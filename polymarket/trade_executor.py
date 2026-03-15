@@ -192,36 +192,47 @@ def _get_token_id(
     # would produce a double-timestamp slug that the Gamma API won't recognise.
     import re as _re
     base_slug = _re.sub(r'-\d+$', '', slug)
-    for ts in ts_candidates:
-        full_slug = f"{base_slug}-{ts}"
-        try:
-            r = requests.get(f"{GAMMA_API}/events", params={"slug": full_slug, "limit": 1}, timeout=10)
-            r.raise_for_status()
-            data  = r.json()
-            event = (data[0] if isinstance(data, list) and data
-                     else data if isinstance(data, dict) and data.get("id") else None)
-            if not event:
+
+    # For next_market lookups retry up to 3 times with 20s backoff — tokens may
+    # not yet be listed on the CLOB right at window boundary.
+    max_attempts = 3 if next_market else 1
+    retry_delay  = 20  # seconds between attempts
+
+    for attempt in range(max_attempts):
+        for ts in ts_candidates:
+            full_slug = f"{base_slug}-{ts}"
+            try:
+                r = requests.get(f"{GAMMA_API}/events", params={"slug": full_slug, "limit": 1}, timeout=10)
+                r.raise_for_status()
+                data  = r.json()
+                event = (data[0] if isinstance(data, list) and data
+                         else data if isinstance(data, dict) and data.get("id") else None)
+                if not event:
+                    continue
+                markets_list = event.get("markets", [])
+                if not markets_list:
+                    eid = str(event.get("id", ""))
+                    mr  = requests.get(f"{GAMMA_API}/markets", params={"event_id": eid, "limit": 20}, timeout=10)
+                    mr.raise_for_status()
+                    markets_list = mr.json() if isinstance(mr.json(), list) else []
+                if not markets_list:
+                    continue
+                m        = markets_list[0]
+                raw_ids  = m.get("clobTokenIds") or "[]"
+                raw_outs = m.get("outcomes") or "[]"
+                if isinstance(raw_ids, str):
+                    raw_ids = json.loads(raw_ids)
+                if isinstance(raw_outs, str):
+                    raw_outs = json.loads(raw_outs)
+                for tid, out in zip(raw_ids, raw_outs):
+                    if str(out).upper() == outcome.upper():
+                        return str(tid)
+            except Exception:
                 continue
-            markets_list = event.get("markets", [])
-            if not markets_list:
-                eid = str(event.get("id", ""))
-                mr  = requests.get(f"{GAMMA_API}/markets", params={"event_id": eid, "limit": 20}, timeout=10)
-                mr.raise_for_status()
-                markets_list = mr.json() if isinstance(mr.json(), list) else []
-            if not markets_list:
-                continue
-            m        = markets_list[0]
-            raw_ids  = m.get("clobTokenIds") or "[]"
-            raw_outs = m.get("outcomes") or "[]"
-            if isinstance(raw_ids, str):
-                raw_ids = json.loads(raw_ids)
-            if isinstance(raw_outs, str):
-                raw_outs = json.loads(raw_outs)
-            for tid, out in zip(raw_ids, raw_outs):
-                if str(out).upper() == outcome.upper():
-                    return str(tid)
-        except Exception:
-            continue
+
+        if next_market and attempt < max_attempts - 1:
+            print(f"    [token-retry {attempt+1}/{max_attempts}] next-market token not found yet, waiting {retry_delay}s…")
+            time.sleep(retry_delay)
 
     return None
 
@@ -506,6 +517,39 @@ def run(execute: bool = False) -> None:
         print(f"ERROR initialising CLOB client: {exc}")
         return
 
+    # ── Pre-flight: resolve next-market tokens for pre_order straddle pairs ──
+    # If EITHER side (UP or DOWN) cannot be resolved for a symbol, skip BOTH
+    # to prevent orphan one-sided positions (partial fill anomaly).
+    pre_order_blocked: set = set()  # symbol names to skip entirely
+    pre_order_sigs = [s for s in signals if s.get("trigger") == "pre_order"]
+    # Group by symbol
+    pre_order_by_sym: Dict[str, List[Dict[str, Any]]] = {}
+    for s in pre_order_sigs:
+        pre_order_by_sym.setdefault(s.get("symbol", ""), []).append(s)
+
+    for sym, pair in pre_order_by_sym.items():
+        outcomes_needed = {s["outcome"] for s in pair}
+        if outcomes_needed != {"UP", "DOWN"}:
+            continue  # partial pair already — skip
+        dedup_keys_needed = {_dedup_key(s["slug"], s["outcome"], "pre_order") for s in pair}
+        if dedup_keys_needed.issubset(executed.keys()):
+            continue  # both already executed — dedup will handle it
+
+        resolved = {}
+        for s in pair:
+            if _dedup_key(s["slug"], s["outcome"], "pre_order") in executed:
+                continue
+            tok = _get_token_id(s["slug"], s["outcome"], markets_raw, next_market=True)
+            if tok:
+                resolved[s["outcome"]] = tok
+            else:
+                print(f"  [{sym} {s['outcome']} | pre_order] token resolution failed — blocking straddle for {sym}")
+                break
+
+        if len(resolved) < len([s for s in pair if _dedup_key(s["slug"], s["outcome"], "pre_order") not in executed]):
+            pre_order_blocked.add(sym)
+            print(f"  [{sym}] SKIP entire pre_order straddle — could not resolve all tokens (no orphan positions)")
+
     # ── Process each signal ────────────────────────────────────────────────
     submitted = 0
     skipped   = 0
@@ -531,6 +575,12 @@ def run(execute: bool = False) -> None:
         # Skip duplicates
         if dedup_key in executed:
             print(f"{prefix} SKIP (already executed at {executed[dedup_key].get('submitted_at','?')})")
+            skipped += 1
+            continue
+
+        # Skip pre_order signals for symbols where straddle pair couldn't be fully resolved
+        if trigger == "pre_order" and symbol.upper() in pre_order_blocked:
+            print(f"{prefix} SKIP — straddle blocked (partner token unresolvable)")
             skipped += 1
             continue
 
@@ -577,9 +627,16 @@ def run(execute: bool = False) -> None:
             skipped += 1
             continue
 
+        # Resolve bucket label for reporting (vol_bucket + trend_bucket from markets.json)
+        sym_info = (markets_raw.get("data", {}).get(symbol.upper())
+                    or markets_raw.get("data", {}).get(symbol.lower()) or {})
+        vol_b   = sym_info.get("vol_bucket", "")
+        trend_b = sym_info.get("trend_bucket", "")
+        bucket  = f"{vol_b}+{trend_b}" if vol_b and trend_b else "—"
+
         print(f"{prefix}")
         print(f"    token     : {token_id[:16]}…")
-        print(f"    live_price: {live_price:.4f}  size: ${size:.2f}")
+        print(f"    live_price: {live_price:.4f}  size: ${size:.2f}  bucket: {bucket}")
         print(f"    confidence: {confidence:.3f}")
         print(f"    reason    : {reason[:100]}")
 
@@ -610,6 +667,7 @@ def run(execute: bool = False) -> None:
                     "shares":       shares,
                     "token_id":     token_id,
                     "order_id":     order_id,
+                    "bucket":       bucket,
                     "submitted_at": datetime.now(_ET).strftime("%Y-%m-%d %I:%M:%S %p ET"),
                     "settled":      False,
                     "result":       None,

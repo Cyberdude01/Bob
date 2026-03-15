@@ -150,8 +150,8 @@ def _write_live_orders(executed: Dict[str, Any]) -> None:
     lines += [
         "## Open Positions",
         "",
-        "| Submitted (ET) | Symbol | Outcome | Trigger | Entry Price | Shares | Stake | Order ID |",
-        "|----------------|--------|---------|---------|-------------|--------|-------|----------|",
+        "| Submitted (ET) | Symbol | Outcome | Trigger | Bucket | Entry Price | Shares | Stake | Order ID |",
+        "|----------------|--------|---------|---------|--------|-------------|--------|-------|----------|",
     ]
     if open_orders:
         for e in open_orders:
@@ -159,18 +159,20 @@ def _write_live_orders(executed: Dict[str, Any]) -> None:
             sz     = float(e.get("size",  0) or 0)
             shares = e.get("shares") or (round(sz / ep, 4) if ep > 0 else "?")
             oid    = str(e.get("order_id", "?"))[:12]
+            bucket = e.get("bucket", "—")
             lines.append(
                 f"| {e.get('submitted_at','?')} "
                 f"| {e.get('symbol','?')} "
                 f"| **{e.get('outcome','?')}** "
                 f"| `{e.get('trigger','?')}` "
+                f"| {bucket} "
                 f"| {ep:.4f} "
                 f"| {shares} "
                 f"| ${sz:.2f} "
                 f"| `{oid}` |"
             )
     else:
-        lines.append("| — | — | — | — | — | — | — | — |")
+        lines.append("| — | — | — | — | — | — | — | — | — |")
 
     lines.append("")
 
@@ -178,8 +180,8 @@ def _write_live_orders(executed: Dict[str, Any]) -> None:
     lines += [
         "## Settled Trades",
         "",
-        "| Submitted (ET) | Symbol | Outcome | Trigger | Entry Price | Shares | Stake | Result | PnL | Total Return |",
-        "|----------------|--------|---------|---------|-------------|--------|-------|--------|-----|--------------|",
+        "| Submitted (ET) | Symbol | Outcome | Trigger | Bucket | Entry Price | Shares | Stake | Result | PnL | Total Return |",
+        "|----------------|--------|---------|---------|--------|-------------|--------|-------|--------|-----|--------------|",
     ]
     if settled_orders:
         for e in settled_orders:
@@ -191,11 +193,13 @@ def _write_live_orders(executed: Dict[str, Any]) -> None:
             total_return = float(e.get("total_return", 0) or 0)
             result_fmt   = "WIN" if result == "WIN" else "LOSS"
             pnl_str      = f"+${pnl:.2f}" if pnl >= 0 else f"-${abs(pnl):.2f}"
+            bucket       = e.get("bucket", "—")
             lines.append(
                 f"| {e.get('submitted_at','?')} "
                 f"| {e.get('symbol','?')} "
                 f"| **{e.get('outcome','?')}** "
                 f"| `{e.get('trigger','?')}` "
+                f"| {bucket} "
                 f"| {ep:.4f} "
                 f"| {shares} "
                 f"| ${sz:.2f} "
@@ -204,7 +208,7 @@ def _write_live_orders(executed: Dict[str, Any]) -> None:
                 f"| ${total_return:.2f} |"
             )
     else:
-        lines.append("| — | — | — | — | — | — | — | — | — | — |")
+        lines.append("| — | — | — | — | — | — | — | — | — | — | — |")
 
     # ── Summary ────────────────────────────────────────────────────────────
     total_traded  = sum(float(e.get("size", 0) or 0) for e in settled_orders + open_orders)

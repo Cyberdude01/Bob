@@ -17,7 +17,7 @@ const REPO_DIR      = path.resolve(__dirname);
 const DATA_DIR      = path.join(REPO_DIR, 'data_exports');
 const REPORTS_DIR   = path.join(REPO_DIR, 'reports');
 const DB_PATH       = path.join(REPO_DIR, 'market-data.db');
-const LOOP_INTERVAL = 5 * 60 * 1000; // 5 minutes
+const LOOP_INTERVAL = 1 * 60 * 1000; // 1 minute
 const SYMBOLS = ['BTC', 'ETH', 'SOL', 'XRP'];
 // Base slug patterns → symbol mapping (slug may have a timestamp suffix like -1773294300)
 const SLUG_PREFIX_TO_SYMBOL = {
@@ -37,7 +37,8 @@ const TREND_THRESHOLD = 0.016; // eff60 above this = Trend
 const MIN_EDGE_TREND_FOLLOW = 0.12;  // |probUp - 0.5| >= 0.12 to fire trend_follow
 const MIN_EDGE_DIRECTIONAL  = 0.25;  // |probUp - 0.5| >= 0.25 to fire directional (75%+ probability)
 const TRADE_SIZE            = 5.0;   // Fixed $5 USDC stake per signal
-const PRE_ORDER_PRICE       = 0.48;  // Fixed bid price for pre_order straddles
+const PRE_ORDER_PRICE       = 0.44;  // Fixed bid price for pre_order straddles
+const MAX_ENTRY_DIRECTIONAL = 0.56;  // Max entry price for directional/trend_follow (above = negative EV at 56% win rate)
 // ─── Time helpers ─────────────────────────────────────────────────────────────
 function isDSTActive(date) {
   const y = date.getUTCFullYear();
@@ -516,6 +517,16 @@ function collectMarketData() {
       .filter(p => p > 0.001 && p < 0.999);
     const { rv60, eff60 } = computeVolMetrics([...recentPrices, midUp]);
     const { volBucket, trendBucket } = getBuckets(rv60, eff60);
+    // Previous-window momentum: detect if last window settled strongly in one direction
+    // Used by momentum_carry trigger in generateSignals
+    let prevWindowOutcome = null;
+    const prevHighElapsed = csvRows.filter(r => parseFloat(r.elapsed_pct || 0) >= 0.85);
+    if (prevHighElapsed.length >= 1) {
+      const lastPrev = prevHighElapsed[prevHighElapsed.length - 1];
+      const prevProbUp = parseFloat(lastPrev.prob_up || lastPrev.up_price || 0.5);
+      if (prevProbUp >= 0.92)      prevWindowOutcome = 'UP';
+      else if (prevProbUp <= 0.08) prevWindowOutcome = 'DOWN';
+    }
     // Directional probabilities
     const { dir60, dir80, dir90 } = getDirProbs(midUp, elapsedPct, rv60);
     // Trade counts
@@ -558,6 +569,7 @@ function collectMarketData() {
       marketStartTs: startMs ? new Date(startMs).toISOString() : '',
       marketEndTs:   endMs   ? new Date(endMs).toISOString()   : '',
       timestamp: now.toISOString(),
+      prevWindowOutcome,
     };
     console.log(`    ✓ UP=${results[symbol].upPrice} DOWN=${results[symbol].downPrice}`
       + ` elapsed=${(elapsedPct * 100).toFixed(1)}%`
@@ -662,12 +674,13 @@ function generateSignals(results) {
     const price      = parseFloat((isUp ? m.upPrice : m.downPrice).toFixed(4));
     const confidence = parseFloat((isUp ? probUp : 1 - probUp).toFixed(4));
 
-    // trend_follow: Trend bucket, 50–90% elapsed, minimum edge
+    // trend_follow: Trend bucket, 50–90% elapsed, minimum edge, max entry price guard
     if (
       trendBucket === 'Trend' &&
       elapsedPct >= 0.50 &&
       elapsedPct < 0.90 &&
-      edge >= MIN_EDGE_TREND_FOLLOW
+      edge >= MIN_EDGE_TREND_FOLLOW &&
+      price <= MAX_ENTRY_DIRECTIONAL
     ) {
       signals.push({
         symbol,
@@ -685,8 +698,8 @@ function generateSignals(results) {
       });
     }
 
-    // directional: 67%+ elapsed, any bucket, edge >= 0.25 (75%+ probability)
-    if (elapsedPct >= 0.667 && edge >= MIN_EDGE_DIRECTIONAL) {
+    // directional: 67%+ elapsed, any bucket, edge >= 0.25 (75%+ probability), max entry price guard
+    if (elapsedPct >= 0.667 && edge >= MIN_EDGE_DIRECTIONAL && price <= MAX_ENTRY_DIRECTIONAL) {
       signals.push({
         symbol,
         slug,
@@ -703,26 +716,55 @@ function generateSignals(results) {
       });
     }
 
-    // pre_order straddle: place simultaneous UP + DOWN bids at 0.48 on the
+    // pre_order straddle: place simultaneous UP + DOWN bids at 0.44 on the
     // NEXT 15-min market, 5 minutes before it opens (elapsed 67–95%).
     // No directional condition — both sides always fire.  One leg will win
-    // (settles ≥ $1) and one will lose ($0); the 0.48 entry price vs 0.50
-    // fair value is the edge.  Executor targets the next window's token via
-    // _get_token_id(next_market=True) and uses the fixed signal price.
+    // (settles ≥ $1) and one will lose ($0); the 0.44 entry price vs 0.50
+    // fair value is the edge (+$1.36/straddle guaranteed).
+    // Bucket-based sizing: LowVol → $7/leg (about to become HighVol 90% of the time).
     if (elapsedPct >= 0.667 && elapsedPct < 0.95) {
+      const preSize = (volBucket === 'LowVol') ? 7.0 : TRADE_SIZE;
       for (const preOutcome of ['UP', 'DOWN']) {
         signals.push({
           symbol,
           slug,   // current-window slug — executor strips timestamp, appends next window ts
           outcome:    preOutcome,
           side:       'BUY',
-          size:       TRADE_SIZE,
+          size:       preSize,
           price:      PRE_ORDER_PRICE,
           confidence: 0.5,
           trigger:    'pre_order',
           reason:     `PRE-ORDER straddle (${preOutcome}) @ ${PRE_ORDER_PRICE} `
             + `— next window, ${(elapsedPct * 100).toFixed(0)}% elapsed. `
-            + `Fixed $${TRADE_SIZE} USDC.`,
+            + `Bucket=${volBucket}+${trendBucket}. $${preSize} USDC (${volBucket === 'LowVol' ? 'LowVol→HighVol sizing' : 'standard sizing'}).`,
+        });
+      }
+    }
+
+    // momentum_carry: previous window settled strongly → bet continuation early in new window
+    // 61% BTC/ETH consecutive window continuation rate makes this +EV at entry <= 0.58.
+    const { prevWindowOutcome } = m;
+    if (
+      prevWindowOutcome !== null &&
+      elapsedPct >= 0.02 &&
+      elapsedPct < 0.30
+    ) {
+      const mcPrice = parseFloat(
+        (prevWindowOutcome === 'UP' ? m.upPrice : m.downPrice).toFixed(4));
+      if (mcPrice <= 0.58) {
+        signals.push({
+          symbol,
+          slug,
+          outcome:    prevWindowOutcome,
+          side:       'BUY',
+          size:       TRADE_SIZE,
+          price:      mcPrice,
+          confidence: 0.61,
+          trigger:    'momentum_carry',
+          reason:     `MOMENTUM CARRY (${prevWindowOutcome}) — prev window settled strongly `
+            + `at ${(elapsedPct * 100).toFixed(0)}% into new window. `
+            + `Bucket=${volBucket}+${trendBucket} (RV60=${rv60}, Eff60=${eff60}). `
+            + `Fixed $${TRADE_SIZE} USDC @ ${mcPrice.toFixed(4)}.`,
         });
       }
     }
@@ -911,7 +953,7 @@ function run() {
 // ─── Entry point ──────────────────────────────────────────────────────────────
 const loopMode = process.argv.includes('--loop');
 if (loopMode) {
-  console.log(`Starting feed-updater in loop mode (interval: ${LOOP_INTERVAL / 60000} min)…`);
+  console.log(`Starting feed-updater in loop mode (interval: ${LOOP_INTERVAL / 1000}s)…`);
   run();
   setInterval(run, LOOP_INTERVAL);
 } else {
