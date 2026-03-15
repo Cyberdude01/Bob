@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-15 11:13 AM ET",
+  "updated": "2026-03-15 11:14 AM ET",
   "data": [
     {
       "symbol": "BTC",
@@ -9,19 +9,8 @@
       "size": 5,
       "price": 0.935,
       "confidence": 0.935,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW at 87% elapsed — P(UP)=0.065 gives edge=0.435 toward DOWN. Bucket=HighVol+Trend (RV60=599.32737, Eff60=0.058). Fixed $5 USDC stake @ conf=0.935."
-    },
-    {
-      "symbol": "BTC",
-      "slug": "btc-updown-15m-1773586800",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 5,
-      "price": 0.935,
-      "confidence": 0.935,
       "trigger": "directional_90pct",
-      "reason": "DIRECTIONAL at 87% elapsed — P(UP)=0.065 gives edge=0.435 toward DOWN. Bucket=HighVol+Trend (RV60=599.32737, Eff60=0.058). Fixed $5 USDC stake @ conf=0.935."
+      "reason": "DIRECTIONAL at 94% elapsed — P(UP)=0.065 gives edge=0.435 toward DOWN. Bucket=HighVol+Trend (RV60=599.32737, Eff60=0.058). Fixed $5 USDC stake @ conf=0.935."
     },
     {
       "symbol": "BTC",
@@ -32,7 +21,7 @@
       "price": 0.48,
       "confidence": 0.5,
       "trigger": "pre_order",
-      "reason": "PRE-ORDER straddle (UP) @ 0.48 — next window, 87% elapsed. Fixed $5 USDC."
+      "reason": "PRE-ORDER straddle (UP) @ 0.48 — next window, 94% elapsed. Fixed $5 USDC."
     },
     {
       "symbol": "BTC",
@@ -43,18 +32,7 @@
       "price": 0.48,
       "confidence": 0.5,
       "trigger": "pre_order",
-      "reason": "PRE-ORDER straddle (DOWN) @ 0.48 — next window, 87% elapsed. Fixed $5 USDC."
-    },
-    {
-      "symbol": "ETH",
-      "slug": "eth-updown-15m-1773586800",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 5,
-      "price": 0.965,
-      "confidence": 0.965,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW at 87% elapsed — P(UP)=0.035 gives edge=0.465 toward DOWN. Bucket=HighVol+Trend (RV60=793.65991, Eff60=0.045). Fixed $5 USDC stake @ conf=0.965."
+      "reason": "PRE-ORDER straddle (DOWN) @ 0.48 — next window, 94% elapsed. Fixed $5 USDC."
     },
     {
       "symbol": "ETH",
@@ -65,7 +43,7 @@
       "price": 0.965,
       "confidence": 0.965,
       "trigger": "directional_90pct",
-      "reason": "DIRECTIONAL at 87% elapsed — P(UP)=0.035 gives edge=0.465 toward DOWN. Bucket=HighVol+Trend (RV60=793.65991, Eff60=0.045). Fixed $5 USDC stake @ conf=0.965."
+      "reason": "DIRECTIONAL at 94% elapsed — P(UP)=0.035 gives edge=0.465 toward DOWN. Bucket=HighVol+Trend (RV60=718.58336, Eff60=0.069). Fixed $5 USDC stake @ conf=0.965."
     },
     {
       "symbol": "ETH",
@@ -76,7 +54,7 @@
       "price": 0.48,
       "confidence": 0.5,
       "trigger": "pre_order",
-      "reason": "PRE-ORDER straddle (UP) @ 0.48 — next window, 87% elapsed. Fixed $5 USDC."
+      "reason": "PRE-ORDER straddle (UP) @ 0.48 — next window, 94% elapsed. Fixed $5 USDC."
     },
     {
       "symbol": "ETH",
@@ -87,7 +65,7 @@
       "price": 0.48,
       "confidence": 0.5,
       "trigger": "pre_order",
-      "reason": "PRE-ORDER straddle (DOWN) @ 0.48 — next window, 87% elapsed. Fixed $5 USDC."
+      "reason": "PRE-ORDER straddle (DOWN) @ 0.48 — next window, 94% elapsed. Fixed $5 USDC."
     },
     {
       "symbol": "SOL",
@@ -95,10 +73,10 @@
       "outcome": "DOWN",
       "side": "BUY",
       "size": 5,
-      "price": 0.745,
-      "confidence": 0.745,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW at 87% elapsed — P(UP)=0.255 gives edge=0.245 toward DOWN. Bucket=HighVol+Trend (RV60=697.00915, Eff60=0.028). Fixed $5 USDC stake @ conf=0.745."
+      "price": 0.795,
+      "confidence": 0.795,
+      "trigger": "directional_90pct",
+      "reason": "DIRECTIONAL at 94% elapsed — P(UP)=0.205 gives edge=0.295 toward DOWN. Bucket=HighVol+Trend (RV60=617.72132, Eff60=0.166). Fixed $5 USDC stake @ conf=0.795."
     },
     {
       "symbol": "SOL",
@@ -109,7 +87,7 @@
       "price": 0.48,
       "confidence": 0.5,
       "trigger": "pre_order",
-      "reason": "PRE-ORDER straddle (UP) @ 0.48 — next window, 87% elapsed. Fixed $5 USDC."
+      "reason": "PRE-ORDER straddle (UP) @ 0.48 — next window, 94% elapsed. Fixed $5 USDC."
     },
     {
       "symbol": "SOL",
@@ -120,7 +98,7 @@
       "price": 0.48,
       "confidence": 0.5,
       "trigger": "pre_order",
-      "reason": "PRE-ORDER straddle (DOWN) @ 0.48 — next window, 87% elapsed. Fixed $5 USDC."
+      "reason": "PRE-ORDER straddle (DOWN) @ 0.48 — next window, 94% elapsed. Fixed $5 USDC."
     },
     {
       "symbol": "XRP",
@@ -131,7 +109,7 @@
       "price": 0.865,
       "confidence": 0.865,
       "trigger": "directional_90pct",
-      "reason": "DIRECTIONAL at 87% elapsed — P(UP)=0.865 gives edge=0.365 toward UP. Bucket=HighVol+Range (RV60=971.84021, Eff60=0.001). Fixed $5 USDC stake @ conf=0.865."
+      "reason": "DIRECTIONAL at 94% elapsed — P(UP)=0.865 gives edge=0.365 toward UP. Bucket=HighVol+Range (RV60=971.84021, Eff60=0.001). Fixed $5 USDC stake @ conf=0.865."
     },
     {
       "symbol": "XRP",
@@ -142,7 +120,7 @@
       "price": 0.48,
       "confidence": 0.5,
       "trigger": "pre_order",
-      "reason": "PRE-ORDER straddle (UP) @ 0.48 — next window, 87% elapsed. Fixed $5 USDC."
+      "reason": "PRE-ORDER straddle (UP) @ 0.48 — next window, 94% elapsed. Fixed $5 USDC."
     },
     {
       "symbol": "XRP",
@@ -153,7 +131,7 @@
       "price": 0.48,
       "confidence": 0.5,
       "trigger": "pre_order",
-      "reason": "PRE-ORDER straddle (DOWN) @ 0.48 — next window, 87% elapsed. Fixed $5 USDC."
+      "reason": "PRE-ORDER straddle (DOWN) @ 0.48 — next window, 94% elapsed. Fixed $5 USDC."
     }
   ]
 }
