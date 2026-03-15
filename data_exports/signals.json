@@ -1,4 +1,16 @@
 {
-  "updated": "2026-03-15 04:23 PM ET",
-  "data": []
+  "updated": "2026-03-15 04:24 PM ET",
+  "data": [
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m-1773605700",
+      "outcome": "DOWN",
+      "side": "BUY",
+      "size": 5,
+      "price": 0.66,
+      "confidence": 0.66,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW at 60% elapsed — P(UP)=0.340 gives edge=0.160 toward DOWN. Bucket=HighVol+Trend (RV60=477.76178, Eff60=0.043). Fixed $5 USDC stake @ conf=0.660."
+    }
+  ]
 }
