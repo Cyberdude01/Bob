@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-15 10:08 AM ET",
+  "updated": "2026-03-15 10:09 AM ET",
   "data": [
     {
       "symbol": "BTC",
@@ -10,7 +10,18 @@
       "price": 0.625,
       "confidence": 0.625,
       "trigger": "trend_follow",
-      "reason": "TREND FOLLOW at 53% elapsed — P(UP)=0.375 gives edge=0.125 toward DOWN. Bucket=HighVol+Trend (RV60=774.83855, Eff60=0.059). Fixed $5 USDC stake @ conf=0.625."
+      "reason": "TREND FOLLOW at 60% elapsed — P(UP)=0.375 gives edge=0.125 toward DOWN. Bucket=HighVol+Trend (RV60=774.83855, Eff60=0.059). Fixed $5 USDC stake @ conf=0.625."
+    },
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m-1773583200",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5,
+      "price": 0.655,
+      "confidence": 0.655,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW at 60% elapsed — P(UP)=0.655 gives edge=0.155 toward UP. Bucket=HighVol+Trend (RV60=620.56991, Eff60=0.07). Fixed $5 USDC stake @ conf=0.655."
     }
   ]
 }
