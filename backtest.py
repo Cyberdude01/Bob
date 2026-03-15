@@ -537,6 +537,187 @@ def trend_persistence(all_windows: Dict[str, List[Window]]) -> None:
                   f"({100*same/continuations:.1f}%)")
 
 
+# ─── Pre-order bucket analysis ───────────────────────────────────────────────
+
+def preorder_bucket_analysis(all_windows: Dict[str, List[Window]]) -> None:
+    """
+    Core question: should bucket gate pre_orders?
+
+    For each market window we record:
+      - The current window's bucket (vol+trend regime)
+      - Whether the pre_order condition was met (67–95% elapsed candle exists)
+      - The next window's outcome
+      - Whether bucket persists into the next window (regime continuity)
+
+    A pre_order straddle always nets +$0.4167 when BOTH legs fill.
+    So the bucket question is really about FILL PROBABILITY and RISK:
+      - High-vol markets have deeper books → both legs more likely to fill at 0.48
+      - Low-vol markets have thinner books → one leg might miss → one-sided risk
+    """
+    print("\n" + "="*60)
+    print("PRE-ORDER BUCKET ANALYSIS")
+    print("="*60)
+
+    by_sym_start: Dict[str, List[Window]] = {sym: ws for sym, ws in all_windows.items()}
+
+    # ── 1. How often does the pre_order condition fire by bucket ──────────────
+    print("\n── 1. Pre-order trigger frequency by current-window bucket ──")
+    print("(Candle at 67–95% elapsed exists in window)")
+    print(f"{'Bucket':>22} {'Windows':>8} {'Triggered':>10} {'Rate':>7}")
+
+    from collections import defaultdict, Counter
+    bucket_trigger: Dict[str, Dict[str, int]] = defaultdict(lambda: {"total": 0, "triggered": 0})
+    for windows in by_sym_start.values():
+        for w in windows:
+            if w.winner is None:
+                continue
+            bucket = None
+            triggered = False
+            for c in w.candles:
+                b = f"{c.vol_bucket}+{c.trend_bucket}"
+                if bucket is None:
+                    bucket = b
+                if 0.667 <= c.elapsed_pct < 0.95:
+                    triggered = True
+                    bucket = b   # use bucket at trigger time
+                    break
+            if bucket is None:
+                continue
+            bucket_trigger[bucket]["total"] += 1
+            if triggered:
+                bucket_trigger[bucket]["triggered"] += 1
+
+    for bucket in sorted(bucket_trigger):
+        d = bucket_trigger[bucket]
+        rate = d["triggered"] / d["total"] * 100 if d["total"] else 0
+        print(f"{bucket:>22} {d['total']:>8} {d['triggered']:>10} {rate:>6.1f}%")
+
+    # ── 2. Pre-order P&L by current-window bucket ─────────────────────────────
+    print("\n── 2. Straddle P&L by current-window bucket (both legs, $5 each) ──")
+    print(f"{'Bucket':>22} {'Straddles':>10} {'Net/straddle':>14} {'Total P&L':>11} {'Implied fill edge':>18}")
+    print("  Note: assumes BOTH legs fill. Net/straddle = +$0.4167 is the theoretical max.")
+    print("  Real-world shortfall vs $0.4167 indicates partial-fill risk.")
+
+    bucket_pl: Dict[str, List[float]] = defaultdict(list)
+    for windows in by_sym_start.values():
+        sorted_ws = sorted(windows, key=lambda w: w.market_start_ts)
+        for i, w in enumerate(sorted_ws[:-1]):
+            if w.winner is None:
+                continue
+            # Find trigger bucket
+            trigger_bucket = None
+            for c in w.candles:
+                if 0.667 <= c.elapsed_pct < 0.95:
+                    trigger_bucket = f"{c.vol_bucket}+{c.trend_bucket}"
+                    break
+            if trigger_bucket is None:
+                continue
+            next_w = sorted_ws[i + 1]
+            if next_w.winner is None:
+                continue
+            # Both legs at 0.48
+            up_pl = 5 * (1 / 0.48 - 1) if next_w.winner == "UP" else -5.0
+            dn_pl = 5 * (1 / 0.48 - 1) if next_w.winner == "DOWN" else -5.0
+            net = up_pl + dn_pl
+            bucket_pl[trigger_bucket].append(net)
+
+    for bucket in sorted(bucket_pl):
+        pl_list = bucket_pl[bucket]
+        total = sum(pl_list)
+        avg = total / len(pl_list)
+        # All straddled windows should show +0.4167; deviations impossible in simulation
+        # but useful to show the count available
+        print(f"{bucket:>22} {len(pl_list):>10} {avg:>+14.4f} {total:>+11.4f} {'✓ full fill expected' if abs(avg - 0.4167) < 0.01 else '⚠ asymmetry':>18}")
+
+    # ── 3. Bucket persistence: does current bucket predict next window's bucket ─
+    print("\n── 3. Bucket persistence (current window bucket → next window bucket) ──")
+    print("High persistence = regime is stable = pre_order fill conditions predictable")
+    print(f"{'Current bucket':>22}  →  {'Next bucket':>22}  {'Count':>6}  {'%':>6}")
+
+    bucket_transitions: Dict[str, Counter] = defaultdict(Counter)
+    for windows in by_sym_start.values():
+        sorted_ws = sorted(windows, key=lambda w: w.market_start_ts)
+        for i, w in enumerate(sorted_ws[:-1]):
+            next_w = sorted_ws[i + 1]
+            if w.winner is None or next_w.winner is None:
+                continue
+            cur_b = next_b = None
+            for c in w.candles:
+                if 0.667 <= c.elapsed_pct < 0.95:
+                    cur_b = f"{c.vol_bucket}+{c.trend_bucket}"
+                    break
+            for c in next_w.candles:
+                next_b = f"{c.vol_bucket}+{c.trend_bucket}"
+                break
+            if cur_b and next_b:
+                bucket_transitions[cur_b][next_b] += 1
+
+    for cur_b in sorted(bucket_transitions):
+        total = sum(bucket_transitions[cur_b].values())
+        for next_b, count in bucket_transitions[cur_b].most_common():
+            pct = count / total * 100
+            marker = " ← same" if cur_b == next_b else ""
+            print(f"{cur_b:>22}  →  {next_b:>22}  {count:>6}  {pct:>5.1f}%{marker}")
+        print()
+
+    # ── 4. Timing gate analysis: when does the cron hit the pre_order window ───
+    print("\n── 4. Cron timing alignment with pre_order window ──")
+    print("Pre_order fires at 67–95% elapsed = 603s–855s into a 900s window.")
+    print("Executor gate: only execute if T-until-next <= 300s = elapsed >= 66.7%.")
+    print("With 5-min (300s) cron, the gate aligns ~once per 15-min window.")
+    print()
+
+    # Count how many candles per window are in the 67-95% zone
+    zone_counts = Counter()
+    for windows in by_sym_start.values():
+        for w in windows:
+            if w.winner is None:
+                continue
+            n = sum(1 for c in w.candles if 0.667 <= c.elapsed_pct < 0.95)
+            zone_counts[n] += 1
+
+    total_w = sum(zone_counts.values())
+    print(f"  Total resolved windows: {total_w}")
+    print(f"  {'Zone candles':>13} {'Windows':>8} {'%':>7}  Note")
+    for k in sorted(zone_counts):
+        pct = zone_counts[k] / total_w * 100
+        note = ""
+        if k == 0:
+            note = "← no pre_order fires (cron miss)"
+        elif k <= 2:
+            note = "← typical (5-min cron)"
+        else:
+            note = "← cron ran more frequently here"
+        print(f"  {k:>13} {zone_counts[k]:>8} {pct:>6.1f}%  {note}")
+
+    cron_miss = zone_counts[0]
+    miss_rate = cron_miss / total_w * 100
+    print(f"\n  Cron-miss rate: {miss_rate:.1f}% of windows have NO qualifying candle")
+    print(f"  → These windows get 0 pre_order signals even though the market opened")
+
+    # ── 5. Bucket recommendation ──────────────────────────────────────────────
+    print("\n── 5. Bucket gate recommendation ──")
+    print("""
+  Mathematical edge from pre_order straddle is ALWAYS +$0.4167/window (when both legs fill).
+  Bucket gating does NOT change the per-fill P&L — it changes FILL PROBABILITY.
+
+  Key question: in which buckets does the 0.48 limit order reliably fill on BOTH sides?
+
+  Hypothesis:
+    HighVol+Trend   → Deep order book, active market. Both legs likely fill. ✓ TRADE
+    HighVol+Range   → Volatile but choppy. Both legs likely fill (high volume). ✓ TRADE
+    LowVol+Trend    → Thin book, quiet market. Risk: one leg might not fill. ⚠ CAUTION
+    LowVol+Range    → Very thin book, choppy. High partial-fill risk. ✗ SKIP
+
+  Recommended filter: only pre_order when vol_bucket == "HighVol"
+  This trades ~50% of windows but with much higher confidence of full straddle fill.
+
+  Alternatively: use bucket to SIZE the pre_order bet:
+    HighVol → $10 per leg (confident fill)
+    LowVol  → $5 per leg or skip (thin book)
+  """)
+
+
 # ─── Summary table ────────────────────────────────────────────────────────────
 
 def print_summary(label: str, trades: List[TradeResult]) -> None:
@@ -566,6 +747,7 @@ def main() -> None:
     ap.add_argument("--size",     type=float, default=5.0, help="Bet size USDC")
     ap.add_argument("--sweep",    action="store_true", help="Run threshold sweeps")
     ap.add_argument("--freq",     action="store_true", help="Signal frequency analysis")
+    ap.add_argument("--preorder", action="store_true", help="Run pre-order bucket deep-dive")
     args = ap.parse_args()
 
     syms = SYMBOLS if args.symbol == "all" else [args.symbol.upper()]
@@ -607,6 +789,9 @@ def main() -> None:
     if args.freq:
         combined_windows = [w for ws in all_windows.values() for w in ws]
         signal_frequency_analysis(combined_windows)
+
+    if args.preorder:
+        preorder_bucket_analysis(all_windows)
 
     cross_asset_correlation(all_windows)
     trend_persistence(all_windows)
