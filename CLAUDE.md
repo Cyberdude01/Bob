@@ -4,7 +4,7 @@
 
 ### Signal Pipeline (the "brain")
 - **`feed-updater.js`** — lives at `/root/Bob/feed-updater.js` on the droplet (NOT in git — needs to be committed)
-- Runs every 5 minutes via cron: `*/5 * * * * cd /root/Bob && node feed-updater.js >> /root/Bob/feed-updater.log 2>&1`
+- Runs every minute via cron: `* * * * * cd /root/Bob && node feed-updater.js >> /root/Bob/feed-updater.log 2>&1`
 - Fetches live BTC/ETH/SOL/XRP 15-min market data, calculates probabilities & signals, writes `data_exports/signals.json` + `data_exports/markets.json`, commits and pushes to `origin/main`
 - Commit author: `Polymarket Feed <polymarket-feed@bot>`, commit message format: `data: YYYY-MM-DDTHH:MM ET`
 - **Critical**: It pushes to whatever the current git branch of `/root/Bob` is. If the repo is on a non-main branch, signals never reach `origin/main` and all trading stops.
@@ -37,6 +37,12 @@
 - **Primary cause**: `/root/Bob` repo on the droplet got checked out to a Claude session branch (e.g. `claude/fix-github-feed-A3ye3`). `feed-updater.js` pushes to current branch, so `origin/main` never updates.
 - **Fix**: On the droplet: `cd /root/Bob && git checkout main && git pull origin main`
 - `run_executor.sh` always pulls from `origin/main` regardless of local branch
+
+### 4. `poly-executor.timer` dies / no trades for hours
+- **Symptom**: Timer shows `inactive (dead)`, executor hasn't run in hours
+- **Cause**: Systemd timer stopped — seen on 2026-03-14, was dead for 18h
+- **Fix**: `systemctl start poly-executor.timer && systemctl status poly-executor.timer`
+- Verify with: `systemctl list-timers poly-executor.timer`
 
 ### 3. `feed-updater.js` push rejected
 - **Symptom**: `! [rejected] claude/fix-... -> claude/fix-... (fetch first)` in `feed-updater.log`
