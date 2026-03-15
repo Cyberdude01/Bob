@@ -483,6 +483,13 @@ def run(execute: bool = False) -> None:
     print(f"  {ts_run}")
     print(f"{'='*60}\n")
 
+    # ── Trading pause guard ────────────────────────────────────────────────
+    _pause_file = _PKG_ROOT / ".TRADING_PAUSED"
+    if _pause_file.exists():
+        print("TRADING PAUSED — .TRADING_PAUSED file present. No orders will be placed.")
+        print(f"Remove {_pause_file} to resume trading.")
+        return
+
     # ── Load signals & markets ─────────────────────────────────────────────
     try:
         signals_raw = _load_json(_SIGNALS_FILE)
