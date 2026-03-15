@@ -1,11 +1,20 @@
 # Live Orders
 
-*Updated: 2026-03-15 07:24 AM ET*
+*Updated: 2026-03-15 07:29 AM ET*
 
 ## Open Positions
 
 | Submitted (ET) | Symbol | Outcome | Trigger | Entry Price | Shares | Stake | Order ID |
 |----------------|--------|---------|---------|-------------|--------|-------|----------|
+| 2026-03-15 07:29:30 AM ET | XRP | **UP** | `directional_90pct` | 0.6300 | 7.9365 | $5.00 | `?` |
+| 2026-03-15 07:29:30 AM ET | XRP | **UP** | `pre_order` | 0.4800 | 10.4167 | $5.00 | `?` |
+| 2026-03-15 07:29:30 AM ET | XRP | **DOWN** | `pre_order` | 0.4800 | 10.4167 | $5.00 | `?` |
+| 2026-03-15 07:29:29 AM ET | SOL | **UP** | `pre_order` | 0.4800 | 10.4167 | $5.00 | `?` |
+| 2026-03-15 07:29:29 AM ET | SOL | **DOWN** | `pre_order` | 0.4800 | 10.4167 | $5.00 | `?` |
+| 2026-03-15 07:29:28 AM ET | ETH | **DOWN** | `pre_order` | 0.4800 | 10.4167 | $5.00 | `?` |
+| 2026-03-15 07:29:27 AM ET | BTC | **DOWN** | `pre_order` | 0.4800 | 10.4167 | $5.00 | `?` |
+| 2026-03-15 07:29:27 AM ET | ETH | **UP** | `pre_order` | 0.4800 | 10.4167 | $5.00 | `?` |
+| 2026-03-15 07:29:26 AM ET | BTC | **UP** | `pre_order` | 0.4800 | 10.4167 | $5.00 | `?` |
 | 2026-03-15 07:24:17 AM ET | XRP | **UP** | `trend_follow` | 0.8700 | 5.7471 | $5.00 | `?` |
 | 2026-03-15 07:14:12 AM ET | XRP | **UP** | `pre_order` | 0.4800 | 10.4167 | $5.00 | `?` |
 | 2026-03-15 07:14:12 AM ET | XRP | **DOWN** | `pre_order` | 0.4800 | 10.4167 | $5.00 | `?` |
@@ -166,8 +175,8 @@
 
 | Metric | Value |
 |--------|-------|
-| Total Trades | 150 |
-| Open | 42 ($210.00 at risk) |
+| Total Trades | 159 |
+| Open | 51 ($255.00 at risk) |
 | Settled | 108 — 56W / 52L |
-| Total Staked | $750.00 |
+| Total Staked | $795.00 |
 | Realized PnL | +$247.48 |
