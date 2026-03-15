@@ -1,4 +1,38 @@
 {
-  "updated": "2026-03-15 02:22 PM ET",
-  "data": []
+  "updated": "2026-03-15 02:23 PM ET",
+  "data": [
+    {
+      "symbol": "BTC",
+      "slug": "btc-updown-15m-1773598500",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5,
+      "price": 0.69,
+      "confidence": 0.69,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW at 54% elapsed — P(UP)=0.690 gives edge=0.190 toward UP. Bucket=HighVol+Trend (RV60=552.43061, Eff60=0.12). Fixed $5 USDC stake @ conf=0.690."
+    },
+    {
+      "symbol": "ETH",
+      "slug": "eth-updown-15m-1773598500",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5,
+      "price": 0.68,
+      "confidence": 0.68,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW at 54% elapsed — P(UP)=0.680 gives edge=0.180 toward UP. Bucket=HighVol+Trend (RV60=718.16047, Eff60=0.104). Fixed $5 USDC stake @ conf=0.680."
+    },
+    {
+      "symbol": "XRP",
+      "slug": "xrp-updown-15m-1773598500",
+      "outcome": "UP",
+      "side": "BUY",
+      "size": 5,
+      "price": 0.625,
+      "confidence": 0.625,
+      "trigger": "trend_follow",
+      "reason": "TREND FOLLOW at 54% elapsed — P(UP)=0.625 gives edge=0.125 toward UP. Bucket=HighVol+Trend (RV60=395.79854, Eff60=0.136). Fixed $5 USDC stake @ conf=0.625."
+    }
+  ]
 }
