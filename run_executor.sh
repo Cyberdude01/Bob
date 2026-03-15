@@ -4,6 +4,18 @@ set -e
 
 cd "$(dirname "$0")"
 
+# ── Trading pause guard ────────────────────────────────────────────────────────
+# To pause ALL trade execution without stopping the feed:
+#   touch /root/Bob/.TRADING_PAUSED
+# To resume:
+#   rm /root/Bob/.TRADING_PAUSED
+# The feed-updater keeps running so signals.json stays fresh.
+if [ -f ".TRADING_PAUSED" ]; then
+  echo "[run_executor] TRADING PAUSED — .TRADING_PAUSED file present. No orders will be placed."
+  echo "[run_executor] Remove /root/Bob/.TRADING_PAUSED to resume trading."
+  exit 0
+fi
+
 echo "[run_executor] Pulling latest data from origin/main..."
 git fetch origin main
 git checkout origin/main -- data_exports/signals.json data_exports/markets.json

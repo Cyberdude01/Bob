@@ -14,6 +14,22 @@
 - Runs every 5 minutes via systemd: `poly-executor.timer` → `poly-executor.service`
 - **Staleness guard**: rejects signals older than 4 hours (`MAX_SIGNAL_AGE_HOURS = 4` in `trade_executor.py`)
 - Deduplication: executed signals tracked in `data_exports/executed.json`
+- **Trading Pause**: create `/root/Bob/.TRADING_PAUSED` to halt all order placement without stopping the feed
+
+### Trading Pause / Analysis Mode
+The feed-updater and executor are deliberately decoupled so you can pause trading at any time without letting signals go stale.
+
+**To pause trading** (feed keeps running, no orders placed):
+```bash
+touch /root/Bob/.TRADING_PAUSED
+```
+**To resume trading**:
+```bash
+rm /root/Bob/.TRADING_PAUSED
+```
+- `run_executor.sh` checks for this file at startup and exits cleanly if present
+- `feed-updater.js` is unaffected — `signals.json` and `markets.json` continue updating every minute
+- When you remove the pause file, the executor resumes on its next 5-minute tick with fresh signals
 
 ### Auto-Redeem
 - `poly-auto-redeem.service` — runs continuously, redeems winning CTF positions on-chain every 10 minutes
