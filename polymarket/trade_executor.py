@@ -523,8 +523,9 @@ def run(execute: bool = False) -> None:
     # ── Pre-flight: resolve next-market tokens for pre_order straddle pairs ──
     # If EITHER side (UP or DOWN) cannot be resolved for a symbol, skip BOTH
     # to prevent orphan one-sided positions (partial fill anomaly).
-    pre_order_blocked: set = set()  # symbol names to skip entirely
-    pre_order_sigs = [s for s in signals if s.get("trigger") == "pre_order"]
+    pre_order_blocked: set = set(PAUSED_SYMBOLS)  # start with paused symbols already blocked
+    pre_order_sigs = [s for s in signals if s.get("trigger") == "pre_order"
+                      and s.get("symbol", "").upper() not in PAUSED_SYMBOLS]
     # Group by symbol
     pre_order_by_sym: Dict[str, List[Dict[str, Any]]] = {}
     for s in pre_order_sigs:
