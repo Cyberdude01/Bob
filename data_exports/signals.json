@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-15 10:23 AM ET",
+  "updated": "2026-03-15 10:24 AM ET",
   "data": [
     {
       "symbol": "BTC",
@@ -10,7 +10,7 @@
       "price": 0.875,
       "confidence": 0.875,
       "trigger": "trend_follow",
-      "reason": "TREND FOLLOW at 54% elapsed — P(UP)=0.125 gives edge=0.375 toward DOWN. Bucket=HighVol+Trend (RV60=602.07898, Eff60=0.084). Fixed $5 USDC stake @ conf=0.875."
+      "reason": "TREND FOLLOW at 60% elapsed — P(UP)=0.125 gives edge=0.375 toward DOWN. Bucket=HighVol+Trend (RV60=602.07898, Eff60=0.084). Fixed $5 USDC stake @ conf=0.875."
     },
     {
       "symbol": "ETH",
@@ -21,7 +21,7 @@
       "price": 0.745,
       "confidence": 0.745,
       "trigger": "trend_follow",
-      "reason": "TREND FOLLOW at 54% elapsed — P(UP)=0.255 gives edge=0.245 toward DOWN. Bucket=HighVol+Trend (RV60=686.53471, Eff60=0.044). Fixed $5 USDC stake @ conf=0.745."
+      "reason": "TREND FOLLOW at 60% elapsed — P(UP)=0.255 gives edge=0.245 toward DOWN. Bucket=HighVol+Trend (RV60=686.53471, Eff60=0.044). Fixed $5 USDC stake @ conf=0.745."
     },
     {
       "symbol": "SOL",
@@ -32,7 +32,7 @@
       "price": 0.835,
       "confidence": 0.835,
       "trigger": "trend_follow",
-      "reason": "TREND FOLLOW at 54% elapsed — P(UP)=0.165 gives edge=0.335 toward DOWN. Bucket=HighVol+Trend (RV60=665.38709, Eff60=0.047). Fixed $5 USDC stake @ conf=0.835."
+      "reason": "TREND FOLLOW at 60% elapsed — P(UP)=0.165 gives edge=0.335 toward DOWN. Bucket=HighVol+Trend (RV60=665.38038, Eff60=0.045). Fixed $5 USDC stake @ conf=0.835."
     },
     {
       "symbol": "XRP",
@@ -43,7 +43,7 @@
       "price": 0.915,
       "confidence": 0.915,
       "trigger": "trend_follow",
-      "reason": "TREND FOLLOW at 54% elapsed — P(UP)=0.085 gives edge=0.415 toward DOWN. Bucket=HighVol+Trend (RV60=538.70722, Eff60=0.076). Fixed $5 USDC stake @ conf=0.915."
+      "reason": "TREND FOLLOW at 60% elapsed — P(UP)=0.085 gives edge=0.415 toward DOWN. Bucket=HighVol+Trend (RV60=538.70722, Eff60=0.076). Fixed $5 USDC stake @ conf=0.915."
     }
   ]
 }
