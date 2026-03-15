@@ -2490,5 +2490,21 @@
     "result": null,
     "pnl": null,
     "total_return": null
+  },
+  "xrp-updown-15m-1773573300:UP:trend_follow": {
+    "slug": "xrp-updown-15m-1773573300",
+    "symbol": "XRP",
+    "outcome": "UP",
+    "trigger": "trend_follow",
+    "price": 0.87,
+    "size": 5.0,
+    "shares": 5.7471,
+    "token_id": "1522634685589972743996659262484156494476280345221601718626202807761431215779",
+    "order_id": "?",
+    "submitted_at": "2026-03-15 07:24:17 AM ET",
+    "settled": false,
+    "result": null,
+    "pnl": null,
+    "total_return": null
   }
 }
