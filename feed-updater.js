@@ -698,8 +698,14 @@ function generateSignals(results) {
       });
     }
 
-    // directional: 67%+ elapsed, any bucket, edge >= 0.25 (75%+ probability), max entry price guard
-    if (elapsedPct >= 0.667 && edge >= MIN_EDGE_DIRECTIONAL && price <= MAX_ENTRY_DIRECTIONAL) {
+    // directional: 67%+ elapsed, edge >= 0.25 (75%+ probability), max entry price guard.
+    // Range suppression: in Range bucket with low eff60, directional probability has no
+    // real signal — it's essentially coin-flipping. Require Trend bucket OR a higher
+    // edge threshold (30%+) in Range conditions to fire.
+    const minEdgeDirectional = (trendBucket === 'Range' && eff60 < 0.01)
+      ? 0.30  // Range + low efficiency: require 80%+ probability to fire
+      : MIN_EDGE_DIRECTIONAL;
+    if (elapsedPct >= 0.667 && edge >= minEdgeDirectional && price <= MAX_ENTRY_DIRECTIONAL) {
       signals.push({
         symbol,
         slug,
@@ -722,7 +728,15 @@ function generateSignals(results) {
     // (settles ≥ $1) and one will lose ($0); the 0.44 entry price vs 0.50
     // fair value is the edge (+$1.36/straddle guaranteed).
     // Bucket-based sizing: LowVol → $7/leg (about to become HighVol 90% of the time).
-    if (elapsedPct >= 0.667 && elapsedPct < 0.95) {
+    //
+    // Fill-asymmetry guard: only execute straddle when BOTH sides show ask ≤ 0.52.
+    // In trending markets (e.g. UP ask = 0.55, DOWN ask = 0.45), placing limit
+    // orders at 0.44 results in only the DOWN leg filling — orphan one-sided position.
+    // Allow null asks (no book yet for next window) since the next market hasn't
+    // opened yet and asks will be at fair value (~0.50) when it does.
+    const upAskFair   = (m.upBestAsk   === null || m.upBestAsk   <= 0.52);
+    const downAskFair = (m.downBestAsk === null || m.downBestAsk <= 0.52);
+    if (elapsedPct >= 0.667 && elapsedPct < 0.95 && upAskFair && downAskFair) {
       const preSize = (volBucket === 'LowVol') ? 7.0 : TRADE_SIZE;
       for (const preOutcome of ['UP', 'DOWN']) {
         signals.push({

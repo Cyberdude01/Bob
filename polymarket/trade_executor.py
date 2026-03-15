@@ -61,6 +61,22 @@ PAUSED_SYMBOLS = {"XRP"}  # paused — insufficient price movement
 # next 15-minute market open (i.e. during the last 5 minutes of the current candle)
 PRE_ORDER_WINDOW_SEC = 300   # 5 minutes
 
+# Maximum entry price for directional_90pct bets.
+# At 92–99¢ a win pays ~$0.05–$0.43 but a loss costs $5 — deeply negative EV.
+# A win at 0.75¢ pays $1.67 vs $5 loss → much more acceptable risk/reward.
+MAX_DIRECTIONAL_ENTRY_PRICE = 0.75
+
+# Grace period before exiting a one-sided pre_order straddle.
+# After a 15-min window opens, we wait this fraction of the candle before
+# declaring "fill asymmetry" and selling the orphan leg at market.
+# At 5% (~45 s) the executor's next 5-min tick (~33% elapsed) catches it early
+# while the unfilled side still has meaningful bid value (vs waiting until 67%).
+PREORDER_ASYMMETRY_EXIT_PCT = 0.05
+
+# Daily loss limit — stop all new entries once realized P&L for today drops below this.
+# Open positions continue running; only new order placement is blocked.
+DAILY_LOSS_LIMIT = -30.0
+
 # ─── Helpers ──────────────────────────────────────────────────────────────────
 
 def _load_env(path: str) -> None:
@@ -96,6 +112,36 @@ def _load_executed() -> Dict[str, Any]:
         return json.loads(_EXECUTED_FILE.read_text())
     except Exception:
         return {}
+
+
+def _get_daily_pnl(executed: Dict[str, Any]) -> float:
+    """
+    Sum realized P&L for all settled trades submitted today (ET).
+    Used by the daily loss circuit breaker.
+    """
+    today_et = datetime.now(_ET).date()
+    total = 0.0
+    for entry in executed.values():
+        if not entry.get("settled"):
+            continue
+        pnl = entry.get("pnl")
+        if pnl is None:
+            continue
+        submitted_at = entry.get("submitted_at", "")
+        cleaned = submitted_at.strip()
+        for tz_label in (" ET", " EST", " EDT"):
+            if cleaned.endswith(tz_label):
+                cleaned = cleaned[: -len(tz_label)].strip()
+                break
+        for fmt in ("%Y-%m-%d %I:%M:%S %p", "%Y-%m-%d %I:%M %p"):
+            try:
+                dt = datetime.strptime(cleaned, fmt)
+                if dt.date() == today_et:
+                    total += float(pnl)
+                break
+            except ValueError:
+                continue
+    return total
 
 
 def _dedup_key(slug: str, outcome: str, trigger: str) -> str:
@@ -351,8 +397,9 @@ def _run_exit_preorders(
     print(f"\n{'─'*60}")
     print(f"  Pre-order exit check  (elapsed={elapsed:.1%})")
 
-    if elapsed < 0.667:
-        print(f"  Too early — waiting until 67% of candle elapsed")
+    if elapsed < PREORDER_ASYMMETRY_EXIT_PCT:
+        print(f"  Grace period — waiting for orders to settle "
+              f"({elapsed:.1%} < {PREORDER_ASYMMETRY_EXIT_PCT:.0%} elapsed)")
         return
 
     # Symbols with active directional confidence in current signals
@@ -438,7 +485,7 @@ def _run_exit_preorders(
         proceeds  = round(shares * sell_price, 4)
         pnl       = round(proceeds - buy_cost, 4)
 
-        print(f"  [{symbol} {outcome}] EXIT — one-sided pre_order, no directional confidence")
+        print(f"  [{symbol} {outcome}] EXIT — one-sided pre_order at {elapsed:.1%} elapsed, no directional confidence")
         print(f"    token     : {token_id[:16]}…")
         print(f"    shares    : {shares}  sell_price: {sell_price:.4f}  (bought @ {entry.get('price', 0):.4f})")
         print(f"    est. P&L  : ${pnl:+.4f}")
@@ -517,6 +564,23 @@ def run(execute: bool = False) -> None:
 
     executed = _load_executed()
     print(f"already executed     : {len(executed)} entries\n")
+
+    # ── Daily loss circuit breaker ─────────────────────────────────────────
+    daily_pnl = _get_daily_pnl(executed)
+    print(f"today's realized P&L : ${daily_pnl:+.4f}")
+    if daily_pnl <= DAILY_LOSS_LIMIT:
+        print(f"\nDAILY LOSS CIRCUIT BREAKER TRIGGERED")
+        print(f"  Realized P&L today: ${daily_pnl:+.2f}  (limit: ${DAILY_LOSS_LIMIT:.0f})")
+        print(f"  No new entries will be placed for the rest of today.")
+        print(f"  Open positions continue running to resolution.")
+        # Still run exit logic so one-sided pre_orders are protected
+        try:
+            client = _build_clob_client()
+        except Exception as exc:
+            print(f"  ERROR initialising CLOB client (for exit check): {exc}")
+            return
+        _run_exit_preorders(signals, markets_raw, executed, client, execute)
+        return
 
     # ── Initialise CLOB client & check balance ─────────────────────────────
     try:
@@ -635,6 +699,14 @@ def run(execute: bool = False) -> None:
             # Skip near-resolved markets (price ≥ 0.95 means candle already closed/settling)
             if live_price >= 0.95:
                 print(f"{prefix} SKIP — market already resolved (live_price={live_price:.4f} ≥ 0.95, no edge)")
+                skipped += 1
+                continue
+
+            # Cap directional_90pct entry price — at 75¢+ a loss costs $5 but a win
+            # only pays ~$1.67 or less, making it deeply negative EV over time.
+            if trigger == "directional_90pct" and live_price > MAX_DIRECTIONAL_ENTRY_PRICE:
+                print(f"{prefix} SKIP — live price {live_price:.4f} > MAX_DIRECTIONAL_ENTRY_PRICE "
+                      f"({MAX_DIRECTIONAL_ENTRY_PRICE}), insufficient upside")
                 skipped += 1
                 continue
 
