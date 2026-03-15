@@ -17,6 +17,11 @@ if [ -f ".TRADING_PAUSED" ]; then
 fi
 
 echo "[run_executor] Pulling latest data from origin/main..."
+# Remove stale git lock file if present (can be left behind by crashed git processes)
+if [ -f ".git/index.lock" ]; then
+  echo "[run_executor] WARNING: Removing stale .git/index.lock"
+  rm -f ".git/index.lock"
+fi
 git fetch origin main
 git checkout origin/main -- data_exports/signals.json data_exports/markets.json
 
