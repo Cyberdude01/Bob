@@ -4469,10 +4469,11 @@
     "token_id": "109331233847995768891128158252181688784740593604951973247896606818810455407338",
     "order_id": "?",
     "submitted_at": "2026-03-15 03:10:56 PM ET",
-    "settled": false,
-    "result": null,
-    "pnl": null,
-    "total_return": null
+    "settled": true,
+    "result": "WIN",
+    "pnl": 4.8039,
+    "total_return": 9.8039,
+    "settled_at": "2026-03-15 04:22:14 PM ET"
   },
   "btc-updown-15m-1773601200:UP:pre_order": {
     "slug": "btc-updown-15m-1773601200",
@@ -4485,10 +4486,11 @@
     "token_id": "17640236814246782485585466452180549279848697917559493651088058234981620076757",
     "order_id": "?",
     "submitted_at": "2026-03-15 03:10:57 PM ET",
-    "settled": false,
-    "result": null,
-    "pnl": null,
-    "total_return": null
+    "settled": true,
+    "result": "WIN",
+    "pnl": 5.4167,
+    "total_return": 10.4167,
+    "settled_at": "2026-03-15 04:22:14 PM ET"
   },
   "btc-updown-15m-1773601200:DOWN:pre_order": {
     "slug": "btc-updown-15m-1773601200",
@@ -4501,10 +4503,11 @@
     "token_id": "21071253143841006787052135898813268142970834835947301879427552612176918458345",
     "order_id": "?",
     "submitted_at": "2026-03-15 03:10:57 PM ET",
-    "settled": false,
-    "result": null,
-    "pnl": null,
-    "total_return": null
+    "settled": true,
+    "result": "LOSS",
+    "pnl": -5.0,
+    "total_return": 0.0,
+    "settled_at": "2026-03-15 04:22:14 PM ET"
   },
   "eth-updown-15m-1773601200:UP:pre_order": {
     "slug": "eth-updown-15m-1773601200",
@@ -4517,10 +4520,11 @@
     "token_id": "3663506259851291033730683888138027906361779010912973047358125413030629327659",
     "order_id": "?",
     "submitted_at": "2026-03-15 03:10:58 PM ET",
-    "settled": false,
-    "result": null,
-    "pnl": null,
-    "total_return": null
+    "settled": true,
+    "result": "WIN",
+    "pnl": 5.4167,
+    "total_return": 10.4167,
+    "settled_at": "2026-03-15 04:22:14 PM ET"
   },
   "eth-updown-15m-1773601200:DOWN:pre_order": {
     "slug": "eth-updown-15m-1773601200",
@@ -4533,10 +4537,11 @@
     "token_id": "13553190581968575449605678301912396868140071641903340045871404297821282300817",
     "order_id": "?",
     "submitted_at": "2026-03-15 03:10:58 PM ET",
-    "settled": false,
-    "result": null,
-    "pnl": null,
-    "total_return": null
+    "settled": true,
+    "result": "LOSS",
+    "pnl": -5.0,
+    "total_return": 0.0,
+    "settled_at": "2026-03-15 04:22:15 PM ET"
   },
   "sol-updown-15m-1773601200:UP:trend_follow": {
     "slug": "sol-updown-15m-1773601200",
@@ -4549,10 +4554,11 @@
     "token_id": "9275887884228875358798326948749542872142606646427041160977206928742022952720",
     "order_id": "?",
     "submitted_at": "2026-03-15 03:10:59 PM ET",
-    "settled": false,
-    "result": null,
-    "pnl": null,
-    "total_return": null
+    "settled": true,
+    "result": "WIN",
+    "pnl": 5.8696,
+    "total_return": 10.8696,
+    "settled_at": "2026-03-15 04:22:15 PM ET"
   },
   "sol-updown-15m-1773601200:UP:pre_order": {
     "slug": "sol-updown-15m-1773601200",
@@ -4565,10 +4571,11 @@
     "token_id": "82228261085057409746731026149296004477720244215167764352507010029257594165227",
     "order_id": "?",
     "submitted_at": "2026-03-15 03:10:59 PM ET",
-    "settled": false,
-    "result": null,
-    "pnl": null,
-    "total_return": null
+    "settled": true,
+    "result": "WIN",
+    "pnl": 5.4167,
+    "total_return": 10.4167,
+    "settled_at": "2026-03-15 04:22:15 PM ET"
   },
   "sol-updown-15m-1773601200:DOWN:pre_order": {
     "slug": "sol-updown-15m-1773601200",
@@ -4581,10 +4588,11 @@
     "token_id": "3653319076433182186630332158785766638226106471969609676233074939846872577774",
     "order_id": "?",
     "submitted_at": "2026-03-15 03:11:00 PM ET",
-    "settled": false,
-    "result": null,
-    "pnl": null,
-    "total_return": null
+    "settled": true,
+    "result": "LOSS",
+    "pnl": -5.0,
+    "total_return": 0.0,
+    "settled_at": "2026-03-15 04:22:15 PM ET"
   },
   "xrp-updown-15m-1773601200:UP:trend_follow": {
     "slug": "xrp-updown-15m-1773601200",
@@ -4597,10 +4605,11 @@
     "token_id": "104384481303479025036304672410876728375775014044878107761138236221999323375985",
     "order_id": "?",
     "submitted_at": "2026-03-15 03:11:00 PM ET",
-    "settled": false,
-    "result": null,
-    "pnl": null,
-    "total_return": null
+    "settled": true,
+    "result": "WIN",
+    "pnl": 10.1515,
+    "total_return": 15.1515,
+    "settled_at": "2026-03-15 04:22:15 PM ET"
   },
   "xrp-updown-15m-1773601200:UP:pre_order": {
     "slug": "xrp-updown-15m-1773601200",
@@ -4613,10 +4622,11 @@
     "token_id": "87888054113674373774405382551841135560437381563661257028175558695252778199350",
     "order_id": "?",
     "submitted_at": "2026-03-15 03:11:00 PM ET",
-    "settled": false,
-    "result": null,
-    "pnl": null,
-    "total_return": null
+    "settled": true,
+    "result": "WIN",
+    "pnl": 5.4167,
+    "total_return": 10.4167,
+    "settled_at": "2026-03-15 04:22:15 PM ET"
   },
   "xrp-updown-15m-1773601200:DOWN:pre_order": {
     "slug": "xrp-updown-15m-1773601200",
@@ -4629,10 +4639,11 @@
     "token_id": "8652888988200361505698111591032524124884970334529817496191713317308105276550",
     "order_id": "?",
     "submitted_at": "2026-03-15 03:11:01 PM ET",
-    "settled": false,
-    "result": null,
-    "pnl": null,
-    "total_return": null
+    "settled": true,
+    "result": "LOSS",
+    "pnl": -5.0,
+    "total_return": 0.0,
+    "settled_at": "2026-03-15 04:22:15 PM ET"
   },
   "btc-updown-15m-1773602100:UP:pre_order": {
     "slug": "btc-updown-15m-1773602100",
