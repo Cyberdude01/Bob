@@ -18,7 +18,7 @@ const DATA_DIR      = path.join(REPO_DIR, 'data_exports');
 const REPORTS_DIR   = path.join(REPO_DIR, 'reports');
 const DB_PATH       = path.join(REPO_DIR, 'market-data.db');
 const LOOP_INTERVAL = 1 * 60 * 1000; // 1 minute
-const SYMBOLS = ['BTC', 'ETH', 'SOL', 'XRP'];
+const SYMBOLS = ['BTC', 'ETH', 'SOL']; // XRP paused — insufficient price movement
 // Base slug patterns → symbol mapping (slug may have a timestamp suffix like -1773294300)
 const SLUG_PREFIX_TO_SYMBOL = {
   'btc-updown-15m': 'BTC',

@@ -54,6 +54,9 @@ _EXECUTED_FILE = _DATA_DIR / "executed.json"
 # Signals older than this are rejected — prevents stale signals trading future markets
 MAX_SIGNAL_AGE_HOURS = 4
 
+# Symbols paused from trading (signal generation + execution)
+PAUSED_SYMBOLS = {"XRP"}  # paused — insufficient price movement
+
 # Pre-order window: only execute pre_order signals within this many seconds of the
 # next 15-minute market open (i.e. during the last 5 minutes of the current candle)
 PRE_ORDER_WINDOW_SEC = 300   # 5 minutes
@@ -571,6 +574,12 @@ def run(execute: bool = False) -> None:
         dedup_key = _dedup_key(slug, outcome, trigger)
 
         prefix = f"  [{symbol} {outcome} | {trigger}]"
+
+        # Skip paused symbols
+        if symbol.upper() in PAUSED_SYMBOLS:
+            print(f"{prefix} SKIP — symbol paused")
+            skipped += 1
+            continue
 
         # Skip duplicates
         if dedup_key in executed:
