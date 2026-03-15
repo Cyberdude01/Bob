@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-15 10:53 AM ET",
+  "updated": "2026-03-15 10:54 AM ET",
   "data": [
     {
       "symbol": "BTC",
@@ -10,18 +10,7 @@
       "price": 0.655,
       "confidence": 0.655,
       "trigger": "trend_follow",
-      "reason": "TREND FOLLOW at 54% elapsed — P(UP)=0.345 gives edge=0.155 toward DOWN. Bucket=HighVol+Trend (RV60=587.61366, Eff60=0.039). Fixed $5 USDC stake @ conf=0.655."
-    },
-    {
-      "symbol": "SOL",
-      "slug": "sol-updown-15m-1773585900",
-      "outcome": "DOWN",
-      "side": "BUY",
-      "size": 5,
-      "price": 0.635,
-      "confidence": 0.635,
-      "trigger": "trend_follow",
-      "reason": "TREND FOLLOW at 54% elapsed — P(UP)=0.365 gives edge=0.135 toward DOWN. Bucket=HighVol+Trend (RV60=707.10633, Eff60=0.03). Fixed $5 USDC stake @ conf=0.635."
+      "reason": "TREND FOLLOW at 60% elapsed — P(UP)=0.345 gives edge=0.155 toward DOWN. Bucket=HighVol+Trend (RV60=587.61366, Eff60=0.039). Fixed $5 USDC stake @ conf=0.655."
     }
   ]
 }
