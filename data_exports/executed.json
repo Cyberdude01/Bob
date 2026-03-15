@@ -1602,10 +1602,11 @@
     "token_id": "59483262909685780694012571240931044180730971821482831296354218324023783776320",
     "order_id": "?",
     "submitted_at": "2026-03-15 05:57:51 AM ET",
-    "settled": false,
-    "result": null,
-    "pnl": null,
-    "total_return": null
+    "settled": true,
+    "result": "WIN",
+    "pnl": 5.4167,
+    "total_return": 10.4167,
+    "settled_at": "2026-03-15 07:04:07 AM ET"
   },
   "btc-updown-15m-1773567900:DOWN:pre_order": {
     "slug": "btc-updown-15m-1773567900",
@@ -1618,10 +1619,11 @@
     "token_id": "14818061343437332666073967263245989683748847035688407336048993132345632604014",
     "order_id": "?",
     "submitted_at": "2026-03-15 05:57:51 AM ET",
-    "settled": false,
-    "result": null,
-    "pnl": null,
-    "total_return": null
+    "settled": true,
+    "result": "LOSS",
+    "pnl": -5.0,
+    "total_return": 0.0,
+    "settled_at": "2026-03-15 07:04:07 AM ET"
   },
   "eth-updown-15m-1773567900:UP:pre_order": {
     "slug": "eth-updown-15m-1773567900",
@@ -1634,10 +1636,11 @@
     "token_id": "57874439051773227035144484370649129918081843534708060613292820845066360758340",
     "order_id": "?",
     "submitted_at": "2026-03-15 05:57:52 AM ET",
-    "settled": false,
-    "result": null,
-    "pnl": null,
-    "total_return": null
+    "settled": true,
+    "result": "LOSS",
+    "pnl": -5.0,
+    "total_return": 0.0,
+    "settled_at": "2026-03-15 07:04:07 AM ET"
   },
   "eth-updown-15m-1773567900:DOWN:pre_order": {
     "slug": "eth-updown-15m-1773567900",
@@ -1650,10 +1653,11 @@
     "token_id": "67732810704156054883150393850160464597149480280871048047409508354531341914233",
     "order_id": "?",
     "submitted_at": "2026-03-15 05:57:52 AM ET",
-    "settled": false,
-    "result": null,
-    "pnl": null,
-    "total_return": null
+    "settled": true,
+    "result": "WIN",
+    "pnl": 5.4167,
+    "total_return": 10.4167,
+    "settled_at": "2026-03-15 07:04:08 AM ET"
   },
   "sol-updown-15m-1773567900:UP:pre_order": {
     "slug": "sol-updown-15m-1773567900",
@@ -1666,10 +1670,11 @@
     "token_id": "29201147291076229704944375418573834537564687573114633434408039815197698104829",
     "order_id": "?",
     "submitted_at": "2026-03-15 05:57:52 AM ET",
-    "settled": false,
-    "result": null,
-    "pnl": null,
-    "total_return": null
+    "settled": true,
+    "result": "WIN",
+    "pnl": 5.4167,
+    "total_return": 10.4167,
+    "settled_at": "2026-03-15 07:04:08 AM ET"
   },
   "sol-updown-15m-1773567900:DOWN:pre_order": {
     "slug": "sol-updown-15m-1773567900",
@@ -1682,10 +1687,11 @@
     "token_id": "25454297043071859528079783402435041356750444992345249432894278167649114592558",
     "order_id": "?",
     "submitted_at": "2026-03-15 05:57:53 AM ET",
-    "settled": false,
-    "result": null,
-    "pnl": null,
-    "total_return": null
+    "settled": true,
+    "result": "LOSS",
+    "pnl": -5.0,
+    "total_return": 0.0,
+    "settled_at": "2026-03-15 07:04:08 AM ET"
   },
   "xrp-updown-15m-1773567900:UP:pre_order": {
     "slug": "xrp-updown-15m-1773567900",
@@ -1698,10 +1704,11 @@
     "token_id": "80735868963407383405376720652936420360581150806757791339997822106133729221026",
     "order_id": "?",
     "submitted_at": "2026-03-15 05:57:53 AM ET",
-    "settled": false,
-    "result": null,
-    "pnl": null,
-    "total_return": null
+    "settled": true,
+    "result": "WIN",
+    "pnl": 5.4167,
+    "total_return": 10.4167,
+    "settled_at": "2026-03-15 07:04:08 AM ET"
   },
   "xrp-updown-15m-1773567900:DOWN:pre_order": {
     "slug": "xrp-updown-15m-1773567900",
@@ -1714,10 +1721,11 @@
     "token_id": "27901520513501042242204279182023063247976449191470153885703346464204432823041",
     "order_id": "?",
     "submitted_at": "2026-03-15 05:57:53 AM ET",
-    "settled": false,
-    "result": null,
-    "pnl": null,
-    "total_return": null
+    "settled": true,
+    "result": "LOSS",
+    "pnl": -5.0,
+    "total_return": 0.0,
+    "settled_at": "2026-03-15 07:04:08 AM ET"
   },
   "btc-updown-15m-1773568800:DOWN:trend_follow": {
     "slug": "btc-updown-15m-1773568800",
