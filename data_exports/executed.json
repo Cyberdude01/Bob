@@ -4214,10 +4214,11 @@
     "token_id": "50330071765111044149155331973409560024092885600988451565666479667619651014133",
     "order_id": "?",
     "submitted_at": "2026-03-15 02:10:08 PM ET",
-    "settled": false,
-    "result": null,
-    "pnl": null,
-    "total_return": null
+    "settled": true,
+    "result": "WIN",
+    "pnl": 1.5789,
+    "total_return": 6.5789,
+    "settled_at": "2026-03-15 03:21:10 PM ET"
   },
   "btc-updown-15m-1773598500:UP:trend_follow": {
     "slug": "btc-updown-15m-1773598500",
